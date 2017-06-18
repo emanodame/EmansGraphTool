@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="sigma.min.js"></script>
 <script src="clickFunctionality.js"></script>
 <script src=dijkstra.js></script>
@@ -10,6 +11,10 @@
 </head>
 <body id="base">
 
+<div>
+    <button onclick="calculatePath(10,10)">START</button>
+</div>
+
 <script>
 
     const s = new sigma({
@@ -21,6 +26,11 @@
             autoRescale: false
         }
     });
+
+    $('#base').dblclick(function (e) {
+        e.stopPropagation();
+    });
+
 
     loadClickFunctionality();
 
