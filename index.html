@@ -1,7 +1,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="sigma.min.js"></script>
+
+<script src="sigma.resources/sigma.min.js"></script>
+<script src="sigma.resources/sigma.canvas.edgehovers.def.js"></script>
+<script src="sigma.resources/sigma.renderers.edgeLabels.min.js"></script>
+
 <script src="clickFunctionality.js"></script>
 <script src=dijkstra.js></script>
+
 
 <link rel="stylesheet" href="index.css">
 
@@ -12,7 +17,7 @@
 <body id="base">
 
 <div>
-    <button onclick="calculatePath(10,10)">START</button>
+    <button onclick="calculatePath(1,10)">GET SOURCE/EDGE</button>
 </div>
 
 <script>
@@ -23,6 +28,12 @@
             type: 'canvas'
         },
         settings: {
+            borderSize: 3,
+            defaultNodeBorderColor: "#c9ddff",
+            defaultEdgeLabelSize: 20,
+            enableEdgeHovering: true,
+            edgeHoverSizeRatio: 2,
+            edgeHoverExtremities: true,
             autoRescale: false
         }
     });
@@ -31,8 +42,9 @@
         e.stopPropagation();
     });
 
-
-    loadClickFunctionality();
+    $(document).bind("contextmenu", function (event) {
+        event.preventDefault();
+    });
 
     function calculatePath(srcNode, destNode) {
         const srcNodeColour = "#001299";
@@ -56,7 +68,6 @@
         s.graph.nodes(srcNode).color = srcNodeColour;
         s.graph.nodes(destNode).color = destNodeColour;
     }
-
 </script>
 </body>
 </html>
