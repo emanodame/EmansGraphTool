@@ -7,8 +7,6 @@ $(document).ready(function () {
 
     const nodesSelected = [];
 
-    let numberOfNodes = 0;
-
     dom.addEventListener("click", function (e) {
 
         if (!e.shiftKey) {
@@ -26,7 +24,7 @@ $(document).ready(function () {
             };
 
             if (!assertNoDuplicateNodePosition(node)) {
-                node.label = (++numberOfNodes).toString();
+                node.label = (++s.graph.nodes().length).toString();
                 nodesCreated.push(node);
                 s.graph.addNode(node);
                 s.refresh();
