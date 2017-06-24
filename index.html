@@ -1,8 +1,14 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0"/>
+<meta http-equiv="cache-control" content="max-age=0"/>
+<meta http-equiv="expires" content="0"/>
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+<meta http-equiv="pragma" content="no-cache"/>
 
-<script src="sigma.resources/sigma.min.js"></script>
-<script src="sigma.resources/sigma.canvas.edgehovers.def.js"></script>
-<script src="sigma.resources/sigma.renderers.edgeLabels.min.js"></script>
+<script src="resources/node_modules/jquery/dist/jquery.min.js"></script>
+
+<script src="resources/sigma.min.js"></script>
+<script src="resources/sigma.canvas.edgehovers.def.js"></script>
+<script src="resources/sigma.renderers.edgeLabels.min.js"></script>
 
 <script src="clickFunctionality.js"></script>
 <script src=dijkstra.js></script>
@@ -11,13 +17,25 @@
 <link rel="stylesheet" href="index.css">
 
 <html>
+
 <head>
     <title>Eman's Graph Tool</title>
 </head>
 <body id="base">
 
 <div>
-    <button onclick="calculatePath(1,10)">GET SOURCE/EDGE</button>
+    <form class="my-form">
+        Source Node:<br>
+        <input type="text" name="srcNode"><br>
+        Dest Node:<br>
+        <input type="text" name="destNode"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<div>
+    <button onclick="clearGraph()">CLEAR GRAPh</button>
+
 </div>
 
 <script>
@@ -29,8 +47,14 @@
         },
         settings: {
             borderSize: 3,
+
             defaultNodeBorderColor: "#c9ddff",
             defaultEdgeLabelSize: 20,
+
+            defaultLabelHoverColor: "#FFFFFF",
+            labelHoverColor: "node",
+            labelShadowColor: "#c9ddff",
+
             enableEdgeHovering: true,
             edgeHoverSizeRatio: 2,
             edgeHoverExtremities: true,
@@ -46,12 +70,38 @@
         event.preventDefault();
     });
 
-    function calculatePath(srcNode, destNode) {
+    $('.my-form').on('submit', function (e) {
+        e.preventDefault();
+
+        const srcNode = $("input[name='srcNode']", this).val();
+        const destNode = $("input[name='destNode']", this).val();
+
+        const sourceNodeId = s.graph.nodes().filter(function (node) {
+            return node.label === srcNode
+        }).shift().id;
+
+        const destNodeId = s.graph.nodes().filter(function (node) {
+            return node.label === destNode
+        }).shift().id;
+
+        calculatePath(sourceNodeId, destNodeId);
+    });
+
+    function clearGraph() {
+        s.graph.clear();
+        s.refresh();
+    }
+
+    function calculatePath(sourceNodeId, destNodeId) {
+
         const srcNodeColour = "#001299";
         const destNodeColour = "#991600";
         const pathColour = "#6e0db6";
 
-        const path = s.graph.dijkstra(srcNode, destNode);
+        s.graph.nodes(sourceNodeId).color = srcNodeColour;
+        s.graph.nodes(destNodeId).color = destNodeColour;
+
+        const path = s.graph.dijkstra(sourceNodeId, destNodeId);
 
         if (path) {
             for (let i = 0; i < path.length; i++) {
@@ -60,13 +110,10 @@
                     setTimeout(function () {
                         path[index].color = pathColour;
                         s.refresh();
-                    }, i * 1000)
+                    }, i * 3000)
                 })(i);
             }
         }
-
-        s.graph.nodes(srcNode).color = srcNodeColour;
-        s.graph.nodes(destNode).color = destNodeColour;
     }
 </script>
 </body>

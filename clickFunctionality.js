@@ -2,51 +2,60 @@ $(document).ready(function () {
     const dom = document.querySelector('#base canvas:last-child');
     const sigmaCamera = s.camera;
 
-    const nodesSelected = [];
+    const nodesCreated = [];
     const edgesCreated = [];
 
-    s.bind("rightClickNode", function (e) {
+    const nodesSelected = [];
 
-        s.graph.dropNode(e.data.node.id);
-        s.refresh();
-    });
-
-    s.bind("rightClickEdge", function (e) {
-        s.graph.dropEdge(e.data.edge.id);
-        removeEdgeIdAndInverseEdgeInArray(e.data.edge.source, e.data.edge.target);
-        s.refresh();
-    });
+    let numberOfNodes = 0;
 
     dom.addEventListener("click", function (e) {
 
         if (!e.shiftKey) {
 
-            let x = sigma.utils.getX(e) - dom.offsetWidth / 2;
-            let y = sigma.utils.getY(e) - dom.offsetHeight / 2;
+            const x = sigma.utils.getX(e) - dom.offsetWidth / 2;
+            const y = sigma.utils.getY(e) - dom.offsetHeight / 2;
 
-            let p = sigmaCamera.cameraPosition(x, y);
-            x = p.x;
-            y = p.y;
+            const positionWithCamera = sigmaCamera.cameraPosition(x, y);
 
             const node = {
-                id: createNodeIdFromCoordinates(x, y),
-                x: x,
-                y: y,
+                id: createNodeIdFromCoordinates(positionWithCamera.x, positionWithCamera.y),
+                x: positionWithCamera.x,
+                y: positionWithCamera.y,
                 size: 10,
             };
 
-            s.graph.addNode(node);
-            s.refresh();
+            if (!assertNoDuplicateNodePosition(node)) {
+                node.label = (++numberOfNodes).toString();
+                nodesCreated.push(node);
+                s.graph.addNode(node);
+                s.refresh();
+            }
         }
     });
 
     s.bind("clickNode", function (e) {
-        const node = e.data.node;
 
         if (e.data.captor.shiftKey) {
-            selectOrUnselectNode(node);
-            connectNodesViaEdges();
+            selectOrUnselectNode(e.data.node);
+
+            if (nodesSelected.length === 2) {
+                connectNodesViaEdges();
+            }
         }
+    });
+
+    s.bind("rightClickNode", function (e) {
+        s.graph.dropNode(e.data.node.id);
+        s.refresh();
+    });
+
+    s.bind("rightClickEdge", function (e) {
+        const edge = e.data.edge;
+        s.graph.dropEdge(edge.id);
+
+        removeEdgeIdAndInverseEdgeInArray(edge.source, edge.target);
+        s.refresh();
     });
 
     function selectOrUnselectNode(node) {
@@ -64,30 +73,27 @@ $(document).ready(function () {
     }
 
     function connectNodesViaEdges() {
+        const sourceNodeId = nodesSelected[0].id;
+        const targetNodeId = nodesSelected[1].id;
 
-        if (nodesSelected.length === 2) {
-            const sourceNodeId = nodesSelected[0].id;
-            const targetNodeId = nodesSelected[1].id;
+        if (edgesCreated.includes(createEdgeIdFromCoordinates(sourceNodeId, targetNodeId))) {
+            resetAllNodesColourAndRefresh();
+            nodesSelected.length = 0;
+            throw "Already an edge between " + sourceNodeId + " and " + targetNodeId;
 
-            if (edgesCreated.includes(createEdgeIdFromCoordinates(sourceNodeId, targetNodeId))) {
-                resetAllNodesColourAndRefresh();
-                nodesSelected.length = 0;
-                throw "Already an edge between " + sourceNodeId + " and " + targetNodeId;
+        } else {
+            s.graph.addEdge({
+                id: createEdgeIdFromCoordinates(sourceNodeId, targetNodeId),
+                source: sourceNodeId,
+                target: targetNodeId,
+                defaultEdgeLabelSize: 20,
+                size: 3,
+                label: computePathLength(nodesSelected[0], nodesSelected[1]).toString()
+            });
 
-            } else {
-                s.graph.addEdge({
-                    id: createEdgeIdFromCoordinates(sourceNodeId, targetNodeId),
-                    source: sourceNodeId,
-                    target: targetNodeId,
-                    defaultEdgeLabelSize: 20,
-                    size: 3,
-                    label: computePathLength(nodesSelected[0], nodesSelected[1]).toString()
-                });
-
-                addEdgeIdAndInverseEdgeIdToArray(sourceNodeId, targetNodeId);
-                resetAllNodesColourAndRefresh();
-                nodesSelected.length = 0;
-            }
+            addEdgeIdAndInverseEdgeIdToArray(sourceNodeId, targetNodeId);
+            resetAllNodesColourAndRefresh();
+            nodesSelected.length = 0;
         }
     }
 
@@ -118,5 +124,11 @@ $(document).ready(function () {
 
     function computePathLength(node1, node2) {
         return (Math.sqrt(Math.pow((node2.y - node1.y), 2) + Math.pow((node2.x - node1.x), 2)) / 10).toFixed(2);
+    }
+
+    function assertNoDuplicateNodePosition(node) {
+        return s.graph.nodes().filter(function (inspectedNode) {
+            return inspectedNode.id === createNodeIdFromCoordinates(node.x, node.y)
+        }).shift();
     }
 });

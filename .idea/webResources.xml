@@ -7,6 +7,8 @@
           <resourceRoots>
             <path value="file://$PROJECT_DIR$/sigma.js" />
             <path value="file://$PROJECT_DIR$/sigmaresources" />
+            <path value="file://$PROJECT_DIR$/sigma.resources" />
+            <path value="file://$PROJECT_DIR$/resources" />
           </resourceRoots>
         </entryData>
       </entry>
