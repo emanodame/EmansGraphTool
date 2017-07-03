@@ -29,7 +29,6 @@
 
 <div>
     <button onclick="clearGraph()">CLEAR GRAPh</button>
-
 </div>
 
 <script>
@@ -56,12 +55,12 @@
         }
     });
 
-    $('#base').dblclick(function (e) {
-        e.stopPropagation();
-    });
-
     $(document).bind("contextmenu", function (event) {
         event.preventDefault();
+    });
+
+    $('#base').dblclick(function (e) {
+        e.stopPropagation();
     });
 
     $('.my-form').on('submit', function (e) {
@@ -133,6 +132,8 @@
                     }, i * 3000)
                 })(i);
             }
+        } else {
+            alert("NO PATH");
         }
     }
 </script>
