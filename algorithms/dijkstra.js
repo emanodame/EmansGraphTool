@@ -11,7 +11,7 @@
 
         addNodeToEvaluationList(sourceNode, NO_PREVIOUS_NODE, 0);
 
-        let completePath = findNeighbours(destNode.id, destNode, this.allNeighborsIndex, this.nodes);
+        let completePath = findNeighbours(destNode, this.allNeighborsIndex, this.nodes);
 
         return completePath === undefined ? "Cannot find path" : completePath;
     });
@@ -33,12 +33,12 @@
         }
     }
 
-    function findNeighbours(destId, destNode, allNeighbors, nodes) {
+    function findNeighbours(destNode, allNeighbors, nodes) {
 
         while (nodesInEvaluation.length > 0) {
             const inspectedNode = nodesInEvaluation.shift();
 
-            if (inspectedNode.nodeId === destId) {
+            if (inspectedNode.nodeId === destNode.id) {
                 return calculatePath(destNode);
             }
 
@@ -59,6 +59,7 @@
             node1.y !== undefined &&
             node2.x !== undefined &&
             node2.y !== undefined;
+
         if (!isEverythingDefined) {
             return undefined;
         }

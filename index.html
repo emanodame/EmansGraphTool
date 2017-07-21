@@ -5,7 +5,9 @@
 <script src="resources/sigma.renderers.edgeLabels.min.js"></script>
 
 <script src="clickFunctionality.js"></script>
-<script src=dijkstra.js></script>
+
+<script src=algorithms/dijkstra.js></script>
+<script src="algorithms/prims.js"></script>
 
 
 <link rel="stylesheet" href="index.css">
@@ -28,7 +30,11 @@
 </div>
 
 <div>
-    <button onclick="clearGraph()">CLEAR GRAPh</button>
+    <button onclick="loadNodes()">LOAD NODE SETUP 1</button>
+</div>
+
+<div>
+    <button onclick="clearGraph()">CLEAR GRAPH</button>
 </div>
 
 <script>
@@ -73,11 +79,12 @@
             return node.label === srcNode
         }).shift().id;
 
-        const destNodeId = s.graph.nodes().filter(function (node) {
-            return node.label === destNode
-        }).shift().id;
+        /*        const destNodeId = s.graph.nodes().filter(function (node) {
+         return node.label === destNode
+         }).shift().id;*/
 
-        calculatePath(sourceNodeId, destNodeId);
+        calculatePrimsPath(sourceNodeId);
+        //calculateDijkstraPath(sourceNodeId, destNodeId);
     });
 
     window.onload = function () {
@@ -101,6 +108,14 @@
     window.onbeforeunload = function () {
         localStorage.clear();
 
+        s.graph.nodes().forEach(function (node) {
+            node.color = "#000000"
+        });
+
+        s.graph.edges().forEach(function (edges) {
+            edges.color = "#000000"
+        });
+
         localStorage.setItem("nodes", JSON.stringify(s.graph.nodes()));
         localStorage.setItem("edges", JSON.stringify(s.graph.edges()));
     };
@@ -111,7 +126,7 @@
         s.refresh();
     }
 
-    function calculatePath(sourceNodeId, destNodeId) {
+    function calculateDijkstraPath(sourceNodeId, destNodeId) {
 
         const srcNodeColour = "#001299";
         const destNodeColour = "#991600";
@@ -129,13 +144,36 @@
                     setTimeout(function () {
                         path[index].color = pathColour;
                         s.refresh();
-                    }, i * 3000)
+                    }, i * 2000)
                 })(i);
             }
         } else {
             alert("NO PATH");
         }
     }
+
+    function calculatePrimsPath(startNodeId) {
+        const pathColour = "#6e0db6";
+
+        const path = s.graph.prims(startNodeId);
+
+        console.log(path);
+
+        if (path) {
+            for (let i = 0; i < path.length; i++) {
+
+                (function (index) {
+                    setTimeout(function () {
+                        s.graph.nodes(path[index]).color = pathColour;
+                        s.refresh();
+                    }, i * 2000)
+                })(i);
+            }
+        } else {
+            alert("NO PATH");
+        }
+    }
+
 </script>
 </body>
 </html>
