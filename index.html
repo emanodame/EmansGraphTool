@@ -8,7 +8,9 @@
 
 <script src=algorithms/dijkstra.js></script>
 <script src="algorithms/prims.js"></script>
+<script src="algorithms/kruskal.js"></script>
 
+<script src="resources/Tree.js"></script>
 
 <link rel="stylesheet" href="index.css">
 
@@ -30,7 +32,15 @@
 </div>
 
 <div>
-    <button onclick="loadNodes()">LOAD NODE SETUP 1</button>
+    <button onclick="loadNodeLayoutTemplate1()">Node Setup 1</button>
+</div>
+
+<div>
+    <button onclick="loadFreeMode()">Load free mode</button>
+</div>
+
+<div>
+    <button onclick="calculateKruskalPath()">Run Kruskal's</button>
 </div>
 
 <div>
@@ -57,7 +67,8 @@
             enableEdgeHovering: true,
             edgeHoverSizeRatio: 2,
             edgeHoverExtremities: true,
-            autoRescale: false
+            autoRescale: localStorage.getItem("autoRescale") === "true",
+            mouseEnabled: localStorage.getItem("mouseEnabled") === "true"
         }
     });
 
@@ -118,11 +129,87 @@
 
         localStorage.setItem("nodes", JSON.stringify(s.graph.nodes()));
         localStorage.setItem("edges", JSON.stringify(s.graph.edges()));
+
+        localStorage.setItem("autoRescale", s.settings("autoRescale"));
+        localStorage.setItem("mouseEnabled", s.settings("mouseEnabled"));
     };
 
     function clearGraph() {
         s.graph.clear();
         localStorage.clear();
+        s.refresh();
+    }
+
+    function loadFreeMode() {
+
+        s.settings('autoRescale', false);
+        s.settings('mouseEnabled', true);
+
+        clearGraph();
+    }
+
+    function loadNodeLayoutTemplate1() {
+
+        clearGraph();
+
+        s.settings('autoRescale', true);
+        s.settings('mouseEnabled', false);
+
+        var getNodeId = function (i, j) {
+            return i + '.' + j;
+        };
+
+        var getEdgeId = function (nodeId1, nodeId2) {
+            if (nodeId1 < nodeId2) {
+                return nodeId1 + "|" + nodeId2;
+            }
+            else {
+                return nodeId2 + "|" + nodeId1;
+            }
+        };
+
+        let id = 0;
+
+        for (var i = 0; i < 10; i++) {
+            for (var j = 0; j < 10; j++) {
+                if (i != 5 || j < 2 || j > 7) {
+                    s.graph.addNode({
+                        id: getNodeId(i, j),
+                        label: (id++).toString(),
+                        x: i,
+                        y: j,
+                        size: 3
+                    });
+
+                    if (s.graph.nodes(getNodeId(i - 1, j))) {
+                        s.graph.addEdge({
+                            id: getEdgeId(getNodeId(i - 1, j), getNodeId(i, j)),
+                            source: getNodeId(i - 1, j),
+                            target: getNodeId(i, j),
+                            size: 5
+                        });
+                    }
+
+                    if (s.graph.nodes(getNodeId(i, j - 1))) {
+                        s.graph.addEdge({
+                            id: getEdgeId(getNodeId(i, j - 1), getNodeId(i, j)),
+                            source: getNodeId(i, j - 1),
+                            target: getNodeId(i, j),
+                            size: 5
+                        });
+                    }
+
+                    if (i % 2 == 0 && j % 2 == 0 && s.graph.nodes(getNodeId(i - 1, j - 1))) {
+                        s.graph.addEdge({
+                            id: getEdgeId(getNodeId(i - 1, j - 1), getNodeId(i, j)),
+                            source: getNodeId(i - 1, j - 1),
+                            target: getNodeId(i, j),
+                            size: 5
+                        });
+                    }
+                }
+            }
+        }
         s.refresh();
     }
 
@@ -165,6 +252,27 @@
                 (function (index) {
                     setTimeout(function () {
                         s.graph.nodes(path[index]).color = pathColour;
+                        s.refresh();
+                    }, i * 2000)
+                })(i);
+            }
+        } else {
+            alert("NO PATH");
+        }
+    }
+
+    function calculateKruskalPath() {
+
+        const pathColour = "#6e0db6";
+
+        const path = s.graph.kruskal();
+
+        if (path) {
+            for (let i = 0; i < path.length; i++) {
+
+                (function (index) {
+                    setTimeout(function () {
+                        s.graph.edges(path[index]).color = pathColour;
                         s.refresh();
                     }, i * 2000)
                 })(i);
