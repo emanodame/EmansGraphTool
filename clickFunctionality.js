@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     dom.addEventListener("click", function (e) {
 
-        if (!e.shiftKey) {
+        if (!e.shiftKey && s.settings('mouseEnabled')) {
 
             const x = sigma.utils.getX(e) - dom.offsetWidth / 2;
             const y = sigma.utils.getY(e) - dom.offsetHeight / 2;
