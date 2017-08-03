@@ -6,7 +6,7 @@
 
 <script src="clickFunctionality.js"></script>
 
-<script src=algorithms/dijkstra.js></script>
+<script src="algorithms/dijkstra.js"></script>
 <script src="algorithms/prims.js"></script>
 <script src="algorithms/kruskal.js"></script>
 
@@ -19,16 +19,14 @@
 <head>
     <title>Eman's Graph Tool</title>
 </head>
+
 <body id="base">
 
 <div>
-    <form class="my-form">
-        Source Node:<br>
-        <input type="text" name="srcNode"><br>
-        Dest Node:<br>
-        <input type="text" name="destNode"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+    Source Node:<br>
+    <input id="srcNode"><br>
+    Dest Node:<br>
+    <input id="destNode"><br>
 </div>
 
 <div>
@@ -37,6 +35,14 @@
 
 <div>
     <button onclick="loadFreeMode()">Load free mode</button>
+</div>
+
+<div>
+    <button onclick="calculateDijkstraPath()">Run Dijkstra's</button>
+</div>
+
+<div>
+    <button onclick="calculatePrimsPath()">Run Prim's</button>
 </div>
 
 <div>
@@ -78,24 +84,6 @@
 
     $('#base').dblclick(function (e) {
         e.stopPropagation();
-    });
-
-    $('.my-form').on('submit', function (e) {
-        e.preventDefault();
-
-        const srcNode = $("input[name='srcNode']", this).val();
-        const destNode = $("input[name='destNode']", this).val();
-
-        const sourceNodeId = s.graph.nodes().filter(function (node) {
-            return node.label === srcNode
-        }).shift().id;
-
-        /*        const destNodeId = s.graph.nodes().filter(function (node) {
-         return node.label === destNode
-         }).shift().id;*/
-
-        calculatePrimsPath(sourceNodeId);
-        //calculateDijkstraPath(sourceNodeId, destNodeId);
     });
 
     window.onload = function () {
@@ -141,7 +129,6 @@
     }
 
     function loadFreeMode() {
-
         s.settings('autoRescale', false);
         s.settings('mouseEnabled', true);
 
@@ -155,11 +142,11 @@
         s.settings('autoRescale', true);
         s.settings('mouseEnabled', false);
 
-        var getNodeId = function (i, j) {
+        const getNodeId = function (i, j) {
             return i + '.' + j;
         };
 
-        var getEdgeId = function (nodeId1, nodeId2) {
+        const getEdgeId = function (nodeId1, nodeId2) {
             if (nodeId1 < nodeId2) {
                 return nodeId1 + "|" + nodeId2;
             }
@@ -170,9 +157,9 @@
 
         let id = 0;
 
-        for (var i = 0; i < 10; i++) {
-            for (var j = 0; j < 10; j++) {
-                if (i != 5 || j < 2 || j > 7) {
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                if (i !== 5 || j < 2 || j > 7) {
                     s.graph.addNode({
                         id: getNodeId(i, j),
                         label: (id++).toString(),
@@ -186,6 +173,7 @@
                             id: getEdgeId(getNodeId(i - 1, j), getNodeId(i, j)),
                             source: getNodeId(i - 1, j),
                             target: getNodeId(i, j),
+                            label: "5",
                             size: 5
                         });
                     }
@@ -195,15 +183,17 @@
                             id: getEdgeId(getNodeId(i, j - 1), getNodeId(i, j)),
                             source: getNodeId(i, j - 1),
                             target: getNodeId(i, j),
+                            label: "5",
                             size: 5
                         });
                     }
 
-                    if (i % 2 == 0 && j % 2 == 0 && s.graph.nodes(getNodeId(i - 1, j - 1))) {
+                    if (i % 2 === 0 && j % 2 === 0 && s.graph.nodes(getNodeId(i - 1, j - 1))) {
                         s.graph.addEdge({
                             id: getEdgeId(getNodeId(i - 1, j - 1), getNodeId(i, j)),
                             source: getNodeId(i - 1, j - 1),
                             target: getNodeId(i, j),
+                            label: "5",
                             size: 5
                         });
                     }
@@ -213,16 +203,18 @@
         s.refresh();
     }
 
-    function calculateDijkstraPath(sourceNodeId, destNodeId) {
-
+    function calculateDijkstraPath() {
         const srcNodeColour = "#001299";
         const destNodeColour = "#991600";
         const pathColour = "#6e0db6";
 
-        s.graph.nodes(sourceNodeId).color = srcNodeColour;
+        const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
+        const destNodeId = getNodeIdFromLabel($("#destNode").val());
+
+        s.graph.nodes(srcNodeId).color = srcNodeColour;
         s.graph.nodes(destNodeId).color = destNodeColour;
 
-        const path = s.graph.dijkstra(sourceNodeId, destNodeId);
+        const path = s.graph.dijkstra(srcNodeId, destNodeId);
 
         if (path) {
             for (let i = 0; i < path.length; i++) {
@@ -239,10 +231,13 @@
         }
     }
 
-    function calculatePrimsPath(startNodeId) {
+    function calculatePrimsPath() {
         const pathColour = "#6e0db6";
 
-        const path = s.graph.prims(startNodeId);
+        const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
+        colorNode(srcNodeId, "#001299");
+
+        const path = s.graph.prims(srcNodeId);
 
         if (path) {
             for (let i = 0; i < path.length; i++) {
@@ -260,7 +255,6 @@
     }
 
     function calculateKruskalPath() {
-
         const pathColour = "#6e0db6";
 
         const path = Array.from(s.graph.kruskal());
@@ -278,6 +272,17 @@
         } else {
             alert("NO PATH");
         }
+    }
+
+    function getNodeIdFromLabel(nodeId) {
+        return s.graph.nodes().filter(function (node) {
+            return node.label === nodeId
+        }).shift().id;
+    }
+
+    function colorNode(nodeId, color) {
+        s.graph.nodes(nodeId).color = color;
+        s.refresh();
     }
 
 </script>
