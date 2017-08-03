@@ -244,8 +244,6 @@
 
         const path = s.graph.prims(startNodeId);
 
-        console.log(path);
-
         if (path) {
             for (let i = 0; i < path.length; i++) {
 
@@ -265,7 +263,7 @@
 
         const pathColour = "#6e0db6";
 
-        const path = s.graph.kruskal();
+        const path = Array.from(s.graph.kruskal());
 
         if (path) {
             for (let i = 0; i < path.length; i++) {
