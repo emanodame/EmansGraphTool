@@ -1,48 +1,61 @@
 (function () {
 
     sigma.classes.graph.addMethod('prims', function (startNodeId) {
-        const nodesOnGraph = s.graph.nodes();
-        const visitedNodes = new Array(startNodeId);
+        const minSpanningTree = [];
 
-        const highestEdgeWeight = getHighestEdgeWeight();
+        const visitedNodes = [startNodeId];
+        const discoveredEdges = [];
 
-        let lowestEdgeWeight = highestEdgeWeight;
-        let lowestNode;
+        while (true) {
+            const lowestEdges = [];
 
-        while (nodesOnGraph.length !== visitedNodes.length) {
-            visitedNodes.forEach(function (visitedNode) {
-                let visitedNodeNeighbours = Object.values(this.allNeighborsIndex[visitedNode]);
+            for (let visitedNode of visitedNodes) {
+                const lowestUndiscoveredEdge = getLowestUndiscoveredEdgeInNeighbouringNodes(this.allNeighborsIndex[visitedNode]);
+                if (lowestUndiscoveredEdge !== null) {
+                    lowestEdges.push(lowestUndiscoveredEdge);
+                }
+            }
 
-                visitedNodeNeighbours.forEach(function (neighbour) {
-                    let connectedEdges = Object.values(neighbour)[0];
-                    const edgeWeight = connectedEdges.label;
+            if (lowestEdges.length === 0) {
+                break;
+            }
 
-                    if (parseFloat(edgeWeight) <= parseFloat(lowestEdgeWeight)) {
-                        if (!checkIfVisited(connectedEdges.target)) {
-                            lowestEdgeWeight = edgeWeight;
-                            lowestNode = connectedEdges.target;
-                        }
-                    }
-                });
-            }, this);
+            const lowestEdge = lowestEdges.reduce((prev, current) => parseFloat(current.label) < parseFloat(prev.label) ? current : prev);
 
-            visitedNodes.push(lowestNode);
-            lowestEdgeWeight = highestEdgeWeight;
+            if (!checkIfNodeAlreadyVisited(lowestEdge.source, lowestEdge.target)) {
+                minSpanningTree.push(lowestEdge);
+                visitedNodes.push(lowestEdge.source);
+                visitedNodes.push(lowestEdge.target);
+            }
+
+            discoveredEdges.push(lowestEdge);
         }
 
-        return visitedNodes;
+        return minSpanningTree;
 
-        function checkIfVisited(nodeId) {
-            return $.inArray(nodeId, visitedNodes) > -1;
-        }
+        function getLowestUndiscoveredEdgeInNeighbouringNodes(neighbouringNodes) {
+            const nodeNeighbours = Object.values(neighbouringNodes);
 
-        function getHighestEdgeWeight() {
-            const edgeWeights = [];
-            s.graph.edges().forEach(function (edge) {
-                edgeWeights.push(parseFloat(edge.label));
+            const undiscoveredEdges = [];
+
+            nodeNeighbours.forEach(function (edgeNeighbour) {
+                const edge = Object.values(edgeNeighbour)[0];
+
+                if (!checkIfEdgeAlreadyDiscovered(edge)) {
+                    undiscoveredEdges.push(edge);
+                }
             });
 
-            return Math.max.apply(Math, edgeWeights);
+            return undiscoveredEdges.length > 0 ?
+                undiscoveredEdges.reduce((prev, current) => parseFloat(current.label) < parseFloat(prev.label) ? current : prev) : null;
+        }
+
+        function checkIfNodeAlreadyVisited(node1, node2) {
+            return $.inArray(node1, visitedNodes) !== -1 && $.inArray(node2, visitedNodes) !== -1;
+        }
+
+        function checkIfEdgeAlreadyDiscovered(edgeId) {
+            return $.inArray(edgeId, discoveredEdges) !== -1;
         }
     });
 }).call(window);

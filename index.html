@@ -29,6 +29,7 @@
     <input id="destNode"><br>
 </div>
 
+<br>
 <div>
     <button onclick="loadNodeLayoutTemplate1()">Node Setup 1</button>
 </div>
@@ -36,7 +37,7 @@
 <div>
     <button onclick="loadFreeMode()">Load free mode</button>
 </div>
-
+<br>
 <div>
     <button onclick="calculateDijkstraPath()">Run Dijkstra's</button>
 </div>
@@ -48,7 +49,7 @@
 <div>
     <button onclick="calculateKruskalPath()">Run Kruskal's</button>
 </div>
-
+<br>
 <div>
     <button onclick="clearGraph()">CLEAR GRAPH</button>
 </div>
@@ -232,10 +233,7 @@
     }
 
     function calculatePrimsPath() {
-        const pathColour = "#6e0db6";
-
         const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
-        colorNode(srcNodeId, "#001299");
 
         const path = s.graph.prims(srcNodeId);
 
@@ -244,7 +242,7 @@
 
                 (function (index) {
                     setTimeout(function () {
-                        s.graph.nodes(path[index]).color = pathColour;
+                        path[index].color = "#6e0db6";
                         s.refresh();
                     }, i * 2000)
                 })(i);
@@ -255,8 +253,6 @@
     }
 
     function calculateKruskalPath() {
-        const pathColour = "#6e0db6";
-
         const path = Array.from(s.graph.kruskal());
 
         if (path) {
@@ -264,7 +260,7 @@
 
                 (function (index) {
                     setTimeout(function () {
-                        s.graph.edges(path[index]).color = pathColour;
+                        s.graph.edges(path[index]).color = "#6e0db6";
                         s.refresh();
                     }, i * 2000)
                 })(i);
@@ -278,11 +274,6 @@
         return s.graph.nodes().filter(function (node) {
             return node.label === nodeId
         }).shift().id;
-    }
-
-    function colorNode(nodeId, color) {
-        s.graph.nodes(nodeId).color = color;
-        s.refresh();
     }
 
 </script>
