@@ -12,10 +12,7 @@
 
 <script src="resources/Tree.js"></script>
 
-<link rel="stylesheet" href="index.css">
-
 <html>
-
 <head>
     <title>Eman's Graph Tool</title>
 </head>
@@ -32,6 +29,10 @@
 <br>
 <div>
     <button onclick="loadNodeLayoutTemplate1()">Node Setup 1</button>
+</div>
+
+<div>
+    <button onclick="createRandomGraph(10)">Random Graph</button>
 </div>
 
 <div>
@@ -106,15 +107,9 @@
     };
 
     window.onbeforeunload = function () {
+        clearColoredNodesAndEdges();
+
         localStorage.clear();
-
-        s.graph.nodes().forEach(function (node) {
-            node.color = "#000000"
-        });
-
-        s.graph.edges().forEach(function (edges) {
-            edges.color = "#000000"
-        });
 
         localStorage.setItem("nodes", JSON.stringify(s.graph.nodes()));
         localStorage.setItem("edges", JSON.stringify(s.graph.edges()));
@@ -122,12 +117,6 @@
         localStorage.setItem("autoRescale", s.settings("autoRescale"));
         localStorage.setItem("mouseEnabled", s.settings("mouseEnabled"));
     };
-
-    function clearGraph() {
-        s.graph.clear();
-        localStorage.clear();
-        s.refresh();
-    }
 
     function loadFreeMode() {
         s.settings('autoRescale', false);
@@ -137,24 +126,10 @@
     }
 
     function loadNodeLayoutTemplate1() {
-
         clearGraph();
 
         s.settings('autoRescale', true);
         s.settings('mouseEnabled', false);
-
-        const getNodeId = function (i, j) {
-            return i + '.' + j;
-        };
-
-        const getEdgeId = function (nodeId1, nodeId2) {
-            if (nodeId1 < nodeId2) {
-                return nodeId1 + "|" + nodeId2;
-            }
-            else {
-                return nodeId2 + "|" + nodeId1;
-            }
-        };
 
         let id = 0;
 
@@ -162,38 +137,38 @@
             for (let j = 0; j < 10; j++) {
                 if (i !== 5 || j < 2 || j > 7) {
                     s.graph.addNode({
-                        id: getNodeId(i, j),
+                        id: createNodeIdFromCoordinates(i, j),
                         label: (id++).toString(),
                         x: i,
                         y: j,
                         size: 3
                     });
 
-                    if (s.graph.nodes(getNodeId(i - 1, j))) {
+                    if (s.graph.nodes(createNodeIdFromCoordinates(i - 1, j))) {
                         s.graph.addEdge({
-                            id: getEdgeId(getNodeId(i - 1, j), getNodeId(i, j)),
-                            source: getNodeId(i - 1, j),
-                            target: getNodeId(i, j),
+                            id: createEdgeIdFromCoordinates(createNodeIdFromCoordinates(i - 1, j), createNodeIdFromCoordinates(i, j)),
+                            source: createNodeIdFromCoordinates(i - 1, j),
+                            target: createNodeIdFromCoordinates(i, j),
                             label: "5",
                             size: 5
                         });
                     }
 
-                    if (s.graph.nodes(getNodeId(i, j - 1))) {
+                    if (s.graph.nodes(createNodeIdFromCoordinates(i, j - 1))) {
                         s.graph.addEdge({
-                            id: getEdgeId(getNodeId(i, j - 1), getNodeId(i, j)),
-                            source: getNodeId(i, j - 1),
-                            target: getNodeId(i, j),
+                            id: createEdgeIdFromCoordinates(createNodeIdFromCoordinates(i, j - 1), createNodeIdFromCoordinates(i, j)),
+                            source: createNodeIdFromCoordinates(i, j - 1),
+                            target: createNodeIdFromCoordinates(i, j),
                             label: "5",
                             size: 5
                         });
                     }
 
-                    if (i % 2 === 0 && j % 2 === 0 && s.graph.nodes(getNodeId(i - 1, j - 1))) {
+                    if (i % 2 === 0 && j % 2 === 0 && s.graph.nodes(createNodeIdFromCoordinates(i - 1, j - 1))) {
                         s.graph.addEdge({
-                            id: getEdgeId(getNodeId(i - 1, j - 1), getNodeId(i, j)),
-                            source: getNodeId(i - 1, j - 1),
-                            target: getNodeId(i, j),
+                            id: createEdgeIdFromCoordinates(createNodeIdFromCoordinates(i - 1, j - 1), createNodeIdFromCoordinates(i, j)),
+                            source: createNodeIdFromCoordinates(i - 1, j - 1),
+                            target: createNodeIdFromCoordinates(i, j),
                             label: "5",
                             size: 5
                         });
@@ -204,7 +179,63 @@
         s.refresh();
     }
 
+    function createRandomGraph(nodeAmount) {
+        clearGraph();
+
+        s.settings('autoRescale', true);
+        s.settings('mouseEnabled', false);
+
+        let id = 0;
+
+        for (let i = 0; i < nodeAmount; i++) {
+
+            const generatedX = Math.floor((Math.random() * 50));
+            const generatedY = Math.floor((Math.random() * 50));
+
+            s.graph.addNode({
+                id: createNodeIdFromCoordinates(generatedX, generatedY),
+                label: (id++).toString(),
+                x: generatedX,
+                y: generatedY,
+                size: 3
+            })
+        }
+
+        const nodeOnGraph = s.graph.nodes();
+
+        const edgeIdSet = new Set();
+
+        for (let node of s.graph.nodes()) {
+            const pickRandomNodeToConnect = Math.floor(Math.random() * nodeOnGraph.length);
+
+            const sourceNode = node;
+            const destNode = nodeOnGraph[pickRandomNodeToConnect];
+
+            if (sourceNode === destNode) {
+                continue;
+            }
+
+            const edgeId = createEdgeIdFromCoordinates(sourceNode.id, destNode.id);
+
+            if (!edgeIdSet.has(edgeId)) {
+                s.graph.addEdge({
+                    id: edgeId,
+                    source: sourceNode.id,
+                    target: destNode.id,
+                    defaultEdgeLabelSize: 20,
+                    size: 3,
+                    label: computePathLength(sourceNode, destNode).toString()
+                });
+
+                edgeIdSet.add(edgeId);
+            }
+        }
+        s.refresh();
+    }
+
     function calculateDijkstraPath() {
+        clearColoredNodesAndEdges();
+
         const srcNodeColour = "#001299";
         const destNodeColour = "#991600";
         const pathColour = "#6e0db6";
@@ -233,6 +264,8 @@
     }
 
     function calculatePrimsPath() {
+        clearColoredNodesAndEdges();
+
         const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
 
         const path = s.graph.prims(srcNodeId);
@@ -253,7 +286,9 @@
     }
 
     function calculateKruskalPath() {
-        const path = Array.from(s.graph.kruskal());
+        clearColoredNodesAndEdges();
+
+        const path = s.graph.kruskal();
 
         if (path) {
             for (let i = 0; i < path.length; i++) {
@@ -270,10 +305,40 @@
         }
     }
 
+    function clearGraph() {
+        s.graph.clear();
+        localStorage.clear();
+        s.refresh();
+    }
+
+    function clearColoredNodesAndEdges() {
+        s.graph.nodes().forEach(function (node) {
+            node.color = "#000000"
+        });
+
+        s.graph.edges().forEach(function (edges) {
+            edges.color = "#000000"
+        });
+
+        s.refresh();
+    }
+
     function getNodeIdFromLabel(nodeId) {
         return s.graph.nodes().filter(function (node) {
             return node.label === nodeId
         }).shift().id;
+    }
+
+    const createNodeIdFromCoordinates = function (x, y) {
+        return x + '.' + y;
+    };
+
+    function createEdgeIdFromCoordinates(x, y) {
+        return x + "|" + y;
+    }
+
+    function computePathLength(node1, node2) {
+        return (Math.sqrt(Math.pow((node2.y - node1.y), 2) + Math.pow((node2.x - node1.x), 2)) / 10).toFixed(2);
     }
 
 </script>

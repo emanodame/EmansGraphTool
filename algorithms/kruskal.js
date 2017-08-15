@@ -76,7 +76,7 @@
             }
         }
 
-        return edgesInMinSpanningTree;
+        return Array.from(edgesInMinSpanningTree);
 
         function addEdgeToMinSpanningTreeAndVisitedNodes(sortedEdges) {
             edgesInMinSpanningTree.add(sortedEdges.source + "|" + sortedEdges.target);
