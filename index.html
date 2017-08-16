@@ -22,17 +22,17 @@
 <div>
     Source Node:<br>
     <input id="srcNode"><br>
-    Dest Node:<br>
-    <input id="destNode"><br>
+    Target Node:<br>
+    <input id="targetNode"><br>
 </div>
 
 <br>
 <div>
-    <button onclick="loadNodeLayoutTemplate1()">Node Setup 1</button>
+    <button onclick="loadPreDefinedNodeLayoutTemplate1()">Node Setup 1</button>
 </div>
 
 <div>
-    <button onclick="createRandomGraph(10)">Random Graph</button>
+    <button onclick="createRandomGraph(6)">Random Graph</button>
 </div>
 
 <div>
@@ -108,7 +108,6 @@
 
     window.onbeforeunload = function () {
         clearColoredNodesAndEdges();
-
         localStorage.clear();
 
         localStorage.setItem("nodes", JSON.stringify(s.graph.nodes()));
@@ -125,20 +124,20 @@
         clearGraph();
     }
 
-    function loadNodeLayoutTemplate1() {
+    function loadPreDefinedNodeLayoutTemplate1() {
         clearGraph();
 
         s.settings('autoRescale', true);
         s.settings('mouseEnabled', false);
 
-        let id = 0;
+        let labelId = 0;
 
         for (let i = 0; i < 10; i++) {
             for (let j = 0; j < 10; j++) {
                 if (i !== 5 || j < 2 || j > 7) {
                     s.graph.addNode({
                         id: createNodeIdFromCoordinates(i, j),
-                        label: (id++).toString(),
+                        label: (labelId++).toString(),
                         x: i,
                         y: j,
                         size: 3
@@ -179,52 +178,60 @@
         s.refresh();
     }
 
-    function createRandomGraph(nodeAmount) {
+    function createRandomGraph(quantityOfNodes) {
         clearGraph();
 
         s.settings('autoRescale', true);
         s.settings('mouseEnabled', false);
 
-        let id = 0;
+        let labelId = 0;
 
-        for (let i = 0; i < nodeAmount; i++) {
+        const nodeIdSet = new Set();
 
-            const generatedX = Math.floor((Math.random() * 50));
-            const generatedY = Math.floor((Math.random() * 50));
+        for (let i = 0; i < quantityOfNodes; i++) {
 
-            s.graph.addNode({
-                id: createNodeIdFromCoordinates(generatedX, generatedY),
-                label: (id++).toString(),
-                x: generatedX,
-                y: generatedY,
-                size: 3
-            })
+            const randomGeneratedX = Math.floor((Math.random() * 50));
+            const randomGeneratedY = Math.floor((Math.random() * 50));
+
+            const nodeId = createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY);
+
+            if (!nodeIdSet.has(nodeId)) {
+                s.graph.addNode({
+                    id: createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY),
+                    label: (labelId++).toString(),
+                    x: randomGeneratedX,
+                    y: randomGeneratedY,
+                    size: 3
+                });
+
+                nodeIdSet.add(nodeId);
+            }
         }
 
-        const nodeOnGraph = s.graph.nodes();
+        const nodesOnGraph = s.graph.nodes();
 
         const edgeIdSet = new Set();
 
-        for (let node of s.graph.nodes()) {
-            const pickRandomNodeToConnect = Math.floor(Math.random() * nodeOnGraph.length);
+        for (let node of nodesOnGraph) {
+            const pickRandomNodeToConnect = Math.floor(Math.random() * nodesOnGraph.length);
 
             const sourceNode = node;
-            const destNode = nodeOnGraph[pickRandomNodeToConnect];
+            let targetNode = nodesOnGraph[pickRandomNodeToConnect];
 
-            if (sourceNode === destNode) {
-                continue;
+            while(sourceNode === targetNode) {
+                targetNode = nodesOnGraph[Math.floor(Math.random() * nodesOnGraph.length)];
             }
 
-            const edgeId = createEdgeIdFromCoordinates(sourceNode.id, destNode.id);
+            const edgeId = createEdgeIdFromCoordinates(sourceNode.id, targetNode.id);
 
             if (!edgeIdSet.has(edgeId)) {
                 s.graph.addEdge({
                     id: edgeId,
                     source: sourceNode.id,
-                    target: destNode.id,
+                    target: targetNode.id,
                     defaultEdgeLabelSize: 20,
                     size: 3,
-                    label: computePathLength(sourceNode, destNode).toString()
+                    label: computePathLength(sourceNode, targetNode).toString()
                 });
 
                 edgeIdSet.add(edgeId);
@@ -237,16 +244,16 @@
         clearColoredNodesAndEdges();
 
         const srcNodeColour = "#001299";
-        const destNodeColour = "#991600";
+        const targetNodeColour = "#991600";
         const pathColour = "#6e0db6";
 
         const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
-        const destNodeId = getNodeIdFromLabel($("#destNode").val());
+        const targetNodeId = getNodeIdFromLabel($("#targetNode").val());
 
         s.graph.nodes(srcNodeId).color = srcNodeColour;
-        s.graph.nodes(destNodeId).color = destNodeColour;
+        s.graph.nodes(targetNodeId).color = targetNodeColour;
 
-        const path = s.graph.dijkstra(srcNodeId, destNodeId);
+        const path = s.graph.dijkstra(srcNodeId, targetNodeId);
 
         if (path) {
             for (let i = 0; i < path.length; i++) {

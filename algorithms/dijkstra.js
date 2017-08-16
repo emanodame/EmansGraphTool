@@ -5,13 +5,13 @@
     const nodesInEvaluation = [];
     const nodesEvaluated = [];
 
-    sigma.classes.graph.addMethod('dijkstra', function (sourceNodeId, destNodeId) {
+    sigma.classes.graph.addMethod('dijkstra', function (sourceNodeId, targetNodeId) {
         const sourceNode = this.nodes(sourceNodeId);
-        const destNode = this.nodes(destNodeId);
+        const targetNode = this.nodes(targetNodeId);
 
         addNodeToEvaluationList(sourceNode, NO_PREVIOUS_NODE, 0);
 
-        let completePath = findNeighbours(destNode, this.allNeighborsIndex, this.nodes);
+        let completePath = findNeighbours(targetNode, this.allNeighborsIndex, this.nodes);
 
         return completePath === undefined ? "Cannot find path" : completePath;
     });
@@ -33,13 +33,13 @@
         }
     }
 
-    function findNeighbours(destNode, allNeighbors, nodes) {
+    function findNeighbours(targetNode, allNeighbors, nodes) {
 
         while (nodesInEvaluation.length > 0) {
             const inspectedNode = nodesInEvaluation.shift();
 
-            if (inspectedNode.nodeId === destNode.id) {
-                return calculatePath(destNode);
+            if (inspectedNode.nodeId === targetNode.id) {
+                return calculatePath(targetNode);
             }
 
             const neighbors = Object.keys(allNeighbors[inspectedNode.nodeId]);
@@ -69,10 +69,10 @@
             );
     }
 
-    function calculatePath(destNode) {
+    function calculatePath(targetNode) {
 
         let path = [];
-        let currentNode = destNode;
+        let currentNode = targetNode;
 
         while (currentNode) {
             path.unshift(currentNode);
