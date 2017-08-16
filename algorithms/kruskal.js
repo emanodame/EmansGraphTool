@@ -6,70 +6,61 @@
         const spanningTreesArray = [];
 
         const edgesInMinSpanningTree = new Set();
-        const nodesInTrees = new Set();
+        const nodesInSpanningTrees = new Set();
 
         initializeFirstTreeWithFirstEdge();
 
         for (let sortedEdgeIndex = 1; sortedEdgeIndex < sortedEdgesInGraph.length; sortedEdgeIndex++) {
+            const sourceNodeId = sortedEdgesInGraph[sortedEdgeIndex].source;
+            const targetNodeId = sortedEdgesInGraph[sortedEdgeIndex].target;
 
-            if (!nodesInTrees.has(sortedEdgesInGraph[sortedEdgeIndex].source) &&
-                !nodesInTrees.has(sortedEdgesInGraph[sortedEdgeIndex].target)) {
+            if (!nodesInSpanningTrees.has(sourceNodeId) &&
+                !nodesInSpanningTrees.has(targetNodeId)) {
                 addEdgeToNewSpanningTree(sortedEdgesInGraph[sortedEdgeIndex]);
                 continue;
             }
 
             for (let spanningTree of spanningTreesArray) {
 
-                if (spanningTree.contains(sortedEdgesInGraph[sortedEdgeIndex].source) &&
-                    spanningTree.contains(sortedEdgesInGraph[sortedEdgeIndex].target)) {
+                if (spanningTree.contains(sourceNodeId) && spanningTree.contains(targetNodeId)) {
                     break;
                 }
 
-                if (spanningTree.contains(sortedEdgesInGraph[sortedEdgeIndex].source)) {
+                if (spanningTree.contains(sourceNodeId)) {
 
-                    if (nodesInTrees.has(sortedEdgesInGraph[sortedEdgeIndex].target)) {
+                    if (nodesInSpanningTrees.has(targetNodeId)) {
+                        const spanningTreeWithTargetNode = returnSpanningTreeWithNodeId(targetNodeId);
 
-                        for (let innerSpanningTree of spanningTreesArray) {
+                        spanningTreeWithTargetNode.traverseBFS(function (node) {
+                            spanningTree.add(node.data, sourceNodeId)
+                        });
 
-                            if (innerSpanningTree.contains(sortedEdgesInGraph[sortedEdgeIndex].target)) {
-
-                                innerSpanningTree.traverseBFS(function (node) {
-                                    spanningTree.add(node.data, sortedEdgesInGraph[sortedEdgeIndex].source)
-                                });
-
-                                edgesInMinSpanningTree.add(sortedEdgesInGraph[sortedEdgeIndex].source + "|" + sortedEdgesInGraph[sortedEdgeIndex].target);
-                                spanningTreesArray.splice(spanningTreesArray.indexOf(innerSpanningTree), 1);
-                                break;
-                            }
-                        }
+                        edgesInMinSpanningTree.add(sourceNodeId + "|" + targetNodeId);
+                        spanningTreesArray.splice(spanningTreesArray.indexOf(spanningTreeWithTargetNode), 1);
+                        break;
 
                     } else {
                         addEdgeToMinSpanningTreeAndVisitedNodes(sortedEdgesInGraph[sortedEdgeIndex]);
-                        spanningTree.add(sortedEdgesInGraph[sortedEdgeIndex].target, sortedEdgesInGraph[sortedEdgeIndex].source);
+                        spanningTree.add(targetNodeId, sourceNodeId);
                     }
                     break;
 
-                } else if (spanningTree.contains(sortedEdgesInGraph[sortedEdgeIndex].target)) {
+                } else if (spanningTree.contains(targetNodeId)) {
 
-                    if (nodesInTrees.has(sortedEdgesInGraph[sortedEdgeIndex].source)) {
+                    if (nodesInSpanningTrees.has(sourceNodeId)) {
+                        const spanningTreeWithSourceNode = returnSpanningTreeWithNodeId(sourceNodeId);
 
-                        for (let innerSpanningTree of spanningTreesArray) {
+                        spanningTreeWithSourceNode.traverseBFS(function (node) {
+                            spanningTree.add(node.data, targetNodeId)
+                        });
 
-                            if (innerSpanningTree.contains(sortedEdgesInGraph[sortedEdgeIndex].source)) {
-
-                                innerSpanningTree.traverseBFS(function (node) {
-                                    spanningTree.add(node.data, sortedEdgesInGraph[sortedEdgeIndex].target)
-                                });
-
-                                edgesInMinSpanningTree.add(sortedEdgesInGraph[sortedEdgeIndex].source + "|" + sortedEdgesInGraph[sortedEdgeIndex].target);
-                                spanningTreesArray.splice(spanningTreesArray.indexOf(innerSpanningTree), 1);
-                                break;
-                            }
-                        }
+                        edgesInMinSpanningTree.add(sourceNodeId + "|" + targetNodeId);
+                        spanningTreesArray.splice(spanningTreesArray.indexOf(spanningTreeWithSourceNode), 1);
+                        break;
 
                     } else {
                         addEdgeToMinSpanningTreeAndVisitedNodes(sortedEdgesInGraph[sortedEdgeIndex]);
-                        spanningTree.add(sortedEdgesInGraph[sortedEdgeIndex].source, sortedEdgesInGraph[sortedEdgeIndex].target);
+                        spanningTree.add(sourceNodeId, targetNodeId);
                     }
                     break;
                 }
@@ -78,34 +69,14 @@
 
         return Array.from(edgesInMinSpanningTree);
 
-        function addEdgeToMinSpanningTreeAndVisitedNodes(sortedEdges) {
-            edgesInMinSpanningTree.add(sortedEdges.source + "|" + sortedEdges.target);
-
-            nodesInTrees.add(sortedEdges.source);
-            nodesInTrees.add(sortedEdges.target);
-        }
-
-        function addEdgeToNewSpanningTree(edge) {
-            const tree = new Tree();
-
-            tree.add(edge.source);
-            tree.add(edge.target, edge.source);
-
-            nodesInTrees.add(edge.source);
-            nodesInTrees.add(edge.target);
-
-            spanningTreesArray.push(tree);
-            edgesInMinSpanningTree.add(edge.source + "|" + edge.target);
-        }
-
         function initializeFirstTreeWithFirstEdge() {
             const tree = new Tree();
 
             tree.add(sortedEdgesInGraph[0].source);
             tree.add(sortedEdgesInGraph[0].target, sortedEdgesInGraph[0].source);
 
-            nodesInTrees.add(sortedEdgesInGraph[0].source);
-            nodesInTrees.add(sortedEdgesInGraph[0].target);
+            nodesInSpanningTrees.add(sortedEdgesInGraph[0].source);
+            nodesInSpanningTrees.add(sortedEdgesInGraph[0].target);
 
             spanningTreesArray.push(tree);
             edgesInMinSpanningTree.add(sortedEdgesInGraph[0].source + "|" + sortedEdgesInGraph[0].target);
@@ -115,6 +86,34 @@
             return s.graph.edges().sort(function (a, b) {
                 return a.label - b.label;
             });
+        }
+
+        function returnSpanningTreeWithNodeId(edge) {
+            for (let spanningTree of spanningTreesArray) {
+                if (spanningTree.contains(edge)) {
+                    return spanningTree;
+                }
+            }
+        }
+
+        function addEdgeToMinSpanningTreeAndVisitedNodes(sortedEdges) {
+            edgesInMinSpanningTree.add(sortedEdges.source + "|" + sortedEdges.target);
+
+            nodesInSpanningTrees.add(sortedEdges.source);
+            nodesInSpanningTrees.add(sortedEdges.target);
+        }
+
+        function addEdgeToNewSpanningTree(edge) {
+            const tree = new Tree();
+
+            tree.add(edge.source);
+            tree.add(edge.target, edge.source);
+
+            nodesInSpanningTrees.add(edge.source);
+            nodesInSpanningTrees.add(edge.target);
+
+            spanningTreesArray.push(tree);
+            edgesInMinSpanningTree.add(edge.source + "|" + edge.target);
         }
     });
 }).call(window);
