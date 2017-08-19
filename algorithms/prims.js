@@ -11,6 +11,7 @@
 
             for (let visitedNode of visitedNodes) {
                 const lowestUndiscoveredEdge = getLowestUndiscoveredEdgeInNeighbouringNodes(this.allNeighborsIndex[visitedNode]);
+
                 if (lowestUndiscoveredEdge !== null) {
                     lowestEdges.push(lowestUndiscoveredEdge);
                 }
