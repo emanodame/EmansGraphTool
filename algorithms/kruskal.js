@@ -5,7 +5,7 @@
 
         const spanningTreesArray = [];
 
-        const edgesInMinSpanningTree = new Set();
+        const edgesInMinSpanningTreeIds = new Set();
         const nodesInSpanningTrees = new Set();
 
         initializeFirstTreeWithFirstEdge();
@@ -35,7 +35,7 @@
                             spanningTree.add(node.data, sourceNodeId)
                         });
 
-                        edgesInMinSpanningTree.add(sourceNodeId + "|" + targetNodeId);
+                        edgesInMinSpanningTreeIds.add(sourceNodeId + "|" + targetNodeId);
                         spanningTreesArray.splice(spanningTreesArray.indexOf(spanningTreeWithTargetNode), 1);
                         break;
 
@@ -54,7 +54,7 @@
                             spanningTree.add(node.data, targetNodeId)
                         });
 
-                        edgesInMinSpanningTree.add(sourceNodeId + "|" + targetNodeId);
+                        edgesInMinSpanningTreeIds.add(sourceNodeId + "|" + targetNodeId);
                         spanningTreesArray.splice(spanningTreesArray.indexOf(spanningTreeWithSourceNode), 1);
                         break;
 
@@ -67,7 +67,7 @@
             }
         }
 
-        return Array.from(edgesInMinSpanningTree);
+        return Array.from(edgesInMinSpanningTreeIds);
 
         function initializeFirstTreeWithFirstEdge() {
             const tree = new Tree();
@@ -79,7 +79,7 @@
             nodesInSpanningTrees.add(sortedEdgesInGraph[0].target);
 
             spanningTreesArray.push(tree);
-            edgesInMinSpanningTree.add(sortedEdgesInGraph[0].source + "|" + sortedEdgesInGraph[0].target);
+            edgesInMinSpanningTreeIds.add(sortedEdgesInGraph[0].source + "|" + sortedEdgesInGraph[0].target);
         }
 
         function returnSortedEdgesByWeight() {
@@ -97,7 +97,7 @@
         }
 
         function addEdgeToMinSpanningTreeAndVisitedNodes(sortedEdges) {
-            edgesInMinSpanningTree.add(sortedEdges.source + "|" + sortedEdges.target);
+            edgesInMinSpanningTreeIds.add(sortedEdges.source + "|" + sortedEdges.target);
 
             nodesInSpanningTrees.add(sortedEdges.source);
             nodesInSpanningTrees.add(sortedEdges.target);
@@ -113,7 +113,7 @@
             nodesInSpanningTrees.add(edge.target);
 
             spanningTreesArray.push(tree);
-            edgesInMinSpanningTree.add(edge.source + "|" + edge.target);
+            edgesInMinSpanningTreeIds.add(edge.source + "|" + edge.target);
         }
     });
 }).call(window);
