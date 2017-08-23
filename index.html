@@ -12,7 +12,9 @@
 
 <script src="teachers/kruskalTeacher.js"></script>
 
-<script src="resources/Tree.js"></script>
+<script src="tools/Tree.js"></script>
+<script src="tools/Timer.js"></script>
+
 
 <html>
 <head>
@@ -55,6 +57,10 @@
 <br>
 <div>
     <button onclick="clearGraph()">CLEAR GRAPH</button>
+</div>
+<br>
+<div>
+    <button id="pauseResumeBtn">PAUSE</button>
 </div>
 
 <script>
@@ -118,6 +124,16 @@
         localStorage.setItem("autoRescale", s.settings("autoRescale"));
         localStorage.setItem("mouseEnabled", s.settings("mouseEnabled"));
     };
+
+    $("#pauseResumeBtn").click(function () {
+        if ($(this).text() === 'PAUSE') {
+            pauseTimer();
+            $(this).text('RESUME');
+        } else {
+            resumeTimer();
+            $(this).text('PAUSE');
+        }
+    });
 
     function loadFreeMode() {
         s.settings('autoRescale', false);
