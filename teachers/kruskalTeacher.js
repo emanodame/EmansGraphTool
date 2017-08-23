@@ -2,21 +2,33 @@ function executeTeacher(idsOfMinSpanningTreeEdges) {
 
     const sortedEdgesOnGraph = returnSortedEdgesByWeight();
 
-    for (let i = 0; i < sortedEdgesOnGraph.length; i++) {
+    console.log("Kruskal Algorithm");
+    console.log("Start with the smallest weighted edge on the graph");
+    console.log("This will be edge " + sortedEdgesOnGraph[0].label);
+    console.log("Pick the next smallest.");
 
-        (function (index) {
-            setTimeout(function () {
-                const currentEdge = sortedEdgesOnGraph[index];
+    let counter = 0;
 
-                if ($.inArray(currentEdge.id, idsOfMinSpanningTreeEdges) !== -1) {
-                    currentEdge.color = "#6e0db6";
-                    s.refresh();
-                } else {
-                    currentEdge.color = "#B6001E";
-                    s.refresh();
-                }
-            }, i * 2000)
-        })(i);
+    kruskalTeacher();
+
+    function kruskalTeacher() {
+        const currentEdge = sortedEdgesOnGraph[counter];
+        console.log("the next smallest is edge " + currentEdge.label);
+
+        if ($.inArray(currentEdge.id, idsOfMinSpanningTreeEdges) !== -1) {
+            console.log(currentEdge.label + " will be added to min spanning tree");
+            currentEdge.color = "#6e0db6";
+        } else {
+            console.log(currentEdge.label + " will not be added to min spanning tree as a cycle will occur");
+            currentEdge.color = "#B6001E";
+        }
+
+        s.refresh();
+        counter++;
+
+        if (counter < sortedEdgesOnGraph.length) {
+            startTimer(kruskalTeacher);
+        }
     }
 }
 
