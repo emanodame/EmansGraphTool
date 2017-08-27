@@ -82,12 +82,6 @@
             edgesInMinSpanningTreeIds.add(sortedEdgesInGraph[0].source + "|" + sortedEdgesInGraph[0].target);
         }
 
-        function returnSortedEdgesByWeight() {
-            return s.graph.edges().sort(function (a, b) {
-                return a.label - b.label;
-            });
-        }
-
         function returnSpanningTreeWithNodeId(edge) {
             for (let spanningTree of spanningTreesArray) {
                 if (spanningTree.contains(edge)) {

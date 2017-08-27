@@ -11,6 +11,7 @@
 <script src="algorithms/kruskal.js"></script>
 
 <script src="teachers/kruskalTeacher.js"></script>
+<script src="teachers/primsTeacher.js"></script>
 
 <script src="tools/Tree.js"></script>
 <script src="tools/Timer.js"></script>
@@ -289,31 +290,14 @@
     }
 
     function calculatePrimsPath() {
-        /*
-    TEACHER TOOL PLAN.
-     - start at the point specified.
-     - at that point evaluate all the reachable paths and add to set
-     - get the lowest option AND CHECK TO SEE IF ITS IN idsOfMinSpanningTreeEdges
-     -If it is, remove from set and continue as normal loop (highlight its the next path)
-     -If it isn't we know that the edge is already in a min spanning tree (so we remove)
-     -repeat till done.
- */
         clearColoredNodesAndEdges();
 
         const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
 
-        const idsOfMinSpanningTreeEdges = s.graph.prims(srcNodeId);
+        const edgesWithMinSpanTreeFlag = s.graph.prims(srcNodeId);
 
-        if (idsOfMinSpanningTreeEdges) {
-            for (let i = 0; i < idsOfMinSpanningTreeEdges.length; i++) {
-
-                (function (index) {
-                    setTimeout(function () {
-                        idsOfMinSpanningTreeEdges[index].color = "#6e0db6";
-                        s.refresh();
-                    }, i * 2000)
-                })(i);
-            }
+        if (edgesWithMinSpanTreeFlag) {
+            executePrimsTeacher(edgesWithMinSpanTreeFlag);
         } else {
             alert("NO PATH");
         }
@@ -325,7 +309,7 @@
         const idsOfMinSpanningTreeEdges = s.graph.kruskal();
 
         if (idsOfMinSpanningTreeEdges) {
-            executeTeacher(idsOfMinSpanningTreeEdges);
+            executeKruskalTeacher(idsOfMinSpanningTreeEdges);
         } else {
             alert("NO PATH");
         }
@@ -365,6 +349,12 @@
 
     function computePathLength(node1, node2) {
         return (Math.sqrt(Math.pow((node2.y - node1.y), 2) + Math.pow((node2.x - node1.x), 2)) / 10).toFixed(2);
+    }
+
+    function returnSortedEdgesByWeight() {
+        return s.graph.edges().sort(function (a, b) {
+            return a.label - b.label;
+        });
     }
 
 </script>

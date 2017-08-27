@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fba305cb-c401-4fb5-acfa-4986a8ba7f52" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/Tree.js" afterPath="$PROJECT_DIR$/tools/Tree.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/teachers/primsTeacher.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms/kruskal.js" afterPath="$PROJECT_DIR$/algorithms/kruskal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms/prims.js" afterPath="$PROJECT_DIR$/algorithms/prims.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigma.js" afterPath="$PROJECT_DIR$/sigma.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigma.js/examples/data/standard_graph.gexf" afterPath="$PROJECT_DIR$/sigma.js/examples/data/standard_graph.gexf" />
@@ -25,31 +27,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="129" column="25" lean-forward="true" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
+            <state relative-caret-position="217">
+              <caret line="287" column="28" lean-forward="false" selection-start-line="287" selection-start-column="28" selection-end-line="287" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kruskalTeacher.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="kruskal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithms/kruskal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kruskalTeacher.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teachers/kruskalTeacher.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="59" lean-forward="true" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+            <state relative-caret-position="285">
+              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Timer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/Timer.js">
+      <file leaf-file-name="primsTeacher.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/teachers/primsTeacher.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prims.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithms/prims.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -68,9 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>forE</find>
-      <find>push</find>
-      <find>console</find>
       <find>forEach</find>
       <find>submit</find>
       <find>inArray</find>
@@ -98,6 +117,9 @@
       <find>dest</find>
       <find>)</find>
       <find>sortedEdgesOnGraph[index]</find>
+      <find>return</find>
+      <find>returnSortedEdgesByWeight</find>
+      <find>\n    edges\.filter\(x \=\&gt; a</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -134,12 +156,13 @@
         <option value="$PROJECT_DIR$/algorithms/Tree.js" />
         <option value="$PROJECT_DIR$/resources/Tree.js" />
         <option value="$PROJECT_DIR$/algorithms/dijkstra.js" />
-        <option value="$PROJECT_DIR$/algorithms/prims.js" />
-        <option value="$PROJECT_DIR$/algorithms/kruskal.js" />
         <option value="$PROJECT_DIR$/Timer.js" />
         <option value="$PROJECT_DIR$/clickFunctionality.js" />
         <option value="$PROJECT_DIR$/tools/Timer.js" />
+        <option value="$PROJECT_DIR$/algorithms/kruskal.js" />
+        <option value="$PROJECT_DIR$/algorithms/prims.js" />
         <option value="$PROJECT_DIR$/teachers/kruskalTeacher.js" />
+        <option value="$PROJECT_DIR$/teachers/primsTeacher.js" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -191,12 +214,7 @@
             <path>
               <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
-              <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="teachers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -212,7 +230,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v0.12.18/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="click&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;krusk&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;kruska&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;prim&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;kruskal&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;kr&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;Tree&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/resources/Tree.js&#10;inde&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/index.html&#10;prims&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;utils&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/utils/sigma.utils.js&#10;setting&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;config&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/classes/sigma.classes.configurable.js&#10;autoRescale&#9;null&#9;null&#10;autoRe&#9;null&#9;null&#10;getRec&#9;null&#9;null&#10;clic&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;dij&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/algorithms/dijkstra.js&#10;di&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/algorithms/dijkstra.js&#10;Click&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;clickFu&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;settings.js&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;index.css&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/index.css&#10;settings&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;sigma.min&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.min.js" />
+    <property name="SearchEverywhereHistoryKey" value="kruska&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/kruskalTeacher.js&#10;kruskal&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;prims&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;prim&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;kru&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;click&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;krusk&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;kr&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;Tree&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/resources/Tree.js&#10;inde&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/index.html&#10;utils&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/utils/sigma.utils.js&#10;setting&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;config&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/classes/sigma.classes.configurable.js&#10;autoRescale&#9;null&#9;null&#10;autoRe&#9;null&#9;null&#10;getRec&#9;null&#9;null&#10;clic&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;dij&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/algorithms/dijkstra.js&#10;di&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/algorithms/dijkstra.js&#10;Click&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;clickFu&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;settings.js&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;index.css&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/index.css&#10;settings&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;sigma.min&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.min.js" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
@@ -363,25 +381,24 @@
       <workItem from="1501854182256" duration="2379000" />
       <workItem from="1501859992943" duration="35926000" />
       <workItem from="1502822061367" duration="27200000" />
-      <workItem from="1503395067067" duration="11737000" />
+      <workItem from="1503395067067" duration="26456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331134000" />
+    <option name="totallyTimeSpent" value="345853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.311" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.311" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -391,6 +408,24 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933334" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.311" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -405,13 +440,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sigma.js/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="311" column="4" lean-forward="true" selection-start-line="311" selection-start-column="4" selection-end-line="311" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sigma.js/plugins/sigma.plugins.neighborhoods/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -631,26 +659,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithms/prims.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="58" column="61" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/node_modules/jquery/dist/jquery.slim.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="402" column="31" lean-forward="false" selection-start-line="402" selection-start-column="30" selection-end-line="402" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithms/kruskal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="77" column="50" lean-forward="true" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -673,24 +685,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/Timer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teachers/kruskalTeacher.js">
+    <entry file="file://$PROJECT_DIR$/teachers/primsTeacher.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="59" lean-forward="true" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms/prims.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="129" column="25" lean-forward="true" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
+        <state relative-caret-position="217">
+          <caret line="287" column="28" lean-forward="false" selection-start-line="287" selection-start-column="28" selection-end-line="287" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms/kruskal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teachers/kruskalTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding />
         </state>
       </provider>

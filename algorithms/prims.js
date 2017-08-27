@@ -1,7 +1,7 @@
 (function () {
 
     sigma.classes.graph.addMethod('prims', function (startNodeId) {
-        const minSpanningTree = [];
+        const edgesInMinSpanningTreeIds = [];
 
         const visitedNodes = [startNodeId];
         const discoveredEdges = [];
@@ -24,15 +24,24 @@
             const lowestEdge = lowestEdges.reduce((prev, current) => parseFloat(current.label) < parseFloat(prev.label) ? current : prev);
 
             if (!checkIfNodeAlreadyVisited(lowestEdge.source, lowestEdge.target)) {
-                minSpanningTree.push(lowestEdge);
+
+                const addToSpanTree = s.graph.edges(lowestEdge.id);
+                addToSpanTree.inSpanningTree = true;
+
+                edgesInMinSpanningTreeIds.push(addToSpanTree);
                 visitedNodes.push(lowestEdge.source);
                 visitedNodes.push(lowestEdge.target);
+            } else {
+                const addToSpanTree = s.graph.edges(lowestEdge.id);
+                addToSpanTree.inSpanningTree = false;
+
+                edgesInMinSpanningTreeIds.push(addToSpanTree);
             }
 
             discoveredEdges.push(lowestEdge);
         }
 
-        return minSpanningTree;
+        return edgesInMinSpanningTreeIds;
 
         function getLowestUndiscoveredEdgeInNeighbouringNodes(neighbouringNodes) {
             const nodeNeighbours = Object.values(neighbouringNodes);

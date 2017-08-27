@@ -1,17 +1,17 @@
-function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
+function executePrimsTeacher(edgesOnGraph) {
 
     const sortedEdgesOnGraph = returnSortedEdgesByWeight();
 
-    console.log("Kruskal Algorithm");
+    console.log("Prim's Algorithm");
 
     let counter = 0;
 
-    kruskalTeacher();
+    primsTeacher();
 
-    function kruskalTeacher() {
-        const currentEdge = sortedEdgesOnGraph[counter];
+    function primsTeacher() {
+        const currentEdge = edgesOnGraph[counter];
 
-        if ($.inArray(currentEdge.id, idsOfMinSpanningTreeEdges) !== -1) {
+        if (currentEdge.inSpanningTree) {
             console.log(currentEdge.label + " will be added to min spanning tree");
             currentEdge.color = "#6e0db6";
         } else {
@@ -23,7 +23,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
         counter++;
 
         if (counter < sortedEdgesOnGraph.length) {
-            startTimer(kruskalTeacher);
+            startTimer(primsTeacher);
         }
     }
 }
