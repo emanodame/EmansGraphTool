@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fba305cb-c401-4fb5-acfa-4986a8ba7f52" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/teachers/dijsktraTeacher.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms/dijkstra.js" afterPath="$PROJECT_DIR$/algorithms/dijkstra.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigma.js" afterPath="$PROJECT_DIR$/sigma.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigma.js/examples/data/standard_graph.gexf" afterPath="$PROJECT_DIR$/sigma.js/examples/data/standard_graph.gexf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigma.js/src/utils/sigma.utils.js" afterPath="$PROJECT_DIR$/sigma.js/src/utils/sigma.utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teachers/dijsktraTeacher.js" afterPath="$PROJECT_DIR$/teachers/dijsktraTeacher.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dijkstra.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/algorithms/dijkstra.js">
+      <file leaf-file-name="dijsktraTeacher.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/teachers/dijsktraTeacher.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="33" />
+            <state relative-caret-position="240">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -38,7 +35,7 @@
       <file leaf-file-name="kruskal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithms/kruskal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="-978">
               <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
               <folding />
             </state>
@@ -86,8 +83,8 @@
       <find>)</find>
       <find>sortedEdgesOnGraph[index]</find>
       <find>return</find>
-      <find>returnSortedEdgesByWeight</find>
       <find>\n    edges\.filter\(x \=\&gt; a</find>
+      <find>returnSortedEdgesByWeight</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -130,9 +127,9 @@
         <option value="$PROJECT_DIR$/algorithms/prims.js" />
         <option value="$PROJECT_DIR$/teachers/primsTeacher.js" />
         <option value="$PROJECT_DIR$/teachers/kruskalTeacher.js" />
-        <option value="$PROJECT_DIR$/teachers/dijsktraTeacher.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/algorithms/dijkstra.js" />
+        <option value="$PROJECT_DIR$/teachers/dijsktraTeacher.js" />
       </list>
     </option>
   </component>
@@ -204,7 +201,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v0.12.18/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="krusk&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;krus&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/kruskalTeacher.js&#10;prims&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;pri&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;prim&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;kruska&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/kruskalTeacher.js&#10;kruskal&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;kru&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;click&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;kr&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;Tree&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/resources/Tree.js&#10;inde&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/index.html&#10;utils&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/utils/sigma.utils.js&#10;setting&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;config&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/classes/sigma.classes.configurable.js&#10;autoRescale&#9;null&#9;null&#10;autoRe&#9;null&#9;null&#10;getRec&#9;null&#9;null&#10;clic&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;dij&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/algorithms/dijkstra.js&#10;di&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/algorithms/dijkstra.js&#10;Click&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;clickFu&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;settings.js&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;index.css&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/index.css&#10;settings&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;sigma.min&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.min.js" />
+    <property name="SearchEverywhereHistoryKey" value="di&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/dijsktraTeacher.js&#10;inde&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/index.html&#10;krusk&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;krus&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/kruskalTeacher.js&#10;prims&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;pri&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;prim&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;kruska&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/kruskalTeacher.js&#10;kruskal&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;kru&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;click&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;kr&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;Tree&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/resources/Tree.js&#10;utils&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/utils/sigma.utils.js&#10;setting&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;config&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/classes/sigma.classes.configurable.js&#10;autoRescale&#9;null&#9;null&#10;autoRe&#9;null&#9;null&#10;getRec&#9;null&#9;null&#10;clic&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;dij&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/algorithms/dijkstra.js&#10;Click&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;clickFu&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;settings.js&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;index.css&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/index.css&#10;settings&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;sigma.min&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.min.js" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
@@ -355,12 +352,12 @@
       <workItem from="1501854182256" duration="2379000" />
       <workItem from="1501859992943" duration="35926000" />
       <workItem from="1502822061367" duration="27200000" />
-      <workItem from="1503395067067" duration="32810000" />
+      <workItem from="1503395067067" duration="33876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352207000" />
+    <option name="totallyTimeSpent" value="353273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -633,26 +630,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teachers/dijsktraTeacher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/Timer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="267" column="0" lean-forward="true" selection-start-line="267" selection-start-column="0" selection-end-line="267" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -673,18 +654,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithms/kruskal.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="115">
+          <caret line="265" column="33" lean-forward="false" selection-start-line="265" selection-start-column="33" selection-end-line="265" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithms/dijkstra.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="33" />
+        <state relative-caret-position="405">
+          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms/kruskal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-978">
+          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teachers/dijsktraTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
