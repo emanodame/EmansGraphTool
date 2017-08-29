@@ -10,8 +10,9 @@
 <script src="algorithms/prims.js"></script>
 <script src="algorithms/kruskal.js"></script>
 
-<script src="teachers/kruskalTeacher.js"></script>
+<script src="teachers/dijsktraTeacher.js"></script>
 <script src="teachers/primsTeacher.js"></script>
+<script src="teachers/kruskalTeacher.js"></script>
 
 <script src="tools/Tree.js"></script>
 <script src="tools/Timer.js"></script>
@@ -264,7 +265,6 @@
 
         const srcNodeColour = "#001299";
         const targetNodeColour = "#991600";
-        const pathColour = "#6e0db6";
 
         const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
         const targetNodeId = getNodeIdFromLabel($("#targetNode").val());
@@ -273,20 +273,7 @@
         s.graph.nodes(targetNodeId).color = targetNodeColour;
 
         const path = s.graph.dijkstra(srcNodeId, targetNodeId);
-
-        if (path) {
-            for (let i = 0; i < path.length; i++) {
-
-                (function (index) {
-                    setTimeout(function () {
-                        path[index].color = pathColour;
-                        s.refresh();
-                    }, i * 2000)
-                })(i);
-            }
-        } else {
-            alert("NO PATH");
-        }
+        executeDijkstraTeacher(path);
     }
 
     function calculatePrimsPath() {
@@ -295,24 +282,14 @@
         const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
 
         const edgesWithMinSpanTreeFlag = s.graph.prims(srcNodeId);
-
-        if (edgesWithMinSpanTreeFlag) {
-            executePrimsTeacher(edgesWithMinSpanTreeFlag);
-        } else {
-            alert("NO PATH");
-        }
+        executePrimsTeacher(edgesWithMinSpanTreeFlag);
     }
 
     function calculateKruskalPath() {
         clearColoredNodesAndEdges();
 
         const idsOfMinSpanningTreeEdges = s.graph.kruskal();
-
-        if (idsOfMinSpanningTreeEdges) {
-            executeKruskalTeacher(idsOfMinSpanningTreeEdges);
-        } else {
-            alert("NO PATH");
-        }
+        executeKruskalTeacher(idsOfMinSpanningTreeEdges);
     }
 
     function clearGraph() {
