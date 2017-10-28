@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fba305cb-c401-4fb5-acfa-4986a8ba7f52" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algorithms/dijkstra.js" afterPath="$PROJECT_DIR$/algorithms/dijkstra.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigma.js" afterPath="$PROJECT_DIR$/sigma.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigma.js/examples/data/standard_graph.gexf" afterPath="$PROJECT_DIR$/sigma.js/examples/data/standard_graph.gexf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigma.js/src/utils/sigma.utils.js" afterPath="$PROJECT_DIR$/sigma.js/src/utils/sigma.utils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teachers/dijsktraTeacher.js" afterPath="$PROJECT_DIR$/teachers/dijsktraTeacher.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/Timer.js" afterPath="$PROJECT_DIR$/tools/Timer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,21 +27,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dijsktraTeacher.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/teachers/dijsktraTeacher.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="15">
+              <caret line="266" column="40" lean-forward="false" selection-start-line="266" selection-start-column="40" selection-end-line="266" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kruskal.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithms/kruskal.js">
+      <file leaf-file-name="dijsktraTeacher.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/teachers/dijsktraTeacher.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-978">
-              <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Timer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/Timer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dijkstra.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithms/dijkstra.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -55,22 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>forEach</find>
-      <find>submit</find>
-      <find>inArray</find>
-      <find>inArra</find>
-      <find>srcNode</find>
-      <find>s</find>
-      <find>mouse</find>
-      <find>edgeHoverExtremities\: true\,\n</find>
-      <find>id</find>
-      <find>label</find>
-      <find>edgesToHighlight.push</find>
-      <find>edge</find>
-      <find>makeNewTree</find>
-      <find>shouldCreateNewSpanningTree</find>
-      <find>visitedNodes</find>
-      <find>spanningTreesArray</find>
       <find>continue</find>
       <find>spanningTreesArray[i]</find>
       <find>allNeigh</find>
@@ -85,6 +94,22 @@
       <find>return</find>
       <find>\n    edges\.filter\(x \=\&gt; a</find>
       <find>returnSortedEdgesByWeight</find>
+      <find>s.graph.nodes</find>
+      <find>forEach</find>
+      <find>this.allNeighb</find>
+      <find>allNeighborsIndex</find>
+      <find>indexOf</find>
+      <find>console.log</find>
+      <find>dij</find>
+      <find>neighbours</find>
+      <find>nodeMap</find>
+      <find>allNeighbors</find>
+      <find>notUsedNodes</find>
+      <find>prevEDge</find>
+      <find>prev</find>
+      <find>reduce</find>
+      <find>dijkstra</find>
+      <find>this.all</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -122,13 +147,17 @@
         <option value="$PROJECT_DIR$/resources/Tree.js" />
         <option value="$PROJECT_DIR$/Timer.js" />
         <option value="$PROJECT_DIR$/clickFunctionality.js" />
-        <option value="$PROJECT_DIR$/tools/Timer.js" />
         <option value="$PROJECT_DIR$/algorithms/kruskal.js" />
         <option value="$PROJECT_DIR$/algorithms/prims.js" />
-        <option value="$PROJECT_DIR$/teachers/primsTeacher.js" />
+        <option value="$PROJECT_DIR$/teachers/ss" />
+        <option value="$PROJECT_DIR$/resources/rangeslider.js" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/teachers/kruskalTeacher.js" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/teachers/primsTeacher.js" />
+        <option value="$PROJECT_DIR$/algorithms/dijkstra2.js" />
+        <option value="$PROJECT_DIR$/tools/Timer.js" />
         <option value="$PROJECT_DIR$/algorithms/dijkstra.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/teachers/dijsktraTeacher.js" />
       </list>
     </option>
@@ -151,8 +180,8 @@
     <handled-path value="$PROJECT_DIR$/sigma.js/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="width" value="838" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -170,12 +199,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
@@ -192,7 +227,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,7 +235,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v0.12.18/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="di&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/dijsktraTeacher.js&#10;inde&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/index.html&#10;krusk&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;krus&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/kruskalTeacher.js&#10;prims&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;pri&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;prim&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;kruska&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/kruskalTeacher.js&#10;kruskal&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;kru&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;click&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;kr&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;Tree&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/resources/Tree.js&#10;utils&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/utils/sigma.utils.js&#10;setting&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;config&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/classes/sigma.classes.configurable.js&#10;autoRescale&#9;null&#9;null&#10;autoRe&#9;null&#9;null&#10;getRec&#9;null&#9;null&#10;clic&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;dij&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/algorithms/dijkstra.js&#10;Click&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;clickFu&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;settings.js&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;index.css&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/index.css&#10;settings&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;sigma.min&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.min.js" />
+    <property name="SearchEverywhereHistoryKey" value="dijs&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/teachers/dijsktraTeacher.js&#10;Timer&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/tools/Timer.js&#10;click&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/clickFunctionality.js&#10;prims&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/algorithms/prims.js&#10;kruskal&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/teachers/kruskalTeacher.js&#10;kruska&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/algorithms/kruskal.js&#10;kr&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/algorithms/kruskal.js&#10;Prim&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/algorithms/prims.js&#10;krusk&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/algorithms/kruskal.js&#10;inde&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/index.html&#10;dij&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/algorithms/dijkstra.js&#10;drag&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/sigma.js/examples/drag-nodes.html&#10;sigma&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/FINAL YEAR WOWOWOWW/Graph Algorithm Tool/EmansGraphTool/sigma.js/src/utils/sigma.utils.js&#10;onSLide&#9;null&#9;null&#10;di&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/dijsktraTeacher.js&#10;krus&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/teachers/kruskalTeacher.js&#10;pri&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;prim&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/prims.js&#10;kru&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/algorithms/kruskal.js&#10;Tree&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/resources/Tree.js&#10;utils&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/utils/sigma.utils.js&#10;setting&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;config&#9;FILE&#9;file:///Users/eman/Google Drive/University Work/EmansGraphTool/sigma.js/src/classes/sigma.classes.configurable.js&#10;autoRescale&#9;null&#9;null&#10;autoRe&#9;null&#9;null&#10;getRec&#9;null&#9;null&#10;clic&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;Click&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;clickFu&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/clickFunctionality.js&#10;settings.js&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;index.css&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/index.css&#10;settings&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.js/src/sigma.settings.js&#10;sigma.min&#9;FILE&#9;file:///Users/eodameasante/Google Drive/University Work/EmansGraphTool/sigma.min.js" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
@@ -231,7 +265,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -297,25 +331,25 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <configuration name="custom-edge-renderer.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/EmansGraphTool/examples/custom-edge-renderer.html" />
+    <configuration name="drag-nodes.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/EmansGraphTool/examples/drag-nodes.html" />
     <configuration name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/EmansGraphTool/index.html" />
     <configuration name="index.html (2)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/EmansGraphTool/sigma-pathfinding-astar/example/index.html" />
     <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/EmansGraphTool/index.html" />
     <configuration name="kruskal.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="kruskal.js" working-dir="$PROJECT_DIR$/algorithms" />
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.custom-edge-renderer.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html (2)" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.kruskal.js" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html (2)" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.kruskal.js" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.drag-nodes.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.kruskal.js" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html (2)" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.custom-edge-renderer.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.drag-nodes.html" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.kruskal.js" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -352,12 +386,17 @@
       <workItem from="1501854182256" duration="2379000" />
       <workItem from="1501859992943" duration="35926000" />
       <workItem from="1502822061367" duration="27200000" />
-      <workItem from="1503395067067" duration="33876000" />
+      <workItem from="1503395067067" duration="35894000" />
+      <workItem from="1504295158314" duration="8659000" />
+      <workItem from="1505861787029" duration="7359000" />
+      <workItem from="1506616617270" duration="30084000" />
+      <workItem from="1508714237758" duration="971000" />
+      <workItem from="1508715556080" duration="58309000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353273000" />
+    <option name="totallyTimeSpent" value="460673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -370,7 +409,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.311" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.262" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -389,51 +428,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sigma.js/plugins/sigma.plugins.relativeSize/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sigma.renderers.edgeLabels.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigma.js/plugins/sigma.renderers.edgeLabels/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/node_modules/jquery/README.md" />
-    <entry file="file://$PROJECT_DIR$/spare.js" />
-    <entry file="file://$PROJECT_DIR$/ss.js" />
-    <entry file="file://$PROJECT_DIR$/xxx.js" />
-    <entry file="file://$PROJECT_DIR$/oo.js" />
-    <entry file="file://$PROJECT_DIR$/sigma.js/src/classes/sigma.classes.edgequad.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigma.js/src/classes/sigma.classes.quad.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sigma.js/src/middlewares/sigma.middlewares.copy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -500,13 +499,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/node_modules/jquery/src/core.js" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="144" column="19" lean-forward="true" selection-start-line="144" selection-start-column="19" selection-end-line="144" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/tree-model/dist/TreeModel.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/tree-model/index.js" />
     <entry file="file://$PROJECT_DIR$/algorithms/TreeModel.js" />
@@ -539,24 +531,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sigma.js/src/sigma.core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="669" column="50" lean-forward="false" selection-start-line="669" selection-start-column="49" selection-end-line="669" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sigma.js/src/sigma.settings.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="160" column="24" lean-forward="true" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigma.js/src/utils/sigma.utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="92" column="43" lean-forward="false" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -586,7 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3612">
           <caret line="10231" column="8" lean-forward="false" selection-start-line="10231" selection-start-column="8" selection-end-line="10231" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -602,7 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="402" column="31" lean-forward="false" selection-start-line="402" selection-start-column="30" selection-end-line="402" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -610,78 +586,165 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="1219" column="0" lean-forward="false" selection-start-line="1219" selection-start-column="0" selection-end-line="1219" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teachers/ss" />
+    <entry file="file://$PROJECT_DIR$/resources/rangeslider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/node_modules/rangeslider.js/dist/rangeslider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1536">
+          <caret line="217" column="32" lean-forward="false" selection-start-line="217" selection-start-column="32" selection-end-line="217" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clickFunctionality.js">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="123" column="39" lean-forward="false" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="39" />
+        <state relative-caret-position="15">
+          <caret line="1" column="37" lean-forward="true" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigma.js/src/utils/sigma.utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="92" column="43" lean-forward="false" selection-start-line="92" selection-start-column="41" selection-end-line="92" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/rdfa.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="249" column="18" lean-forward="false" selection-start-line="249" selection-start-column="18" selection-end-line="249" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/meta.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="272" column="22" lean-forward="false" selection-start-line="272" selection-start-column="22" selection-end-line="272" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigma.js/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigma.js/examples/edge-renderers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigma.js/examples/drag-nodes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="79" column="12" lean-forward="false" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigma.js/src/sigma.core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="324" column="10" lean-forward="false" selection-start-line="324" selection-start-column="10" selection-end-line="324" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9525">
+          <caret line="635" column="9" lean-forward="false" selection-start-line="635" selection-start-column="9" selection-end-line="635" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teachers/kruskalTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="51" lean-forward="true" selection-start-line="0" selection-start-column="51" selection-end-line="0" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teachers/primsTeacher.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="true" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/Timer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teachers/kruskalTeacher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithms/prims.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="67" lean-forward="true" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="265" column="33" lean-forward="false" selection-start-line="265" selection-start-column="33" selection-end-line="265" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithms/dijkstra.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithms/kruskal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-978">
-          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="75">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms/prims.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="59" column="40" lean-forward="false" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clickFunctionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="84" column="37" lean-forward="true" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms/dijkstra.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/Timer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithms/dijkstra.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="266" column="40" lean-forward="false" selection-start-line="266" selection-start-column="40" selection-end-line="266" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teachers/dijsktraTeacher.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding />
         </state>
       </provider>

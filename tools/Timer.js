@@ -1,13 +1,15 @@
 let timeVar;
 let savedFunctionCode;
 
+const intervalTime = 2000;
+
 function startTimer(code) {
     savedFunctionCode = code;
-    timeVar = setTimeout(savedFunctionCode, 2000);
+    timeVar = setTimeout(savedFunctionCode, intervalTime);
 }
 
 function resumeTimer() {
-    setTimeout(savedFunctionCode, 2000);
+    setTimeout(savedFunctionCode, intervalTime);
 }
 
 function pauseTimer() {

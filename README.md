@@ -1,2 +1,2 @@
 # EmansGraphTool
-Tool on demonstrating graph alglorithms
+Tool on demonstrating graph algorithms

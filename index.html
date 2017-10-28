@@ -1,4 +1,5 @@
 <script src="resources/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="resources/node_modules/rangeslider.js/dist/rangeslider.js"></script>
 
 <script src="resources/sigma.min.js"></script>
 <script src="resources/sigma.canvas.edgehovers.def.js"></script>
@@ -38,7 +39,7 @@
 </div>
 
 <div>
-    <button onclick="createRandomGraph(6)">Random Graph</button>
+    <button onclick="createRandomGraph(20)">Random Graph</button>
 </div>
 
 <div>
@@ -264,15 +265,11 @@
         clearColoredNodesAndEdges();
 
         const srcNodeColour = "#001299";
-        const targetNodeColour = "#991600";
-
         const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
-        const targetNodeId = getNodeIdFromLabel($("#targetNode").val());
 
         s.graph.nodes(srcNodeId).color = srcNodeColour;
-        s.graph.nodes(targetNodeId).color = targetNodeColour;
 
-        const path = s.graph.dijkstra(srcNodeId, targetNodeId);
+        const path = s.graph.dijkstra(srcNodeId);
         executeDijkstraTeacher(path);
     }
 
@@ -326,12 +323,6 @@
 
     function computePathLength(node1, node2) {
         return (Math.sqrt(Math.pow((node2.y - node1.y), 2) + Math.pow((node2.x - node1.x), 2)) / 10).toFixed(2);
-    }
-
-    function returnSortedEdgesByWeight() {
-        return s.graph.edges().sort(function (a, b) {
-            return a.label - b.label;
-        });
     }
 
 </script>
