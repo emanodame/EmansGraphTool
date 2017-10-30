@@ -121,7 +121,7 @@ $(document).ready(function () {
     }
 
     function computePathLength(node1, node2) {
-        return (Math.sqrt(Math.pow((node2.y - node1.y), 2) + Math.pow((node2.x - node1.x), 2)) / 10).toFixed(2);
+        return (Math.sqrt(Math.pow((node2.y - node1.y), 2) + Math.pow((node2.x - node1.x), 2)) / 100).toFixed(2);
     }
 
     function assertNoDuplicateNodePosition(node) {
