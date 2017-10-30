@@ -7,7 +7,7 @@
 
         const path = [];
 
-        const startNodeNeighbours = getNeighboursConnectedToNode(startNodeId, this);
+        const startNodeNeighbours =  Object.values(this.allNeighborsIndex[startNodeId]);
         addToNodeAndEdgeMap(undefined, startNodeNeighbours);
 
         let lowestEdge = sortAndReturnLowestEdge();
@@ -27,10 +27,6 @@
             });
 
             return sortedEdges.shift();
-        }
-
-        function getNeighboursConnectedToNode(node, outerThis) {
-            return Object.values(outerThis.allNeighborsIndex[node]);
         }
 
         function getNeighboursConnectedToEdge(edge, outerThis) {
