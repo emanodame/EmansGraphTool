@@ -7,7 +7,7 @@
 
         const path = [];
 
-        const startNodeNeighbours =  Object.values(this.allNeighborsIndex[startNodeId]);
+        const startNodeNeighbours = Object.values(this.allNeighborsIndex[startNodeId]);
         addToNodeAndEdgeMap(undefined, startNodeNeighbours);
 
         let lowestEdge = sortAndReturnLowestEdge();
