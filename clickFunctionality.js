@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    const dom = document.querySelector('#base canvas:last-child');
     const sigmaCamera = s.camera;
 
     const nodesCreated = [];
@@ -7,14 +6,11 @@ $(document).ready(function () {
 
     const nodesSelected = [];
 
-    dom.addEventListener("click", function (e) {
+    s.bind('clickStage', function (e) {
 
-        if (!e.shiftKey && s.settings('mouseEnabled')) {
+        if (!e.data.captor.isDragging && !e.shiftKey && s.settings('mouseEnabled')) {
 
-            const x = sigma.utils.getX(e) - dom.offsetWidth / 2;
-            const y = sigma.utils.getY(e) - dom.offsetHeight / 2;
-
-            const positionWithCamera = sigmaCamera.cameraPosition(x, y);
+            const positionWithCamera = sigmaCamera.cameraPosition(e.data.captor.x, e.data.captor.y);
 
             const node = {
                 id: createNodeIdFromCoordinates(positionWithCamera.x, positionWithCamera.y),
@@ -31,6 +27,7 @@ $(document).ready(function () {
             }
         }
     });
+
 
     s.bind("clickNode", function (e) {
 
