@@ -1,5 +1,4 @@
 <script src="resources/node_modules/jquery/dist/jquery.min.js"></script>
-<script src="resources/node_modules/rangeslider.js/dist/rangeslider.js"></script>
 
 <script src="resources/sigma.min.js"></script>
 <script src="resources/sigma.canvas.edgehovers.def.js"></script>
@@ -325,6 +324,11 @@
         return (Math.sqrt(Math.pow((node2.y - node1.y), 2) + Math.pow((node2.x - node1.x), 2)) / 10).toFixed(2);
     }
 
+    function returnSortedEdgesByWeight() {
+        return s.graph.edges().sort(function (a, b) {
+            return a.label - b.label;
+        });
+    }
 </script>
 </body>
 </html>
