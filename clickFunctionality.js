@@ -28,7 +28,6 @@ $(document).ready(function () {
         }
     });
 
-
     s.bind("clickNode", function (e) {
 
         if (e.data.captor.shiftKey) {
