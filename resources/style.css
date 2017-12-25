@@ -1,0 +1,62 @@
+a:link {
+    color: white;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 200%;
+}
+
+.parent {
+}
+
+.main-page {
+    height: 100%;
+}
+
+.info-page {
+    position: absolute;
+    background: #1D1D1D;
+    height: 700px;
+    width: 1200px;
+    top: 1075px;
+    left: 250px;
+}
+
+#particles {
+    position: absolute;
+    background: black;
+    height: 200%;
+    width: 100%;
+}
+
+#intro-text {
+    position: absolute;
+    top: 40px;
+    right: 250px;
+    color: #ffffff;
+}
+
+#info-text {
+    color: #ffffff;
+}
+
+#info-text-title {
+    text-align: center;
+}
+
+#go-button {
+    position: absolute;
+    top: 700px;
+    right: 523px;
+    font-size: 5ch;
+}
+
+#base {
+    color: pink;
+    font-size: large;
+    background-color: black;
+}

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="resources/style.css">
 <script src="resources/node_modules/jquery/dist/jquery.min.js"></script>
 
 <script src="resources/sigma.min.js"></script>
@@ -25,6 +26,7 @@
 
 <body id="base">
 
+<!--
 <div>
     Source Node:<br>
     <input id="srcNode"><br>
@@ -64,8 +66,15 @@
 <div>
     <button id="pauseResumeBtn">PAUSE</button>
 </div>
+-->
 
+<div>
+    <button onclick="clearGraph()">CLEAR GRAPH</button>
+</div>
+</body>
 <script>
+
+    const nodeColor = "#ff0e58";
 
     const s = new sigma({
         renderer: {
@@ -75,10 +84,12 @@
         settings: {
             borderSize: 3,
 
+            defaultNodeColor: nodeColor,
             defaultNodeBorderColor: "#c9ddff",
             defaultEdgeLabelSize: 20,
 
-            defaultLabelHoverColor: "#FFFFFF",
+            defaultLabelColor: "#ff0e58",
+            defaultLabelHoverColor: "#ff0e58",
             labelHoverColor: "node",
             labelShadowColor: "#c9ddff",
 
@@ -88,14 +99,6 @@
             autoRescale: localStorage.getItem("autoRescale") === "true",
             mouseEnabled: localStorage.getItem("mouseEnabled") === "true"
         }
-    });
-
-    $(document).bind("contextmenu", function (event) {
-        event.preventDefault();
-    });
-
-    $('#base').dblclick(function (e) {
-        e.stopPropagation();
     });
 
     window.onload = function () {
@@ -296,11 +299,11 @@
 
     function clearColoredNodesAndEdges() {
         s.graph.nodes().forEach(function (node) {
-            node.color = "#000000"
+            node.color = nodeColor;
         });
 
         s.graph.edges().forEach(function (edges) {
-            edges.color = "#000000"
+            edges.color = nodeColor;
         });
 
         s.refresh();
@@ -330,5 +333,4 @@
         });
     }
 </script>
-</body>
 </html>
