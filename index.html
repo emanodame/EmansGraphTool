@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="resources/style.css">
 <script src="resources/node_modules/jquery/dist/jquery.min.js"></script>
 
 <script src="resources/sigma.min.js"></script>
@@ -17,64 +16,138 @@
 
 <script src="tools/Tree.js"></script>
 <script src="tools/Timer.js"></script>
+<script src="resources/slideReveal.js"></script>
 
+<link rel="stylesheet" href="resources/style.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link href="resources/bootstrap-tour/build/css/bootstrap-tour-standalone.css" rel="stylesheet">
+<script src="resources/bootstrap-tour/build/js/bootstrap-tour-standalone.js"></script>
 
 <html>
 <head>
     <title>Eman's Graph Tool</title>
 </head>
 
-<body id="base">
-
 <!--
-<div>
-    Source Node:<br>
-    <input id="srcNode"><br>
-    Target Node:<br>
-    <input id="targetNode"><br>
-</div>
-
 <br>
 <div>
     <button onclick="loadPreDefinedNodeLayoutTemplate1()">Node Setup 1</button>
 </div>
-
 <div>
     <button onclick="createRandomGraph(20)">Random Graph</button>
 </div>
-
-<div>
-    <button onclick="loadFreeMode()">Load free mode</button>
-</div>
-<br>
-<div>
-    <button onclick="calculateDijkstraPath()">Run Dijkstra's</button>
-</div>
-
-<div>
-    <button onclick="calculatePrimsPath()">Run Prim's</button>
-</div>
-
-<div>
-    <button onclick="calculateKruskalPath()">Run Kruskal's</button>
-</div>
-<br>
-<div>
-    <button onclick="clearGraph()">CLEAR GRAPH</button>
-</div>
-<br>
 <div>
     <button id="pauseResumeBtn">PAUSE</button>
 </div>
 -->
 
-<div>
-    <button onclick="clearGraph()">CLEAR GRAPH</button>
+<body id="base">
+<div id="slider">
+
+    <div class="handle">
+        <span id="trigger" class="glyphicon glyphicon-chevron-left"></span>
+    </div>
+
+    <div id="slider-header">
+        <div id="slider-title">
+            Control Panel
+        </div>
+        <div id="slider-info" class="btn glyphicon glyphicon-info-sign" onclick="runTourGuide()"></div>
+    </div>
+
+    <div class="btn-group algo-button-group" role="group" aria-label="Algo Button">
+        <button type="button" class="algo-button" onclick="showDijkstraInputBoxes()">Dijkstra's</button>
+        <button type="button" class="algo-button" onclick="showKruskalInputBoxes()">Kruskal's</button>
+        <button type="button" class="algo-button" onclick="showPrimsInputBoxes()">Prim's</button>
+    </div>
+
+    <div id="node-id-input-box" class="input-box-holder">
+        <div id="source-holder">
+            <label for="src-node">Source Node</label><input id="src-node" class="node-input"><br>
+        </div>
+        <div id="target-holder">
+            <label for="target-node">Target Node</label><input id="target-node" class="node-input"><br>
+        </div>
+    </div>
+
+    <div id="execute-button">
+        <button type="button" class="algo-button" onclick="calculateKruskalPath()"><b>Execute</b></button>
+    </div>
+
+    <div id="button-block">
+        <div>
+            <button class="algo-button" id="free-mode-button" onclick="loadFreeMode()">Load free mode</button>
+        </div>
+        <div>
+            <button class="algo-button" id="clear-button" onclick="clearGraph()">CLEAR GRAPH</button>
+        </div>
+    </div>
 </div>
+
+<div id="helper-text">
+    lol
+</div>
+
+<div id="media-holder">
+    <span id="backward-button" class="glyphicon glyphicon-backward"></span>
+    <span id="play-button" class="glyphicon glyphicon-play" onclick="showPauseButton()"></span>
+    <span id="pause-button" class="glyphicon glyphicon-pause" onclick="showPlayButton()"></span>
+    <span id="forward-button" class="glyphicon glyphicon-forward"></span>
+</div>
+
 </body>
 <script>
 
-    const nodeColor = "#ff0e58";
+    function showPlayButton() {
+        document.getElementById("pause-button").style.display = "none";
+        document.getElementById("play-button").style.display = "inline";
+
+        pauseTimer();
+    }
+
+    function showPauseButton() {
+
+        document.getElementById("play-button").style.display = "none";
+        document.getElementById("pause-button").style.display = "inline";
+
+        resumeTimer();
+    }
+
+    $('#slider').slideReveal({
+        trigger: $("#trigger"),
+        position: "right",
+        push: false,
+        overlay: true
+    });
+
+    function showDijkstraInputBoxes() {
+        document.getElementById("source-holder").style.visibility = "visible";
+        document.getElementById("target-holder").style.visibility = "visible";
+    }
+
+    function showKruskalInputBoxes() {
+        document.getElementById("source-holder").style.visibility = "hidden";
+        document.getElementById("target-holder").style.visibility = "hidden";
+    }
+
+    function showPrimsInputBoxes() {
+        document.getElementById("source-holder").style.visibility = "visible";
+        document.getElementById("target-holder").style.visibility = "hidden";
+    }
+
+
+    $(document).bind("contextmenu", function (event) {
+        event.preventDefault();
+    });
+
+    $(document).ondblclick = function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+    };
+
+    const nodeColour = "#ff0e58";
+    const edgeColour = "#ff0e58";
 
     const s = new sigma({
         renderer: {
@@ -84,11 +157,14 @@
         settings: {
             borderSize: 3,
 
-            defaultNodeColor: nodeColor,
+            defaultNodeColor: nodeColour,
             defaultNodeBorderColor: "#c9ddff",
+
+            defaultEdgeColor: edgeColour,
+            defaultEdgeLabelColor: edgeColour,
             defaultEdgeLabelSize: 20,
 
-            defaultLabelColor: "#ff0e58",
+            defaultLabelColor: "#ffffff",
             defaultLabelHoverColor: "#ff0e58",
             labelHoverColor: "node",
             labelShadowColor: "#c9ddff",
@@ -97,7 +173,8 @@
             edgeHoverSizeRatio: 2,
             edgeHoverExtremities: true,
             autoRescale: localStorage.getItem("autoRescale") === "true",
-            mouseEnabled: localStorage.getItem("mouseEnabled") === "true"
+            mouseEnabled: localStorage.getItem("mouseEnabled") === "true",
+            doubleClickEnabled: false
         }
     });
 
@@ -129,16 +206,6 @@
         localStorage.setItem("autoRescale", s.settings("autoRescale"));
         localStorage.setItem("mouseEnabled", s.settings("mouseEnabled"));
     };
-
-    $("#pauseResumeBtn").click(function () {
-        if ($(this).text() === 'PAUSE') {
-            pauseTimer();
-            $(this).text('RESUME');
-        } else {
-            resumeTimer();
-            $(this).text('PAUSE');
-        }
-    });
 
     function loadFreeMode() {
         s.settings('autoRescale', false);
@@ -267,7 +334,7 @@
         clearColoredNodesAndEdges();
 
         const srcNodeColour = "#001299";
-        const srcNodeId = getNodeIdFromLabel($("#srcNode").val());
+        const srcNodeId = getNodeIdFromLabel($("#src-node").val());
 
         s.graph.nodes(srcNodeId).color = srcNodeColour;
 
@@ -285,7 +352,12 @@
     }
 
     function calculateKruskalPath() {
+        $('#slider').slideReveal("hide");
         clearColoredNodesAndEdges();
+
+        document.getElementById("play-button").style.display = "none";
+        document.getElementById("pause-button").style.display = "inline";
+
 
         const idsOfMinSpanningTreeEdges = s.graph.kruskal();
         executeKruskalTeacher(idsOfMinSpanningTreeEdges);
@@ -299,11 +371,11 @@
 
     function clearColoredNodesAndEdges() {
         s.graph.nodes().forEach(function (node) {
-            node.color = nodeColor;
+            node.color = nodeColour;
         });
 
         s.graph.edges().forEach(function (edges) {
-            edges.color = nodeColor;
+            edges.color = nodeColour;
         });
 
         s.refresh();
@@ -331,6 +403,22 @@
         return s.graph.edges().sort(function (a, b) {
             return a.label - b.label;
         });
+    }
+
+    function runTourGuide() {
+        var tour = new Tour({
+            steps: [
+                {
+                    element: "#tour-anchor",
+                    title: "Welcome to my Graph Algo Tool!",
+                    content: "Welcome ",
+                    backdrop: true
+                }
+            ]
+        });
+
+        tour.init();
+        tour.start();
     }
 </script>
 </html>

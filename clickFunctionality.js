@@ -56,7 +56,7 @@ $(document).ready(function () {
         const isNodeAlreadySelected = nodesSelected.includes(node);
 
         if (isNodeAlreadySelected) {
-            s.graph.nodes(node.id).color = "#000000";
+            s.graph.nodes(node.id).color = "#ff0e58";
             nodesSelected.splice(nodesSelected.indexOf(node), 1);
 
         } else {
@@ -93,7 +93,7 @@ $(document).ready(function () {
 
     function resetAllNodesColourAndRefresh() {
         s.graph.nodes().forEach(function (node) {
-            node.color = "#000000";
+            node.color = "#ff0e58";
         });
         s.refresh();
     }

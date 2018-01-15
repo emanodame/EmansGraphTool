@@ -1,13 +1,5 @@
-a:link {
-    color: white;
-}
-
 html {
     height: 100%;
-}
-
-body {
-    height: 200%;
 }
 
 .parent {
@@ -26,6 +18,11 @@ body {
     left: 250px;
 }
 
+.handle {
+    color: #ff0e58;
+    font-size: 20px;
+}
+
 #particles {
     position: absolute;
     background: black;
@@ -40,8 +37,20 @@ body {
     color: #ffffff;
 }
 
-#info-text {
-    color: #ffffff;
+#slider-header {
+    position: absolute;
+    left: 50px;
+    color: #ff0e58;
+}
+
+#slider-title {
+    float: left;
+}
+
+#slider-info {
+    font-size: 15px;
+    float: left;
+    top: -5px;
 }
 
 #info-text-title {
@@ -55,8 +64,119 @@ body {
     font-size: 5ch;
 }
 
-#base {
-    color: pink;
-    font-size: large;
+#slider {
+    position: absolute;
+}
+
+#info-sign {
+    color: #ff0e58;
+}
+
+#free-mode-button {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+}
+
+#clear-button {
+    position: absolute;
+}
+
+.input-text-holder {
+    position: absolute;
+    top: 5px;
+    width: 10px;
+}
+
+.input-box-holder {
+    position: absolute;
+    top: 90px;
+    left: 31px;
+    color: #ff0e58;
+}
+
+.node-input {
     background-color: black;
+    border-color: #ff0e58;
+    outline: 0;
+}
+
+.algo-button-group {
+    position: absolute;
+    top: 40px;
+    left: 31px;
+}
+
+#source-holder {
+    position: absolute;
+}
+
+#target-holder {
+    position: absolute;
+    top: 60px;
+}
+
+.algo-button {
+    background-color: black;
+    border: thin solid #ff0e58;
+    color: #ff0e58;
+    outline: none;
+}
+
+#base {
+    background-color: #111111;
+}
+
+#tour-anchor {
+    position: absolute;
+    left: 47%;
+    visibility: hidden;
+}
+
+#execute-button {
+    position: absolute;
+    top: 220px;
+    left: 50px;
+}
+
+#trigger {
+    left: -40px;
+    padding: 10px;
+    position: absolute;
+    width: 20px;
+    cursor: pointer;
+}
+
+#button-block {
+    position: absolute;
+    top: 260px;
+    left: 60px;
+}
+
+#media-holder {
+    position:fixed;
+    bottom: 25px;
+    left: 45%;
+    margin-right: -50%;
+    font-size: 30px;
+    color: #ff0e58;
+    z-index: 1;
+}
+
+#play-button {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#pause-button {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: none;
+}
+
+#helper-text {
+    position: absolute;
+    bottom: 150px;
+    left: 60px;
+    color: #ff0e58;
 }

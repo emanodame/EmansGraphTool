@@ -4,33 +4,30 @@
     <meta charset="UTF-8">
     <title>Eman's Graph Tool!</title>
     <link rel="stylesheet" href="resources/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="resources/animsition/dist/css/animsition.min.css">
     <link rel="stylesheet" media="screen" href="resources/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="resources/animsition/dist/js/animsition.min.js"></script>
+
+    <link href="resources/animsition/dist/css/animsition.css" rel="stylesheet">
 </head>
 <body>
 
 <div class="parent">
     <div class="main-page">
         <div id="particles"></div>
+        <div class="animsition">
 
-        <div id="intro-text">
-            <div class="container center-vertically-holder">
-                <div class="center-vertically">
-                    <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 text-center">
-                        <h1 class="scaleReveal">
-                            Welcome to GraphAlgoTool.
-                        </h1>
-                        <hr class="bottomReveal">
-                        <p class="bottomReveal">Press Go to start or scroll down for more info!
-                        </p>
+            <div id="intro-text">
+                <div class="container center-vertically-holder">
+                    <div class="center-vertically">
+                        <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 text-center">
+                            <h1 class="scaleReveal">
+                                Welcome to GraphAlgoTool.
+                            </h1>
+                            <hr class="bottomReveal">
+                            <p class="bottomReveal">Press Go to start or scroll down for more info!
+                            </p>
+                        </div>
                     </div>
-
-                    <div
-                    <div id="go-button">
-                        <a href="index.html">Enter</a>
-                    </div>
+                        <a href="index.html" id="go-button" class="animsition-link">Enter</a>
                 </div>
             </div>
         </div>
@@ -47,5 +44,14 @@
 
 <script type="text/javascript" src="resources/particles/particles.min.js"></script>
 <script type="text/javascript" src="resources/particles/particlesRun.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="resources/animsition/dist/js/animsition.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.animsition').animsition();
+    });
+</script>
+
 </body>
 </html>
