@@ -78,8 +78,34 @@ html {
     left: 15px;
 }
 
+.tour {
+    background-color: black !important;
+    border: thin solid #ff0e58 !important;
+}
+
+#options {
+    position: relative;
+    background-color: black;
+    color: #ff0e58;
+    left: 35px;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.directional-buttons {
+    cursor: pointer !important;
+}
+
+.popover-content {
+    color: #ff0e58;
+    font-size: 20px;
+}
+
 #clear-button {
     position: absolute;
+    white-space: nowrap;
+    left: -22px;
+    top: 32px;
 }
 
 .input-text-holder {
@@ -95,16 +121,36 @@ html {
     color: #ff0e58;
 }
 
+#source-error-message {
+    position: relative;
+    padding-bottom: 50%;
+}
+
 .node-input {
     background-color: black;
     border-color: #ff0e58;
     outline: 0;
 }
 
+#customClassValidation {
+    top: 50px;
+    height: 70px;
+    width: 50%;
+    border: 1px solid #bbb;
+    background-color: white;
+}
+
+.node-input:focus {
+    outline: none;
+    border-color: #ff0e58;
+    box-shadow: 0 0 25px #ff0e58;
+}
+
 .algo-button-group {
     position: absolute;
     top: 40px;
     left: 31px;
+    z-index: 1;
 }
 
 #source-holder {
@@ -123,8 +169,14 @@ html {
     outline: none;
 }
 
+.algo-chooser-highlight {
+    outline: none;
+    border-color: #ff0e58;
+    box-shadow: 0 0 25px #ff0e58;
+}
+
 #base {
-    background-color: #111111;
+    background-color: black;
 }
 
 #tour-anchor {
@@ -135,8 +187,6 @@ html {
 
 #execute-button {
     position: absolute;
-    top: 220px;
-    left: 50px;
 }
 
 #trigger {
@@ -149,17 +199,18 @@ html {
 
 #button-block {
     position: absolute;
-    top: 260px;
-    left: 60px;
+    top: 75px;
+    left: 50px;
 }
 
 #media-holder {
-    position:fixed;
+    position: fixed;
     bottom: 25px;
     left: 45%;
     margin-right: -50%;
     font-size: 30px;
     color: #ff0e58;
+    cursor: pointer;
     z-index: 1;
 }
 
@@ -179,4 +230,12 @@ html {
     bottom: 150px;
     left: 60px;
     color: #ff0e58;
+}
+
+#hover-bar {
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    right: 0;
+    z-index: 1;
 }
