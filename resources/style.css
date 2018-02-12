@@ -2,7 +2,8 @@ html {
     height: 100%;
 }
 
-.parent {
+#base {
+    background-color: black;
 }
 
 .main-page {
@@ -175,10 +176,6 @@ html {
     box-shadow: 0 0 25px #ff0e58;
 }
 
-#base {
-    background-color: black;
-}
-
 #tour-anchor {
     position: absolute;
     left: 47%;
@@ -205,12 +202,12 @@ html {
 
 #media-holder {
     position: fixed;
-    bottom: 25px;
-    left: 45%;
-    margin-right: -50%;
+    bottom: 20px;
+    left: 47%;
     font-size: 30px;
     color: #ff0e58;
     cursor: pointer;
+    display: inline-block;
     z-index: 1;
 }
 
@@ -238,4 +235,68 @@ html {
     width: 10%;
     right: 0;
     z-index: 1;
+}
+
+#json-import-btn {
+    position: absolute;
+    top: 90%;
+    left: 30%;
+}
+
+#json-export-btn {
+    position: absolute;
+    top: 93%;
+    left: 30%;
+}
+
+#json-import {
+    position: absolute;
+    top: 12%;
+    left: 43%;
+    height: 70px;
+    width: 281px;
+    color: #ff0e58;
+    border: 1px solid #ff0e58;
+    visibility: hidden;
+    z-index: 1;
+}
+
+#json-input {
+    position: absolute;
+    top: 30px;
+    display: inline-block;
+}
+
+#json-text-input {
+    border: 1px solid #ff0e58;
+    background-color: black;
+}
+
+#close-holder {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background-color: black;
+}
+
+#close-holder:hover {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background: black;
+    color: #ff0e58;
+}
+
+#close-button {
+    border: none;
+    background-color: black;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#json-submit-btn {
 }
