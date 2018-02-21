@@ -1,7 +1,9 @@
 let dijkstraCounter = 0;
+let pathLength = 0;
 const dijkstraEdgeStatesArray = [];
 
 function executeDijkstraTeacher(path) {
+    pathLength = path.length;
 
     const visitedNodes = new Set();
 
@@ -21,7 +23,6 @@ function executeDijkstraTeacher(path) {
 
         dijkstraEdgeStatesArray.push(edgeStates);
 
-        if (!(visitedNodes.has(currentEdge.source) && (visitedNodes.has(currentEdge.target)))) {
             visitedNodes.add(currentEdge.source);
             visitedNodes.add(currentEdge.target);
 
@@ -32,12 +33,6 @@ function executeDijkstraTeacher(path) {
             helperText.appendChild(textNode);
             helperText.appendChild(breakNode);
             currentEdge.color = "#6e0db6";
-        } else {
-            const textNode = document.createTextNode("This would be the next edge but the nodes have already been discovered!");
-
-            helperText.appendChild(textNode);
-            helperText.appendChild(breakNode);
-        }
 
         s.refresh();
         dijkstraCounter++;
@@ -53,7 +48,13 @@ function executeDijkstraTeacher(path) {
     }
 }
 
-function rewindBack() {
+function restart() {
+    clearColoredNodesAndEdges();
+
+    dijkstraCounter = 0;
+}
+
+function rewind() {
     Object.values(dijkstraEdgeStatesArray[dijkstraCounter - 1].edges).forEach(function (edge) {
         s.graph.edges(edge.id).color = edge.color;
         s.refresh();
@@ -62,6 +63,13 @@ function rewindBack() {
     dijkstraCounter--;
 }
 
-function forwardOne() {
+function forward() {
     executeKruskalTeacher(ids).kruskalTeacher();
+}
+
+function end() {
+    dijkstraEdgeStatesArray.forEach(function (edge) {
+        console.log(edge);
+    });
+
 }

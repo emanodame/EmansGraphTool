@@ -17,6 +17,7 @@
 <script src="tools/Tree.js"></script>
 <script src="tools/Timer.js"></script>
 <script src="resources/slideReveal.js"></script>
+<script src="tourGuide.js"></script>
 
 <link rel="stylesheet" href="resources/style.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
@@ -30,20 +31,26 @@
 <head>
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <title>Eman's Graph Tool</title>
 </head>
 
 <body id="base">
 
 <div id="json-import">
-    <span id="close-holder"><button id="close-button" onclick="closeJsonInput()">x</button></span>
+    <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
     <form id="json-input">
         <label>Input
             <input type="text" id="json-text-input" name="json-input">
             <input type="submit" class="algo-button" id="json-submit-btn" onclick="parseJson()">
         </label>
+    </form>
+</div>
+
+<div id="json-export">
+    <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
+    <form id="json-output">
+        <label><input type="text" id="json-text-output" name="json-input"></label>
+        <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="COPY">
     </form>
 </div>
 
@@ -53,7 +60,8 @@
 
 <div id="slider">
     <div class="handle">
-        <span id="trigger" class="glyphicon glyphicon-chevron-left"></span>
+        <span id="left-trigger" class="glyphicon glyphicon-chevron-left"></span>
+        <span id="right-trigger" class="glyphicon glyphicon-chevron-right"></span>
     </div>
 
     <div id="slider-header">
@@ -76,7 +84,8 @@
         <div id="source-holder">
             Source Node
             <label>
-                <input type="text" name="source-node" id="src-node" class="node-input validate-class my-class-invalid">
+                <input autocomplete="off" type="text" name="source-node" id="src-node"
+                       class="node-input validate-class my-class-invalid">
             </label>
             <div id="source-error-message" hidden>
                 Invalid ID!
@@ -84,7 +93,10 @@
         </div>
 
         <div id="button-block">
-            <button class="algo-button" id="clear-button" onclick="clearGraph()">CLEAR GRAPH</button>
+            <button type="button" class="algo-button" id="clear-button" onclick="clearGraph()">CLEAR GRAPH</button>
+            <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(6)">Random
+                Graph
+            </button>
             <input type="submit" id="execute-button" class="algo-button" value="Execute">
         </div>
     </form>
@@ -96,15 +108,27 @@
 <div id="helper-text"></div>
 
 <div id="media-holder">
-    <span id="backward-button" class="glyphicon glyphicon-backward" onclick="rewindOneStep()"></span>
-    <span id="play-button" class="glyphicon glyphicon-play" onclick="showPauseButton()"></span>
-    <span id="pause-button" class="glyphicon glyphicon-pause" onclick="showPlayButton()"></span>
-    <span id="forward-button" class="glyphicon glyphicon-forward" onclick="forwardOneStep()"></span>
+    <span id="restart-button" class="glyphicon glyphicon-step-backward noSelect" onclick="restartProcess()"></span>
+    <span id="backward-button" class="glyphicon glyphicon-backward noSelect" onclick="rewindFunctionality()"></span>
+    <span id="play-button" class="glyphicon glyphicon-play noSelect" onclick="showPauseButton()"></span>
+    <span id="pause-button" class="glyphicon glyphicon-pause noSelect" onclick="showPlayButton()"></span>
+    <span id="forward-button" class="glyphicon glyphicon-forward" onclick="forwardFunctionality()"></span>
+    <span id="end-button" class="glyphicon glyphicon-step-forward" onclick="endProcess()"></span>
 </div>
 
 </body>
 <script>
 
+    function show() {
+        $('#slider').slideReveal("show");
+    }
+
+    /*
+    Manual testing
+    REVAMP TEACHERS
+    Finish tour guide stuff
+    revisit intro page
+     */
     $("#src-node").focusout(function () {
         const srcNodeId = getNodeIdFromLabel($("#src-node").val());
 
@@ -117,25 +141,32 @@
         }
     });
 
-    //runTourGuide();
+    const firstTimeVisit = localStorage.getItem("first_time") === null;
+
     let algorithmSelected = "dijkstra";
     let validNodeId = false;
 
     $("#hover-bar").mouseover(function () {
         $('#slider').slideReveal("show");
+        document.getElementById("left-trigger").style.display = "inline";
+        document.getElementById("right-trigger").style.display = "none";
     });
 
     $("#slider").mouseleave(function () {
         $('#slider').slideReveal("hide");
+        document.getElementById("left-trigger").style.display = "none";
+        document.getElementById("right-trigger").style.display = "inline";
     });
 
 
     function importJson() {
         document.getElementById("json-import").style.visibility = "visible";
+        document.getElementById("json-export").style.visibility = "hidden";
     }
 
     function exportJson() {
-        document.getElementById("json-import").style.visibility = "visible";
+        document.getElementById("json-import").style.visibility = "hidden";
+        document.getElementById("json-export").style.visibility = "visible";
 
         let jsonGraphText = "{\"nodes\":";
         const nodes = [];
@@ -143,8 +174,9 @@
         s.graph.nodes().forEach(function (node) {
             const nodeCreation = {
                 id: node.id,
-                x: node.x.toString(),
-                y: node.y.toString(),
+                x: (node.x / 100).toString(),
+                y: (node.y / 100).toString(),
+                label: node.label
             };
 
             nodes.push(nodeCreation);
@@ -167,15 +199,24 @@
         jsonGraphText += JSON.stringify(edges);
         jsonGraphText += "}";
 
-        document.getElementById("json-text-input").value = jsonGraphText;
+
+        document.getElementById("json-text-output").value = jsonGraphText;
+    }
+
+    function copyJsonOutput() {
+        const copyText = document.getElementById("json-text-output");
+        copyText.select();
+        document.execCommand("Copy");
     }
 
     function closeJsonInput() {
         document.getElementById("json-import").style.visibility = "hidden";
+        document.getElementById("json-export").style.visibility = "hidden";
     }
 
     function parseJson() {
         event.preventDefault();
+
         const jsonTextInput = document.getElementById("json-text-input").value;
         const textToJson = JSON.parse(jsonTextInput);
 
@@ -187,7 +228,7 @@
                 id: textToJson.nodes[i].id,
                 x: textToJson.nodes[i].x * 100,
                 y: textToJson.nodes[i].y * 100,
-                label: (i + 1).toString(),
+                label: textToJson.nodes[i].label ? textToJson.nodes[i].label : textToJson.nodes[i].id.toString(),
                 size: 10
             };
 
@@ -212,9 +253,16 @@
         }
     }
 
-    function show() {
-        //$('#slider').slideReveal("show");
-        console.log("lolopl");
+    function restartProcess() {
+        restart();
+        showPauseButton();
+    }
+
+    function endProcess() {
+        document.getElementById("pause-button").style.display = "none";
+        document.getElementById("play-button").style.display = "inline";
+
+        end();
     }
 
 
@@ -226,25 +274,24 @@
     }
 
     function showPauseButton() {
-
         document.getElementById("play-button").style.display = "none";
         document.getElementById("pause-button").style.display = "inline";
 
         resumeTimer();
     }
 
-    function rewindOneStep() {
+    function rewindFunctionality() {
         showPlayButton();
-        rewindBack();
+        rewind();
     }
 
-    function forwardOneStep() {
+    function forwardFunctionality() {
         showPlayButton();
-        forwardOne();
+        forward();
     }
 
     $('#slider').slideReveal({
-        trigger: $("#trigger"),
+        trigger: $("#left-trigger"),
         position: "right",
         push: false,
         overlay: true
@@ -348,27 +395,28 @@
     function createRandomGraph(quantityOfNodes) {
         clearGraph();
 
-        s.settings('autoRescale', true);
-        s.settings('mouseEnabled', false);
-
         let labelId = 0;
 
         const nodeIdSet = new Set();
 
         for (let i = 0; i < quantityOfNodes; i++) {
 
-            const randomGeneratedX = Math.floor((Math.random() * 50));
-            const randomGeneratedY = Math.floor((Math.random() * 50));
+            let randomGeneratedX = Math.floor(Math.random() * 5) + 1;
+            randomGeneratedX *= Math.floor(Math.random() * 2) === 1 ? 1 : -1;
+
+            let randomGeneratedY = Math.floor(Math.random() * 5) + 1;
+            randomGeneratedY *= Math.floor(Math.random() * 2) === 1 ? 1 : -1;
+
 
             const nodeId = createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY);
 
             if (!nodeIdSet.has(nodeId)) {
                 s.graph.addNode({
                     id: createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY),
+                    x: randomGeneratedX * 100,
+                    y: randomGeneratedY * 100,
                     label: (labelId++).toString(),
-                    x: randomGeneratedX,
-                    y: randomGeneratedY,
-                    size: 3
+                    size: 10
                 });
 
                 nodeIdSet.add(nodeId);
@@ -409,6 +457,12 @@
 
     function executedSelectedAlgorithm() {
         event.preventDefault();
+
+        if (!validNodeId) {
+            document.getElementById("source-error-message").style.display = "inline";
+            validNodeId = false;
+            return false;
+        }
 
         if (algorithmSelected === "dijkstra") {
             calculateDijkstraPath();
@@ -506,56 +560,6 @@
             return a.label - b.label;
         });
     }
-
-    function runTourGuide() {
-        var tour = new Tour({
-            steps: [
-                {
-                    template: "<div class='popover tour'>\n" +
-                    "    <div class='popover-content'>Welcome to my Graph Algo Tool! This website will educate you on algorithms</div>\n" +
-                    "    <div class='popover-navigation'>\n" +
-                    "     <div id='options'>" +
-                    "        <div class='glyphicon glyphicon-arrow-left directional-buttons' data-role='prev'></div>\n" +
-                    "        <span data-role='separator'>|</span>\n" +
-                    "        <div class='glyphicon glyphicon-arrow-right directional-buttons' data-role='next'></div>\n" +
-                    "    </div>" +
-                    "   </div>\n" +
-                    "  </div>",
-                    backdrop: true,
-                    element: "#tour-anchor"
-                }, {
-                    template: "<div class='popover tour'>\n" +
-                    "    <div class='popover-content'>Right click to insert node on screen. Left click to remove!</div>\n" +
-                    "    <div class='popover-navigation'>\n" +
-                    "     <div id='options'>" +
-                    "        <div class='glyphicon glyphicon-arrow-left directional-buttons' data-role='prev'></div>\n" +
-                    "        <span data-role='separator'>|</span>\n" +
-                    "        <div class='glyphicon glyphicon-arrow-right directional-buttons' data-role='next'></div>\n" +
-                    "    </div>" +
-                    "   </div>\n" +
-                    "  </div>",
-                    backdrop: false,
-                    element: "#tour-anchor",
-                    onNext: show()
-                }, {
-                    element: "#trigger",
-                    template: "<div class='popover tour'>\n" +
-                    "    <div class='popover-content'>On the right is the control panel, from here is where the algorithms get executed. Hover cursor on the right to view.</div>\n" +
-                    "    <div class='popover-navigation'>\n" +
-                    "     <div id='options'>" +
-                    "        <div class='glyphicon glyphicon-arrow-left directional-buttons' data-role='prev'></div>\n" +
-                    "        <span data-role='separator'>|</span>\n" +
-                    "        <div class='glyphicon glyphicon-arrow-right directional-buttons' data-role='next'></div>\n" +
-                    "    </div>" +
-                    "   </div>\n" +
-                    "  </div>",
-                    backdrop: true,
-                }
-            ]
-        });
-
-        tour.init();
-        tour.start();
-    }
 </script>
+
 </html>

@@ -53,7 +53,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     }
 }
 
-function rewindBack() {
+function rewind() {
     Object.values(kruskalEdgeStatesArray[kruskalTeacherCount - 1].edges).forEach(function (edge) {
         s.graph.edges(edge.id).color = edge.color;
         s.refresh();
@@ -62,6 +62,6 @@ function rewindBack() {
     kruskalTeacherCount--;
 }
 
-function forwardOne() {
+function forward() {
     executeKruskalTeacher(ids).kruskalTeacher();
 }

@@ -4,6 +4,10 @@ html {
 
 #base {
     background-color: black;
+    outline: none !important;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .main-page {
@@ -75,8 +79,7 @@ html {
 
 #free-mode-button {
     position: absolute;
-    top: 30px;
-    left: 15px;
+    top: 550px;
 }
 
 .tour {
@@ -186,12 +189,21 @@ html {
     position: absolute;
 }
 
-#trigger {
+#left-trigger {
     left: -40px;
     padding: 10px;
     position: absolute;
     width: 20px;
     cursor: pointer;
+}
+
+#right-trigger {
+    left: -40px;
+    padding: 10px;
+    position: absolute;
+    width: 20px;
+    cursor: pointer;
+    display: none;
 }
 
 #button-block {
@@ -203,7 +215,7 @@ html {
 #media-holder {
     position: fixed;
     bottom: 20px;
-    left: 47%;
+    left: 46%;
     font-size: 30px;
     color: #ff0e58;
     cursor: pointer;
@@ -261,6 +273,19 @@ html {
     z-index: 1;
 }
 
+#json-export {
+    position: absolute;
+    top: 12%;
+    left: 43%;
+    height: 70px;
+    width: 281px;
+    color: #ff0e58;
+    border: 1px solid #ff0e58;
+    visibility: hidden;
+    z-index: 1;
+}
+
+
 #json-input {
     position: absolute;
     top: 30px;
@@ -272,14 +297,14 @@ html {
     background-color: black;
 }
 
-#close-holder {
+.close-holder {
     float:right;
     display:inline-block;
     padding:2px 5px;
     background-color: black;
 }
 
-#close-holder:hover {
+.close-holder:hover {
     float:right;
     display:inline-block;
     padding:2px 5px;
@@ -287,7 +312,7 @@ html {
     color: #ff0e58;
 }
 
-#close-button {
+.close-button {
     border: none;
     background-color: black;
 }
@@ -299,4 +324,30 @@ html {
 }
 
 #json-submit-btn {
+}
+
+#random-graph-button {
+    position: absolute;
+    top: 550px;
+    left: 75px;
+}
+
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#json-output {
+    position: absolute;
+    top: 30px;
+    display: inline-block;
+}
+
+#json-text-output {
+    border: 1px solid #ff0e58;
+    background-color: black;
 }

@@ -4,18 +4,28 @@
 
         const edgeMap = [];
         const visitedEdges = [];
+        const visitedNodes = new Set();
 
         const path = [];
 
         const startNodeNeighbours = Object.values(this.allNeighborsIndex[startNodeId]);
-        addToNodeAndEdgeMap(undefined, startNodeNeighbours);
+        discoverNeighbourEdges(undefined, startNodeNeighbours);
 
         let lowestEdge = sortAndReturnLowestEdge();
 
         while (lowestEdge) {
             const neighboursOfTargetNode = getNeighboursConnectedToEdge(lowestEdge, this);
-            addToNodeAndEdgeMap(lowestEdge, neighboursOfTargetNode);
-            path.push(lowestEdge);
+
+            if (visitedNodes.has(lowestEdge.source) && visitedNodes.has(lowestEdge.target)) {
+                console.log("NOT ADDED");
+
+            } else {
+                visitedNodes.add(lowestEdge.source);
+                visitedNodes.add(lowestEdge.target);
+                path.push(lowestEdge);
+            }
+
+            discoverNeighbourEdges(lowestEdge, neighboursOfTargetNode);
             lowestEdge = sortAndReturnLowestEdge();
         }
 
@@ -34,7 +44,7 @@
                 .concat(Object.values(outerThis.allNeighborsIndex[edge.target]));
         }
 
-        function addToNodeAndEdgeMap(prevEdge, neighbours) {
+        function discoverNeighbourEdges(prevEdge, neighbours) {
 
             neighbours.forEach(function (neighbour) {
                 const edge = Object.values(neighbour)[0];
