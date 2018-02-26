@@ -1,5 +1,6 @@
 function executeDijkstraTeacher(path) {
     const helperText = document.getElementById("helper-text");
+    const visitedNodesText = document.getElementById("visited-nodes-text");
 
     const dijkstraNodeStateArray = [];
     const dijkstraEdgeStatesArray = [];
@@ -43,6 +44,13 @@ function executeDijkstraTeacher(path) {
     const task = new Task(actionExecutor());
     let freeFlow = false;
 
+    function displayFirstEdgeInfo() {
+        helperText.innerHTML = "Starting node is " + $("#src-node").val() + "<br /> Pick the shortest path to an undiscovered node from the source node. " + "</br>" + displayConnectionInfo();
+        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[algoCounter].currentEdge.id)});
+        nodeDiscoveryStatus.add(s.graph.nodes(getNodeIdFromLabel($("#src-node").val())).id);
+        makeTextScroll();
+    }
+
     function* actionExecutor() {
         while (true) {
             if (algoCounter !== path.length) {
@@ -58,14 +66,9 @@ function executeDijkstraTeacher(path) {
         }
     }
 
-    function displayFirstEdgeInfo() {
-        helperText.innerHTML = "Starting node is " + $("#src-node").val() + "<br /> Pick the shortest path to an undiscovered node from the source node. " + "</br>" + displayConnectionInfo();
-        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[algoCounter].currentEdge.id)});
-        nodeDiscoveryStatus.add(s.graph.nodes(getNodeIdFromLabel($("#src-node").val())).id);
-        makeTextScroll();
-    }
-
     function graphAction() {
+        visitedNodesText.innerHTML = "";
+
         if (algoCounter === path.length) {
             showPlayButton();
         }

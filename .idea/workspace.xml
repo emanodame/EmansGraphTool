@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fba305cb-c401-4fb5-acfa-4986a8ba7f52" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/tools/Task.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Graph Algorithm Tool Logbook.docx" afterPath="$PROJECT_DIR$/Graph Algorithm Tool Logbook.docx" />
-      <change beforePath="$PROJECT_DIR$/algorithms/dijkstra.js" afterPath="$PROJECT_DIR$/algorithms/dijkstra.js" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/resources/animsition" afterPath="$PROJECT_DIR$/resources/animsition" />
       <change beforePath="$PROJECT_DIR$/resources/bootstrap-tour" afterPath="$PROJECT_DIR$/resources/bootstrap-tour" />
       <change beforePath="$PROJECT_DIR$/resources/particles" afterPath="$PROJECT_DIR$/resources/particles" />
-      <change beforePath="$PROJECT_DIR$/resources/style.css" afterPath="$PROJECT_DIR$/resources/style.css" />
       <change beforePath="$PROJECT_DIR$/teachers/dijsktraTeacher.js" afterPath="$PROJECT_DIR$/teachers/dijsktraTeacher.js" />
-      <change beforePath="$PROJECT_DIR$/teachers/kruskalTeacher.js" afterPath="$PROJECT_DIR$/teachers/kruskalTeacher.js" />
-      <change beforePath="$PROJECT_DIR$/teachers/primsTeacher.js" afterPath="$PROJECT_DIR$/teachers/primsTeacher.js" />
-      <change beforePath="$PROJECT_DIR$/test_graphs/graph3.json" afterPath="$PROJECT_DIR$/test_graphs/graph3.json" />
-      <change beforePath="$PROJECT_DIR$/tools/Timer.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tourGuide.js" afterPath="$PROJECT_DIR$/tourGuide.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,41 +27,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+            <state relative-caret-position="532">
+              <caret line="109" column="31" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Task.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/Task.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dijsktraTeacher.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dijsktraTeacher.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/teachers/dijsktraTeacher.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-873">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="398" column="10" lean-forward="true" selection-start-line="398" selection-start-column="10" selection-end-line="398" selection-end-column="10" />
+            <state relative-caret-position="1935">
+              <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -91,7 +61,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>json-impo</find>
       <find>json-import</find>
       <find>Submit</find>
       <find>path</find>
@@ -120,6 +89,7 @@
       <find>console</find>
       <find>text</find>
       <find>animate</find>
+      <find>style.css</find>
       <find>helper</find>
     </findStrings>
     <replaceStrings>
@@ -188,10 +158,10 @@
         <option value="$PROJECT_DIR$/teachers/primsTeacher.js" />
         <option value="$PROJECT_DIR$/tools/Timer.js" />
         <option value="$PROJECT_DIR$/algorithms/dijkstra.js" />
-        <option value="$PROJECT_DIR$/teachers/dijsktraTeacher.js" />
         <option value="$PROJECT_DIR$/tools/Task.js" />
         <option value="$PROJECT_DIR$/resources/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/teachers/dijsktraTeacher.js" />
       </list>
     </option>
   </component>
@@ -272,7 +242,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="SearchEverywhereHistoryKey" value="index&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/index.html&#10;dij&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;task&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/tools/Task.js&#10;graph&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph3.json&#10;dijk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithms/dijkstra.js&#10;click&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/clickFunctionality.js&#10;Task&#9;null&#9;null&#10;Time&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/tools/Timer.js&#10;Timer&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/tools/Timer.js&#10;json&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph3.json&#10;gra&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph3.json&#10;Tim&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/tools/Timer.js&#10;intro&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/intropage.html&#10;css&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/style.css&#10;slider&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/slideReveal.js&#10;prim&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/primsTeacher.js&#10;k&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;kruska&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;grap&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph3.json&#10;prims&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/primsTeacher.js&#10;krusk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;kruskal&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithms/kruskal.js&#10;DI&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;KRUS&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;grap2&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph2.json&#10;krus&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithms/kruskal.js&#10;grap1&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph1.json&#10;teach&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;js&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/clickFunctionality.js&#10;cl&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/clickFunctionality.js&#10;teac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;inde&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/index.html&#10;di&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;clic&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/clickFunctionality.js&#10;kr&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithms/kruskal.js&#10;tea&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;kru&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;bootstrap.min&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap/bootstrap.min.css&#10;sli&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/slideReveal.js&#10;bootstrap-tour.min.js&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap-tour/build/js/bootstrap-tour.min.js&#10;bootstrap.min.js&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap-tour/build/js/bootstrap-tour.min.js&#10;bootstrap-tour.min.css&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap-tour/build/css/bootstrap-tour.min.css&#10;jquery&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/node_modules/jquery/dist/jquery.js&#10;bootstrap-tour&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap-tour/build/css/bootstrap-tour-standalone.css&#10;p&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/particles/particlesRun.js&#10;ind&#9;FILE&#9;file:///Users/emanodame/Downloads/Particles - Personal + Agency Template 1.4/HTML/index-default-particles.html&#10;parti&#9;FILE&#9;file://M:/EmansGraphTool/resources/particles/particles.json&#10;particles.json&#9;FILE&#9;file://M:/EmansGraphTool/resources/particles.js/demo/particles.json&#10;Prims&#9;FILE&#9;file://M:/EmansGraphTool/algorithms/prims.js&#10;Kruska&#9;FILE&#9;file://M:/EmansGraphTool/algorithms/kruskal.js" />
+    <property name="SearchEverywhereHistoryKey" value="graph&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph3.json&#10;index&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/index.html&#10;dij&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;task&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/tools/Task.js&#10;dijk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithms/dijkstra.js&#10;click&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/clickFunctionality.js&#10;Task&#9;null&#9;null&#10;Time&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/tools/Timer.js&#10;Timer&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/tools/Timer.js&#10;json&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph3.json&#10;gra&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph3.json&#10;Tim&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/tools/Timer.js&#10;intro&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/intropage.html&#10;css&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/style.css&#10;slider&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/slideReveal.js&#10;prim&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/primsTeacher.js&#10;k&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;kruska&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;grap&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph3.json&#10;prims&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/primsTeacher.js&#10;krusk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;kruskal&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithms/kruskal.js&#10;DI&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;KRUS&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;grap2&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph2.json&#10;krus&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithms/kruskal.js&#10;grap1&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test_graphs/graph1.json&#10;teach&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;js&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/clickFunctionality.js&#10;cl&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/clickFunctionality.js&#10;teac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;inde&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/index.html&#10;di&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/dijsktraTeacher.js&#10;clic&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/clickFunctionality.js&#10;kr&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithms/kruskal.js&#10;tea&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;kru&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/teachers/kruskalTeacher.js&#10;bootstrap.min&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap/bootstrap.min.css&#10;sli&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/slideReveal.js&#10;bootstrap-tour.min.js&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap-tour/build/js/bootstrap-tour.min.js&#10;bootstrap.min.js&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap-tour/build/js/bootstrap-tour.min.js&#10;bootstrap-tour.min.css&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap-tour/build/css/bootstrap-tour.min.css&#10;jquery&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/node_modules/jquery/dist/jquery.js&#10;bootstrap-tour&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/bootstrap-tour/build/css/bootstrap-tour-standalone.css&#10;p&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/particles/particlesRun.js&#10;ind&#9;FILE&#9;file:///Users/emanodame/Downloads/Particles - Personal + Agency Template 1.4/HTML/index-default-particles.html&#10;parti&#9;FILE&#9;file://M:/EmansGraphTool/resources/particles/particles.json&#10;particles.json&#9;FILE&#9;file://M:/EmansGraphTool/resources/particles.js/demo/particles.json&#10;Prims&#9;FILE&#9;file://M:/EmansGraphTool/algorithms/prims.js&#10;Kruska&#9;FILE&#9;file://M:/EmansGraphTool/algorithms/kruskal.js" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -782,12 +752,12 @@
       <workItem from="1517869107101" duration="4930000" />
       <workItem from="1518184448948" duration="2000" />
       <workItem from="1518218725836" duration="13073000" />
-      <workItem from="1519077556806" duration="145573000" />
+      <workItem from="1519077556806" duration="148506000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="872697000" />
+    <option name="totallyTimeSpent" value="875630000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -1166,14 +1136,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_graphs/graph3.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="58" column="6" lean-forward="true" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/algorithms/dijkstra.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1190,26 +1152,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teachers/dijsktraTeacher.js">
+    <entry file="file://$PROJECT_DIR$/test_graphs/graph3.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-873">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="435">
+          <caret line="78" column="6" lean-forward="true" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="398" column="10" lean-forward="true" selection-start-line="398" selection-start-column="10" selection-end-line="398" selection-end-column="10" />
+        <state relative-caret-position="780">
+          <caret line="416" column="1" lean-forward="false" selection-start-line="416" selection-start-column="1" selection-end-line="416" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state relative-caret-position="532">
+          <caret line="109" column="31" lean-forward="true" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teachers/dijsktraTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="5" lean-forward="true" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
           <folding />
         </state>
       </provider>
