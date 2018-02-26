@@ -42,17 +42,17 @@ html {
     color: #ffffff;
 }
 
-#slider-header {
+#slide-revealer-header {
     position: absolute;
     left: 50px;
     color: #ff0e58;
 }
 
-#slider-title {
+#slide-revealer-title {
     float: left;
 }
 
-#slider-info {
+#slide-revealer-info {
     font-size: 15px;
     float: left;
     top: -5px;
@@ -69,7 +69,7 @@ html {
     font-size: 5ch;
 }
 
-#slider {
+#slide-revealer {
     position: absolute;
 }
 
@@ -234,13 +234,6 @@ html {
     display: none;
 }
 
-#helper-text {
-    position: absolute;
-    bottom: 150px;
-    left: 60px;
-    color: #ff0e58;
-}
-
 #hover-bar {
     position: absolute;
     height: 100%;
@@ -285,7 +278,6 @@ html {
     z-index: 1;
 }
 
-
 #json-input {
     position: absolute;
     top: 30px;
@@ -298,16 +290,16 @@ html {
 }
 
 .close-holder {
-    float:right;
-    display:inline-block;
-    padding:2px 5px;
+    float: right;
+    display: inline-block;
+    padding: 2px 5px;
     background-color: black;
 }
 
 .close-holder:hover {
-    float:right;
-    display:inline-block;
-    padding:2px 5px;
+    float: right;
+    display: inline-block;
+    padding: 2px 5px;
     background: black;
     color: #ff0e58;
 }
@@ -350,4 +342,83 @@ html {
 #json-text-output {
     border: 1px solid #ff0e58;
     background-color: black;
+}
+
+#slider {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 10px;
+    width: 150px;
+    background: #ff0000;
+    border: 1px solid #ff0e58;
+    display: inline-block;
+}
+
+.ui-slider .ui-slider-handle {
+    margin-left: -3px;
+    margin-top: 2.5px;
+    background: black;
+    border: 1px solid #ff0e58;
+    height: 20px;
+    width: 20px;
+    outline: none;
+!important;
+}
+
+.slow-btn {
+    float: left;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.fast-btn {
+    position: absolute;
+    float: right;
+    display: inline-block;
+    font-size: 20px;
+}
+
+#speed-control {
+    position: absolute;
+    top: 10px;
+    left: 275px;
+    width: 260px;
+}
+
+@keyframes slide {
+    from {
+        top: 100%;
+    }
+    to {
+        top: -100%;
+    }
+}
+
+@-webkit-keyframes slide {
+    from {
+        top: 100%;
+    }
+    to {
+        top: -100%;
+    }
+}
+
+#helper-container {
+    position: absolute;
+    bottom: 150px;
+    left: 60px;
+    width: 300px;
+    height: 100px;
+    background: black;
+    color: #ff0e58;
+}
+
+#helper-text {
+    position: absolute;
+    color: #ff0e58;
+    width: 1px;
+    height: 1px;
+    background-color: red;
+    white-space: nowrap;
 }

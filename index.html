@@ -10,12 +10,12 @@
 <script src="algorithms/prims.js"></script>
 <script src="algorithms/kruskal.js"></script>
 
+<script src="tools/Task.js"></script>
 <script src="teachers/dijsktraTeacher.js"></script>
 <script src="teachers/kruskalTeacher.js"></script>
 <script src="teachers/primsTeacher.js"></script>
 
 <script src="tools/Tree.js"></script>
-<script src="tools/Timer.js"></script>
 <script src="resources/slideReveal.js"></script>
 <script src="tourGuide.js"></script>
 
@@ -27,13 +27,13 @@
 <link href="resources/node_modules/popup-validation/bin/validation.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="resources/style.css"/>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <title>Eman's Graph Tool</title>
-</head>
-
 <body id="base">
 
 <div id="json-import">
@@ -58,17 +58,17 @@
 
 <div id="hover-bar"></div>
 
-<div id="slider">
+<div id="slide-revealer">
     <div class="handle">
         <span id="left-trigger" class="glyphicon glyphicon-chevron-left"></span>
         <span id="right-trigger" class="glyphicon glyphicon-chevron-right"></span>
     </div>
 
-    <div id="slider-header">
-        <div id="slider-title">
+    <div id="slide-revealer-header">
+        <div id="slide-revealer-title">
             Control Panel
         </div>
-        <div id="slider-info" class="btn glyphicon glyphicon-info-sign" onclick="runTourGuide()"></div>
+        <div id="slide-revealer-info" class="btn glyphicon glyphicon-info-sign" onclick="runTourGuide()"></div>
     </div>
 
     <div class="btn-group algo-button-group" role="group" aria-label="Algo Button">
@@ -82,10 +82,10 @@
 
     <form name="source-target" id="node-id-input-box" class="input-box-holder" onsubmit="executedSelectedAlgorithm()">
         <div id="source-holder">
-            Source Node
+            Source Node ID
             <label>
                 <input autocomplete="off" type="text" name="source-node" id="src-node"
-                       class="node-input validate-class my-class-invalid">
+                       class="node-input validate-class my-class-invalid" onkeydown="enterKeyHandler()">
             </label>
             <div id="source-error-message" hidden>
                 Invalid ID!
@@ -94,40 +94,65 @@
 
         <div id="button-block">
             <button type="button" class="algo-button" id="clear-button" onclick="clearGraph()">CLEAR GRAPH</button>
-            <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(6)">Random
-                Graph
-            </button>
+            <!--            <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(6)">Random
+                            Graph
+                        </button>-->
             <input type="submit" id="execute-button" class="algo-button" value="Execute">
         </div>
     </form>
 
-    <button type="button" class="algo-button" id="json-import-btn" onclick="importJson()">Import Graph</button>
+    <button type="button" class="algo-button " id="json-import-btn" onclick="importJson()">Import Graph</button>
     <button type="button" class="algo-button" id="json-export-btn" onclick="exportJson()">Export Graph</button>
 </div>
 
-<div id="helper-text"></div>
+<div id="helper-container">
+    <div id="helper-text"></div>
+</div>
 
 <div id="media-holder">
     <span id="restart-button" class="glyphicon glyphicon-step-backward noSelect" onclick="restartProcess()"></span>
     <span id="backward-button" class="glyphicon glyphicon-backward noSelect" onclick="rewindFunctionality()"></span>
-    <span id="play-button" class="glyphicon glyphicon-play noSelect" onclick="showPauseButton()"></span>
-    <span id="pause-button" class="glyphicon glyphicon-pause noSelect" onclick="showPlayButton()"></span>
+    <span id="play-button" class="glyphicon glyphicon-play noSelect" onclick="showPauseButton();play();"></span>
+    <span id="pause-button" class="glyphicon glyphicon-pause noSelect" onclick="showPlayButton();pause();"></span>
     <span id="forward-button" class="glyphicon glyphicon-forward" onclick="forwardFunctionality()"></span>
     <span id="end-button" class="glyphicon glyphicon-step-forward" onclick="endProcess()"></span>
+    <div id="speed-control">
+        <div class="slow-btn">slow</div>
+        <div id="slider" class="ui-slider-handle"></div>
+        <div class="fast-btn">fast</div>
+    </div>
 </div>
 
 </body>
 <script>
+    $(function () {
+        $("#slider").slider({
+            value: 50,
+            stop: function (event, ui) {
+                play(3000 - (ui.value * 25));
+            }
+        });
+    });
 
-    function show() {
-        $('#slider').slideReveal("show");
+    let sticky = false;
+
+    function showSlider() {
+        $('#slide-revealer').slideReveal("show");
+        document.getElementById("left-trigger").style.display = "inline";
+        document.getElementById("right-trigger").style.display = "none";
+        sticky = true;
+    }
+
+    function hideSlider() {
+        $('#slide-revealer').slideReveal("hide");
+        document.getElementById("left-trigger").style.display = "none";
+        document.getElementById("right-trigger").style.display = "inline";
+        sticky = false;
     }
 
     /*
-    Manual testing
-    REVAMP TEACHERS
-    Finish tour guide stuff
     revisit intro page
+    commonon definions and explanation page
      */
     $("#src-node").focusout(function () {
         const srcNodeId = getNodeIdFromLabel($("#src-node").val());
@@ -147,15 +172,17 @@
     let validNodeId = false;
 
     $("#hover-bar").mouseover(function () {
-        $('#slider').slideReveal("show");
+        $('#slide-revealer').slideReveal("show");
         document.getElementById("left-trigger").style.display = "inline";
         document.getElementById("right-trigger").style.display = "none";
     });
 
-    $("#slider").mouseleave(function () {
-        $('#slider').slideReveal("hide");
-        document.getElementById("left-trigger").style.display = "none";
-        document.getElementById("right-trigger").style.display = "inline";
+    $("#slide-revealer").mouseleave(function () {
+        if (!sticky) {
+            $('#slide-revealer').slideReveal("hide");
+            document.getElementById("left-trigger").style.display = "none";
+            document.getElementById("right-trigger").style.display = "inline";
+        }
     });
 
 
@@ -254,48 +281,137 @@
     }
 
     function restartProcess() {
-        restart();
-        showPauseButton();
+        showPlayButton();
+        pause();
+
+        switch (localStorage.getItem("algorithm")) {
+            case "dijkstra":
+                executeDijkstraTeacher.restart();
+                break;
+
+            case "kruskal":
+                executeKruskalTeacher.restart();
+                break;
+
+            case "prim":
+                executePrimsTeacher.restart();
+                break;
+        }
     }
-
-    function endProcess() {
-        document.getElementById("pause-button").style.display = "none";
-        document.getElementById("play-button").style.display = "inline";
-
-        end();
-    }
-
 
     function showPlayButton() {
         document.getElementById("pause-button").style.display = "none";
         document.getElementById("play-button").style.display = "inline";
-
-        pauseTimer();
     }
 
     function showPauseButton() {
         document.getElementById("play-button").style.display = "none";
         document.getElementById("pause-button").style.display = "inline";
+    }
 
-        resumeTimer();
+
+    function play(intervalTime) {
+        switch (localStorage.getItem("algorithm")) {
+            case "dijkstra":
+                executeDijkstraTeacher.play(intervalTime);
+                break;
+
+            case "kruskal":
+                executeKruskalTeacher.play(intervalTime);
+                break;
+
+            case "prim":
+                executePrimsTeacher.play(intervalTime);
+                break;
+        }
+    }
+
+    function pause() {
+        switch (localStorage.getItem("algorithm")) {
+            case "dijkstra":
+                executeDijkstraTeacher.pause();
+                break;
+
+            case "kruskal":
+                executeKruskalTeacher.pause();
+                break;
+
+            case "prim":
+                executePrimsTeacher.pause();
+                break;
+        }
     }
 
     function rewindFunctionality() {
         showPlayButton();
-        rewind();
+        pause();
+
+        switch (localStorage.getItem("algorithm")) {
+            case "dijkstra":
+                executeDijkstraTeacher.rewind();
+                break;
+
+            case "kruskal":
+                executeKruskalTeacher.rewind();
+                break;
+
+            case "prim":
+                executePrimsTeacher.rewind();
+                break;
+        }
     }
 
     function forwardFunctionality() {
         showPlayButton();
-        forward();
+        pause();
+
+        switch (localStorage.getItem("algorithm")) {
+            case "dijkstra":
+                executeDijkstraTeacher.forward();
+                break;
+
+            case "kruskal":
+                executeKruskalTeacher.forward();
+                break;
+
+            case "prim":
+                executePrimsTeacher.forward();
+                break;
+        }
     }
 
-    $('#slider').slideReveal({
+    function endProcess() {
+        showPlayButton();
+        pause();
+
+        switch (localStorage.getItem("algorithm")) {
+            case "dijkstra":
+                executeDijkstraTeacher.end();
+                break;
+
+            case "kruskal":
+                executeKruskalTeacher.end();
+                break;
+
+            case "prim":
+                executePrimsTeacher.end();
+                break;
+        }
+    }
+
+    $('#slide-revealer').slideReveal({
         trigger: $("#left-trigger"),
         position: "right",
         push: false,
         overlay: true
     });
+
+
+    function enterKeyHandler() {
+        if (event.keyCode === 13) {
+            executedSelectedAlgorithm()
+        }
+    }
 
     function showDijkstraInputBoxes() {
         document.getElementById("source-holder").style.visibility = "visible";
@@ -458,61 +574,74 @@
     function executedSelectedAlgorithm() {
         event.preventDefault();
 
-        if (!validNodeId) {
-            document.getElementById("source-error-message").style.display = "inline";
-            validNodeId = false;
-            return false;
-        }
-
         if (algorithmSelected === "dijkstra") {
-            calculateDijkstraPath();
+
+            if (!validNodeId) {
+                document.getElementById("source-error-message").style.display = "inline";
+                validNodeId = false;
+                return false;
+            } else {
+                validNodeId = true;
+                clearColoredNodesAndEdges();
+                calculateDijkstraPath();
+            }
 
         } else if (algorithmSelected === "kruskal") {
+            validNodeId = true;
+            clearColoredNodesAndEdges();
             calculateKruskalPath();
 
         } else if (algorithmSelected === "prim") {
-            calculatePrimsPath();
+
+            if (!validNodeId) {
+                document.getElementById("source-error-message").style.display = "inline";
+                validNodeId = false;
+                return false;
+            } else {
+                validNodeId = true;
+                clearColoredNodesAndEdges();
+                calculatePrimsPath();
+            }
         }
 
         return false;
     }
 
     function calculateDijkstraPath() {
-        clearColoredNodesAndEdges();
-
         if (validNodeId) {
+            localStorage.setItem("algorithm", "dijkstra");
 
             const srcNodeId = getNodeIdFromLabel($("#src-node").val());
 
             const path = s.graph.dijkstra(srcNodeId);
             executeDijkstraTeacher(path);
 
-            $('#slider').slideReveal("hide");
-            document.getElementById("play-button").style.display = "none";
-            document.getElementById("pause-button").style.display = "inline";
+            $('#slide-revealer').slideReveal("hide");
+            document.getElementById("play-button").style.display = "inline";
+            document.getElementById("pause-button").style.display = "none";
         }
     }
 
     function calculateKruskalPath() {
-        clearColoredNodesAndEdges();
+        localStorage.setItem("algorithm", "kruskal");
 
         const idsOfMinSpanningTreeEdges = s.graph.kruskal();
         executeKruskalTeacher(idsOfMinSpanningTreeEdges);
 
-        $('#slider').slideReveal("hide");
+        $('#slide-revealer').slideReveal("hide");
         document.getElementById("play-button").style.display = "none";
         document.getElementById("pause-button").style.display = "inline";
     }
 
     function calculatePrimsPath() {
-        clearColoredNodesAndEdges();
+        localStorage.setItem("algorithm", "prim");
 
         const srcNodeId = getNodeIdFromLabel($("#src-node").val());
 
         const edgesWithMinSpanTreeFlag = s.graph.prims(srcNodeId);
         executePrimsTeacher(edgesWithMinSpanTreeFlag);
 
-        $('#slider').slideReveal("hide");
+        $('#slide-revealer').slideReveal("hide");
         document.getElementById("play-button").style.display = "none";
         document.getElementById("pause-button").style.display = "inline";
     }

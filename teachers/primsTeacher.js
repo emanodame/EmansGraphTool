@@ -1,29 +1,104 @@
 function executePrimsTeacher(edgesOnGraph) {
+    let primsCounter = 0;
+    const primsEdgeStatesArray = [];
 
-    const sortedEdgesOnGraph = returnSortedEdgesByWeight();
+    const helperText = document.getElementById("helper-text");
+    const breakNode = document.createElement("br");
 
-    console.log("Prim's Algorithm");
+    edgesOnGraph.forEach(function (edge) {
+        edge.color = edge.inSpanningTree ? "#6e0db6" : "#CDAD00";
 
-    let counter = 0;
+        const edgeStates = {
+            currentEdge: edge,
+            edges: jQuery.extend(true, {}, s.graph.edges())
+        };
 
-    primsTeacher();
+        primsEdgeStatesArray.push(edgeStates);
+    });
 
-    function primsTeacher() {
-        const currentEdge = edgesOnGraph[counter];
+    const task = new Task(start());
 
-        if (currentEdge.inSpanningTree) {
-            console.log(currentEdge.label + " will be added to min spanning tree");
-            currentEdge.color = "#6e0db6";
-        } else {
-            console.log(currentEdge.label + " will not be added to min spanning tree as a cycle will occur");
-            currentEdge.color = "#B6001E";
-        }
+    function* start() {
+        while (true) {
 
-        s.refresh();
-        counter++;
+            if (primsCounter === path.length) {
+                showPlayButton();
+                break;
+            }
 
-        if (counter < sortedEdgesOnGraph.length) {
-            startTimer(primsTeacher);
+            Object.values(primsEdgeStatesArray[primsCounter].edges).forEach(function (edge) {
+                s.graph.edges(edge.id).color = edge.color;
+            });
+
+            if (primsEdgeStatesArray[primsCounter].currentEdge.inSpanningTree) {
+                s.graph.edges(primsEdgeStatesArray[primsCounter].currentEdge.id).color = primsEdgeStatesArray[primsCounter].currentEdge.color;
+
+                helperText.appendChild(document.createTextNode("Picking the smallest edge: " +
+                    s.graph.nodes(primsEdgeStatesArray[primsCounter].currentEdge.source).label + " - " +
+                    s.graph.nodes(primsEdgeStatesArray[primsCounter].currentEdge.target).label +
+                    " this has weight " + primsEdgeStatesArray[primsCounter].currentEdge.label));
+                helperText.appendChild(breakNode.cloneNode());
+                helperText.appendChild(document.createTextNode("This will not form a cycle"));
+                helperText.appendChild(breakNode.cloneNode());
+                helperText.appendChild(breakNode.cloneNode());
+            } else {
+                helperText.appendChild(document.createTextNode("Picking the smallest edge: " +
+                    s.graph.nodes(primsEdgeStatesArray[primsCounter].currentEdge.source).label + " - " +
+                    s.graph.nodes(primsEdgeStatesArray[primsCounter].currentEdge.target).label +
+                    " this has weight " + primsEdgeStatesArray[primsCounter].currentEdge.label));
+                helperText.appendChild(breakNode.cloneNode());
+                helperText.appendChild(document.createTextNode("This will form a cycle! So it is not added to spanning tree"));
+                helperText.appendChild(breakNode.cloneNode());
+                helperText.appendChild(breakNode.cloneNode());
+            }
+            s.refresh();
+            yield primsCounter++;
         }
     }
+
+    function pause() {
+        task.pause();
+    }
+
+    function play(intervalTime) {
+        task.resume(intervalTime);
+    }
+
+    function restart() {
+        if (primsCounter > 2) {
+            primsCounter = 0;
+            task.step();
+        }
+    }
+
+    function rewind() {
+        if (primsCounter > 1) {
+            if (primsCounter < 2) {
+                primsCounter--;
+            } else {
+                primsCounter -= 2;
+            }
+            task.step();
+        }
+    }
+
+    function forward() {
+        if (primsCounter < edgesOnGraph.length) {
+            task.step();
+        }
+    }
+
+    function end() {
+        if (primsCounter < edgesOnGraph.length) {
+            primsCounter = edgesOnGraph.length - 1;
+            task.step();
+        }
+    }
+
+    executePrimsTeacher.restart = restart;
+    executePrimsTeacher.pause = pause;
+    executePrimsTeacher.play = play;
+    executePrimsTeacher.rewind = rewind;
+    executePrimsTeacher.forward = forward;
+    executePrimsTeacher.end = end;
 }

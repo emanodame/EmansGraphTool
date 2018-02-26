@@ -17,7 +17,6 @@
             const neighboursOfTargetNode = getNeighboursConnectedToEdge(lowestEdge, this);
 
             if (visitedNodes.has(lowestEdge.source) && visitedNodes.has(lowestEdge.target)) {
-                console.log("NOT ADDED");
 
             } else {
                 visitedNodes.add(lowestEdge.source);
