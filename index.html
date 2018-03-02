@@ -26,6 +26,8 @@
 <script src="resources/node_modules/popup-validation/bin/validation.min.js"></script>
 <link href="resources/node_modules/popup-validation/bin/validation.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="resources/style.css"/>
+<script src="sigma.plugins.dragNodes.js"></script>
+
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -185,7 +187,6 @@
             document.getElementById("right-trigger").style.display = "inline";
         }
     });
-
 
     function importJson() {
         document.getElementById("json-import").style.visibility = "visible";
@@ -483,6 +484,8 @@
         }
     });
 
+    const dragListener = sigma.plugins.dragNodes(s, s.renderers[0]);
+
     window.onload = function () {
         const storageNodes = JSON.parse(localStorage.getItem("nodes"));
         const storageEdges = JSON.parse(localStorage.getItem("edges"));
@@ -630,8 +633,8 @@
         executeKruskalTeacher(idsOfMinSpanningTreeEdges);
 
         $('#slide-revealer').slideReveal("hide");
-        document.getElementById("play-button").style.display = "none";
-        document.getElementById("pause-button").style.display = "inline";
+        document.getElementById("play-button").style.display = "inline";
+        document.getElementById("pause-button").style.display = "none";
     }
 
     function calculatePrimsPath() {

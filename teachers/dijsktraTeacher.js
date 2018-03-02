@@ -1,14 +1,15 @@
 function executeDijkstraTeacher(path) {
     const helperText = document.getElementById("helper-text");
-    const visitedNodesText = document.getElementById("visited-nodes-text");
 
     const dijkstraNodeStateArray = [];
     const dijkstraEdgeStatesArray = [];
-    const action = [];
+
     const nodeDiscoveryStatus = new Set();
 
-    let algoCounter = 0;
+    const action = [];
     let actionPosition = 0;
+
+    let dijkstraCounter = 0;
 
     path.forEach(function (edge) {
         s.graph.nodes(edge.source).color = "#CDAD00";
@@ -31,29 +32,26 @@ function executeDijkstraTeacher(path) {
 
         dijkstraNodeStateArray.push(nodeStates);
         dijkstraEdgeStatesArray.push(edgeStates);
+        action.push(textAction);
+        action.push(graphAction);
     });
 
     clearColoredNodesAndEdges();
     displayFirstEdgeInfo();
-
-    path.forEach(function () {
-        action.push(textAction);
-        action.push(graphAction);
-    });
 
     const task = new Task(actionExecutor());
     let freeFlow = false;
 
     function displayFirstEdgeInfo() {
         helperText.innerHTML = "Starting node is " + $("#src-node").val() + "<br /> Pick the shortest path to an undiscovered node from the source node. " + "</br>" + displayConnectionInfo();
-        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[algoCounter].currentEdge.id)});
+        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
         nodeDiscoveryStatus.add(s.graph.nodes(getNodeIdFromLabel($("#src-node").val())).id);
         makeTextScroll();
     }
 
     function* actionExecutor() {
         while (true) {
-            if (algoCounter !== path.length) {
+            if (dijkstraCounter !== path.length) {
                 if (freeFlow) {
                     actionPosition++;
                 }
@@ -67,26 +65,24 @@ function executeDijkstraTeacher(path) {
     }
 
     function graphAction() {
-        visitedNodesText.innerHTML = "";
-
-        if (algoCounter === path.length) {
+        if (dijkstraCounter === path.length) {
             showPlayButton();
         }
 
-        Object.values(dijkstraNodeStateArray[algoCounter].nodes).forEach(function (node) {
+        Object.values(dijkstraNodeStateArray[dijkstraCounter].nodes).forEach(function (node) {
             s.graph.nodes(node.id).color = node.color;
         });
 
-        Object.values(dijkstraEdgeStatesArray[algoCounter].edges).forEach(function (edge) {
+        Object.values(dijkstraEdgeStatesArray[dijkstraCounter].edges).forEach(function (edge) {
             s.graph.edges(edge.id).color = edge.color;
         });
 
-        s.graph.edges(dijkstraEdgeStatesArray[algoCounter].currentEdge.id).color = dijkstraEdgeStatesArray[algoCounter].currentEdge.color;
-        s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[algoCounter].currentEdge.id)});
+        s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id).color = dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.color;
+        s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
 
+        nodeDiscoveryStatus.add(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.source).add(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.target);
+        dijkstraCounter++;
         s.refresh();
-        nodeDiscoveryStatus.add(dijkstraEdgeStatesArray[algoCounter].currentEdge.source).add(dijkstraEdgeStatesArray[algoCounter].currentEdge.target);
-        algoCounter++;
 
         if (!freeFlow) {
             task.pause();
@@ -96,18 +92,20 @@ function executeDijkstraTeacher(path) {
     function textAction() {
         helperText.innerHTML = "Pick the shortest path to an undiscovered node from the source node. <br />" + displayConnectionInfo();
         makeTextScroll();
-        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[algoCounter].currentEdge.id)});
+        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
     }
 
     function displayConnectionInfo() {
-        if (!nodeDiscoveryStatus.has(dijkstraNodeStateArray[algoCounter].sourceNode)) {
-            return " This would go to Node " + s.graph.nodes(dijkstraNodeStateArray[algoCounter].sourceNode).label
-                + " from Node " + s.graph.nodes(dijkstraNodeStateArray[algoCounter].targetNode).label
-                + " using Edge " + dijkstraEdgeStatesArray[algoCounter].currentEdge.label;
+        if (!nodeDiscoveryStatus.has(dijkstraNodeStateArray[dijkstraCounter].sourceNode)) {
+            return " This would go to Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].sourceNode).label
+                + " from Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].targetNode).label
+                + " using Edge " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.label
+                + "<br/> The weight from source node is " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.weight;
         } else {
-            return " This would go to Node " + s.graph.nodes(dijkstraNodeStateArray[algoCounter].targetNode).label
-                + " from Node " + s.graph.nodes(dijkstraNodeStateArray[algoCounter].sourceNode).label
-                + " using Edge " + dijkstraEdgeStatesArray[algoCounter].currentEdge.label;
+            return " This would go to Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].targetNode).label
+                + " from Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].sourceNode).label
+                + " using Edge " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.label
+                + "<br/> The weight from source node is " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.weight;
         }
     }
 
@@ -136,9 +134,9 @@ function executeDijkstraTeacher(path) {
     }
 
     function restart() {
-        if (algoCounter > 2) {
-            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[algoCounter === path.length ? algoCounter - 1 : algoCounter].currentEdge.id)});
-            algoCounter = 0;
+        if (dijkstraCounter > 2) {
+            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter === path.length ? dijkstraCounter - 1 : dijkstraCounter].currentEdge.id)});
+            dijkstraCounter = 0;
             actionPosition = 1;
             freeFlow = false;
             task.step();
@@ -146,9 +144,9 @@ function executeDijkstraTeacher(path) {
     }
 
     function rewind() {
-        if (algoCounter > 0) {
-            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[algoCounter === path.length ? algoCounter - 1 : algoCounter].currentEdge.id)});
-            algoCounter -= 1;
+        if (dijkstraCounter > 0) {
+            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter === path.length ? dijkstraCounter - 1 : dijkstraCounter].currentEdge.id)});
+            dijkstraCounter -= 1;
             action[actionPosition].name === "graphAction" ? actionPosition -= 1 : actionPosition -= 1;
             freeFlow = false;
             task.step();
@@ -156,7 +154,7 @@ function executeDijkstraTeacher(path) {
     }
 
     function forward() {
-        if (algoCounter < path.length) {
+        if (dijkstraCounter < path.length) {
             actionPosition++;
             freeFlow = false;
             task.step();
@@ -164,9 +162,9 @@ function executeDijkstraTeacher(path) {
     }
 
     function end() {
-        if (algoCounter < path.length) {
-            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[algoCounter].currentEdge.id)});
-            algoCounter = path.length - 1;
+        if (dijkstraCounter < path.length) {
+            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
+            dijkstraCounter = path.length - 1;
             actionPosition = action.length - 1;
             freeFlow = false;
             task.step();

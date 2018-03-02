@@ -125,4 +125,15 @@ $(document).ready(function () {
             return inspectedNode.id === createNodeIdFromCoordinates(node.x, node.y)
         }).shift();
     }
+
+    dragListener.bind('drag', function (event) {
+        const edgesConnectedToNode = s.graph.edges().filter(function (edge) {
+            return event.data.node.id === edge.source || event.data.node.id === edge.target;
+        });
+
+        edgesConnectedToNode.forEach(function (edge) {
+            edge.label = computePathLength(s.graph.nodes(edge.source), s.graph.nodes(edge.target));
+            s.refresh();
+        });
+    });
 });
