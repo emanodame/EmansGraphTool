@@ -27,13 +27,19 @@
 <link href="resources/node_modules/popup-validation/bin/validation.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="resources/style.css"/>
 <script src="sigma.plugins.dragNodes.js"></script>
+<link href="resources/animsition/dist/css/animsition.css" rel="stylesheet">
+<script src="resources/animsition/dist/js/animsition.min.js"></script>
 
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="interact.js"></script>
+<script src="lol.js"></script>
 
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <title>Eman's Graph Tool</title>
 <body id="base">
@@ -96,20 +102,22 @@
 
         <div id="button-block">
             <button type="button" class="algo-button" id="clear-button" onclick="clearGraph()">CLEAR GRAPH</button>
-            <!--            <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(6)">Random
-                            Graph
-                        </button>-->
             <input type="submit" id="execute-button" class="algo-button" value="Execute">
         </div>
     </form>
 
-    <button type="button" class="algo-button " id="json-import-btn" onclick="importJson()">Import Graph</button>
-    <button type="button" class="algo-button" id="json-export-btn" onclick="exportJson()">Export Graph</button>
+    <div id="bottom-button-block">
+        <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(6)">Random
+            Graph
+        </button>
+        <button type="button" class="algo-button " id="json-import-btn" onclick="importJson()">Import Graph</button>
+        <button type="button" class="algo-button" id="json-export-btn" onclick="exportJson()">Export Graph</button>
+    </div>
 </div>
 
-<div id="helper-container">
-    <div id="helper-text"></div>
-    <div id="visited-nodes-text"></div>
+<div class="animsition"></div>
+<div id="helper-text-container" class="resize-drag">
+    <div id=helper-text></div>
 </div>
 
 <div id="media-holder">
@@ -128,11 +136,75 @@
 
 </body>
 <script>
+
+    $(document).ready(function () {
+        $('.animsition').animsition();
+    });
+
+    const helperText = document.getElementById("helper-text");
+
+    interact('.resize-drag')
+        .draggable({
+            onmove: window.dragMoveListener,
+            restrict: {
+                restriction: 'parent',
+                elementRect: {top: 0, left: 0, bottom: 1, right: 1}
+            },
+        })
+        .resizable({
+            // resize from all edges and corners
+            edges: {left: true, right: true, bottom: true, top: true},
+
+            restrictEdges: {
+                outer: 'parent',
+                endOnly: true,
+            },
+            restrictSize: {
+                min: {width: 650, height: 85},
+            },
+
+            inertia: true,
+        })
+        .on('resizemove', function (event) {
+            var target = event.target,
+                x = (parseFloat(target.getAttribute('data-x')) || 0),
+                y = (parseFloat(target.getAttribute('data-y')) || 0);
+
+            // update the element's style
+            target.style.width = event.rect.width + 'px';
+            target.style.height = event.rect.height + 'px';
+
+            target.style.webkitTransform = target.style.transform =
+                'translate(' + x + 'px,' + y + 'px)';
+
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+        });
+
+    function dragMoveListener(event) {
+        var target = event.target,
+            // keep the dragged position in the data-x/data-y attributes
+            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+        // translate the element
+        target.style.webkitTransform =
+            target.style.transform =
+                'translate(' + x + 'px, ' + y + 'px)';
+
+        // update the posiion attributes
+        target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+    }
+
+    let speed = undefined;
+
     $(function () {
         $("#slider").slider({
             value: 50,
             stop: function (event, ui) {
                 play(3000 - (ui.value * 25));
+                showPauseButton();
             }
         });
     });
@@ -458,7 +530,7 @@
     const s = new sigma({
         renderer: {
             container: document.getElementById('base'),
-            type: 'canvas'
+            type: 'canvas',
         },
         settings: {
             borderSize: 3,
@@ -484,6 +556,8 @@
         }
     });
 
+    s.camera.x = localStorage.getItem("cameraX");
+    s.camera.y = localStorage.getItem("cameraY");
     const dragListener = sigma.plugins.dragNodes(s, s.renderers[0]);
 
     window.onload = function () {
@@ -510,6 +584,9 @@
 
         localStorage.setItem("nodes", JSON.stringify(s.graph.nodes()));
         localStorage.setItem("edges", JSON.stringify(s.graph.edges()));
+
+        localStorage.setItem("cameraX", s.camera.x);
+        localStorage.setItem("cameraY", s.camera.y);
     };
 
     function createRandomGraph(quantityOfNodes) {
@@ -576,6 +653,7 @@
     }
 
     function executedSelectedAlgorithm() {
+        $("#helper-text-container").fadeIn();
         event.preventDefault();
 
         if (algorithmSelected === "dijkstra") {

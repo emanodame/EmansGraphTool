@@ -215,7 +215,7 @@ html {
 #media-holder {
     position: fixed;
     bottom: 20px;
-    left: 46%;
+    left: 43%;
     font-size: 30px;
     color: #ff0e58;
     cursor: pointer;
@@ -243,15 +243,11 @@ html {
 }
 
 #json-import-btn {
-    position: absolute;
-    top: 90%;
-    left: 30%;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 #json-export-btn {
-    position: absolute;
-    top: 93%;
-    left: 30%;
 }
 
 #json-import {
@@ -260,7 +256,6 @@ html {
     left: 43%;
     height: 70px;
     width: 281px;
-    color: #ff0e58;
     border: 1px solid #ff0e58;
     visibility: hidden;
     z-index: 1;
@@ -285,28 +280,36 @@ html {
 }
 
 #json-text-input {
+    color: #ff0e58;
     border: 1px solid #ff0e58;
     background-color: black;
 }
 
 .close-holder {
+    position: fixed;
     float: right;
     display: inline-block;
-    padding: 2px 5px;
     background-color: black;
 }
 
 .close-holder:hover {
     float: right;
     display: inline-block;
-    padding: 2px 5px;
     background: black;
     color: #ff0e58;
 }
 
 .close-button {
+    color: #ff0e58;
     border: none;
     background-color: black;
+}
+
+.tour-close-button {
+    position: absolute;
+    font-size: 13px;
+    border: none;
+    right: 0;
 }
 
 #background {
@@ -319,9 +322,10 @@ html {
 }
 
 #random-graph-button {
-    position: absolute;
-    top: 550px;
-    left: 75px;
+    font-size: 13px;
+    text-align: center;
+    width: 100px;
+    white-space: nowrap;
 }
 
 .noSelect {
@@ -404,21 +408,30 @@ html {
     }
 }
 
-#helper-container {
+#bottom-button-block {
     position: absolute;
-    bottom: 150px;
-    left: 60px;
-    width: 300px;
-    height: 100px;
-    background: black;
-    color: #ff0e58;
+    top: 90%;
+    left: 30%;
 }
 
-#helper-text {
+.resize-drag {
+    bottom: 10%;
+    left: 1%;
     position: absolute;
+    display: none;
+    z-index: 1;
     color: #ff0e58;
-    width: 1px;
-    height: 1px;
-    background-color: red;
-    white-space: nowrap;
+    font-size: 20px;
+    font-family: sans-serif;
+    border: 2px solid #ff0e58;
+    border-radius: 8px;
+    width: 650px;
+    height: 87px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.resize-drag-highlight {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+    0 0 0 10px rgba(255, 14, 88, 0.3);
 }

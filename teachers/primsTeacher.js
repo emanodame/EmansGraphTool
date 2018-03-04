@@ -1,12 +1,10 @@
 function executePrimsTeacher(edgesOnGraph) {
-    const helperText = document.getElementById("helper-text");
-
+    let maxCount = 0;
     let primsCounter = 0;
     const primsEdgeStates = [];
 
     let actionPosition = 0;
     const action = [];
-
 
     edgesOnGraph.forEach(function (edge) {
         edge.color = edge.inSpanningTree ? "#6e0db6" : "#CDAD00";
@@ -22,16 +20,12 @@ function executePrimsTeacher(edgesOnGraph) {
     });
 
     clearColoredNodesAndEdges();
-    const task = new Task(actionExecutor());
+    const task = new Task(actionExecutor(), speed);
     let freeFlow = false;
 
     task.step();
 
     function graphAction() {
-        if (actionPosition === edgesOnGraph.length) {
-            showPlayButton();
-        }
-
         Object.values(primsEdgeStates[primsCounter].edges).forEach(function (edge) {
             s.graph.edges(edge.id).color = edge.color;
         });
@@ -48,8 +42,10 @@ function executePrimsTeacher(edgesOnGraph) {
     }
 
     function textAction() {
-        helperText.innerHTML = "Pick the next lowest edge on the graph. <br />" + displayConnectionInfo();
-        makeTextScroll();
+        if (maxCount === actionPosition) {
+            helperText.insertAdjacentHTML("beforeend", "<br/> </br> Pick the next lowest edge on the graph. <br />" + displayConnectionInfo());
+            document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
+        }
         s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter].currentEdge.id)});
     }
 
@@ -59,6 +55,7 @@ function executePrimsTeacher(edgesOnGraph) {
                 if (freeFlow) {
                     actionPosition++;
                 }
+                maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
                 showPlayButton();
@@ -84,20 +81,6 @@ function executePrimsTeacher(edgesOnGraph) {
         }
     }
 
-    function makeTextScroll() {
-        let pos = 0;
-        const id = setInterval(frame, 5);
-
-        function frame() {
-            if (pos === 350) {
-                clearInterval(id);
-            } else {
-                pos++;
-                helperText.style.bottom = pos + 'px';
-            }
-        }
-    }
-
     function play(intervalTime) {
         freeFlow = true;
         task.resume(intervalTime);
@@ -113,6 +96,7 @@ function executePrimsTeacher(edgesOnGraph) {
             s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
             primsCounter = 0;
             actionPosition = 1;
+            maxCount = actionPosition;
             freeFlow = false;
             task.step();
         }
@@ -122,7 +106,7 @@ function executePrimsTeacher(edgesOnGraph) {
         if (primsCounter > 0) {
             s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
             primsCounter -= 1;
-            action[actionPosition].name === "graphAction" ? actionPosition -= 1 : actionPosition -= 1;
+            actionPosition -= 1;
             freeFlow = false;
             task.step();
         }
@@ -141,6 +125,7 @@ function executePrimsTeacher(edgesOnGraph) {
             s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
             primsCounter = edgesOnGraph.length - 1;
             actionPosition = action.length - 1;
+            maxCount = actionPosition;
             freeFlow = false;
             task.step();
         }

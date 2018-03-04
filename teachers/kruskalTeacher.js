@@ -1,6 +1,5 @@
 function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
-    const helperText = document.getElementById("helper-text");
-
+    let maxCount = 0;
     let kruskalCounter = 0;
     const kruskalEdgeStatesArray = [];
     const sortedEdgesOnGraph = returnSortedEdgesByWeight();
@@ -24,16 +23,12 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     clearColoredNodesAndEdges();
 
-    const task = new Task(actionExecutor());
+    const task = new Task(actionExecutor(), speed);
     let freeFlow = false;
 
     task.step();
 
     function graphAction() {
-        if (actionPosition === kruskalEdgeStatesArray.length) {
-            showPlayButton();
-        }
-
         Object.values(kruskalEdgeStatesArray[kruskalCounter].edges).forEach(function (edge) {
             s.graph.edges(edge.id).color = edge.color;
         });
@@ -50,9 +45,17 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     }
 
     function textAction() {
-        helperText.innerHTML = "Pick the next lowest edge on the graph. <br />" + displayConnectionInfo();
-        makeTextScroll();
-        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id)});
+        if (maxCount === actionPosition) {
+            helperText.insertAdjacentHTML("beforeend", "<br /> <br />" + "Pick the next lowest edge on the graph. <br />" + displayConnectionInfo());
+            document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
+
+            $('.resize-drag').addClass('resize-drag-highlight');
+            setTimeout(function () {
+               $('.resize-drag').removeClass('resize-drag-highlight');
+            }, 1000);
+
+        }
+        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id)})
     }
 
     function* actionExecutor() {
@@ -61,6 +64,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                 if (freeFlow) {
                     actionPosition++;
                 }
+                maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
                 showPlayButton();
@@ -71,32 +75,18 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function displayConnectionInfo() {
         if (kruskalEdgeStatesArray[kruskalCounter].isEdgeInSpanningTree) {
-            return "Picking the smallest edge: " +
+            return "Pick the lowest weighted undiscovered edge: " +
                 s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
                 s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
                 " this has weight " + kruskalEdgeStatesArray[kruskalCounter].currentEdge.label +
-                ". </br> This will get added to Minimum Spanning Tree"
+                ".  <br /> This will get added to Minimum Spanning Tree."
         } else {
-            return "Picking the smallest edge: " +
+            return "Pick the lowest weighted undiscovered edge: " +
                 s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
                 s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
                 " this has weight " + kruskalEdgeStatesArray[kruskalCounter].currentEdge.label +
-                ". </br> This will not get added to Minimum Spanning Tree as a cycle is formed"
+                ".  <br /> This will not get added to Minimum Spanning Tree as a cycle is formed."
 
-        }
-    }
-
-    function makeTextScroll() {
-        let pos = 0;
-        const id = setInterval(frame, 5);
-
-        function frame() {
-            if (pos === 350) {
-                clearInterval(id);
-            } else {
-                pos++;
-                helperText.style.bottom = pos + 'px';
-            }
         }
     }
 
@@ -115,6 +105,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
             kruskalCounter = 0;
             actionPosition = 1;
+            maxCount = actionPosition;
             freeFlow = false;
             task.step();
         }
@@ -124,7 +115,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
         if (kruskalCounter > 0) {
             s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
             kruskalCounter -= 1;
-            action[actionPosition].name === "graphAction" ? actionPosition -= 1 : actionPosition -= 1;
+            actionPosition -= 1;
             freeFlow = false;
             task.step();
         }
@@ -143,6 +134,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
             kruskalCounter = sortedEdgesOnGraph.length - 1;
             actionPosition = action.length - 1;
+            maxCount = actionPosition;
             freeFlow = false;
             task.step();
         }
