@@ -15,6 +15,17 @@
 <script src="teachers/kruskalTeacher.js"></script>
 <script src="teachers/primsTeacher.js"></script>
 
+
+<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/public/stylesheets/animate.css"/>
+
+<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/igrowl.min.css">
+<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/fonts/feather.css">
+<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/fonts/linecons.css">
+<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/fonts/steadysets.css">
+<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/fonts/vicons.css">
+
+<script src="resources/catc-iGrowl-3232c92/dist/js/igrowl.js"></script>
+
 <script src="tools/Tree.js"></script>
 <script src="resources/slideReveal.js"></script>
 <script src="tourGuide.js"></script>
@@ -41,8 +52,12 @@
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <title>Eman's Graph Tool</title>
+
 <body id="base">
+<div id="animation-holder" class="animsition"></div>
 
 <div id="json-import">
     <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
@@ -58,12 +73,11 @@
     <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
     <form id="json-output">
         <label><input type="text" id="json-text-output" name="json-input"></label>
-        <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="COPY">
+        <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="Copy">
     </form>
 </div>
 
 <div id="tour-anchor"></div>
-
 <div id="hover-bar"></div>
 
 <div id="slide-revealer">
@@ -76,7 +90,7 @@
         <div id="slide-revealer-title">
             Control Panel
         </div>
-        <div id="slide-revealer-info" class="btn glyphicon glyphicon-info-sign" onclick="runTourGuide()"></div>
+        <div id="slide-revealer-info" class="btn glyphicon glyphicon-info-sign" onclick="tour.restart()"></div>
     </div>
 
     <div class="btn-group algo-button-group" role="group" aria-label="Algo Button">
@@ -115,7 +129,6 @@
     </div>
 </div>
 
-<div class="animsition"></div>
 <div id="helper-text-container" class="resize-drag">
     <div id=helper-text></div>
 </div>
@@ -133,13 +146,33 @@
         <div class="fast-btn">fast</div>
     </div>
 </div>
-
 </body>
 <script>
+    $('.animsition').animsition();
 
     $(document).ready(function () {
-        $('.animsition').animsition();
+        initalizeTourGuide();
     });
+
+    /*
+    -Info Page -YT pages - Prompt "do you want to see kruskal info page"
+    -Finalise tour (add a step about the actual text)
+    -Make learner text look more banging - maybe some 3d?
+    -Do general testing to make sure its okay.
+    */
+
+    setInterval(function () {
+        if (s.graph.nodes().length === 0) {
+            $.iGrowl({
+                animShow: 'fadeInDown',
+                animHide: 'fadeOutUp',
+                message: "There a no nodes on the screen! Please add some",
+                placement: {
+                    x: 'center'
+                }
+            });
+        }
+    }, 4000);
 
     const helperText = document.getElementById("helper-text");
 
@@ -164,25 +197,24 @@
             },
 
             inertia: true,
-        })
-        .on('resizemove', function (event) {
-            var target = event.target,
-                x = (parseFloat(target.getAttribute('data-x')) || 0),
-                y = (parseFloat(target.getAttribute('data-y')) || 0);
+        }).on('resizemove', function (event) {
+        var target = event.target,
+            x = (parseFloat(target.getAttribute('data-x')) || 0),
+            y = (parseFloat(target.getAttribute('data-y')) || 0);
 
-            // update the element's style
-            target.style.width = event.rect.width + 'px';
-            target.style.height = event.rect.height + 'px';
+        // update the element's style
+        target.style.width = event.rect.width + 'px';
+        target.style.height = event.rect.height + 'px';
 
-            target.style.webkitTransform = target.style.transform =
-                'translate(' + x + 'px,' + y + 'px)';
+        target.style.webkitTransform = target.style.transform =
+            'translate(' + x + 'px,' + y + 'px)';
 
-            target.setAttribute('data-x', x);
-            target.setAttribute('data-y', y);
-        });
+        target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+    });
 
     function dragMoveListener(event) {
-        var target = event.target,
+        const target = event.target,
             // keep the dragged position in the data-x/data-y attributes
             x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
             y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
@@ -225,10 +257,7 @@
         sticky = false;
     }
 
-    /*
-    revisit intro page
-    commonon definions and explanation page
-     */
+
     $("#src-node").focusout(function () {
         const srcNodeId = getNodeIdFromLabel($("#src-node").val());
 
@@ -379,8 +408,10 @@
     }
 
     function showPauseButton() {
-        document.getElementById("play-button").style.display = "none";
-        document.getElementById("pause-button").style.display = "inline";
+        if (localStorage.getItem("algorithm")) {
+            document.getElementById("play-button").style.display = "none";
+            document.getElementById("pause-button").style.display = "inline";
+        }
     }
 
 
@@ -488,6 +519,9 @@
     }
 
     function showDijkstraInputBoxes() {
+        if (algorithmSelected === 'kruskal') {
+            $("#button-block").animate({top: '+70px'});
+        }
         document.getElementById("source-holder").style.visibility = "visible";
 
         $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
@@ -496,6 +530,9 @@
     }
 
     function showKruskalInputBoxes() {
+        if (algorithmSelected !== 'kruskal') {
+            $("#button-block").animate({top: '-8px'});
+        }
         document.getElementById("source-holder").style.visibility = "hidden";
 
         $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
@@ -505,6 +542,9 @@
     }
 
     function showPrimsInputBoxes() {
+        if (algorithmSelected === 'kruskal') {
+            $("#button-block").animate({top: '+70px'});
+        }
         document.getElementById("source-holder").style.visibility = "visible";
 
         $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
@@ -556,8 +596,8 @@
         }
     });
 
-    s.camera.x = localStorage.getItem("cameraX");
-    s.camera.y = localStorage.getItem("cameraY");
+    s.camera.x = localStorage.getItem("cameraX") === null ? localStorage.getItem("cameraX") : 0;
+    s.camera.y = localStorage.getItem("cameraY") === null ? localStorage.getItem("cameraX") : 0;
     const dragListener = sigma.plugins.dragNodes(s, s.renderers[0]);
 
     window.onload = function () {
@@ -592,6 +632,7 @@
     function createRandomGraph(quantityOfNodes) {
         clearGraph();
 
+        noNodeFlag = false;
         let labelId = 0;
 
         const nodeIdSet = new Set();
@@ -653,8 +694,11 @@
     }
 
     function executedSelectedAlgorithm() {
-        $("#helper-text-container").fadeIn();
         event.preventDefault();
+
+        if (s.graph.nodes().length === 0) {
+            return;
+        }
 
         if (algorithmSelected === "dijkstra") {
 
@@ -663,12 +707,20 @@
                 validNodeId = false;
                 return false;
             } else {
+                $("#helper-text-container").fadeIn();
+                $.iGrowl({
+                    message: "There a no nodes on the screen! Please add some",
+                    placement: {
+                        x: 'center'
+                    }
+                });
                 validNodeId = true;
                 clearColoredNodesAndEdges();
                 calculateDijkstraPath();
             }
 
         } else if (algorithmSelected === "kruskal") {
+            $("#helper-text-container").fadeIn();
             validNodeId = true;
             clearColoredNodesAndEdges();
             calculateKruskalPath();
@@ -680,6 +732,7 @@
                 validNodeId = false;
                 return false;
             } else {
+                $("#helper-text-container").fadeIn();
                 validNodeId = true;
                 clearColoredNodesAndEdges();
                 calculatePrimsPath();
@@ -729,6 +782,7 @@
     }
 
     function clearGraph() {
+        noNodeFlag = false;
         s.graph.clear();
         localStorage.clear();
         s.refresh();
@@ -771,6 +825,8 @@
             return a.label - b.label;
         });
     }
+
+    $("animation-holder").removeClass("animsition");
 </script>
 
 </html>

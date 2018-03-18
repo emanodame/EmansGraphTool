@@ -10,40 +10,43 @@
 </head>
 <body>
 
-<div class="parent">
-    <div class="main-page">
-        <div id="particles"></div>
-        <div class="animsition">
-
+<div class="main-page">
+    <div id="particles"></div>
+    <div class="animsition">
+        <div id="centered-information">
             <div id="intro-text">
-                <div class="container center-vertically-holder">
-                    <div class="center-vertically">
-                        <div class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3 text-center">
-                            <h1 class="scaleReveal">
-                                Welcome to GraphAlgoTool.
-                            </h1>
-                            <hr class="bottomReveal">
-                            <p class="bottomReveal">Press Go to start or scroll down for more info!
-                            </p>
-                        </div>
-                    </div>
-                        <a href="index.html" id="go-button" class="animsition-link">Enter</a>
-                </div>
+                <h1> Welcome to GraphAlgoTool.</h1>
+            </div>
+            <div id="border-separate"></div>
+            <div id="description-text">
+                Scroll down to enter the site
             </div>
         </div>
     </div>
 </div>
 
+<script>
+    $(document).ready(function () {
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+
+        $('.animsition').animsition({
+            loading: false
+        });
+
+        window.onscroll = function () {
+            if (window.pageYOffset > window.innerHeight * 0.45) {
+                window.location.href = "index.html";
+            }
+        };
+    });
+</script>
+
 <script type="text/javascript" src="resources/particles/particles.min.js"></script>
 <script type="text/javascript" src="resources/particles/particlesRun.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="resources/animsition/dist/js/animsition.min.js"></script>
-
-<script>
-    $(document).ready(function () {
-        $('.animsition').animsition();
-    });
-</script>
 
 </body>
 </html>

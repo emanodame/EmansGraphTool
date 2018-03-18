@@ -46,12 +46,21 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function textAction() {
         if (maxCount === actionPosition) {
-            helperText.insertAdjacentHTML("beforeend", "<br /> <br />" + "Pick the next lowest edge on the graph. <br />" + displayConnectionInfo());
+            const div = document.createElement('div');
+            div.id = kruskalCounter.toString();
+            div.insertAdjacentHTML("beforeend", "<br /> <br />" + displayConnectionInfo());
+            document.getElementById("helper-text-container").appendChild(div);
             document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
+
+            document.getElementById(div.id).addEventListener("click", function (k) {
+                kruskalCounter = k.srcElement.id;
+                actionPosition = k.srcElement.id * 2 + 1;
+                task.step();
+            });
 
             $('.resize-drag').addClass('resize-drag-highlight');
             setTimeout(function () {
-               $('.resize-drag').removeClass('resize-drag-highlight');
+                $('.resize-drag').removeClass('resize-drag-highlight');
             }, 1000);
 
         }
@@ -67,6 +76,9 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                 maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
+                $.iGrowl({
+                    message: "End of Kruskal's Algorithm!",
+                });
                 showPlayButton();
             }
             yield;
@@ -75,13 +87,13 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function displayConnectionInfo() {
         if (kruskalEdgeStatesArray[kruskalCounter].isEdgeInSpanningTree) {
-            return "Pick the lowest weighted undiscovered edge: " +
+            return "Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered edge: " +
                 s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
                 s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
                 " this has weight " + kruskalEdgeStatesArray[kruskalCounter].currentEdge.label +
                 ".  <br /> This will get added to Minimum Spanning Tree."
         } else {
-            return "Pick the lowest weighted undiscovered edge: " +
+            return "Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered edge: " +
                 s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
                 s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
                 " this has weight " + kruskalEdgeStatesArray[kruskalCounter].currentEdge.label +
@@ -126,6 +138,12 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             actionPosition++;
             freeFlow = false;
             task.step();
+
+            if (kruskalCounter === sortedEdgesOnGraph.length) {
+                $.iGrowl({
+                    message: "End of Kruskal's Algorithm!",
+                });
+            }
         }
     }
 
@@ -137,6 +155,10 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             maxCount = actionPosition;
             freeFlow = false;
             task.step();
+
+            $.iGrowl({
+                message: "End of Kruskal's Algorithm!",
+            });
         }
     }
 

@@ -60,6 +60,11 @@ function executeDijkstraTeacher(path) {
                 maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
+                if (dijkstraCounter === path.length) {
+                    $.iGrowl({
+                        message: "End of Kruskal's Algorithm!",
+                    });
+                }
                 showPlayButton();
             }
             yield;
@@ -88,8 +93,17 @@ function executeDijkstraTeacher(path) {
     }
 
     function textAction() {
-        helperText.insertAdjacentHTML("beforeend", "<br/> </br> Pick the shortest path to an undiscovered node from the source node. <br />" + displayConnectionInfo());
+        const div = document.createElement('div');
+        div.id = dijkstraCounter.toString();
+        div.insertAdjacentHTML("beforeend", "<br /> <br />" + displayConnectionInfo());
+        document.getElementById("helper-text-container").appendChild(div);
         document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
+
+        document.getElementById(div.id).addEventListener("click", function (k) {
+            dijkstraCounter = k.srcElement.id;
+            actionPosition = k.srcElement.id * 2 + 1;
+            task.step();
+        });
         s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
     }
 
@@ -142,6 +156,12 @@ function executeDijkstraTeacher(path) {
             actionPosition++;
             freeFlow = false;
             task.step();
+
+            if (dijkstraCounter === path.length) {
+                $.iGrowl({
+                    message: "End of Kruskal's Algorithm!",
+                });
+            }
         }
     }
 
@@ -153,6 +173,10 @@ function executeDijkstraTeacher(path) {
             maxCount = actionPosition;
             freeFlow = false;
             task.step();
+
+            $.iGrowl({
+                message: "End of Dijkstra's Algorithm!",
+            });
         }
     }
 

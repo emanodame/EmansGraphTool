@@ -43,8 +43,17 @@ function executePrimsTeacher(edgesOnGraph) {
 
     function textAction() {
         if (maxCount === actionPosition) {
-            helperText.insertAdjacentHTML("beforeend", "<br/> </br> Pick the next lowest edge on the graph. <br />" + displayConnectionInfo());
+            const div = document.createElement('div');
+            div.id = primsCounter.toString();
+            div.insertAdjacentHTML("beforeend", "<br /> <br />" + displayConnectionInfo());
+            document.getElementById("helper-text-container").appendChild(div);
             document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
+
+            document.getElementById(div.id).addEventListener("click", function (k) {
+                primsCounter = k.srcElement.id;
+                actionPosition = k.srcElement.id * 2 + 1;
+                task.step();
+            });
         }
         s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter].currentEdge.id)});
     }
@@ -58,6 +67,9 @@ function executePrimsTeacher(edgesOnGraph) {
                 maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
+                $.iGrowl({
+                    message: "End of Kruskal's Algorithm!",
+                });
                 showPlayButton();
             }
             yield;
@@ -117,6 +129,12 @@ function executePrimsTeacher(edgesOnGraph) {
             actionPosition++;
             freeFlow = false;
             task.step();
+
+            if (primsCounter === edgesOnGraph.length) {
+                $.iGrowl({
+                    message: "End of Kruskal's Algorithm!",
+                });
+            }
         }
     }
 
@@ -128,6 +146,10 @@ function executePrimsTeacher(edgesOnGraph) {
             maxCount = actionPosition;
             freeFlow = false;
             task.step();
+
+            $.iGrowl({
+                message: "End of Kruskal's Algorithm!",
+            });
         }
     }
 

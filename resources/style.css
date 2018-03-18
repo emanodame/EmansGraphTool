@@ -36,9 +36,6 @@ html {
 }
 
 #intro-text {
-    position: absolute;
-    top: 40px;
-    right: 250px;
     color: #ffffff;
 }
 
@@ -158,6 +155,7 @@ html {
 }
 
 #source-holder {
+    left: 20px;
     position: absolute;
 }
 
@@ -209,13 +207,13 @@ html {
 #button-block {
     position: absolute;
     top: 75px;
-    left: 50px;
+    left: 60px;
 }
 
 #media-holder {
     position: fixed;
     bottom: 20px;
-    left: 43%;
+    left: 38%;
     font-size: 30px;
     color: #ff0e58;
     cursor: pointer;
@@ -226,6 +224,10 @@ html {
 #play-button {
     margin-left: 20px;
     margin-right: 20px;
+}
+
+#play-button:disabled {
+    color: blue; !important;
 }
 
 #pause-button {
@@ -266,7 +268,7 @@ html {
     top: 12%;
     left: 43%;
     height: 70px;
-    width: 281px;
+    width: 256px;
     color: #ff0e58;
     border: 1px solid #ff0e58;
     visibility: hidden;
@@ -274,6 +276,7 @@ html {
 }
 
 #json-input {
+    color: #ff0e58;
     position: absolute;
     top: 30px;
     display: inline-block;
@@ -286,7 +289,6 @@ html {
 }
 
 .close-holder {
-    position: fixed;
     float: right;
     display: inline-block;
     background-color: black;
@@ -301,6 +303,7 @@ html {
 
 .close-button {
     color: #ff0e58;
+    float: right;
     border: none;
     background-color: black;
 }
@@ -346,6 +349,7 @@ html {
 #json-text-output {
     border: 1px solid #ff0e58;
     background-color: black;
+    margin-right: 10px;
 }
 
 #slider {
@@ -434,4 +438,36 @@ html {
 .resize-drag-highlight {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
     0 0 0 10px rgba(255, 14, 88, 0.3);
+}
+
+#description-text {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    width: 270px;
+    font-size: 20px;
+    transform: translate(-50%, 0);
+    color: #ffffff;
+}
+
+#border-separate {
+    position: absolute;
+    color: white;
+    left: 50%;
+    width: 550px;
+    transform: translate(-50%, 0);
+    border: 1px solid #ffffff;
+}
+
+#centered-information {
+    position: absolute;
+    top: 550px;
+    right: 36%;
+}
+
+#json-copy-btn {
+    position: absolute;
+    top: 0px;
+    height: 24px;
+    left: 176px;
 }
