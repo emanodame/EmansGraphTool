@@ -62,6 +62,7 @@ function executeDijkstraTeacher(path) {
             } else {
                 if (dijkstraCounter === path.length) {
                     $.iGrowl({
+                        type: "growler-settings",
                         message: "End of Kruskal's Algorithm!",
                     });
                 }
@@ -109,12 +110,12 @@ function executeDijkstraTeacher(path) {
 
     function displayConnectionInfo() {
         if (!nodeDiscoveryStatus.has(dijkstraNodeStateArray[dijkstraCounter].sourceNode)) {
-            return " This would go to Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].sourceNode).label
+            return "Step " + (dijkstraCounter + 1) + ") This would go to Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].sourceNode).label
                 + " from Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].targetNode).label
                 + " using Edge " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.label
                 + "<br/> The weight from source node is " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.weight;
         } else {
-            return " This would go to Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].targetNode).label
+            return "Step " + (dijkstraCounter + 1) + ") This would go to Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].targetNode).label
                 + " from Node " + s.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].sourceNode).label
                 + " using Edge " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.label
                 + "<br/> The weight from source node is " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.weight;
@@ -159,6 +160,7 @@ function executeDijkstraTeacher(path) {
 
             if (dijkstraCounter === path.length) {
                 $.iGrowl({
+                    type: "growler-settings",
                     message: "End of Kruskal's Algorithm!",
                 });
             }
@@ -175,6 +177,7 @@ function executeDijkstraTeacher(path) {
             task.step();
 
             $.iGrowl({
+                type: "growler-settings",
                 message: "End of Dijkstra's Algorithm!",
             });
         }

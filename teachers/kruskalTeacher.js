@@ -77,6 +77,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                 action[actionPosition]();
             } else {
                 $.iGrowl({
+                    type: "growler-settings",
                     message: "End of Kruskal's Algorithm!",
                 });
                 showPlayButton();
@@ -141,6 +142,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
             if (kruskalCounter === sortedEdgesOnGraph.length) {
                 $.iGrowl({
+                    type: "growler-settings",
                     message: "End of Kruskal's Algorithm!",
                 });
             }
@@ -157,6 +159,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             task.step();
 
             $.iGrowl({
+                type: "growler-settings",
                 message: "End of Kruskal's Algorithm!",
             });
         }

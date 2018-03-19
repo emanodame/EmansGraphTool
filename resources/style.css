@@ -227,7 +227,8 @@ html {
 }
 
 #play-button:disabled {
-    color: blue; !important;
+    color: blue;
+!important;
 }
 
 #pause-button {
@@ -470,4 +471,45 @@ html {
     top: 0px;
     height: 24px;
     left: 176px;
+}
+
+#guide-prompt {
+    position: absolute;
+    top: 12%;
+    left: 43%;
+    height: 70px;
+    width: 300px;
+    color: #ff0e58;
+    border: 2px solid #ff0e58;
+    border-radius: 8px;
+    /*visibility: hidden;*/
+    z-index: 1;
+}
+
+#accept-button {
+    background: black; !important;
+}
+
+.tour-next {
+    position: absolute;
+    top: -8px;
+    left: 193px;
+}
+
+.tour-prev {
+    position: absolute;
+    top: -8px;
+    left: -30px;
+    size: 20px;
+}
+
+.igrowl-growler-settings {
+    background: black;
+    border-color: #ff0e58;
+    color: #ff0e58 !important;
+}
+
+#igrowl-dismiss i-times {
+    background: #ff0e58 !important;
+    color: #ff0e58 !important;
 }

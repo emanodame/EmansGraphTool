@@ -54,6 +54,8 @@
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <link rel="stylesheet" type="text/css" href="resources/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
     <title>Eman's Graph Tool</title>
 
 <body id="base">
@@ -76,6 +78,14 @@
         <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="Copy">
     </form>
 </div>
+
+<!--
+<div id="guide-prompt">
+    Pull down to reveal more about Kruskal's!
+    <span id="remove-button"><button class="glyphicon glyphicon-remove" onclick="closeJsonInput()"></button></span>
+    <span id="accept-button"><button class="glyphicon glyphicon-menu-down" onclick="closeJsonInput()"></button></span>
+</div>
+-->
 
 <div id="tour-anchor"></div>
 <div id="hover-bar"></div>
@@ -155,24 +165,8 @@
     });
 
     /*
-    -Info Page -YT pages - Prompt "do you want to see kruskal info page"
-    -Finalise tour (add a step about the actual text)
-    -Make learner text look more banging - maybe some 3d?
-    -Do general testing to make sure its okay.
+    -Make le arner text look more banging - maybe some 3d?
     */
-
-    setInterval(function () {
-        if (s.graph.nodes().length === 0) {
-            $.iGrowl({
-                animShow: 'fadeInDown',
-                animHide: 'fadeOutUp',
-                message: "There a no nodes on the screen! Please add some",
-                placement: {
-                    x: 'center'
-                }
-            });
-        }
-    }, 4000);
 
     const helperText = document.getElementById("helper-text");
 
@@ -709,6 +703,7 @@
             } else {
                 $("#helper-text-container").fadeIn();
                 $.iGrowl({
+                    type: "growler-settings",
                     message: "There a no nodes on the screen! Please add some",
                     placement: {
                         x: 'center'
@@ -826,6 +821,37 @@
         });
     }
 
+    let growler;
+
+    function checkNodeExistence() {
+        if (s.graph.nodes().length === 0) {
+            growler = $.iGrowl({
+                type: "growler-settings",
+                animShow: 'fadeInDown',
+                message: "Go ahead and add some nodes on the graph :)",
+                placement: {
+                    x: 'center'
+                },
+                delay: 0
+            });
+        }
+    }
+
+    sigma.classes.graph.attach('clear', 'clearLog', function () {
+        checkNodeExistence();
+    });
+
+    sigma.classes.graph.attach('dropNode', 'dropNodeLog', function () {
+        checkNodeExistence();
+    });
+
+    sigma.classes.graph.attach('addNode', 'addNodeLog', function () {
+        if (growler) {
+            growler.dismiss();
+        }
+    });
+
+    setTimeout(checkNodeExistence, 2500);
     $("animation-holder").removeClass("animsition");
 </script>
 

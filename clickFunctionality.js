@@ -9,8 +9,6 @@ $(document).ready(function () {
     s.bind('clickStage', function (e) {
 
         if (!e.shiftKey && !e.data.captor.isDragging && s.settings('mouseEnabled')) {
-            noNodeFlag = false;
-
             const positionWithCamera = sigmaCamera.cameraPosition(e.data.captor.x, e.data.captor.y);
 
             const node = {

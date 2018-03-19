@@ -68,6 +68,7 @@ function executePrimsTeacher(edgesOnGraph) {
                 action[actionPosition]();
             } else {
                 $.iGrowl({
+                    type: "growler-settings",
                     message: "End of Kruskal's Algorithm!",
                 });
                 showPlayButton();
@@ -78,13 +79,13 @@ function executePrimsTeacher(edgesOnGraph) {
 
     function displayConnectionInfo() {
         if (primsEdgeStates[primsCounter].currentEdge.inSpanningTree) {
-            return "Picking the smallest edge: " +
+            return "Step " + (primsCounter + 1) + ") Picking the smallest edge: " +
                 s.graph.nodes(primsEdgeStates[primsCounter].currentEdge.source).label + " - " +
                 s.graph.nodes(primsEdgeStates[primsCounter].currentEdge.target).label +
                 " this has weight " + primsEdgeStates[primsCounter].currentEdge.label +
                 ". </br> This will get added to Minimum Spanning Tree"
         } else {
-            return "Picking the smallest edge: " +
+            return "Step " + (primsCounter + 1) + ") Picking the smallest edge: " +
                 s.graph.nodes(primsEdgeStates[primsCounter].currentEdge.source).label + " - " +
                 s.graph.nodes(primsEdgeStates[primsCounter].currentEdge.target).label +
                 " this has weight " + primsEdgeStates[primsCounter].currentEdge.label +
@@ -132,6 +133,7 @@ function executePrimsTeacher(edgesOnGraph) {
 
             if (primsCounter === edgesOnGraph.length) {
                 $.iGrowl({
+                    type: "growler-settings",
                     message: "End of Kruskal's Algorithm!",
                 });
             }
@@ -148,6 +150,7 @@ function executePrimsTeacher(edgesOnGraph) {
             task.step();
 
             $.iGrowl({
+                type: "growler-settings",
                 message: "End of Kruskal's Algorithm!",
             });
         }
