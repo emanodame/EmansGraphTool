@@ -48,7 +48,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
         if (maxCount === actionPosition) {
             const div = document.createElement('div');
             div.id = kruskalCounter.toString();
-            div.insertAdjacentHTML("beforeend", "<br /> <br />" + displayConnectionInfo());
+            div.insertAdjacentHTML("beforeend", " <br />" + displayConnectionInfo());
             document.getElementById("helper-text-container").appendChild(div);
             document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
@@ -76,10 +76,6 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                 maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
-                $.iGrowl({
-                    type: "growler-settings",
-                    message: "End of Kruskal's Algorithm!",
-                });
                 showPlayButton();
             }
             yield;

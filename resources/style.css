@@ -419,6 +419,10 @@ html {
     left: 30%;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .resize-drag {
     bottom: 10%;
     left: 1%;
@@ -431,7 +435,7 @@ html {
     border: 2px solid #ff0e58;
     border-radius: 8px;
     width: 650px;
-    height: 87px;
+    height: 90px;
     box-sizing: border-box;
     overflow: auto;
 }

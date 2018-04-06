@@ -1,0 +1,71 @@
+FINAL YEAR PROJECT NOTES
+
+Main Text ideas:
+
+-Introduction- 3 Pages
+Audience?
+Aims/ Goals - Notes from Sanderson
+Approach
+Project Motivation
+
+Symbols/Acronyms
+
+-Background- 5 pages
+Dijkstra/Kruskal/Prims - Overview of them
+Learning Tools (Psychology) - What makes a good teacher?
+UX Design. What makes a good app.
+Research other tools. See what they do/dont have. What is different in my application compared to others? Perhaps images of their work.
+
+-Spec & Design - 10 pages
+Talk about libraries/technologies. What & why?
+System Requirements
+JavaScipt/HTML/CSS - What & why?
+Architecture of web application. More talk about the code impelemented. What & why?
+User Experience for my application.
+Fill with Diagrams of MVC.
+Fill with a mock diagram of a user using the applicaiton.
+Has my designed changed? New technolgies? Add that.
+Screenshot of my application 
+JQuery
+JSON
+TESTING
+
+-Implementation- 10 pages
+Talk about code to the finer level. (Only important bits)
+Add images of code in appendix.
+Images of my implementation of Dijkstar/Kruskal/Prims? n time
+Any problems and how they were dealt. Lack of documentation/complexity.
+Maybe problems with time complexity.
+Problems with mobile?
+Talk about how the website is hosted.
+JSON - printscreen of graph structure
+Default colour scheme - blind people
+TESTING
+
+-Result & Evaluation 10 pages
+What extent have i achieved my goals?
+Evaluate my application algorithm times.
+Demos in open day.
+Demos to other Computer Science students
+What about testing? Make automation test. Talk about manual testing with other people. Fake survery. Maybe say that most people not aware of some tool.
+Compare the two web applications.
+Website Speed/Settings/HTML 5 / CSS Ready compatabible
+Code standards
+
+- Project Planning - 5 pages 
+ Sprint plan. Follow it up?
+ GitHub
+
+- Future Work - 1 /2 pages
+Other Algorithms? A*/BFS/DFS
+Mobile?
+
+- Conclusion & Personal Reflection-  2 page
+Summary of project. What has been learnt/achieved.
+
+References
+Quiz
+Appendix - How to use.
+
+35
+

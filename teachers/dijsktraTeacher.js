@@ -43,7 +43,7 @@ function executeDijkstraTeacher(path) {
 
     function displayFirstEdgeInfo() {
         if (maxCount === actionPosition) {
-            helperText.insertAdjacentHTML("beforeend", "<br/> </br> Pick the shortest path to an undiscovered node from the source node. <br />" + displayConnectionInfo());
+            helperText.insertAdjacentHTML("beforeend", "" + displayConnectionInfo());
             document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
         }
         s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
@@ -61,10 +61,6 @@ function executeDijkstraTeacher(path) {
                 action[actionPosition]();
             } else {
                 if (dijkstraCounter === path.length) {
-                    $.iGrowl({
-                        type: "growler-settings",
-                        message: "End of Kruskal's Algorithm!",
-                    });
                 }
                 showPlayButton();
             }
@@ -96,7 +92,7 @@ function executeDijkstraTeacher(path) {
     function textAction() {
         const div = document.createElement('div');
         div.id = dijkstraCounter.toString();
-        div.insertAdjacentHTML("beforeend", "<br /> <br />" + displayConnectionInfo());
+        div.insertAdjacentHTML("beforeend", "<br />" + displayConnectionInfo());
         document.getElementById("helper-text-container").appendChild(div);
         document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 

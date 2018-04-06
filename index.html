@@ -131,7 +131,7 @@
     </form>
 
     <div id="bottom-button-block">
-        <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(6)">Random
+        <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(20)">Random
             Graph
         </button>
         <button type="button" class="algo-button " id="json-import-btn" onclick="importJson()">Import Graph</button>
@@ -165,8 +165,38 @@
     });
 
     /*
-    -Make le arner text look more banging - maybe some 3d?
-    */
+Drag up execute button when kruskal selected
+On bare black screen  say add nodes manually, or "create random graph for me! option"
+Tooltip - 'This is resizable and draggable'!
+-Scroll and drag up to see the previous execution!
+-Give notice when the algorithm is completed on graph. slide down notification maybe?
+Make media controls disabled - tool tip
+Make execute button disabled
+Make the steps clickable and jump to them! add step 1..step2..etc
+Info Page -YT pages - Prompt " do you want to see kruskal ifno page"
+React.Js
+Finalise tour (add a step about the actual text)
+Need a 'are there nodes check' before executing anything
+Make learner text look more banging - maybe some 3d?
+What about the scenario if there are two graphs on screen?
+What about if a path is unreachable?
+make is possible to minimize the text box.
+maybe give a choice to see if the text box keeps printing out info. no smart logic to only print 'what has only been done'
+put a '>' on current instruction
+use the pseudocode from sandersons lecture notes.
+
+Add the scroll down error for if you duplicate node add position
+collpase import/export into one
+need to add verfication check on JSON import
+let user choose different colour schemes
+fontawesome.com to add custom expand text box buttons
+JASMINE
+bug with adding nodes. it sometimes add the same number. make sure it always adds most number
+see if slow/fast works.
+    -Make learner text look more banging
+    -Explanation about each algo.
+    A* IMPLEMENT
+ */
 
     const helperText = document.getElementById("helper-text");
 
@@ -591,7 +621,7 @@
     });
 
     s.camera.x = localStorage.getItem("cameraX") === null ? localStorage.getItem("cameraX") : 0;
-    s.camera.y = localStorage.getItem("cameraY") === null ? localStorage.getItem("cameraX") : 0;
+    s.camera.y = localStorage.getItem("cameraY") === null ? localStorage.getItem("cameraY") : 0;
     const dragListener = sigma.plugins.dragNodes(s, s.renderers[0]);
 
     window.onload = function () {
@@ -691,6 +721,13 @@
         event.preventDefault();
 
         if (s.graph.nodes().length === 0) {
+            $.iGrowl({
+                type: "growler-settings",
+                message: "There a no nodes on the screen! Please add some",
+                placement: {
+                    x: 'center'
+                }
+            });
             return;
         }
 
@@ -702,13 +739,6 @@
                 return false;
             } else {
                 $("#helper-text-container").fadeIn();
-                $.iGrowl({
-                    type: "growler-settings",
-                    message: "There a no nodes on the screen! Please add some",
-                    placement: {
-                        x: 'center'
-                    }
-                });
                 validNodeId = true;
                 clearColoredNodesAndEdges();
                 calculateDijkstraPath();
@@ -837,9 +867,9 @@
         }
     }
 
-    sigma.classes.graph.attach('clear', 'clearLog', function () {
-        checkNodeExistence();
-    });
+    /*    sigma.classes.graph.attach('clear', 'clearLog', function () {
+            checkNodeExistence();
+        });*/
 
     sigma.classes.graph.attach('dropNode', 'dropNodeLog', function () {
         checkNodeExistence();
