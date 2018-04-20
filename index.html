@@ -1,162 +1,58 @@
-<!--<!DOCTYPE html>-->
-<html>
-<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
-<link href="resources/bootstrap-tour/build/css/bootstrap-tour-standalone.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph Algorithm Tool</title>
+    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
 
-<link rel="stylesheet" href="resources/widget.css">
-<link href="resources/popup-validation/bin/validation.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="css/index.css">
 
-<link href="resources/animsition/dist/css/animsition.css" rel="stylesheet">
+    <link href="resources/animsition/dist/css/animsition.css" rel="stylesheet">
+</head>
+<body>
 
-<link rel="stylesheet" href="resources/iGrowl/public/stylesheets/animate.css"/>
-<link rel="stylesheet" href="resources/iGrowl/dist/css/igrowl.min.css">
-<link rel="stylesheet" href="resources/iGrowl/dist/css/fonts/feather.css">
-<link rel="stylesheet" href="resources/iGrowl/dist/css/fonts/linecons.css">
-<link rel="stylesheet" href="resources/iGrowl/dist/css/fonts/steadysets.css">
-<link rel="stylesheet" href="resources/iGrowl/dist/css/fonts/vicons.css">
-
-<link rel="stylesheet" type="text/css" href="css/index.css"/>
-<title>Graph Algorithm tool</title>
-
-<body id="base">
-<div id="animation-holder" class="animsition"></div>
-
-<div id="json-import">
-    <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
-    <form id="json-input">
-        <label for="json-input">Input
-            <input type="text" id="json-text-input" name="json-input">
-            <input type="submit" class="algo-button" id="json-submit-btn" onclick="parseJson()">
-        </label>
-    </form>
-</div>
-
-<div id="json-export">
-    <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
-    <form id="json-output">
-        <label><input type="text" id="json-text-output" name="json-input"></label>
-        <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="Copy">
-    </form>
-</div>
-<!--
-<div id="guide-prompt">
-    Pull down to reveal more about Kruskal's!
-    <span id="remove-button"><button class="glyphicon glyphicon-remove" onclick="closeJsonInput()"></button></span>
-    <span id="accept-button"><button class="glyphicon glyphicon-menu-down" onclick="closeJsonInput()"></button></span>
-</div>
--->
-
-<div id="tour-anchor"></div>
-<div id="hover-bar"></div>
-
-<div id="slide-revealer" hidden>
-    <div class="handle">
-        <span id="left-trigger" class="glyphicon glyphicon-chevron-left"></span>
-        <span id="right-trigger" class="glyphicon glyphicon-chevron-right"></span>
-    </div>
-
-    <div id="slide-revealer-header">
-        <div id="slide-revealer-title">
-            Control Panel
-        </div>
-        <div id="slide-revealer-info" class="btn glyphicon glyphicon-info-sign" onclick="tour.restart()"></div>
-    </div>
-
-    <div class="btn-group algo-button-group" role="group" aria-label="Algo Button">
-        <button type="button" class="algo-button algo-chooser-highlight" id="dijkstra-option"
-                onclick="showDijkstraInputBoxes()">Dijkstra's
-        </button>
-        <button type="button" class="algo-button" id="kruskal-option" onclick="showKruskalInputBoxes()">Kruskal's
-        </button>
-        <button type="button" class="algo-button" id="prim-option" onclick="showPrimsInputBoxes()">Prim's</button>
-    </div>
-
-    <form name="source-target" id="node-id-input-box" class="input-box-holder" onsubmit="executedSelectedAlgorithm()">
-        <div id="source-holder">
-            Source Node ID
-            <label>
-                <input autocomplete="off" type="text" name="source-node" id="src-node"
-                       class="node-input validate-class my-class-invalid" onkeydown="enterKeyHandler()">
-            </label>
-            <div id="source-error-message" hidden>
-                Invalid ID!
+<div class="main-page">
+    <div id="particles"></div>
+    <div class="animsition">
+        <div id="centered-information">
+            <div id="intro-text">
+                <h1> Welcome to GraphAlgoTool.</h1>
+            </div>
+            <div id="border-separate"></div>
+            <div id="description-text">
+                Scroll down to enter the site
             </div>
         </div>
-
-        <div id="button-block">
-            <button type="button" class="algo-button" id="clear-button" onclick="clearGraph()">CLEAR GRAPH</button>
-            <input type="submit" id="execute-button" class="algo-button" value="Execute">
-        </div>
-    </form>
-
-    <div id="bottom-button-block">
-        <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(10)">Random
-            Graph
-        </button>
-        <button type="button" class="algo-button " id="json-import-btn" onclick="importJson()">Import Graph</button>
-        <button type="button" class="algo-button" id="json-export-btn" onclick="exportJson()">Export Graph</button>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="resources/particles/particles.min.js"></script>
+<script type="text/javascript" src="resources/particles/particlesRun.js"></script>
+<script src="resources/node_modules/jquery/dist/jquery.min.js"></script>
 
-<div id="helper-text-container" class="resize-drag">
-    <div id=helper-text></div>
-</div>
 
-<div id="media-holder">
-    <span id="restart-button" class="glyphicon glyphicon-step-backward noSelect" onclick="restartAlgorithm()"></span>
-    <span id="backward-button" class="glyphicon glyphicon-backward noSelect" onclick="rewindAlgorithm()"></span>
-    <span id="play-button" class="glyphicon glyphicon-play noSelect"
-          onclick="showPauseButton();resumeAlgorithm();"></span>
-    <span id="pause-button" class="glyphicon glyphicon-pause noSelect"
-          onclick="showPlayButton();pauseAlgorithm();"></span>
-    <span id="forward-button" class="glyphicon glyphicon-forward" onclick="stepAlgorithm()"></span>
-    <span id="end-button" class="glyphicon glyphicon-step-forward" onclick="endAlgorithm()"></span>
-    <div id="speed-control">
-        <div class="slow-btn">slow</div>
-        <div id="slider" class="ui-slider-handle"></div>
-        <div class="fast-btn">fast</div>
-    </div>
-</div>
-
-<script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"
+        integrity="sha256-spTpc4lvj4dOkKjrGokIrHkJgNA0xMS98Pw9N7ir9oI="
         crossorigin="anonymous"></script>
-
-<script src="resources/sigma/sigma.min.js"></script>
-<script src="resources/sigma/sigma.canvas.edgehovers.def.js"></script>
-<script src="resources/sigma/sigma.renderers.edgeLabels.min.js"></script>
-
-<script src="js/main/clickFunctionality.js"></script>
-
-<script src="js/algorithms/dijkstra.js"></script>
-<script src="js/algorithms/prims.js"></script>
-<script src="js/algorithms/kruskal.js"></script>
-
-<script src="js/tools/Task.js"></script>
-<script src="js/teachers/dijsktraTeacher.js"></script>
-<script src="js/teachers/kruskalTeacher.js"></script>
-<script src="js/teachers/primsTeacher.js"></script>
-
-<script src="resources/iGrowl/dist/js/igrowl.js"></script>
-
-<script src="js/tools/Tree.js"></script>
-<script src="resources/slideReveal.js"></script>
-<script src="resources/tourGuide.js"></script>
-
-<script src="resources/bootstrap-tour/build/js/bootstrap-tour-standalone.js"></script>
-<script src="resources/popup-validation/bin/validation.min.js"></script>
-<script src="resources/sigma/sigma.plugins.dragNodes.js"></script>
 <script src="resources/animsition/dist/js/animsition.min.js"></script>
-<script src="resources/widget.js"></script>
-<script src="js/main/interact.js"></script>
-<script src="js/main/shadow.js"></script>
-<script src="js/main/index.js"></script>
-<script src="js/main/algorithmController.js"></script>
-<script src="js/main/graphAction.js"></script>
-<script src="js/main/jsonHandler.js"></script>
-<script src="js/main/external.js"></script>
-<script src="js/main/media.js"></script>
+<script>
+    $(document).ready(function () {
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+
+        $('.animsition').animsition({
+            loading: false
+        });
+
+        window.onscroll = function () {
+            if (window.pageYOffset > window.innerHeight * 0.45) {
+                window.location.href = "graph.html";
+            }
+        };
+    });
+</script>
+
+
 </body>
 </html>
-

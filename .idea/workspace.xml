@@ -3,31 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bacd0c4e-12b0-4d84-af88-8d70b72db066" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/algorithms/dijkstra.js" afterPath="$PROJECT_DIR$/js/algorithms/dijkstra.js" />
-      <change beforePath="$PROJECT_DIR$/algorithms/kruskal.js" afterPath="$PROJECT_DIR$/js/algorithms/kruskal.js" />
-      <change beforePath="$PROJECT_DIR$/algorithms/prims.js" afterPath="$PROJECT_DIR$/js/algorithms/prims.js" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change beforePath="$PROJECT_DIR$/intropage.html" afterPath="$PROJECT_DIR$/intropage.html" />
-      <change beforePath="$PROJECT_DIR$/js/algorithms.js" afterPath="$PROJECT_DIR$/js/main/algorithmController.js" />
-      <change beforePath="$PROJECT_DIR$/js/clickFunctionality.js" afterPath="$PROJECT_DIR$/js/main/clickFunctionality.js" />
-      <change beforePath="$PROJECT_DIR$/js/external.js" afterPath="$PROJECT_DIR$/js/main/external.js" />
-      <change beforePath="$PROJECT_DIR$/js/graphAction.js" afterPath="$PROJECT_DIR$/js/main/graphAction.js" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/main/index.js" />
-      <change beforePath="$PROJECT_DIR$/js/interact.js" afterPath="$PROJECT_DIR$/js/main/interact.js" />
-      <change beforePath="$PROJECT_DIR$/js/jsonHandler.js" afterPath="$PROJECT_DIR$/js/main/jsonHandler.js" />
-      <change beforePath="$PROJECT_DIR$/js/media.js" afterPath="$PROJECT_DIR$/js/main/media.js" />
-      <change beforePath="$PROJECT_DIR$/js/shadow.js" afterPath="$PROJECT_DIR$/js/main/shadow.js" />
-      <change beforePath="$PROJECT_DIR$/resources/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change beforePath="$PROJECT_DIR$/teachers/dijsktraTeacher.js" afterPath="$PROJECT_DIR$/js/teachers/dijsktraTeacher.js" />
-      <change beforePath="$PROJECT_DIR$/teachers/kruskalTeacher.js" afterPath="$PROJECT_DIR$/js/teachers/kruskalTeacher.js" />
-      <change beforePath="$PROJECT_DIR$/teachers/primsTeacher.js" afterPath="$PROJECT_DIR$/js/teachers/primsTeacher.js" />
-      <change beforePath="$PROJECT_DIR$/test/test.html" afterPath="$PROJECT_DIR$/test/test.html" />
-      <change beforePath="$PROJECT_DIR$/test_graphs/graph1.json" afterPath="$PROJECT_DIR$/resources/json-graphs/graph1.json" />
-      <change beforePath="$PROJECT_DIR$/test_graphs/graph2.json" afterPath="$PROJECT_DIR$/resources/json-graphs/graph2.json" />
-      <change beforePath="$PROJECT_DIR$/test_graphs/graph3.json" afterPath="$PROJECT_DIR$/resources/json-graphs/graph3.json" />
-      <change beforePath="$PROJECT_DIR$/test_graphs/graph4.json" afterPath="$PROJECT_DIR$/resources/json-graphs/graph4.json" />
-      <change beforePath="$PROJECT_DIR$/tools/Task.js" afterPath="$PROJECT_DIR$/js/tools/Task.js" />
-      <change beforePath="$PROJECT_DIR$/tools/Tree.js" afterPath="$PROJECT_DIR$/js/tools/Tree.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -363,17 +338,17 @@
       <updated>1523829652551</updated>
       <workItem from="1523829688415" duration="42000" />
       <workItem from="1523829803589" duration="41768000" />
-      <workItem from="1524177111512" duration="8012000" />
+      <workItem from="1524177111512" duration="8151000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49818000" />
+    <option name="totallyTimeSpent" value="49957000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.50238097" order="7" side_tool="true" content_ui="tabs" />
@@ -381,7 +356,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5059701" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
