@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bacd0c4e-12b0-4d84-af88-8d70b72db066" name="Default" comment="" />
+    <list default="true" id="bacd0c4e-12b0-4d84-af88-8d70b72db066" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour-standalone.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour-standalone.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour-standalone.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour-standalone.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour.min.js" />
+      <change beforePath="$PROJECT_DIR$/resources/bootstrap-tour" afterPath="" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -224,6 +234,11 @@
             <path>
               <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -387,17 +402,17 @@
       <updated>1523829652551</updated>
       <workItem from="1523829688415" duration="42000" />
       <workItem from="1523829803589" duration="41768000" />
-      <workItem from="1524177111512" duration="7268000" />
+      <workItem from="1524177111512" duration="7316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49074000" />
+    <option name="totallyTimeSpent" value="49122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.50238097" order="7" side_tool="true" content_ui="tabs" />
@@ -405,7 +420,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5059701" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
