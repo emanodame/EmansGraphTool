@@ -2,15 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bacd0c4e-12b0-4d84-af88-8d70b72db066" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour-standalone.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour-standalone.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour-standalone.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour-standalone.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour.min.js" />
-      <change beforePath="$PROJECT_DIR$/resources/bootstrap-tour" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/animsitiony/dist/css/animsition.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/animsitiony/dist/css/animsition.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/animsitiony/dist/js/animsition.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/animsitiony/dist/js/animsition.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/particlesk/particles.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/particlesk/particles.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resources/particlesk/particlesRun.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/resources/animsition" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/particles" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour-standalone.css" afterPath="$PROJECT_DIR$/resources/bootstrap-tour/build/css/bootstrap-tour-standalone.css" />
+      <change beforePath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour-standalone.min.css" afterPath="$PROJECT_DIR$/resources/bootstrap-tour/build/css/bootstrap-tour-standalone.min.css" />
+      <change beforePath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour.css" afterPath="$PROJECT_DIR$/resources/bootstrap-tour/build/css/bootstrap-tour.css" />
+      <change beforePath="$PROJECT_DIR$/resources/y/build/css/bootstrap-tour.min.css" afterPath="$PROJECT_DIR$/resources/bootstrap-tour/build/css/bootstrap-tour.min.css" />
+      <change beforePath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour-standalone.js" afterPath="$PROJECT_DIR$/resources/bootstrap-tour/build/js/bootstrap-tour-standalone.js" />
+      <change beforePath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour-standalone.min.js" afterPath="$PROJECT_DIR$/resources/bootstrap-tour/build/js/bootstrap-tour-standalone.min.js" />
+      <change beforePath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour.js" afterPath="$PROJECT_DIR$/resources/bootstrap-tour/build/js/bootstrap-tour.js" />
+      <change beforePath="$PROJECT_DIR$/resources/y/build/js/bootstrap-tour.min.js" afterPath="$PROJECT_DIR$/resources/bootstrap-tour/build/js/bootstrap-tour.min.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,7 +77,7 @@
         </entry>
       </file>
       <file leaf-file-name="animsition.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/animsition/dist/js/animsition.min.js">
+        <entry file="file://$PROJECT_DIR$/resources/animsitiony/dist/js/animsition.min.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-16">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -80,7 +89,7 @@
         </entry>
       </file>
       <file leaf-file-name="animsition.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/animsition/dist/js/animsition.js">
+        <entry file="file://$PROJECT_DIR$/resources/animsitiony/dist/js/animsition.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-25">
               <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="12" />
@@ -235,6 +244,27 @@
               <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
               <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-tour" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-tour" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EmansGraphTool" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap-tour" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EmansGraphTool" type="b2602c69:ProjectViewProjectNode" />
@@ -402,12 +432,12 @@
       <updated>1523829652551</updated>
       <workItem from="1523829688415" duration="42000" />
       <workItem from="1523829803589" duration="41768000" />
-      <workItem from="1524177111512" duration="7316000" />
+      <workItem from="1524177111512" duration="7383000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49122000" />
+    <option name="totallyTimeSpent" value="49189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -827,7 +857,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/animsition/dist/js/animsition.min.js">
+    <entry file="file://$PROJECT_DIR$/resources/animsitiony/dist/js/animsition.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -837,7 +867,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/animsition/dist/js/animsition.js">
+    <entry file="file://$PROJECT_DIR$/resources/animsitiony/dist/js/animsition.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-25">
           <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="12" />
