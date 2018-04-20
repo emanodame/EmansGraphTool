@@ -11,6 +11,7 @@ window.onload = function () {
 
     if (storageNodes.length > 0) {
         storageNodes.forEach(function (node) {
+            node.hidden = false;
             s.graph.addNode(node);
         });
 
@@ -156,6 +157,82 @@ function checkNodeExistence() {
             },
             delay: 0
         });
+    }
+}
+
+function showAlgorithmSummarisation() {
+    s.graph.nodes().forEach(function (node) {
+        node.hidden = true;
+    });
+
+    s.refresh();
+    document.getElementById("guide-prompt").style.left = "23%";
+
+    document.getElementById("guide-prompt").style.width = "60%";
+    document.getElementById("guide-prompt").style.height = "75%";
+
+    document.getElementById("answer-container").style.display = "none";
+    document.getElementById("prompt-text").style.display = "none";
+
+    $("#guide-prompt").css('borderWidth', '4px');
+    $("#algorithm-summary-holder").fadeIn(500);
+
+    if (algorithmSelected === "dijkstra") {
+        $("#dijkstra-summary-container").fadeIn(500);
+        localStorage.setItem("dijkstra-summary-prompt", "true");
+
+    } else if (algorithmSelected === "kruskal") {
+        $("#kruskal-summary-container").fadeIn(500);
+        localStorage.setItem("kruskal-summary-prompt", "true");
+
+    } else if (algorithmSelected === "prim") {
+        $("#prim-summary-container").fadeIn(500);
+        localStorage.setItem("prim-summary-prompt", "true");
+    }
+}
+
+function closePrompt() {
+    document.getElementById("guide-prompt").style.display = "none";
+
+    if (algorithmSelected === "dijkstra") {
+        localStorage.setItem("dijkstra-summary-prompt", "true");
+
+    } else if (algorithmSelected === "kruskal") {
+        localStorage.setItem("kruskal-summary-prompt", "true");
+
+    } else {
+        localStorage.setItem("prim-summary-prompt", "true");
+    }
+    executedSelectedAlgorithm();
+}
+
+function closeSummary() {
+    s.graph.nodes().forEach(function (node) {
+        node.hidden = false;
+    });
+    s.refresh();
+
+    document.getElementById("algorithm-summary-holder").style.display = "none";
+    document.getElementById("guide-prompt").style.display = "none";
+
+    document.getElementById("guide-prompt").style.left = "43%";
+    document.getElementById("guide-prompt").style.top = "12%";
+
+
+    document.getElementById("guide-prompt").style.width = "300px";
+    document.getElementById("guide-prompt").style.height = "92px";
+
+    if (algorithmSelected === "dijkstra") {
+        localStorage.setItem("dijkstra-summary-prompt", "true");
+        document.getElementById("dijkstra-summary-container").style.display = "none";
+
+    } else if (algorithmSelected === "kruskal") {
+        localStorage.setItem("kruskal-summary-prompt", "true");
+        document.getElementById("kruskal-summary-container").style.display = "none";
+
+    } else {
+        localStorage.setItem("prim-summary-prompt", "true");
+        document.getElementById("prim-summary-container").style.display = "none";
     }
 }
 

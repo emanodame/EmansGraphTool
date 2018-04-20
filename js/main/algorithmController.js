@@ -67,7 +67,18 @@ function executedSelectedAlgorithm() {
             document.getElementById("source-error-message").style.display = "inline";
             validNodeId = false;
             return false;
+
         } else {
+
+            if (!localStorage.getItem("dijkstra-summary-prompt")) {
+                $("#algorithm-summary-holder").load("algorithm-summary.html");
+                $("#prompt-text").text("Would you like to view a brief summary of Dijkstra's algorithm before executing?");
+                $("#prompt-text").show();
+                $("#answer-container").show();
+                $("#guide-prompt").fadeIn(500);
+                return;
+            }
+
             $("#helper-text-container").fadeIn();
             validNodeId = true;
             clearColoredNodesAndEdges();
@@ -75,12 +86,31 @@ function executedSelectedAlgorithm() {
         }
 
     } else if (algorithmSelected === "kruskal") {
+
+        if (!localStorage.getItem("kruskal-summary-prompt")) {
+            $("#algorithm-summary-holder").load("algorithm-summary.html");
+            $("#prompt-text").text("Would you like to view a brief summary of Kruskal's algorithm before executing?");
+            $("#prompt-text").show();
+            $("#answer-container").show();
+            $("#guide-prompt").show();
+            return;
+        }
+
         $("#helper-text-container").fadeIn();
         validNodeId = true;
         clearColoredNodesAndEdges();
         calculateKruskalPath();
 
     } else if (algorithmSelected === "prim") {
+
+        if (!localStorage.getItem("prim-summary-prompt")) {
+            $("#algorithm-summary-holder").load("algorithm-summary.html");
+            $("#prompt-text").text("Would you like to view a brief summary of Prim's algorithm before executing?");
+            $("#prompt-text").show();
+            $("#answer-container").show();
+            $("#guide-prompt").fadeIn(500);
+            return;
+        }
 
         if (!validNodeId) {
             document.getElementById("source-error-message").style.display = "inline";

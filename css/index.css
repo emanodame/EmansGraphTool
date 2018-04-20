@@ -475,17 +475,19 @@ html {
     position: absolute;
     top: 12%;
     left: 43%;
-    height: 70px;
+    height: 92px;
     width: 300px;
     color: #ff0e58;
     border: 2px solid #ff0e58;
     border-radius: 8px;
-    /*visibility: hidden;*/
+    transition: all .5s linear;
     z-index: 1;
+    display: none;
 }
 
-#accept-button {
-    background: black !important;
+#no-button {
+    position: relative;
+    left: 5px;
 }
 
 .tour-next {
@@ -509,4 +511,79 @@ html {
 #igrowl-dismiss i-times {
     background: #ff0e58 !important;
     color: #ff0e58 !important;
+}
+
+#answer-container {
+    position: absolute;
+    top: 54px;
+    left: 100px;
+}
+
+#algorithm-summary-holder {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 15%;
+    left: 36%;
+    display: none;
+    z-index: 1;
+}
+
+#dijkstra-summary-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 100;
+}
+
+#kruskal-summary-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+#prim-summary-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.summary-title {
+    position: absolute;
+    color: #ff0e58;
+    left: 9%;
+    font-size: 24px;
+}
+
+.summary-text {
+    position: absolute;
+    top: 5%;
+    left: -10%;
+    width: 50%;
+    text-align: justify;
+    letter-spacing: 1px;
+    line-height: 33px;
+    word-spacing: 2px;
+    font-family: sans-serif;
+    font-size: 15px;
+    color: #ff0e58;
+
+}
+
+.summary-video {
+    position: absolute;
+    top: 32%;
+    left: -5%;
+}
+
+.close-summary-holder {
+    position: absolute;
+    display: inline-block;
+    background-color: black;
+    left: 44%;
+    top: -2%;
+    font-size: 24px;
 }

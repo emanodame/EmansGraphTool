@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="resources/iGrowl/dist/css/fonts/vicons.css">
 
 <link rel="stylesheet" type="text/css" href="css/index.css"/>
+<link rel="import" href="algorithm-summary.html">
 <title>Graph Algorithm tool</title>
 
 <body id="base">
@@ -38,13 +39,16 @@
         <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="Copy">
     </form>
 </div>
-<!--
+
 <div id="guide-prompt">
-    Pull down to reveal more about Kruskal's!
-    <span id="remove-button"><button class="glyphicon glyphicon-remove" onclick="closeJsonInput()"></button></span>
-    <span id="accept-button"><button class="glyphicon glyphicon-menu-down" onclick="closeJsonInput()"></button></span>
+    <span id="prompt-text"></span>
+    <div id="answer-container">
+        <span id="yes-button"><button class="algo-button" onclick="showAlgorithmSummarisation()">YES</button></span>
+        <span id="no-button"><button class="algo-button" onclick="closePrompt()">NO</button></span>
+    </div>
 </div>
--->
+
+<div id="algorithm-summary-holder"></div>
 
 <div id="tour-anchor"></div>
 <div id="hover-bar"></div>
