@@ -38,11 +38,12 @@ function executeDijkstraTeacher(path) {
     clearColoredNodesAndEdges();
     displayFirstEdgeInfo();
 
-    const task = new Task(actionExecutor(), speed);
+    const task = new Task(actionExecutor(), executionSpeed);
     let freeFlow = false;
 
     function displayFirstEdgeInfo() {
         if (maxCount === actionPosition) {
+            const helperText = document.getElementById("helper-text");
             helperText.insertAdjacentHTML("beforeend", "" + displayConnectionInfo());
             document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
         }
@@ -101,6 +102,12 @@ function executeDijkstraTeacher(path) {
             actionPosition = k.srcElement.id * 2 + 1;
             task.step();
         });
+
+        $('.resize-drag').addClass('resize-drag-highlight');
+        setTimeout(function () {
+            $('.resize-drag').removeClass('resize-drag-highlight');
+        }, 1000);
+
         s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
     }
 

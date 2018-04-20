@@ -23,7 +23,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     clearColoredNodesAndEdges();
 
-    const task = new Task(actionExecutor(), speed);
+    const task = new Task(actionExecutor(), executionSpeed);
     let freeFlow = false;
 
     task.step();

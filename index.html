@@ -1,62 +1,22 @@
-<script src="resources/node_modules/jquery/dist/jquery.min.js"></script>
-
-<script src="resources/sigma.min.js"></script>
-<script src="resources/sigma.canvas.edgehovers.def.js"></script>
-<script src="resources/sigma.renderers.edgeLabels.min.js"></script>
-
-<script src="clickFunctionality.js"></script>
-
-<script src="algorithms/dijkstra.js"></script>
-<script src="algorithms/prims.js"></script>
-<script src="algorithms/kruskal.js"></script>
-
-<script src="tools/Task.js"></script>
-<script src="teachers/dijsktraTeacher.js"></script>
-<script src="teachers/kruskalTeacher.js"></script>
-<script src="teachers/primsTeacher.js"></script>
-
-
-<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/public/stylesheets/animate.css"/>
-
-<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/igrowl.min.css">
-<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/fonts/feather.css">
-<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/fonts/linecons.css">
-<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/fonts/steadysets.css">
-<link rel="stylesheet" href="resources/catc-iGrowl-3232c92/dist/css/fonts/vicons.css">
-
-<script src="resources/catc-iGrowl-3232c92/dist/js/igrowl.js"></script>
-
-<script src="tools/Tree.js"></script>
-<script src="resources/slideReveal.js"></script>
-<script src="tourGuide.js"></script>
-
-<link rel="stylesheet" href="resources/style.css">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-<link href="resources/bootstrap-tour/build/css/bootstrap-tour-standalone.css" rel="stylesheet">
-<script src="resources/bootstrap-tour/build/js/bootstrap-tour-standalone.js"></script>
-<script src="resources/node_modules/popup-validation/bin/validation.min.js"></script>
-<link href="resources/node_modules/popup-validation/bin/validation.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="resources/style.css"/>
-<script src="sigma.plugins.dragNodes.js"></script>
-<link href="resources/animsition/dist/css/animsition.css" rel="stylesheet">
-<script src="resources/animsition/dist/js/animsition.min.js"></script>
-
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="interact.js"></script>
-<script src="lol.js"></script>
-
+<!--<!DOCTYPE html>-->
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <link rel="stylesheet" type="text/css" href="resources/style.css"/>
-    <title>Eman's Graph Tool</title>
+<link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
+<link href="resources/bootstrap-tour/build/css/bootstrap-tour-standalone.css" rel="stylesheet">
+
+<link rel="stylesheet" href="resources/widget.css">
+<link href="resources/popup-validation/bin/validation.css" rel="stylesheet">
+
+<link href="resources/animsition/dist/css/animsition.css" rel="stylesheet">
+
+<link rel="stylesheet" href="resources/iGrowl/public/stylesheets/animate.css"/>
+<link rel="stylesheet" href="resources/iGrowl/dist/css/igrowl.min.css">
+<link rel="stylesheet" href="resources/iGrowl/dist/css/fonts/feather.css">
+<link rel="stylesheet" href="resources/iGrowl/dist/css/fonts/linecons.css">
+<link rel="stylesheet" href="resources/iGrowl/dist/css/fonts/steadysets.css">
+<link rel="stylesheet" href="resources/iGrowl/dist/css/fonts/vicons.css">
+
+<link rel="stylesheet" type="text/css" href="resources/index.css"/>
+<title>Graph Algorithm tool</title>
 
 <body id="base">
 <div id="animation-holder" class="animsition"></div>
@@ -64,7 +24,7 @@
 <div id="json-import">
     <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
     <form id="json-input">
-        <label>Input
+        <label for="json-input">Input
             <input type="text" id="json-text-input" name="json-input">
             <input type="submit" class="algo-button" id="json-submit-btn" onclick="parseJson()">
         </label>
@@ -78,7 +38,6 @@
         <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="Copy">
     </form>
 </div>
-
 <!--
 <div id="guide-prompt">
     Pull down to reveal more about Kruskal's!
@@ -90,7 +49,7 @@
 <div id="tour-anchor"></div>
 <div id="hover-bar"></div>
 
-<div id="slide-revealer">
+<div id="slide-revealer" hidden>
     <div class="handle">
         <span id="left-trigger" class="glyphicon glyphicon-chevron-left"></span>
         <span id="right-trigger" class="glyphicon glyphicon-chevron-right"></span>
@@ -131,7 +90,7 @@
     </form>
 
     <div id="bottom-button-block">
-        <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(20)">Random
+        <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(1000)">Random
             Graph
         </button>
         <button type="button" class="algo-button " id="json-import-btn" onclick="importJson()">Import Graph</button>
@@ -144,745 +103,57 @@
 </div>
 
 <div id="media-holder">
-    <span id="restart-button" class="glyphicon glyphicon-step-backward noSelect" onclick="restartProcess()"></span>
-    <span id="backward-button" class="glyphicon glyphicon-backward noSelect" onclick="rewindFunctionality()"></span>
-    <span id="play-button" class="glyphicon glyphicon-play noSelect" onclick="showPauseButton();play();"></span>
-    <span id="pause-button" class="glyphicon glyphicon-pause noSelect" onclick="showPlayButton();pause();"></span>
-    <span id="forward-button" class="glyphicon glyphicon-forward" onclick="forwardFunctionality()"></span>
-    <span id="end-button" class="glyphicon glyphicon-step-forward" onclick="endProcess()"></span>
+    <span id="restart-button" class="glyphicon glyphicon-step-backward noSelect" onclick="restartAlgorithm()"></span>
+    <span id="backward-button" class="glyphicon glyphicon-backward noSelect" onclick="rewindAlgorithm()"></span>
+    <span id="play-button" class="glyphicon glyphicon-play noSelect"
+          onclick="showPauseButton();resumeAlgorithm();"></span>
+    <span id="pause-button" class="glyphicon glyphicon-pause noSelect"
+          onclick="showPlayButton();pauseAlgorithm();"></span>
+    <span id="forward-button" class="glyphicon glyphicon-forward" onclick="stepAlgorithm()"></span>
+    <span id="end-button" class="glyphicon glyphicon-step-forward" onclick="endAlgorithm()"></span>
     <div id="speed-control">
         <div class="slow-btn">slow</div>
         <div id="slider" class="ui-slider-handle"></div>
         <div class="fast-btn">fast</div>
     </div>
 </div>
+
+<script src="resources/jquery/dist/jquery.min.js"></script>
+
+<script src="resources/sigma/sigma.min.js"></script>
+<script src="resources/sigma/sigma.canvas.edgehovers.def.js"></script>
+<script src="resources/sigma/sigma.renderers.edgeLabels.min.js"></script>
+
+<script src="js/clickFunctionality.js"></script>
+
+<script src="algorithms/dijkstra.js"></script>
+<script src="algorithms/prims.js"></script>
+<script src="algorithms/kruskal.js"></script>
+
+<script src="tools/Task.js"></script>
+<script src="teachers/dijsktraTeacher.js"></script>
+<script src="teachers/kruskalTeacher.js"></script>
+<script src="teachers/primsTeacher.js"></script>
+
+<script src="resources/iGrowl/dist/js/igrowl.js"></script>
+
+<script src="tools/Tree.js"></script>
+<script src="resources/slideReveal.js"></script>
+<script src="resources/tourGuide.js"></script>
+
+<script src="resources/bootstrap-tour/build/js/bootstrap-tour-standalone.js"></script>
+<script src="resources/popup-validation/bin/validation.min.js"></script>
+<script src="resources/sigma/sigma.plugins.dragNodes.js"></script>
+<script src="resources/animsition/dist/js/animsition.min.js"></script>
+<script src="resources/widget.js"></script>
+<script src="js/interact.js"></script>
+<script src="js/shadow.js"></script>
+<script src="js/index.js"></script>
+<script src="js/algorithms.js"></script>
+<script src="js/graphAction.js"></script>
+<script src="js/jsonHandler.js"></script>
+<script src="js/external.js"></script>
+<script src="js/media.js"></script>
 </body>
-<script>
-    $('.animsition').animsition();
-
-    $(document).ready(function () {
-        initalizeTourGuide();
-    });
-
-    /*
-Drag up execute button when kruskal selected
-On bare black screen  say add nodes manually, or "create random graph for me! option"
-Tooltip - 'This is resizable and draggable'!
--Scroll and drag up to see the previous execution!
--Give notice when the algorithm is completed on graph. slide down notification maybe?
-Make media controls disabled - tool tip
-Make execute button disabled
-Make the steps clickable and jump to them! add step 1..step2..etc
-Info Page -YT pages - Prompt " do you want to see kruskal ifno page"
-React.Js
-Finalise tour (add a step about the actual text)
-Need a 'are there nodes check' before executing anything
-Make learner text look more banging - maybe some 3d?
-What about the scenario if there are two graphs on screen?
-What about if a path is unreachable?
-make is possible to minimize the text box.
-maybe give a choice to see if the text box keeps printing out info. no smart logic to only print 'what has only been done'
-put a '>' on current instruction
-use the pseudocode from sandersons lecture notes.
-
-Add the scroll down error for if you duplicate node add position
-collpase import/export into one
-need to add verfication check on JSON import
-let user choose different colour schemes
-fontawesome.com to add custom expand text box buttons
-JASMINE
-bug with adding nodes. it sometimes add the same number. make sure it always adds most number
-see if slow/fast works.
-    -Make learner text look more banging
-    -Explanation about each algo.
-    A* IMPLEMENT
- */
-
-    const helperText = document.getElementById("helper-text");
-
-    interact('.resize-drag')
-        .draggable({
-            onmove: window.dragMoveListener,
-            restrict: {
-                restriction: 'parent',
-                elementRect: {top: 0, left: 0, bottom: 1, right: 1}
-            },
-        })
-        .resizable({
-            // resize from all edges and corners
-            edges: {left: true, right: true, bottom: true, top: true},
-
-            restrictEdges: {
-                outer: 'parent',
-                endOnly: true,
-            },
-            restrictSize: {
-                min: {width: 650, height: 85},
-            },
-
-            inertia: true,
-        }).on('resizemove', function (event) {
-        var target = event.target,
-            x = (parseFloat(target.getAttribute('data-x')) || 0),
-            y = (parseFloat(target.getAttribute('data-y')) || 0);
-
-        // update the element's style
-        target.style.width = event.rect.width + 'px';
-        target.style.height = event.rect.height + 'px';
-
-        target.style.webkitTransform = target.style.transform =
-            'translate(' + x + 'px,' + y + 'px)';
-
-        target.setAttribute('data-x', x);
-        target.setAttribute('data-y', y);
-    });
-
-    function dragMoveListener(event) {
-        const target = event.target,
-            // keep the dragged position in the data-x/data-y attributes
-            x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-            y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-        // translate the element
-        target.style.webkitTransform =
-            target.style.transform =
-                'translate(' + x + 'px, ' + y + 'px)';
-
-        // update the posiion attributes
-        target.setAttribute('data-x', x);
-        target.setAttribute('data-y', y);
-    }
-
-    let speed = undefined;
-
-    $(function () {
-        $("#slider").slider({
-            value: 50,
-            stop: function (event, ui) {
-                play(3000 - (ui.value * 25));
-                showPauseButton();
-            }
-        });
-    });
-
-    let sticky = false;
-
-    function showSlider() {
-        $('#slide-revealer').slideReveal("show");
-        document.getElementById("left-trigger").style.display = "inline";
-        document.getElementById("right-trigger").style.display = "none";
-        sticky = true;
-    }
-
-    function hideSlider() {
-        $('#slide-revealer').slideReveal("hide");
-        document.getElementById("left-trigger").style.display = "none";
-        document.getElementById("right-trigger").style.display = "inline";
-        sticky = false;
-    }
-
-
-    $("#src-node").focusout(function () {
-        const srcNodeId = getNodeIdFromLabel($("#src-node").val());
-
-        if (!srcNodeId) {
-            document.getElementById("source-error-message").style.display = "inline";
-            validNodeId = false;
-        } else {
-            document.getElementById("source-error-message").style.display = "none";
-            validNodeId = true;
-        }
-    });
-
-    const firstTimeVisit = localStorage.getItem("first_time") === null;
-
-    let algorithmSelected = "dijkstra";
-    let validNodeId = false;
-
-    $("#hover-bar").mouseover(function () {
-        $('#slide-revealer').slideReveal("show");
-        document.getElementById("left-trigger").style.display = "inline";
-        document.getElementById("right-trigger").style.display = "none";
-    });
-
-    $("#slide-revealer").mouseleave(function () {
-        if (!sticky) {
-            $('#slide-revealer').slideReveal("hide");
-            document.getElementById("left-trigger").style.display = "none";
-            document.getElementById("right-trigger").style.display = "inline";
-        }
-    });
-
-    function importJson() {
-        document.getElementById("json-import").style.visibility = "visible";
-        document.getElementById("json-export").style.visibility = "hidden";
-    }
-
-    function exportJson() {
-        document.getElementById("json-import").style.visibility = "hidden";
-        document.getElementById("json-export").style.visibility = "visible";
-
-        let jsonGraphText = "{\"nodes\":";
-        const nodes = [];
-
-        s.graph.nodes().forEach(function (node) {
-            const nodeCreation = {
-                id: node.id,
-                x: (node.x / 100).toString(),
-                y: (node.y / 100).toString(),
-                label: node.label
-            };
-
-            nodes.push(nodeCreation);
-        });
-        jsonGraphText += JSON.stringify(nodes);
-        jsonGraphText += ",\"edges\":";
-
-        const edges = [];
-
-        s.graph.edges().forEach(function (edge) {
-            const edgeCreation = {
-                id: edge.id,
-                source: edge.source,
-                target: edge.target,
-            };
-
-            edges.push(edgeCreation);
-        });
-
-        jsonGraphText += JSON.stringify(edges);
-        jsonGraphText += "}";
-
-
-        document.getElementById("json-text-output").value = jsonGraphText;
-    }
-
-    function copyJsonOutput() {
-        const copyText = document.getElementById("json-text-output");
-        copyText.select();
-        document.execCommand("Copy");
-    }
-
-    function closeJsonInput() {
-        document.getElementById("json-import").style.visibility = "hidden";
-        document.getElementById("json-export").style.visibility = "hidden";
-    }
-
-    function parseJson() {
-        event.preventDefault();
-
-        const jsonTextInput = document.getElementById("json-text-input").value;
-        const textToJson = JSON.parse(jsonTextInput);
-
-        clearGraph();
-
-        for (let i = 0; i < textToJson.nodes.length; i++) {
-
-            const nodeCreation = {
-                id: textToJson.nodes[i].id,
-                x: textToJson.nodes[i].x * 100,
-                y: textToJson.nodes[i].y * 100,
-                label: textToJson.nodes[i].label ? textToJson.nodes[i].label : textToJson.nodes[i].id.toString(),
-                size: 10
-            };
-
-            s.graph.addNode(nodeCreation);
-            s.refresh();
-            closeJsonInput();
-        }
-
-        for (let i = 0; i < textToJson.edges.length; i++) {
-
-            const edgeCreation = {
-                id: createEdgeIdFromCoordinates(textToJson.edges[i].source, textToJson.edges[i].target),
-                source: textToJson.edges[i].source,
-                target: textToJson.edges[i].target,
-                defaultEdgeLabelSize: 20,
-                size: 3,
-                label: textToJson.edges[i].weight
-            };
-
-            s.graph.addEdge(edgeCreation);
-            s.refresh();
-        }
-    }
-
-    function restartProcess() {
-        showPlayButton();
-        pause();
-
-        switch (localStorage.getItem("algorithm")) {
-            case "dijkstra":
-                executeDijkstraTeacher.restart();
-                break;
-
-            case "kruskal":
-                executeKruskalTeacher.restart();
-                break;
-
-            case "prim":
-                executePrimsTeacher.restart();
-                break;
-        }
-    }
-
-    function showPlayButton() {
-        document.getElementById("pause-button").style.display = "none";
-        document.getElementById("play-button").style.display = "inline";
-    }
-
-    function showPauseButton() {
-        if (localStorage.getItem("algorithm")) {
-            document.getElementById("play-button").style.display = "none";
-            document.getElementById("pause-button").style.display = "inline";
-        }
-    }
-
-
-    function play(intervalTime) {
-        switch (localStorage.getItem("algorithm")) {
-            case "dijkstra":
-                executeDijkstraTeacher.play(intervalTime);
-                break;
-
-            case "kruskal":
-                executeKruskalTeacher.play(intervalTime);
-                break;
-
-            case "prim":
-                executePrimsTeacher.play(intervalTime);
-                break;
-        }
-    }
-
-    function pause() {
-        switch (localStorage.getItem("algorithm")) {
-            case "dijkstra":
-                executeDijkstraTeacher.pause();
-                break;
-
-            case "kruskal":
-                executeKruskalTeacher.pause();
-                break;
-
-            case "prim":
-                executePrimsTeacher.pause();
-                break;
-        }
-    }
-
-    function rewindFunctionality() {
-        showPlayButton();
-        pause();
-
-        switch (localStorage.getItem("algorithm")) {
-            case "dijkstra":
-                executeDijkstraTeacher.rewind();
-                break;
-
-            case "kruskal":
-                executeKruskalTeacher.rewind();
-                break;
-
-            case "prim":
-                executePrimsTeacher.rewind();
-                break;
-        }
-    }
-
-    function forwardFunctionality() {
-        showPlayButton();
-        pause();
-
-        switch (localStorage.getItem("algorithm")) {
-            case "dijkstra":
-                executeDijkstraTeacher.forward();
-                break;
-
-            case "kruskal":
-                executeKruskalTeacher.forward();
-                break;
-
-            case "prim":
-                executePrimsTeacher.forward();
-                break;
-        }
-    }
-
-    function endProcess() {
-        showPlayButton();
-        pause();
-
-        switch (localStorage.getItem("algorithm")) {
-            case "dijkstra":
-                executeDijkstraTeacher.end();
-                break;
-
-            case "kruskal":
-                executeKruskalTeacher.end();
-                break;
-
-            case "prim":
-                executePrimsTeacher.end();
-                break;
-        }
-    }
-
-    $('#slide-revealer').slideReveal({
-        trigger: $("#left-trigger"),
-        position: "right",
-        push: false,
-        overlay: true
-    });
-
-
-    function enterKeyHandler() {
-        if (event.keyCode === 13) {
-            executedSelectedAlgorithm()
-        }
-    }
-
-    function showDijkstraInputBoxes() {
-        if (algorithmSelected === 'kruskal') {
-            $("#button-block").animate({top: '+70px'});
-        }
-        document.getElementById("source-holder").style.visibility = "visible";
-
-        $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
-        $('#dijkstra-option').addClass('algo-chooser-highlight');
-        algorithmSelected = "dijkstra";
-    }
-
-    function showKruskalInputBoxes() {
-        if (algorithmSelected !== 'kruskal') {
-            $("#button-block").animate({top: '-8px'});
-        }
-        document.getElementById("source-holder").style.visibility = "hidden";
-
-        $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
-        $('#kruskal-option').addClass('algo-chooser-highlight');
-
-        algorithmSelected = "kruskal";
-    }
-
-    function showPrimsInputBoxes() {
-        if (algorithmSelected === 'kruskal') {
-            $("#button-block").animate({top: '+70px'});
-        }
-        document.getElementById("source-holder").style.visibility = "visible";
-
-        $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
-        $('#prim-option').addClass('algo-chooser-highlight');
-
-        algorithmSelected = "prim";
-    }
-
-
-    $(document).bind("contextmenu", function (event) {
-        event.preventDefault();
-    });
-
-    $(document).ondblclick = function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-    };
-
-    const nodeColour = "#ff0e58";
-    const edgeColour = "#ff0e58";
-
-    const s = new sigma({
-        renderer: {
-            container: document.getElementById('base'),
-            type: 'canvas',
-        },
-        settings: {
-            borderSize: 3,
-
-            defaultNodeColor: nodeColour,
-            defaultNodeBorderColor: "#c9ddff",
-
-            defaultEdgeColor: edgeColour,
-            defaultEdgeLabelColor: edgeColour,
-            defaultEdgeLabelSize: 20,
-
-            defaultLabelColor: "#ffffff",
-            defaultLabelHoverColor: "#ff0e58",
-            labelHoverColor: "node",
-            labelShadowColor: "#c9ddff",
-
-            enableEdgeHovering: true,
-            edgeHoverSizeRatio: 2,
-            edgeHoverExtremities: true,
-            autoRescale: false,
-            mouseEnabled: true,
-            doubleClickEnabled: false
-        }
-    });
-
-    s.camera.x = localStorage.getItem("cameraX") === null ? localStorage.getItem("cameraX") : 0;
-    s.camera.y = localStorage.getItem("cameraY") === null ? localStorage.getItem("cameraY") : 0;
-    const dragListener = sigma.plugins.dragNodes(s, s.renderers[0]);
-
-    window.onload = function () {
-        const storageNodes = JSON.parse(localStorage.getItem("nodes"));
-        const storageEdges = JSON.parse(localStorage.getItem("edges"));
-
-        if (storageNodes.length > 0) {
-            storageNodes.forEach(function (node) {
-                s.graph.addNode(node);
-            });
-
-            if (storageEdges.length > 0) {
-                storageEdges.forEach(function (edge) {
-                    s.graph.addEdge(edge);
-                });
-            }
-            s.refresh();
-        }
-    };
-
-    window.onbeforeunload = function () {
-        clearColoredNodesAndEdges();
-        localStorage.clear();
-
-        localStorage.setItem("nodes", JSON.stringify(s.graph.nodes()));
-        localStorage.setItem("edges", JSON.stringify(s.graph.edges()));
-
-        localStorage.setItem("cameraX", s.camera.x);
-        localStorage.setItem("cameraY", s.camera.y);
-    };
-
-    function createRandomGraph(quantityOfNodes) {
-        clearGraph();
-
-        noNodeFlag = false;
-        let labelId = 0;
-
-        const nodeIdSet = new Set();
-
-        for (let i = 0; i < quantityOfNodes; i++) {
-
-            let randomGeneratedX = Math.floor(Math.random() * 5) + 1;
-            randomGeneratedX *= Math.floor(Math.random() * 2) === 1 ? 1 : -1;
-
-            let randomGeneratedY = Math.floor(Math.random() * 5) + 1;
-            randomGeneratedY *= Math.floor(Math.random() * 2) === 1 ? 1 : -1;
-
-
-            const nodeId = createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY);
-
-            if (!nodeIdSet.has(nodeId)) {
-                s.graph.addNode({
-                    id: createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY),
-                    x: randomGeneratedX * 100,
-                    y: randomGeneratedY * 100,
-                    label: (labelId++).toString(),
-                    size: 10
-                });
-
-                nodeIdSet.add(nodeId);
-            }
-        }
-
-        const nodesOnGraph = s.graph.nodes();
-
-        const edgeIdSet = new Set();
-
-        for (let node of nodesOnGraph) {
-            const pickRandomNodeToConnect = Math.floor(Math.random() * nodesOnGraph.length);
-
-            const sourceNode = node;
-            let targetNode = nodesOnGraph[pickRandomNodeToConnect];
-
-            while (sourceNode === targetNode) {
-                targetNode = nodesOnGraph[Math.floor(Math.random() * nodesOnGraph.length)];
-            }
-
-            const edgeId = createEdgeIdFromCoordinates(sourceNode.id, targetNode.id);
-
-            if (!edgeIdSet.has(edgeId)) {
-                s.graph.addEdge({
-                    id: edgeId,
-                    source: sourceNode.id,
-                    target: targetNode.id,
-                    defaultEdgeLabelSize: 20,
-                    size: 3,
-                    label: computePathLength(sourceNode, targetNode).toString()
-                });
-
-                edgeIdSet.add(edgeId);
-            }
-        }
-        s.refresh();
-    }
-
-    function executedSelectedAlgorithm() {
-        event.preventDefault();
-
-        if (s.graph.nodes().length === 0) {
-            $.iGrowl({
-                type: "growler-settings",
-                message: "There a no nodes on the screen! Please add some",
-                placement: {
-                    x: 'center'
-                }
-            });
-            return;
-        }
-
-        if (algorithmSelected === "dijkstra") {
-
-            if (!validNodeId) {
-                document.getElementById("source-error-message").style.display = "inline";
-                validNodeId = false;
-                return false;
-            } else {
-                $("#helper-text-container").fadeIn();
-                validNodeId = true;
-                clearColoredNodesAndEdges();
-                calculateDijkstraPath();
-            }
-
-        } else if (algorithmSelected === "kruskal") {
-            $("#helper-text-container").fadeIn();
-            validNodeId = true;
-            clearColoredNodesAndEdges();
-            calculateKruskalPath();
-
-        } else if (algorithmSelected === "prim") {
-
-            if (!validNodeId) {
-                document.getElementById("source-error-message").style.display = "inline";
-                validNodeId = false;
-                return false;
-            } else {
-                $("#helper-text-container").fadeIn();
-                validNodeId = true;
-                clearColoredNodesAndEdges();
-                calculatePrimsPath();
-            }
-        }
-
-        return false;
-    }
-
-    function calculateDijkstraPath() {
-        if (validNodeId) {
-            localStorage.setItem("algorithm", "dijkstra");
-
-            const srcNodeId = getNodeIdFromLabel($("#src-node").val());
-
-            const path = s.graph.dijkstra(srcNodeId);
-            executeDijkstraTeacher(path);
-
-            $('#slide-revealer').slideReveal("hide");
-            document.getElementById("play-button").style.display = "inline";
-            document.getElementById("pause-button").style.display = "none";
-        }
-    }
-
-    function calculateKruskalPath() {
-        localStorage.setItem("algorithm", "kruskal");
-
-        const idsOfMinSpanningTreeEdges = s.graph.kruskal();
-        executeKruskalTeacher(idsOfMinSpanningTreeEdges);
-
-        $('#slide-revealer').slideReveal("hide");
-        document.getElementById("play-button").style.display = "inline";
-        document.getElementById("pause-button").style.display = "none";
-    }
-
-    function calculatePrimsPath() {
-        localStorage.setItem("algorithm", "prim");
-
-        const srcNodeId = getNodeIdFromLabel($("#src-node").val());
-
-        const edgesWithMinSpanTreeFlag = s.graph.prims(srcNodeId);
-        executePrimsTeacher(edgesWithMinSpanTreeFlag);
-
-        $('#slide-revealer').slideReveal("hide");
-        document.getElementById("play-button").style.display = "none";
-        document.getElementById("pause-button").style.display = "inline";
-    }
-
-    function clearGraph() {
-        noNodeFlag = false;
-        s.graph.clear();
-        localStorage.clear();
-        s.refresh();
-    }
-
-    function clearColoredNodesAndEdges() {
-        s.graph.nodes().forEach(function (node) {
-            node.color = nodeColour;
-        });
-
-        s.graph.edges().forEach(function (edges) {
-            edges.color = nodeColour;
-        });
-
-        s.refresh();
-    }
-
-    function getNodeIdFromLabel(nodeId) {
-        const node = s.graph.nodes().filter(function (node) {
-            return node.label === nodeId;
-        }).shift();
-
-        return node ? node.id : null;
-    }
-
-    const createNodeIdFromCoordinates = function (x, y) {
-        return x + '.' + y;
-    };
-
-    function createEdgeIdFromCoordinates(x, y) {
-        return x + "|" + y;
-    }
-
-    function computePathLength(node1, node2) {
-        return (Math.sqrt(Math.pow((node2.y - node1.y), 2) + Math.pow((node2.x - node1.x), 2)) / 10).toFixed(2);
-    }
-
-    function returnSortedEdgesByWeight() {
-        return s.graph.edges().sort(function (a, b) {
-            return a.label - b.label;
-        });
-    }
-
-    let growler;
-
-    function checkNodeExistence() {
-        if (s.graph.nodes().length === 0) {
-            growler = $.iGrowl({
-                type: "growler-settings",
-                animShow: 'fadeInDown',
-                message: "Go ahead and add some nodes on the graph :)",
-                placement: {
-                    x: 'center'
-                },
-                delay: 0
-            });
-        }
-    }
-
-    /*    sigma.classes.graph.attach('clear', 'clearLog', function () {
-            checkNodeExistence();
-        });*/
-
-    sigma.classes.graph.attach('dropNode', 'dropNodeLog', function () {
-        checkNodeExistence();
-    });
-
-    sigma.classes.graph.attach('addNode', 'addNodeLog', function () {
-        if (growler) {
-            growler.dismiss();
-        }
-    });
-
-    setTimeout(checkNodeExistence, 2500);
-    $("animation-holder").removeClass("animsition");
-</script>
-
 </html>
+

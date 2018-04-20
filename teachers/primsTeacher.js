@@ -20,7 +20,7 @@ function executePrimsTeacher(edgesOnGraph) {
     });
 
     clearColoredNodesAndEdges();
-    const task = new Task(actionExecutor(), speed);
+    const task = new Task(actionExecutor(), executionSpeed);
     let freeFlow = false;
 
     task.step();
@@ -54,6 +54,12 @@ function executePrimsTeacher(edgesOnGraph) {
                 actionPosition = k.srcElement.id * 2 + 1;
                 task.step();
             });
+
+            $('.resize-drag').addClass('resize-drag-highlight');
+            setTimeout(function () {
+                $('.resize-drag').removeClass('resize-drag-highlight');
+            }, 1000);
+
         }
         s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter].currentEdge.id)});
     }

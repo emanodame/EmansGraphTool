@@ -3,7 +3,7 @@
     sigma.classes.graph.addMethod('kruskal', function () {
         const sortedEdgesInGraph = returnSortedEdgesByWeight();
 
-        const spanningTreesArray = [];
+        const spanningTrees = [];
 
         const edgesInMinSpanningTreeIds = new Set();
         const nodesInSpanningTrees = new Set();
@@ -20,7 +20,7 @@
                 continue;
             }
 
-            for (let spanningTree of spanningTreesArray) {
+            for (let spanningTree of spanningTrees) {
 
                 if (spanningTree.contains(sourceNodeId) && spanningTree.contains(targetNodeId)) {
                     break;
@@ -36,7 +36,7 @@
                         });
 
                         edgesInMinSpanningTreeIds.add(sourceNodeId + "|" + targetNodeId);
-                        spanningTreesArray.splice(spanningTreesArray.indexOf(spanningTreeWithTargetNode), 1);
+                        spanningTrees.splice(spanningTrees.indexOf(spanningTreeWithTargetNode), 1);
                         break;
 
                     } else {
@@ -55,7 +55,7 @@
                         });
 
                         edgesInMinSpanningTreeIds.add(sourceNodeId + "|" + targetNodeId);
-                        spanningTreesArray.splice(spanningTreesArray.indexOf(spanningTreeWithSourceNode), 1);
+                        spanningTrees.splice(spanningTrees.indexOf(spanningTreeWithSourceNode), 1);
                         break;
 
                     } else {
@@ -78,12 +78,12 @@
             nodesInSpanningTrees.add(sortedEdgesInGraph[0].source);
             nodesInSpanningTrees.add(sortedEdgesInGraph[0].target);
 
-            spanningTreesArray.push(tree);
+            spanningTrees.push(tree);
             edgesInMinSpanningTreeIds.add(sortedEdgesInGraph[0].source + "|" + sortedEdgesInGraph[0].target);
         }
 
         function returnSpanningTreeWithNodeId(edge) {
-            for (let spanningTree of spanningTreesArray) {
+            for (let spanningTree of spanningTrees) {
                 if (spanningTree.contains(edge)) {
                     return spanningTree;
                 }
@@ -106,7 +106,7 @@
             nodesInSpanningTrees.add(edge.source);
             nodesInSpanningTrees.add(edge.target);
 
-            spanningTreesArray.push(tree);
+            spanningTrees.push(tree);
             edgesInMinSpanningTreeIds.add(edge.source + "|" + edge.target);
         }
     });

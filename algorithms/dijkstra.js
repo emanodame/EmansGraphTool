@@ -1,5 +1,4 @@
 (function () {
-
     sigma.classes.graph.addMethod('dijkstra', function (startNodeId) {
 
         const edgeMap = [];
