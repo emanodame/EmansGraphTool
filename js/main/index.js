@@ -87,11 +87,11 @@ s.camera.y = localStorage.getItem("cameraY") === null ? localStorage.getItem("ca
 const dragListener = sigma.plugins.dragNodes(s, s.renderers[0]);
 
 sigma.classes.graph.attach('clear', 'clearLog', function () {
-    checkNodeExistence();
+    setTimeout(checkNodeExistence, 1000);
 });
 
 sigma.classes.graph.attach('dropNode', 'dropNodeLog', function () {
-    checkNodeExistence();
+    setTimeout(checkNodeExistence, 1000);
 });
 
 sigma.classes.graph.attach('addNode', 'addNodeLog', function () {

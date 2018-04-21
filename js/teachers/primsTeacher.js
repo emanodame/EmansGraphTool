@@ -136,7 +136,10 @@ function executePrimsTeacher(edgesOnGraph) {
             if (primsCounter === edgesOnGraph.length) {
                 $.iGrowl({
                     type: "growler-settings",
-                    message: "End of Kruskal's Algorithm!",
+                    message: "End of Prim's Algorithm!",
+                    placement: {
+                        x: 'center'
+                    },
                 });
             }
         }
@@ -153,7 +156,10 @@ function executePrimsTeacher(edgesOnGraph) {
 
             $.iGrowl({
                 type: "growler-settings",
-                message: "End of Kruskal's Algorithm!",
+                message: "End of Prim's Algorithm!",
+                placement: {
+                    x: 'center'
+                },
             });
         }
     }

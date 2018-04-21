@@ -13,7 +13,7 @@ describe("Tests", function () {
     });
 
     fit('should correctly import and export test graph', function () {
-        mockExportGraphButton(JSON.stringify(getContentsFromFile("../test_graphs/graph3.json")));
+        mockExportGraphButton(JSON.stringify(getContentsFromFile("../resources/json-graphs/graph3.json")));
         expect(s.graph.nodes().length).toBe(10);
     });
 
@@ -67,19 +67,16 @@ describe("Tests", function () {
         expect(JSON.stringify(expectedPath)).toBe(getContentsFromFile("expectedPrimPath"));
     });
 
-    fit('should correctly execute selected algorithm', function () {
-        const fadeInSpy = spyOn($.fn, "fadeIn");
+/*    fit('should correctly execute selected algorithm', function () {
         const kruskalAlgorithmSpy = spyOn(window, 'calculateKruskalPath');
         algorithmSelected = "kruskal";
-
+TODO: replace test so that it checks for prompt instead
         executedSelectedAlgorithm();
-
-        expect(fadeInSpy).toHaveBeenCalled();
         expect(kruskalAlgorithmSpy).toHaveBeenCalled();
-    });
+    });*/
 
     fit('should correcly create a random grpah', function () {
-        createRandomGraph(2);
+        randomGraphInput(2);
         expect(s.graph.nodes().length).toBe(2);
     });
 

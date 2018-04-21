@@ -587,3 +587,27 @@ html {
     top: -2%;
     font-size: 24px;
 }
+
+#random-graph-input {
+    position: absolute;
+    top: 12%;
+    left: 43%;
+    height: 85px;
+    width: 281px;
+    border: 1px solid #ff0e58;
+    visibility: hidden;
+    z-index: 1;
+}
+
+#number-text-input {
+    color: #ff0e58;
+    border: 1px solid #ff0e58;
+    background-color: black;
+}
+
+#number-input {
+    color: #ff0e58;
+    position: absolute;
+    top: 30px;
+    display: inline-block;
+}

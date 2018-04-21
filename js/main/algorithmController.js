@@ -61,6 +61,18 @@ function executedSelectedAlgorithm() {
         return;
     }
 
+    if (s.graph.edges().length === 0) {
+        $.iGrowl({
+            type: "growler-settings",
+            message: "There a no edges on the screen! Please add some",
+            placement: {
+                x: 'center'
+            }
+        });
+        return;
+    }
+
+
     if (algorithmSelected === "dijkstra") {
 
         if (!validNodeId) {
@@ -79,7 +91,7 @@ function executedSelectedAlgorithm() {
                 return;
             }
 
-            $("#helper-text-container").fadeIn();
+            resetInformation();
             validNodeId = true;
             clearColoredNodesAndEdges();
             calculateDijkstraPath();
@@ -96,7 +108,7 @@ function executedSelectedAlgorithm() {
             return;
         }
 
-        $("#helper-text-container").fadeIn();
+        resetInformation();
         validNodeId = true;
         clearColoredNodesAndEdges();
         calculateKruskalPath();
@@ -117,7 +129,7 @@ function executedSelectedAlgorithm() {
             validNodeId = false;
             return false;
         } else {
-            $("#helper-text-container").fadeIn();
+            resetInformation();
             validNodeId = true;
             clearColoredNodesAndEdges();
             calculatePrimsPath();
@@ -128,41 +140,56 @@ function executedSelectedAlgorithm() {
 }
 
 function calculateDijkstraPath() {
-    if (validNodeId) {
-        localStorage.setItem("algorithm", "dijkstra");
+    localStorage.setItem("algorithm", "dijkstra");
 
-        const srcNodeId = getNodeIdFromLabel($("#src-node").val());
+    const srcNodeId = getNodeIdFromLabel($("#src-node").val());
 
-        const time0 = performance.now();
-        const path = s.graph.dijkstra(srcNodeId);
-        const time1 = performance.now();
+    const path = s.graph.dijkstra(srcNodeId);
 
-        console.log(time1 - time0);
-
+    if (path === undefined || path.length === 0) {
+        $.iGrowl({
+            type: "growler-settings",
+            message: "No path was returned from Dijkstra's algorithm!",
+            placement: {
+                x: 'center'
+            }
+        });
+        return;
+    } else {
+        $("#helper-text-container").fadeIn();
         executeDijkstraTeacher(path);
 
         $('#slide-revealer').slideReveal("hide");
         document.getElementById("play-button").style.display = "inline";
         document.getElementById("pause-button").style.display = "none";
-
-        return path;
     }
+
+    return path;
 }
 
 function calculateKruskalPath() {
     localStorage.setItem("algorithm", "kruskal");
 
-    const time0 = performance.now();
     const idsOfMinSpanningTreeEdges = s.graph.kruskal();
-    const time1 = performance.now();
 
-    console.log(time1 - time0);
+    if (idsOfMinSpanningTreeEdges === undefined ||
+        idsOfMinSpanningTreeEdges.length === 0) {
 
-    executeKruskalTeacher(idsOfMinSpanningTreeEdges);
+        $.iGrowl({
+            type: "growler-settings",
+            message: "No path was returned from Dijkstra's algorithm!",
+            placement: {
+                x: 'center'
+            }
+        });
+    } else {
+        $("#helper-text-container").fadeIn();
+        executeKruskalTeacher(idsOfMinSpanningTreeEdges);
 
-    $('#slide-revealer').slideReveal("hide");
-    document.getElementById("play-button").style.display = "inline";
-    document.getElementById("pause-button").style.display = "none";
+        $('#slide-revealer').slideReveal("hide");
+        document.getElementById("play-button").style.display = "inline";
+        document.getElementById("pause-button").style.display = "none";
+    }
 
     return idsOfMinSpanningTreeEdges;
 }
@@ -171,18 +198,26 @@ function calculatePrimsPath() {
     localStorage.setItem("algorithm", "prim");
 
     const srcNodeId = getNodeIdFromLabel($("#src-node").val());
-
-    const time0 = performance.now();
     const edgesWithMinSpanTreeFlag = s.graph.prims(srcNodeId);
-    const time1 = performance.now();
 
-    console.log(time1 - time0);
+    if (edgesWithMinSpanTreeFlag === undefined ||
+        edgesWithMinSpanTreeFlag.length === 0) {
 
-    executePrimsTeacher(edgesWithMinSpanTreeFlag);
+        $.iGrowl({
+            type: "growler-settings",
+            message: "No path was returned from Dijkstra's algorithm!",
+            placement: {
+                x: 'center'
+            }
+        });
+    } else {
+        $("#helper-text-container").fadeIn();
+        executePrimsTeacher(edgesWithMinSpanTreeFlag);
 
-    $('#slide-revealer').slideReveal("hide");
-    document.getElementById("play-button").style.display = "none";
-    document.getElementById("pause-button").style.display = "inline";
+        $('#slide-revealer').slideReveal("hide");
+        document.getElementById("play-button").style.display = "none";
+        document.getElementById("pause-button").style.display = "inline";
+    }
 
     return edgesWithMinSpanTreeFlag;
 }
@@ -191,4 +226,8 @@ function enterKeyHandler() {
     if (event.keyCode === 13) {
         executedSelectedAlgorithm()
     }
+}
+
+function resetInformation() {
+    $("#helper-text-container").empty();
 }

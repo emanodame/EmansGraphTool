@@ -43,7 +43,7 @@ function executeDijkstraTeacher(path) {
 
     function displayFirstEdgeInfo() {
         if (maxCount === actionPosition) {
-            const helperText = document.getElementById("helper-text");
+            const helperText = document.getElementById("helper-text-container");
             helperText.insertAdjacentHTML("beforeend", "" + displayConnectionInfo());
             document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
         }
@@ -164,7 +164,10 @@ function executeDijkstraTeacher(path) {
             if (dijkstraCounter === path.length) {
                 $.iGrowl({
                     type: "growler-settings",
-                    message: "End of Kruskal's Algorithm!",
+                    message: "End of Dijkstra's Algorithm!",
+                    placement: {
+                        x: 'center'
+                    },
                 });
             }
         }
@@ -182,6 +185,9 @@ function executeDijkstraTeacher(path) {
             $.iGrowl({
                 type: "growler-settings",
                 message: "End of Dijkstra's Algorithm!",
+                placement: {
+                    x: 'center'
+                },
             });
         }
     }

@@ -35,6 +35,14 @@ $(document).ready(function () {
             if (nodesSelected.length === 2) {
                 connectNodesViaEdges();
             }
+        } else {
+            $.iGrowl({
+                type: "growler-settings",
+                message: "Try and insert the node at a different position!",
+                placement: {
+                    x: 'center'
+                },
+            });
         }
     });
 
@@ -81,9 +89,17 @@ $(document).ready(function () {
         const targetNodeId = nodesSelected[1].id;
 
         if (edgesCreated.includes(createEdgeIdFromCoordinates(sourceNodeId, targetNodeId))) {
+
+            $.iGrowl({
+                type: "growler-settings",
+                message: "An edge already exists between these two nodes1",
+                placement: {
+                    x: 'center'
+                },
+            });
+
             resetAllNodesColourAndRefresh();
             nodesSelected.length = 0;
-            throw "Already an edge between " + sourceNodeId + " and " + targetNodeId;
 
         } else {
             s.graph.addEdge({

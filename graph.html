@@ -22,6 +22,16 @@
 <body id="base">
 <div id="animation-holder" class="animsition"></div>
 
+<div id="random-graph-input">
+    <span class="close-holder"><button class="close-button" onclick="closeRandomGraphInput()">x</button></span>
+    <form id="number-input">
+        <label for="number-input">Number of nodes (2 - 99)
+            <input type="text" id="number-text-input" name="json-input">
+            <input type="submit" class="algo-button" id="number-graph-submit-btn" onclick="createRandomGraph()">
+        </label>
+    </form>
+</div>
+
 <div id="json-import">
     <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
     <form id="json-input">
@@ -94,7 +104,7 @@
     </form>
 
     <div id="bottom-button-block">
-        <button type="button" class="algo-button" id="random-graph-button" onclick="createRandomGraph(10)">Random
+        <button type="button" class="algo-button" id="random-graph-button" onclick="randomGraphInputter()">Random
             Graph
         </button>
         <button type="button" class="algo-button " id="json-import-btn" onclick="importJson()">Import Graph</button>
@@ -136,6 +146,7 @@
 <script src="js/algorithms/dijkstra.js"></script>
 <script src="js/algorithms/prims.js"></script>
 <script src="js/algorithms/kruskal.js"></script>
+<script src="js/algorithms/astar.js"> </script>
 
 <script src="js/tools/Task.js"></script>
 <script src="js/teachers/dijsktraTeacher.js"></script>
