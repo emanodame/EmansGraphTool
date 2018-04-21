@@ -23,6 +23,16 @@ $(document).ready(function () {
                 nodesCreated.push(node);
                 s.graph.addNode(node);
                 s.refresh();
+                console.log("lolda");
+            } else {
+                console.log("da");
+                $.iGrowl({
+                    type: "growler-settings",
+                    message: "Try and insert the node at a different position!",
+                    placement: {
+                        x: 'center'
+                    },
+                });
             }
         }
     });
@@ -35,14 +45,6 @@ $(document).ready(function () {
             if (nodesSelected.length === 2) {
                 connectNodesViaEdges();
             }
-        } else {
-            $.iGrowl({
-                type: "growler-settings",
-                message: "Try and insert the node at a different position!",
-                placement: {
-                    x: 'center'
-                },
-            });
         }
     });
 

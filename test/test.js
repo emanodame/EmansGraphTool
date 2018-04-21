@@ -70,14 +70,17 @@ describe("Tests", function () {
 /*    fit('should correctly execute selected algorithm', function () {
         const kruskalAlgorithmSpy = spyOn(window, 'calculateKruskalPath');
         algorithmSelected = "kruskal";
-TODO: replace test so that it checks for prompt instead
+TODO: replace test so that it checks for prompt instead add test case for prompt and non prompt
         executedSelectedAlgorithm();
         expect(kruskalAlgorithmSpy).toHaveBeenCalled();
     });*/
 
     fit('should correcly create a random grpah', function () {
-        randomGraphInput(2);
-        expect(s.graph.nodes().length).toBe(2);
+        const randomNodesValue = 5;
+
+        spyOn($.fn, "val").and.returnValue(randomNodesValue);
+        createRandomGraph();
+        expect(s.graph.nodes().length).toBe(randomNodesValue);
     });
 
     fit('should show dijkstra input box', function () {

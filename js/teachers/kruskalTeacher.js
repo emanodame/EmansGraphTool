@@ -160,9 +160,6 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             $.iGrowl({
                 type: "growler-settings",
                 message: "End of Kruskal's Algorithm!",
-                placement: {
-                    x: 'center'
-                },
             });
         }
     }

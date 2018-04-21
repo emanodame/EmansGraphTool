@@ -41,7 +41,7 @@ html {
 
 #slide-revealer-header {
     position: absolute;
-    left: 50px;
+    left: 85px;
     color: #ff0e58;
 }
 
@@ -104,9 +104,9 @@ html {
 
 #clear-button {
     position: absolute;
+    top: -38px;
+    width: 100px;
     white-space: nowrap;
-    left: -22px;
-    top: 32px;
 }
 
 .input-text-holder {
@@ -187,6 +187,8 @@ html {
 
 #execute-button {
     position: absolute;
+    left: 16px;
+    top: -12px;
 }
 
 #left-trigger {

@@ -5,8 +5,6 @@ function showDijkstraInputBoxes() {
 
     if (algorithmSelected === 'kruskal') {
         $("#button-block").animate({top: '+70px'});
-    } else if (algorithmSelected === 'astar') {
-        $("#button-block").animate({top: '+60px'});
     }
 
     document.getElementById("source-holder").style.visibility = "visible";
@@ -21,9 +19,7 @@ function showKruskalInputBoxes() {
     document.getElementById("source-error-message").style.display = "none";
 
     if (algorithmSelected !== 'kruskal') {
-        $("#button-block").animate({top: '-8px'});
-    } else if (algorithmSelected === 'astar') {
-        $("#button-block").animate({top: '+50px'});
+        $("#button-block").animate({top: '25px'});
     }
 
     document.getElementById("source-holder").style.visibility = "hidden";
@@ -40,8 +36,6 @@ function showPrimsInputBoxes() {
 
     if (algorithmSelected === 'kruskal') {
         $("#button-block").animate({top: '+70px'});
-    } else if (algorithmSelected === 'astar') {
-        $("#button-block").animate({top: '+60px'});
     }
 
     document.getElementById("source-holder").style.visibility = "visible";
@@ -51,20 +45,6 @@ function showPrimsInputBoxes() {
     $('#prim-option').addClass('algo-chooser-highlight');
 
     algorithmSelected = "prim";
-}
-
-function showAStarInputBoxes() {
-    document.getElementById("source-error-message").style.display = "none";
-
-    $("#button-block").animate({top: '+140px'});
-
-    document.getElementById("source-holder").style.visibility = "visible";
-    document.getElementById("target-holder").style.visibility = "visible";
-
-    $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
-    $('#astar-option').addClass('algo-chooser-highlight');
-
-    algorithmSelected = "astar";
 }
 
 function showPlayButton() {

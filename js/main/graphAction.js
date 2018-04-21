@@ -11,7 +11,7 @@ function closeRandomGraphInput() {
 function createRandomGraph() {
     event.preventDefault();
 
-    const quantityOfNodes = document.getElementById("number-text-input").value;
+    const quantityOfNodes = $("#number-text-input").val();
 
     if (quantityOfNodes < 2 || quantityOfNodes > 101) {
         $.iGrowl({

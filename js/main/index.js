@@ -62,6 +62,8 @@ $(document).ready(function () {
     initalizeTourGuide();
 });
 
+setTimeout(checkNodeExistence, 2500);
+
 const s = new sigma({
     renderer: {
         container: document.getElementById('base'),
