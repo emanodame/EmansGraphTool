@@ -1,6 +1,7 @@
 function importJson() {
     document.getElementById("json-import").style.visibility = "visible";
     document.getElementById("json-export").style.visibility = "hidden";
+    showOverlay();
 }
 
 function parseJson() {
@@ -41,6 +42,8 @@ function parseJson() {
             s.graph.addEdge(edgeCreation);
             s.refresh();
         }
+
+        removeOverlay();
     } catch (err) {
         console.log("lol");
         $.iGrowl({
@@ -54,6 +57,7 @@ function parseJson() {
 }
 
 function exportJson() {
+    showOverlay();
     document.getElementById("json-import").style.visibility = "hidden";
     document.getElementById("json-export").style.visibility = "visible";
 
@@ -95,6 +99,7 @@ function exportJson() {
 function closeJsonInput() {
     document.getElementById("json-import").style.visibility = "hidden";
     document.getElementById("json-export").style.visibility = "hidden";
+    removeOverlay();
 }
 
 function copyJsonOutput() {

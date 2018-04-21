@@ -1,10 +1,16 @@
 let algorithmSelected = "dijkstra";
 
 function showDijkstraInputBoxes() {
+    document.getElementById("source-error-message").style.display = "none";
+
     if (algorithmSelected === 'kruskal') {
         $("#button-block").animate({top: '+70px'});
+    } else if (algorithmSelected === 'astar') {
+        $("#button-block").animate({top: '+60px'});
     }
+
     document.getElementById("source-holder").style.visibility = "visible";
+    document.getElementById("target-holder").style.visibility = "hidden";
 
     $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
     $('#dijkstra-option').addClass('algo-chooser-highlight');
@@ -12,10 +18,16 @@ function showDijkstraInputBoxes() {
 }
 
 function showKruskalInputBoxes() {
+    document.getElementById("source-error-message").style.display = "none";
+
     if (algorithmSelected !== 'kruskal') {
         $("#button-block").animate({top: '-8px'});
+    } else if (algorithmSelected === 'astar') {
+        $("#button-block").animate({top: '+50px'});
     }
+
     document.getElementById("source-holder").style.visibility = "hidden";
+    document.getElementById("target-holder").style.visibility = "hidden";
 
     $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
     $('#kruskal-option').addClass('algo-chooser-highlight');
@@ -24,15 +36,35 @@ function showKruskalInputBoxes() {
 }
 
 function showPrimsInputBoxes() {
+    document.getElementById("source-error-message").style.display = "none";
+
     if (algorithmSelected === 'kruskal') {
         $("#button-block").animate({top: '+70px'});
+    } else if (algorithmSelected === 'astar') {
+        $("#button-block").animate({top: '+60px'});
     }
+
     document.getElementById("source-holder").style.visibility = "visible";
+    document.getElementById("target-holder").style.visibility = "hidden";
 
     $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
     $('#prim-option').addClass('algo-chooser-highlight');
 
     algorithmSelected = "prim";
+}
+
+function showAStarInputBoxes() {
+    document.getElementById("source-error-message").style.display = "none";
+
+    $("#button-block").animate({top: '+140px'});
+
+    document.getElementById("source-holder").style.visibility = "visible";
+    document.getElementById("target-holder").style.visibility = "visible";
+
+    $(".algo-chooser-highlight").removeClass("algo-chooser-highlight");
+    $('#astar-option').addClass('algo-chooser-highlight');
+
+    algorithmSelected = "astar";
 }
 
 function showPlayButton() {
@@ -83,6 +115,7 @@ function executedSelectedAlgorithm() {
         } else {
 
             if (!localStorage.getItem("dijkstra-summary-prompt")) {
+                showOverlay();
                 $("#algorithm-summary-holder").load("algorithm-summary.html");
                 $("#prompt-text").text("Would you like to view a brief summary of Dijkstra's algorithm before executing?");
                 $("#prompt-text").show();
@@ -100,6 +133,7 @@ function executedSelectedAlgorithm() {
     } else if (algorithmSelected === "kruskal") {
 
         if (!localStorage.getItem("kruskal-summary-prompt")) {
+            showOverlay();
             $("#algorithm-summary-holder").load("algorithm-summary.html");
             $("#prompt-text").text("Would you like to view a brief summary of Kruskal's algorithm before executing?");
             $("#prompt-text").show();
@@ -116,6 +150,7 @@ function executedSelectedAlgorithm() {
     } else if (algorithmSelected === "prim") {
 
         if (!localStorage.getItem("prim-summary-prompt")) {
+            showOverlay();
             $("#algorithm-summary-holder").load("algorithm-summary.html");
             $("#prompt-text").text("Would you like to view a brief summary of Prim's algorithm before executing?");
             $("#prompt-text").show();
@@ -135,7 +170,6 @@ function executedSelectedAlgorithm() {
             calculatePrimsPath();
         }
     }
-
     return false;
 }
 
@@ -177,7 +211,7 @@ function calculateKruskalPath() {
 
         $.iGrowl({
             type: "growler-settings",
-            message: "No path was returned from Dijkstra's algorithm!",
+            message: "No path was returned from Kruskal's algorithm!",
             placement: {
                 x: 'center'
             }
@@ -205,7 +239,7 @@ function calculatePrimsPath() {
 
         $.iGrowl({
             type: "growler-settings",
-            message: "No path was returned from Dijkstra's algorithm!",
+            message: "No path was returned from Prim's algorithm!",
             placement: {
                 x: 'center'
             }
@@ -220,6 +254,36 @@ function calculatePrimsPath() {
     }
 
     return edgesWithMinSpanTreeFlag;
+}
+
+function calculateAstarPath() {
+    localStorage.setItem("algorithm", "astar");
+
+    const srcNodeId = getNodeIdFromLabel($("#src-node").val());
+    const targNodeId = getNodeIdFromLabel($("#targ-node").val());
+
+    const nodePath = s.graph.astar(srcNodeId, targNodeId);
+
+    if (nodePath === undefined ||
+        nodePath.length === 0) {
+
+        $.iGrowl({
+            type: "growler-settings",
+            message: "No path was returned from A* algorithm!",
+            placement: {
+                x: 'center'
+            }
+        });
+
+    } else {
+        $("#helper-text-container").fadeIn();
+        executeAstarTeacher(nodePath);
+
+        $('#slide-revealer').slideReveal("hide");
+        document.getElementById("play-button").style.display = "none";
+        document.getElementById("pause-button").style.display = "inline";
+    }
+    return nodePath;
 }
 
 function enterKeyHandler() {

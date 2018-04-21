@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     if (typeof sigma === 'undefined') {
@@ -7,7 +7,7 @@
 
     // Default function to compute path length between two nodes:
     // the euclidian
-    var defaultPathLengthFunction = function(node1, node2, previousPathLength) {
+    var defaultPathLengthFunction = function (node1, node2, previousPathLength) {
         var isEverythingDefined =
             node1 != undefined &&
             node2 != undefined &&
@@ -15,7 +15,7 @@
             node1.y != undefined &&
             node2.x != undefined &&
             node2.y != undefined;
-        if(!isEverythingDefined) {
+        if (!isEverythingDefined) {
             return undefined;
         }
 
@@ -24,9 +24,13 @@
         );
     };
 
+    var lol = function (node1, node2) {
+        return 2;
+    };
+
     sigma.classes.graph.addMethod(
         'astar',
-        function(srcId, destId, settings) {
+        function (srcId, destId, settings) {
             var currentSettings = new sigma.classes.configurable(
                 // Default settings
                 {
@@ -49,7 +53,7 @@
             var closedList = {},
                 openList = [];
 
-            var addToLists = function(node, previousNode, pathLength, heuristicLength) {
+            var addToLists = function (node, previousNode, pathLength, heuristicLength) {
                 var nodeId = node.id;
                 var newItem = {
                     pathLength: pathLength,
@@ -59,14 +63,14 @@
                     previousNode: previousNode
                 };
 
-                if(closedList[nodeId] == undefined || closedList[nodeId].pathLength > pathLength) {
+                if (closedList[nodeId] == undefined || closedList[nodeId].pathLength > pathLength) {
                     closedList[nodeId] = newItem;
 
                     var item;
                     var i;
-                    for(i = 0; i < openList.length; i++) {
+                    for (i = 0; i < openList.length; i++) {
                         item = openList[i];
-                        if(item.heuristicLength > heuristicLength) {
+                        if (item.heuristicLength > heuristicLength) {
                             break;
                         }
                     }
@@ -81,14 +85,7 @@
 
             // Depending of the type of graph (directed or not),
             // the neighbors are either the out neighbors or all.
-            var allNeighbors;
-            if(currentSettings("undirected")) {
-                allNeighbors = this.allNeighborsIndex;
-            }
-            else {
-                allNeighbors = this.outNeighborsIndex;
-            }
-
+            var allNeighbors = this.allNeighborsIndex;
 
             var inspectedItem,
                 neighbors,
@@ -96,17 +93,17 @@
                 pathLength,
                 heuristicLength,
                 i;
-            while(openList.length > 0) {
+            while (openList.length > 0) {
                 inspectedItem = openList.shift();
 
                 // We reached the destination node
-                if(inspectedItem.nodeId == destId) {
+                if (inspectedItem.nodeId == destId) {
                     pathFound = true;
                     break;
                 }
 
                 neighbors = Object.keys(allNeighbors[inspectedItem.nodeId]);
-                for(i = 0; i < neighbors.length; i++) {
+                for (i = 0; i < neighbors.length; i++) {
                     neighbor = this.nodes(neighbors[i]);
                     pathLength = pathLengthFunction(inspectedItem.node, neighbor, inspectedItem.pathLength);
                     heuristicLength = heuristicLengthFunction(neighbor, destNode);
@@ -114,12 +111,12 @@
                 }
             }
 
-            if(pathFound) {
+            if (pathFound) {
                 // Rebuilding path
                 var path = [],
                     currentNode = destNode;
 
-                while(currentNode) {
+                while (currentNode) {
                     path.unshift(currentNode);
                     currentNode = closedList[currentNode.id].previousNode;
                 }

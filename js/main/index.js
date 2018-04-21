@@ -2,8 +2,19 @@ let growler;
 let validNodeId = false;
 let executionSpeed = undefined;
 
-const nodeColour = "#ff0e58";
-const edgeColour = "#ff0e58";
+const nodeAndEdgeColour = "#ff0e58";
+
+self.overlayElement = $("<div class='slide-reveal-overlay'></div>")
+    .hide()
+    .css({
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        height: '100%',
+        width: '100%',
+        'z-index': 2,
+        'background-color': 'rgba(0,0,0,0.5)'
+    });
 
 window.onload = function () {
     const storageNodes = JSON.parse(localStorage.getItem("nodes"));
@@ -110,11 +121,11 @@ function createEdgeIdFromCoordinates(x, y) {
 
 function clearColoredNodesAndEdges() {
     s.graph.nodes().forEach(function (node) {
-        node.color = nodeColour;
+        node.color = nodeAndEdgeColour;
     });
 
     s.graph.edges().forEach(function (edges) {
-        edges.color = nodeColour;
+        edges.color = nodeAndEdgeColour;
     });
 
     s.refresh();
@@ -160,7 +171,24 @@ function checkNodeExistence() {
     }
 }
 
-function showAlgorithmSummarisation() {
+function closePrompt() {
+    removeOverlay();
+    document.getElementById("guide-prompt").style.display = "none";
+
+    if (algorithmSelected === "dijkstra") {
+        localStorage.setItem("dijkstra-summary-prompt", "true");
+
+    } else if (algorithmSelected === "kruskal") {
+        localStorage.setItem("kruskal-summary-prompt", "true");
+
+    } else {
+        localStorage.setItem("prim-summary-prompt", "true");
+    }
+    executedSelectedAlgorithm();
+}
+
+function showSummary() {
+    showOverlay();
     s.graph.nodes().forEach(function (node) {
         node.hidden = true;
     });
@@ -191,26 +219,12 @@ function showAlgorithmSummarisation() {
     }
 }
 
-function closePrompt() {
-    document.getElementById("guide-prompt").style.display = "none";
-
-    if (algorithmSelected === "dijkstra") {
-        localStorage.setItem("dijkstra-summary-prompt", "true");
-
-    } else if (algorithmSelected === "kruskal") {
-        localStorage.setItem("kruskal-summary-prompt", "true");
-
-    } else {
-        localStorage.setItem("prim-summary-prompt", "true");
-    }
-    executedSelectedAlgorithm();
-}
-
 function closeSummary() {
     s.graph.nodes().forEach(function (node) {
         node.hidden = false;
     });
     s.refresh();
+    removeOverlay();
 
     document.getElementById("algorithm-summary-holder").style.display = "none";
     document.getElementById("guide-prompt").style.display = "none";
@@ -238,4 +252,15 @@ function closeSummary() {
 
 function computePathLength(node1, node2) {
     return (Math.sqrt(Math.pow((node2.y - node1.y), 2) + Math.pow((node2.x - node1.x), 2)) / 10).toFixed(2);
+}
+
+function showOverlay() {
+    const $overlayElement = this.overlayElement;
+    $("body").prepend(self.overlayElement);
+    $overlayElement.show();
+}
+
+function removeOverlay() {
+    var $overlayElement = this.overlayElement;
+    $overlayElement.hide();
 }

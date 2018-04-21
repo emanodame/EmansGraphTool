@@ -17,7 +17,7 @@
 
 <link rel="stylesheet" type="text/css" href="css/index.css"/>
 <link rel="import" href="algorithm-summary.html">
-<title>Graph Algorithm tool</title>
+<title>Graph Algorithm Tool</title>
 
 <body id="base">
 <div id="animation-holder" class="animsition"></div>
@@ -53,7 +53,7 @@
 <div id="guide-prompt">
     <span id="prompt-text"></span>
     <div id="answer-container">
-        <span id="yes-button"><button class="algo-button" onclick="showAlgorithmSummarisation()">YES</button></span>
+        <span id="yes-button"><button class="algo-button" onclick="showSummary()">YES</button></span>
         <span id="no-button"><button class="algo-button" onclick="closePrompt()">NO</button></span>
     </div>
 </div>
@@ -97,6 +97,17 @@
             </div>
         </div>
 
+        <div id="target-holder">
+            Target Node ID
+            <label>
+                <input autocomplete="off" type="text" name="target-node" id="targ-node"
+                       class="node-input validate-class my-class-invalid" onkeydown="enterKeyHandler()">
+            </label>
+            <div id="target-error-message" hidden>
+                Invalid ID!
+            </div>
+        </div>
+
         <div id="button-block">
             <button type="button" class="algo-button" id="clear-button" onclick="clearGraph()">CLEAR GRAPH</button>
             <input type="submit" id="execute-button" class="algo-button" value="Execute">
@@ -104,7 +115,7 @@
     </form>
 
     <div id="bottom-button-block">
-        <button type="button" class="algo-button" id="random-graph-button" onclick="randomGraphInputter()">Random
+        <button type="button" class="algo-button" id="random-graph-button" onclick="openRandomGraphInput()">Random
             Graph
         </button>
         <button type="button" class="algo-button " id="json-import-btn" onclick="importJson()">Import Graph</button>
@@ -146,7 +157,7 @@
 <script src="js/algorithms/dijkstra.js"></script>
 <script src="js/algorithms/prims.js"></script>
 <script src="js/algorithms/kruskal.js"></script>
-<script src="js/algorithms/astar.js"> </script>
+<script src="js/algorithms/astar.js"></script>
 
 <script src="js/tools/Task.js"></script>
 <script src="js/teachers/dijsktraTeacher.js"></script>

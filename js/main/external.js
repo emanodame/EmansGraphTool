@@ -79,6 +79,7 @@ function hideSlider() {
 
 $('#slide-revealer').slideReveal({
     trigger: $("#left-trigger"),
+    width: "16%",
     position: "right",
     push: false,
     overlay: true

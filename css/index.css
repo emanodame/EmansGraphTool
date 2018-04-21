@@ -161,7 +161,9 @@ html {
 
 #target-holder {
     position: absolute;
+    left: 20px;
     top: 60px;
+    visibility: hidden;
 }
 
 .algo-button {
@@ -256,7 +258,7 @@ html {
     width: 281px;
     border: 1px solid #ff0e58;
     visibility: hidden;
-    z-index: 1;
+    z-index: 3;
 }
 
 #json-export {
@@ -268,7 +270,7 @@ html {
     color: #ff0e58;
     border: 1px solid #ff0e58;
     visibility: hidden;
-    z-index: 1;
+    z-index: 3;
 }
 
 #json-input {
@@ -481,8 +483,8 @@ html {
     border: 2px solid #ff0e58;
     border-radius: 8px;
     transition: all .5s linear;
-    z-index: 1;
     display: none;
+    z-index: 3;
 }
 
 #no-button {
@@ -526,7 +528,7 @@ html {
     top: 15%;
     left: 36%;
     display: none;
-    z-index: 1;
+    z-index: 3;
 }
 
 #dijkstra-summary-container {
@@ -596,7 +598,7 @@ html {
     width: 281px;
     border: 1px solid #ff0e58;
     visibility: hidden;
-    z-index: 1;
+    z-index: 3;
 }
 
 #number-text-input {
@@ -610,4 +612,14 @@ html {
     position: absolute;
     top: 30px;
     display: inline-block;
+}
+
+#dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index : 1049;
+    background-color: rgba(0,0,0,0.5)
 }

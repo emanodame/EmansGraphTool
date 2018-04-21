@@ -43,6 +43,8 @@
         this.init();
     };
 
+
+
     // Public methods
     $.extend(SlideReveal.prototype, {
         init: function() {

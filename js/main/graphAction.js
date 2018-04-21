@@ -1,8 +1,10 @@
-function randomGraphInputter() {
+function openRandomGraphInput() {
+    showOverlay();
     document.getElementById("random-graph-input").style.visibility = "visible";
 }
 
 function closeRandomGraphInput() {
+    removeOverlay();
     document.getElementById("random-graph-input").style.visibility = "hidden";
 }
 
@@ -21,6 +23,7 @@ function createRandomGraph() {
         });
 
     } else {
+        removeOverlay();
         closeRandomGraphInput();
         clearGraph();
 
