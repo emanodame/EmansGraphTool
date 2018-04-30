@@ -14,6 +14,7 @@ function createRandomGraph() {
     const quantityOfNodes = $("#number-text-input").val();
 
     if (quantityOfNodes < 2 || quantityOfNodes > 101 || isNaN(quantityOfNodes)) {
+        $.iGrowl.prototype.dismissAll('all');
         $.iGrowl({
             type: "growler-settings",
             message: "Please enter a number between 2-10 (inclusive)",

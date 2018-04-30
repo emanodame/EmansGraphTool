@@ -63,6 +63,7 @@ function executedSelectedAlgorithm() {
     event.preventDefault();
 
     if (sigmaInstance.graph.nodes().length === 0) {
+        $.iGrowl.prototype.dismissAll('all');
         $.iGrowl({
             type: "growler-settings",
             message: "There a no nodes on the screen! Please add some",
@@ -74,6 +75,7 @@ function executedSelectedAlgorithm() {
     }
 
     if (sigmaInstance.graph.edges().length === 0) {
+        $.iGrowl.prototype.dismissAll('all');
         $.iGrowl({
             type: "growler-settings",
             message: "There a no edges on the screen! Please add some",
@@ -237,36 +239,6 @@ function calculatePrimsPath() {
     }
 
     return edgesWithMinSpanTreeFlag;
-}
-
-function calculateAstarPath() {
-    localStorage.setItem("algorithm", "astar");
-
-    const srcNodeId = getNodeIdFromLabel($("#src-node").val());
-    const targNodeId = getNodeIdFromLabel($("#targ-node").val());
-
-    const nodePath = sigmaInstance.graph.astar(srcNodeId, targNodeId);
-
-    if (nodePath === undefined ||
-        nodePath.length === 0) {
-
-        $.iGrowl({
-            type: "growler-settings",
-            message: "No path was returned from A* algorithm!",
-            placement: {
-                x: 'center'
-            }
-        });
-
-    } else {
-        $("#helper-text-container").fadeIn();
-        executeAstarTeacher(nodePath);
-
-        $('#slide-revealer').slideReveal("hide");
-        document.getElementById("play-button").style.display = "none";
-        document.getElementById("pause-button").style.display = "inline";
-    }
-    return nodePath;
 }
 
 function enterKeyHandler() {

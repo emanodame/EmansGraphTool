@@ -293,6 +293,12 @@ head {
     background-color: black;
 }
 
+#json-text-input:focus {
+    outline: none;
+    border-color: #ff0e58;
+    box-shadow: 0 0 25px #ff0e58;
+}
+
 .close-holder {
     float: right;
     display: inline-block;
@@ -355,6 +361,8 @@ head {
     border: 1px solid #ff0e58;
     background-color: black;
     margin-right: 10px;
+    outline: none;
+    box-shadow: 0 0 25px #ff0e58;
 }
 
 #slider {
@@ -606,12 +614,20 @@ head {
     border: 1px solid #ff0e58;
     visibility: hidden;
     z-index: 3;
+    outline: none;
+    box-shadow: 0 0 25px #ff0e58;
 }
 
 #number-text-input {
     color: #ff0e58;
     border: 1px solid #ff0e58;
     background-color: black;
+}
+
+#number-text-input:focus {
+    outline: none;
+    border-color: #ff0e58;
+    box-shadow: 0 0 25px #ff0e58;
 }
 
 #number-input {

@@ -81,6 +81,7 @@ $(document).ready(function () {
         const targetNodeId = nodesSelected[1].id;
 
         if (edgesCreated.includes(createEdgeIdFromCoordinates(sourceNodeId, targetNodeId))) {
+            $.iGrowl.prototype.dismissAll('all');
 
             $.iGrowl({
                 type: "growler-settings",

@@ -47,6 +47,8 @@ function parseJson() {
         sigmaInstance.graph.clear();
         sigmaInstance.refresh();
 
+        $.iGrowl.prototype.dismissAll('all');
+
         $.iGrowl({
             type: "growler-settings",
             message: "Invalid JSON structure!",

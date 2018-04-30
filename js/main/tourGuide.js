@@ -116,7 +116,7 @@ function initalizeTourGuide() {
             }, {
                 template: "<div class='popover tour'>\n" +
                 "<button class='tour-close-button algo-button' data-role='end'>X</button>" +
-                "    <div class='popover-content'>Give it a try. Go back clear up on misunderstandings.</div>\n" +
+                "    <div class='popover-content'>Give it a try. To run the tour guide again, go into the Control Panel and click the info button on the top right!.</div>\n" +
                 "    <div class='popover-navigation'>\n" +
                 "     <div id='options'>" +
                 "        <div class='glyphicon glyphicon-arrow-left directional-buttons tour-prev' data-role='prev'></div>\n" +
