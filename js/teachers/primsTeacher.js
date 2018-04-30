@@ -11,7 +11,7 @@ function executePrimsTeacher(edgesOnGraph) {
 
         const edgeStates = {
             currentEdge: edge,
-            edges: jQuery.extend(true, {}, s.graph.edges())
+            edges: jQuery.extend(true, {}, sigmaInstance.graph.edges())
         };
 
         primsEdgeStates.push(edgeStates);
@@ -27,14 +27,14 @@ function executePrimsTeacher(edgesOnGraph) {
 
     function graphAction() {
         Object.values(primsEdgeStates[primsCounter].edges).forEach(function (edge) {
-            s.graph.edges(edge.id).color = edge.color;
+            sigmaInstance.graph.edges(edge.id).color = edge.color;
         });
 
-        s.graph.edges(primsEdgeStates[primsCounter].currentEdge.id).color = primsEdgeStates[primsCounter].currentEdge.color;
-        s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter].currentEdge.id)});
+        sigmaInstance.graph.edges(primsEdgeStates[primsCounter].currentEdge.id).color = primsEdgeStates[primsCounter].currentEdge.color;
+        sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(primsEdgeStates[primsCounter].currentEdge.id)});
 
         primsCounter++;
-        s.refresh();
+        sigmaInstance.refresh();
 
         if (!freeFlow) {
             task.pause();
@@ -61,7 +61,8 @@ function executePrimsTeacher(edgesOnGraph) {
             }, 1000);
 
         }
-        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter].currentEdge.id)});
+        highlightElement(primsCounter, '#6e0db6', 0.5);
+        sigmaInstance.renderers[0].dispatchEvent('overEdge', {edge: sigmaInstance.graph.edges(primsEdgeStates[primsCounter].currentEdge.id)});
     }
 
     function* actionExecutor() {
@@ -81,15 +82,15 @@ function executePrimsTeacher(edgesOnGraph) {
 
     function displayConnectionInfo() {
         if (primsEdgeStates[primsCounter].currentEdge.inSpanningTree) {
-            return "Step " + (primsCounter + 1) + ") Picking the smallest edge: " +
-                s.graph.nodes(primsEdgeStates[primsCounter].currentEdge.source).label + " - " +
-                s.graph.nodes(primsEdgeStates[primsCounter].currentEdge.target).label +
+            return "> Step " + (primsCounter + 1) + ") Picking the smallest edge: " +
+                sigmaInstance.graph.nodes(primsEdgeStates[primsCounter].currentEdge.source).label + " - " +
+                sigmaInstance.graph.nodes(primsEdgeStates[primsCounter].currentEdge.target).label +
                 " this has weight " + primsEdgeStates[primsCounter].currentEdge.label +
                 ". </br> This will get added to Minimum Spanning Tree"
         } else {
-            return "Step " + (primsCounter + 1) + ") Picking the smallest edge: " +
-                s.graph.nodes(primsEdgeStates[primsCounter].currentEdge.source).label + " - " +
-                s.graph.nodes(primsEdgeStates[primsCounter].currentEdge.target).label +
+            return "> Step " + (primsCounter + 1) + ") Picking the smallest edge: " +
+                sigmaInstance.graph.nodes(primsEdgeStates[primsCounter].currentEdge.source).label + " - " +
+                sigmaInstance.graph.nodes(primsEdgeStates[primsCounter].currentEdge.target).label +
                 " this has weight " + primsEdgeStates[primsCounter].currentEdge.label +
                 ". </br> This will not get added to Minimum Spanning Tree as a cycle is formed"
 
@@ -108,7 +109,7 @@ function executePrimsTeacher(edgesOnGraph) {
 
     function restart() {
         if (primsCounter > 2) {
-            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
             primsCounter = 0;
             actionPosition = 1;
             maxCount = actionPosition;
@@ -119,7 +120,7 @@ function executePrimsTeacher(edgesOnGraph) {
 
     function rewind() {
         if (primsCounter > 0) {
-            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
             primsCounter -= 1;
             actionPosition -= 1;
             freeFlow = false;
@@ -147,7 +148,7 @@ function executePrimsTeacher(edgesOnGraph) {
 
     function end() {
         if (primsCounter < edgesOnGraph.length) {
-            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
             primsCounter = edgesOnGraph.length - 1;
             actionPosition = action.length - 1;
             maxCount = actionPosition;
@@ -170,4 +171,13 @@ function executePrimsTeacher(edgesOnGraph) {
     executePrimsTeacher.rewind = rewind;
     executePrimsTeacher.forward = forward;
     executePrimsTeacher.end = end;
+}
+
+function highlightElement(id, color, seconds){
+    var element = document.getElementById(id);
+    var origcolor = element.style.backgroundColor;
+    element.style.backgroundColor = color;
+    var t = setTimeout(function(){
+        element.style.backgroundColor = origcolor;
+    },(seconds*1000));
 }

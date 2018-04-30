@@ -117,3 +117,14 @@ function endAlgorithm() {
             break;
     }
 }
+
+document.onkeydown = function (e) {
+    switch (e.keyCode) {
+        case 37: //left key
+            rewindAlgorithm();
+            return;
+        case 39: //right key
+            stepAlgorithm();
+            return;
+    }
+};

@@ -23,15 +23,15 @@ window.onload = function () {
     if (storageNodes.length > 0) {
         storageNodes.forEach(function (node) {
             node.hidden = false;
-            s.graph.addNode(node);
+            sigmaInstance.graph.addNode(node);
         });
 
         if (storageEdges.length > 0) {
             storageEdges.forEach(function (edge) {
-                s.graph.addEdge(edge);
+                sigmaInstance.graph.addEdge(edge);
             });
         }
-        s.refresh();
+        sigmaInstance.refresh();
     }
 };
 
@@ -39,11 +39,11 @@ window.onbeforeunload = function () {
     clearColoredNodesAndEdges();
     localStorage.clear();
 
-    localStorage.setItem("nodes", JSON.stringify(s.graph.nodes()));
-    localStorage.setItem("edges", JSON.stringify(s.graph.edges()));
+    localStorage.setItem("nodes", JSON.stringify(sigmaInstance.graph.nodes()));
+    localStorage.setItem("edges", JSON.stringify(sigmaInstance.graph.edges()));
 
-    localStorage.setItem("cameraX", s.camera.x);
-    localStorage.setItem("cameraY", s.camera.y);
+    localStorage.setItem("cameraX", sigmaInstance.camera.x);
+    localStorage.setItem("cameraY", sigmaInstance.camera.y);
 };
 
 $(document).bind("contextmenu", function (event) {
@@ -64,7 +64,7 @@ $(document).ready(function () {
 
 setTimeout(checkNodeExistence, 2500);
 
-const s = new sigma({
+const sigmaInstance = new sigma({
     renderer: {
         container: document.getElementById('base'),
         type: 'canvas'
@@ -94,10 +94,10 @@ const s = new sigma({
     }
 });
 
-s.camera.x = localStorage.getItem("cameraX") === null ? localStorage.getItem("cameraX") : 0;
-s.camera.y = localStorage.getItem("cameraY") === null ? localStorage.getItem("cameraY") : 0;
+sigmaInstance.camera.x = localStorage.getItem("cameraX") === null ? localStorage.getItem("cameraX") : 0;
+sigmaInstance.camera.y = localStorage.getItem("cameraY") === null ? localStorage.getItem("cameraY") : 0;
 
-const dragListener = sigma.plugins.dragNodes(s, s.renderers[0]);
+const dragListener = sigma.plugins.dragNodes(sigmaInstance, sigmaInstance.renderers[0]);
 
 sigma.classes.graph.attach('clear', 'clearLog', function () {
     setTimeout(checkNodeExistence, 1000);
@@ -122,19 +122,19 @@ function createEdgeIdFromCoordinates(x, y) {
 }
 
 function clearColoredNodesAndEdges() {
-    s.graph.nodes().forEach(function (node) {
+    sigmaInstance.graph.nodes().forEach(function (node) {
         node.color = nodeAndEdgeColour;
     });
 
-    s.graph.edges().forEach(function (edges) {
+    sigmaInstance.graph.edges().forEach(function (edges) {
         edges.color = nodeAndEdgeColour;
     });
 
-    s.refresh();
+    sigmaInstance.refresh();
 }
 
 function getNodeIdFromLabel(nodeId) {
-    const node = s.graph.nodes().filter(function (node) {
+    const node = sigmaInstance.graph.nodes().filter(function (node) {
         return node.label === nodeId;
     }).shift();
 
@@ -142,7 +142,7 @@ function getNodeIdFromLabel(nodeId) {
 }
 
 function returnSortedEdgesByWeight() {
-    return s.graph.edges().sort(function (a, b) {
+    return sigmaInstance.graph.edges().sort(function (a, b) {
         return a.label - b.label;
     });
 }
@@ -160,7 +160,7 @@ $("#src-node").focusout(function () {
 });
 
 function checkNodeExistence() {
-    if (s.graph.nodes().length === 0) {
+    if (sigmaInstance.graph.nodes().length === 0) {
         growler = $.iGrowl({
             type: "growler-settings",
             animShow: 'fadeInDown',
@@ -191,11 +191,11 @@ function closePrompt() {
 
 function showSummary() {
     showOverlay();
-    s.graph.nodes().forEach(function (node) {
+    sigmaInstance.graph.nodes().forEach(function (node) {
         node.hidden = true;
     });
 
-    s.refresh();
+    sigmaInstance.refresh();
     document.getElementById("guide-prompt").style.left = "23%";
 
     document.getElementById("guide-prompt").style.width = "60%";
@@ -222,10 +222,10 @@ function showSummary() {
 }
 
 function closeSummary() {
-    s.graph.nodes().forEach(function (node) {
+    sigmaInstance.graph.nodes().forEach(function (node) {
         node.hidden = false;
     });
-    s.refresh();
+    sigmaInstance.refresh();
     removeOverlay();
 
     document.getElementById("algorithm-summary-holder").style.display = "none";
@@ -263,6 +263,6 @@ function showOverlay() {
 }
 
 function removeOverlay() {
-    var $overlayElement = this.overlayElement;
+    const $overlayElement = this.overlayElement;
     $overlayElement.hide();
 }

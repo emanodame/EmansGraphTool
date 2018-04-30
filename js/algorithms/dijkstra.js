@@ -1,7 +1,7 @@
 (function () {
     sigma.classes.graph.addMethod('dijkstra', function (startNodeId) {
 
-        const edgeMap = [];
+        const discoveredEdges = [];
         const visitedEdges = [];
         const visitedNodes = new Set();
 
@@ -30,7 +30,7 @@
         return path;
 
         function sortAndReturnLowestEdge() {
-            const sortedEdges = edgeMap.sort(function (a, b) {
+            const sortedEdges = discoveredEdges.sort(function (a, b) {
                 return parseFloat(a.weight) - parseFloat(b.weight);
             });
 
@@ -50,7 +50,7 @@
                 if (!visitedEdges.includes(edge)) {
                     edge.prevEdge = parseFloat(prevEdge !== undefined ? parseFloat(prevEdge.weight) : 0);
                     edge.weight = (edge.prevEdge) + parseFloat(edge.label);
-                    edgeMap.push(edge);
+                    discoveredEdges.push(edge);
                     visitedEdges.push(edge);
                 }
             });

@@ -2,6 +2,11 @@ html {
     height: 100%;
 }
 
+
+head {
+    color: black;
+}
+
 #base {
     background-color: black;
     outline: none !important;
@@ -188,7 +193,7 @@ html {
 #execute-button {
     position: absolute;
     left: 16px;
-    top: -12px;
+    top: 5px;
 }
 
 #left-trigger {
@@ -596,7 +601,7 @@ html {
     position: absolute;
     top: 12%;
     left: 43%;
-    height: 85px;
+    height: 84px;
     width: 281px;
     border: 1px solid #ff0e58;
     visibility: hidden;
@@ -612,7 +617,7 @@ html {
 #number-input {
     color: #ff0e58;
     position: absolute;
-    top: 30px;
+    top: 16px;
     display: inline-block;
 }
 
@@ -624,4 +629,11 @@ html {
     width: 100%;
     z-index : 1049;
     background-color: rgba(0,0,0,0.5)
+}
+
+#helper-text-container {
+    font-family: sans-serif;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-spacing: 2px;
 }

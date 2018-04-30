@@ -13,7 +13,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
         const edgeStates = {
             currentEdge: edge,
             isEdgeInSpanningTree: isEdgeInSpanningTree(edge.id),
-            edges: jQuery.extend(true, {}, s.graph.edges())
+            edges: jQuery.extend(true, {}, sigmaInstance.graph.edges())
         };
 
         kruskalEdgeStatesArray.push(edgeStates);
@@ -30,14 +30,14 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function graphAction() {
         Object.values(kruskalEdgeStatesArray[kruskalCounter].edges).forEach(function (edge) {
-            s.graph.edges(edge.id).color = edge.color;
+            sigmaInstance.graph.edges(edge.id).color = edge.color;
         });
 
-        s.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id).color = kruskalEdgeStatesArray[kruskalCounter].currentEdge.color;
-        s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id)});
+        sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id).color = kruskalEdgeStatesArray[kruskalCounter].currentEdge.color;
+        sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id)});
 
         kruskalCounter++;
-        s.refresh();
+        sigmaInstance.refresh();
 
         if (!freeFlow) {
             task.pause();
@@ -52,6 +52,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             document.getElementById("helper-text-container").appendChild(div);
             document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
+
             document.getElementById(div.id).addEventListener("click", function (k) {
                 kruskalCounter = k.srcElement.id;
                 actionPosition = k.srcElement.id * 2 + 1;
@@ -62,9 +63,9 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             setTimeout(function () {
                 $('.resize-drag').removeClass('resize-drag-highlight');
             }, 1000);
-
         }
-        s.renderers[0].dispatchEvent('overEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id)})
+        highlightElement(kruskalCounter, '#6e0db6', 0.5);
+        sigmaInstance.renderers[0].dispatchEvent('overEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id)})
     }
 
     function* actionExecutor() {
@@ -84,15 +85,15 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function displayConnectionInfo() {
         if (kruskalEdgeStatesArray[kruskalCounter].isEdgeInSpanningTree) {
-            return "Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered edge: " +
-                s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
-                s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
+            return "> Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered edge: " +
+                sigmaInstance.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
+                sigmaInstance.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
                 " this has weight " + kruskalEdgeStatesArray[kruskalCounter].currentEdge.label +
                 ".  <br /> This will get added to Minimum Spanning Tree."
         } else {
-            return "Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered edge: " +
-                s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
-                s.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
+            return "> Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered edge: " +
+                sigmaInstance.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
+                sigmaInstance.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
                 " this has weight " + kruskalEdgeStatesArray[kruskalCounter].currentEdge.label +
                 ".  <br /> This will not get added to Minimum Spanning Tree as a cycle is formed."
 
@@ -111,7 +112,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function restart() {
         if (kruskalCounter > 2) {
-            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
             kruskalCounter = 0;
             actionPosition = 1;
             maxCount = actionPosition;
@@ -122,7 +123,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function rewind() {
         if (kruskalCounter > 0) {
-            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
             kruskalCounter -= 1;
             actionPosition -= 1;
             freeFlow = false;
@@ -150,7 +151,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function end() {
         if (kruskalCounter < sortedEdgesOnGraph.length) {
-            s.renderers[0].dispatchEvent('outEdge', {edge: s.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
             kruskalCounter = sortedEdgesOnGraph.length - 1;
             actionPosition = action.length - 1;
             maxCount = actionPosition;
@@ -174,4 +175,13 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     executeKruskalTeacher.rewind = rewind;
     executeKruskalTeacher.forward = forward;
     executeKruskalTeacher.end = end;
+}
+
+function highlightElement(id, color, seconds){
+    var element = document.getElementById(id);
+    var origcolor = element.style.backgroundColor;
+    element.style.backgroundColor = color;
+    var t = setTimeout(function(){
+        element.style.backgroundColor = origcolor;
+    },(seconds*1000));
 }

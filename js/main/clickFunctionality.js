@@ -1,14 +1,14 @@
 $(document).ready(function () {
-    const sigmaCamera = s.camera;
+    const sigmaCamera = sigmaInstance.camera;
 
     const nodesCreated = [];
     const edgesCreated = [];
 
     const nodesSelected = [];
 
-    s.bind('clickStage', function (e) {
+    sigmaInstance.bind('clickStage', function (e) {
 
-        if (!e.shiftKey && !e.data.captor.isDragging && s.settings('mouseEnabled')) {
+        if (!e.shiftKey && !e.data.captor.isDragging && sigmaInstance.settings('mouseEnabled')) {
             const positionWithCamera = sigmaCamera.cameraPosition(e.data.captor.x, e.data.captor.y);
 
             const node = {
@@ -19,25 +19,15 @@ $(document).ready(function () {
             };
 
             if (!assertNoDuplicateNodePosition(node)) {
-                node.label = (++s.graph.nodes().length).toString();
+                node.label = (++sigmaInstance.graph.nodes().length).toString();
                 nodesCreated.push(node);
-                s.graph.addNode(node);
-                s.refresh();
-                console.log("lolda");
-            } else {
-                console.log("da");
-                $.iGrowl({
-                    type: "growler-settings",
-                    message: "Try and insert the node at a different position!",
-                    placement: {
-                        x: 'center'
-                    },
-                });
+                sigmaInstance.graph.addNode(node);
+                sigmaInstance.refresh();
             }
         }
     });
 
-    s.bind("clickNode", function (e) {
+    sigmaInstance.bind("clickNode", function (e) {
 
         if (e.data.captor.shiftKey) {
             selectOrUnselectNode(e.data.node);
@@ -48,41 +38,41 @@ $(document).ready(function () {
         }
     });
 
-    s.bind("rightClickNode", function (e) {
-        s.graph.dropNode(e.data.node.id);
-        s.refresh();
+    sigmaInstance.bind("rightClickNode", function (node) {
+        sigmaInstance.graph.dropNode(node.data.node.id);
+        sigmaInstance.refresh();
     });
 
-    s.bind("rightClickEdge", function (e) {
+    sigmaInstance.bind("rightClickEdge", function (e) {
         const edge = e.data.edge;
-        s.graph.dropEdge(edge.id);
+        sigmaInstance.graph.dropEdge(edge.id);
 
         removeEdgeIdAndInverseEdgeInArray(edge.source, edge.target);
-        s.refresh();
+        sigmaInstance.refresh();
     });
 
     function selectOrUnselectNode(node) {
         const isNodeAlreadySelected = nodesSelected.includes(node);
 
         if (isNodeAlreadySelected) {
-            s.graph.nodes(node.id).color = "#ff0e58";
+            sigmaInstance.graph.nodes(node.id).color = "#ff0e58";
             nodesSelected.splice(nodesSelected.indexOf(node), 1);
 
         } else {
-            s.graph.nodes(node.id).color = "#4f5b66";
+            sigmaInstance.graph.nodes(node.id).color = "#4f5b66";
             nodesSelected.push(node);
         }
-        s.refresh();
+        sigmaInstance.refresh();
     }
 
     dragListener.bind('drag', function (event) {
-        const edgesConnectedToNode = s.graph.edges().filter(function (edge) {
+        const edgesConnectedToNode = sigmaInstance.graph.edges().filter(function (edge) {
             return event.data.node.id === edge.source || event.data.node.id === edge.target;
         });
 
         edgesConnectedToNode.forEach(function (edge) {
-            edge.label = computePathLength(s.graph.nodes(edge.source), s.graph.nodes(edge.target));
-            s.refresh();
+            edge.label = computePathLength(sigmaInstance.graph.nodes(edge.source), sigmaInstance.graph.nodes(edge.target));
+            sigmaInstance.refresh();
         });
     });
 
@@ -104,7 +94,7 @@ $(document).ready(function () {
             nodesSelected.length = 0;
 
         } else {
-            s.graph.addEdge({
+            sigmaInstance.graph.addEdge({
                 id: createEdgeIdFromCoordinates(sourceNodeId, targetNodeId),
                 source: sourceNodeId,
                 target: targetNodeId,
@@ -120,10 +110,10 @@ $(document).ready(function () {
     }
 
     function resetAllNodesColourAndRefresh() {
-        s.graph.nodes().forEach(function (node) {
+        sigmaInstance.graph.nodes().forEach(function (node) {
             node.color = "#ff0e58";
         });
-        s.refresh();
+        sigmaInstance.refresh();
     }
 
     function addEdgeIdAndInverseEdgeIdToArray(sourceNodeId, targetNodeId) {
@@ -149,7 +139,7 @@ $(document).ready(function () {
     }
 
     function assertNoDuplicateNodePosition(node) {
-        return s.graph.nodes().filter(function (inspectedNode) {
+        return sigmaInstance.graph.nodes().filter(function (inspectedNode) {
             return inspectedNode.id === createNodeIdFromCoordinates(node.x, node.y)
         }).shift();
     }

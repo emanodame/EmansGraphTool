@@ -62,7 +62,7 @@ function showPauseButton() {
 function executedSelectedAlgorithm() {
     event.preventDefault();
 
-    if (s.graph.nodes().length === 0) {
+    if (sigmaInstance.graph.nodes().length === 0) {
         $.iGrowl({
             type: "growler-settings",
             message: "There a no nodes on the screen! Please add some",
@@ -73,7 +73,7 @@ function executedSelectedAlgorithm() {
         return;
     }
 
-    if (s.graph.edges().length === 0) {
+    if (sigmaInstance.graph.edges().length === 0) {
         $.iGrowl({
             type: "growler-settings",
             message: "There a no edges on the screen! Please add some",
@@ -96,6 +96,7 @@ function executedSelectedAlgorithm() {
 
             if (!localStorage.getItem("dijkstra-summary-prompt")) {
                 showOverlay();
+                hideSlider();
                 $("#algorithm-summary-holder").load("algorithm-summary.html");
                 $("#prompt-text").text("Would you like to view a brief summary of Dijkstra's algorithm before executing?");
                 $("#prompt-text").show();
@@ -114,6 +115,7 @@ function executedSelectedAlgorithm() {
 
         if (!localStorage.getItem("kruskal-summary-prompt")) {
             showOverlay();
+            hideSlider();
             $("#algorithm-summary-holder").load("algorithm-summary.html");
             $("#prompt-text").text("Would you like to view a brief summary of Kruskal's algorithm before executing?");
             $("#prompt-text").show();
@@ -131,6 +133,7 @@ function executedSelectedAlgorithm() {
 
         if (!localStorage.getItem("prim-summary-prompt")) {
             showOverlay();
+            hideSlider();
             $("#algorithm-summary-holder").load("algorithm-summary.html");
             $("#prompt-text").text("Would you like to view a brief summary of Prim's algorithm before executing?");
             $("#prompt-text").show();
@@ -158,7 +161,7 @@ function calculateDijkstraPath() {
 
     const srcNodeId = getNodeIdFromLabel($("#src-node").val());
 
-    const path = s.graph.dijkstra(srcNodeId);
+    const path = sigmaInstance.graph.dijkstra(srcNodeId);
 
     if (path === undefined || path.length === 0) {
         $.iGrowl({
@@ -184,7 +187,7 @@ function calculateDijkstraPath() {
 function calculateKruskalPath() {
     localStorage.setItem("algorithm", "kruskal");
 
-    const idsOfMinSpanningTreeEdges = s.graph.kruskal();
+    const idsOfMinSpanningTreeEdges = sigmaInstance.graph.kruskal();
 
     if (idsOfMinSpanningTreeEdges === undefined ||
         idsOfMinSpanningTreeEdges.length === 0) {
@@ -212,7 +215,7 @@ function calculatePrimsPath() {
     localStorage.setItem("algorithm", "prim");
 
     const srcNodeId = getNodeIdFromLabel($("#src-node").val());
-    const edgesWithMinSpanTreeFlag = s.graph.prims(srcNodeId);
+    const edgesWithMinSpanTreeFlag = sigmaInstance.graph.prims(srcNodeId);
 
     if (edgesWithMinSpanTreeFlag === undefined ||
         edgesWithMinSpanTreeFlag.length === 0) {
@@ -242,7 +245,7 @@ function calculateAstarPath() {
     const srcNodeId = getNodeIdFromLabel($("#src-node").val());
     const targNodeId = getNodeIdFromLabel($("#targ-node").val());
 
-    const nodePath = s.graph.astar(srcNodeId, targNodeId);
+    const nodePath = sigmaInstance.graph.astar(srcNodeId, targNodeId);
 
     if (nodePath === undefined ||
         nodePath.length === 0) {

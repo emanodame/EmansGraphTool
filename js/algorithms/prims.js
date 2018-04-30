@@ -25,14 +25,14 @@
 
             if (!checkIfNodeAlreadyVisited(lowestEdge.source, lowestEdge.target)) {
 
-                const addToSpanTree = s.graph.edges(lowestEdge.id);
+                const addToSpanTree = sigmaInstance.graph.edges(lowestEdge.id);
                 addToSpanTree.inSpanningTree = true;
 
                 edgesInMinSpanningTreeIds.push(addToSpanTree);
                 visitedNodes.push(lowestEdge.source);
                 visitedNodes.push(lowestEdge.target);
             } else {
-                const addToSpanTree = s.graph.edges(lowestEdge.id);
+                const addToSpanTree = sigmaInstance.graph.edges(lowestEdge.id);
                 addToSpanTree.inSpanningTree = false;
 
                 edgesInMinSpanningTreeIds.push(addToSpanTree);

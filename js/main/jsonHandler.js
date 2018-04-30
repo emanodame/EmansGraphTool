@@ -24,8 +24,7 @@ function parseJson() {
                 size: 10
             };
 
-            s.graph.addNode(nodeCreation);
-            s.refresh();
+            sigmaInstance.graph.addNode(nodeCreation);
         }
 
         for (let i = 0; i < textToJson.edges.length; i++) {
@@ -39,13 +38,15 @@ function parseJson() {
                 label: textToJson.edges[i].weight
             };
 
-            s.graph.addEdge(edgeCreation);
-            s.refresh();
+            sigmaInstance.graph.addEdge(edgeCreation);
         }
 
+        sigmaInstance.refresh();
         removeOverlay();
     } catch (err) {
-        console.log("lol");
+        sigmaInstance.graph.clear();
+        sigmaInstance.refresh();
+
         $.iGrowl({
             type: "growler-settings",
             message: "Invalid JSON structure!",
@@ -64,7 +65,7 @@ function exportJson() {
     let jsonGraphText = "{\"nodes\":";
     const nodes = [];
 
-    s.graph.nodes().forEach(function (node) {
+    sigmaInstance.graph.nodes().forEach(function (node) {
         const nodeCreation = {
             id: node.id,
             x: (node.x / 100).toString(),
@@ -79,7 +80,7 @@ function exportJson() {
 
     const edges = [];
 
-    s.graph.edges().forEach(function (edge) {
+    sigmaInstance.graph.edges().forEach(function (edge) {
         const edgeCreation = {
             id: edge.id,
             source: edge.source,

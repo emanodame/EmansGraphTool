@@ -1,5 +1,14 @@
 let sliderStick = false;
 
+
+$('#slide-revealer').slideReveal({
+    trigger: $("#left-trigger"),
+    width: "16%",
+    position: "right",
+    push: false,
+    overlay: true
+});
+
 interact('.resize-drag')
     .draggable({
         onmove: window.dragMoveListener,
@@ -76,15 +85,6 @@ function hideSlider() {
     document.getElementById("right-trigger").style.display = "inline";
     sliderStick = false;
 }
-
-$('#slide-revealer').slideReveal({
-    trigger: $("#left-trigger"),
-    width: "16%",
-    position: "right",
-    push: false,
-    overlay: true
-});
-
 
 $("#hover-bar").mouseover(function () {
     $('#slide-revealer').slideReveal("show");

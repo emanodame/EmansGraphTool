@@ -1,20 +1,20 @@
 describe("Tests", function () {
 
     beforeAll(function() {
-        s.graph.clear();
-        s.drawNodes = false;
+        sigmaInstance.graph.clear();
+        sigmaInstance.drawNodes = false;
     });
 
     var dummyElement = document.createElement('div');
     document.getElementById = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
     fit('should initialise sigma', function () {
-        expect(s.id).toBe("0");
+        expect(sigmaInstance.id).toBe("0");
     });
 
     fit('should correctly import and export test graph', function () {
         mockExportGraphButton(JSON.stringify(getContentsFromFile("../resources/json-graphs/graph3.json")));
-        expect(s.graph.nodes().length).toBe(10);
+        expect(sigmaInstance.graph.nodes().length).toBe(10);
     });
 
     fit('should create node id from x and y coordinates', function () {
@@ -32,11 +32,11 @@ describe("Tests", function () {
             color: "#ffffff"
         };
 
-        s.graph.addNode(mockNode);
-        expect(s.graph.nodes("mock").color).toBe("#ffffff");
+        sigmaInstance.graph.addNode(mockNode);
+        expect(sigmaInstance.graph.nodes("mock").color).toBe("#ffffff");
 
         clearColoredNodesAndEdges();
-        expect(s.graph.nodes("mock").color).toBe("#ff0e58");
+        expect(sigmaInstance.graph.nodes("mock").color).toBe("#ff0e58");
     });
 
     fit('should correctly execute dijkstra and return correct path', function () {
@@ -80,7 +80,7 @@ TODO: replace test so that it checks for prompt instead add test case for prompt
 
         spyOn($.fn, "val").and.returnValue(randomNodesValue);
         createRandomGraph();
-        expect(s.graph.nodes().length).toBe(randomNodesValue);
+        expect(sigmaInstance.graph.nodes().length).toBe(randomNodesValue);
     });
 
     fit('should show dijkstra input box', function () {
@@ -194,7 +194,7 @@ function mockExportGraphButton(graphJsonText) {
             size: 10
         };
 
-        s.graph.addNode(nodeCreation);
+        sigmaInstance.graph.addNode(nodeCreation);
     }
 
     for (let i = 0; i < textToJson.edges.length; i++) {
@@ -208,9 +208,9 @@ function mockExportGraphButton(graphJsonText) {
             label: textToJson.edges[i].weight
         };
 
-        s.graph.addEdge(edgeCreation);
+        sigmaInstance.graph.addEdge(edgeCreation);
     }
-    s.refresh();
+    sigmaInstance.refresh();
 }
 
 function getContentsFromFile(filePath) {

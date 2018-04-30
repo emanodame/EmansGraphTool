@@ -13,7 +13,7 @@ function createRandomGraph() {
 
     const quantityOfNodes = $("#number-text-input").val();
 
-    if (quantityOfNodes < 2 || quantityOfNodes > 101) {
+    if (quantityOfNodes < 2 || quantityOfNodes > 101 || isNaN(quantityOfNodes)) {
         $.iGrowl({
             type: "growler-settings",
             message: "Please enter a number between 2-10 (inclusive)",
@@ -44,7 +44,7 @@ function createRandomGraph() {
             const nodeId = createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY);
 
             if (!nodeIdSet.has(nodeId)) {
-                s.graph.addNode({
+                sigmaInstance.graph.addNode({
                     id: createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY),
                     x: randomGeneratedX * 100,
                     y: randomGeneratedY * 100,
@@ -56,7 +56,7 @@ function createRandomGraph() {
             }
         }
 
-        const nodesOnGraph = s.graph.nodes();
+        const nodesOnGraph = sigmaInstance.graph.nodes();
 
         const edgeIdSet = new Set();
 
@@ -71,9 +71,10 @@ function createRandomGraph() {
             }
 
             const edgeId = createEdgeIdFromCoordinates(sourceNode.id, targetNode.id);
+            const oppositeEdgeId = createEdgeIdFromCoordinates(targetNode.id, sourceNode.id);
 
             if (!edgeIdSet.has(edgeId)) {
-                s.graph.addEdge({
+                sigmaInstance.graph.addEdge({
                     id: edgeId,
                     source: sourceNode.id,
                     target: targetNode.id,
@@ -83,15 +84,16 @@ function createRandomGraph() {
                 });
 
                 edgeIdSet.add(edgeId);
+                edgeIdSet.add(oppositeEdgeId);
             }
         }
-        s.refresh();
+        sigmaInstance.refresh();
     }
 }
 
 function clearGraph() {
     noNodeFlag = false;
-    s.graph.clear();
+    sigmaInstance.graph.clear();
     localStorage.clear();
-    s.refresh();
+    sigmaInstance.refresh();
 }

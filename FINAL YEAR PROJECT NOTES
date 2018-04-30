@@ -1,0 +1,101 @@
+FINAL YEAR PROJECT NOTES
+
+Main Text ideas:
+
+-Introduction- 3 Pages
+Audience?
+Aims/ Goals - Notes from Sanderson
+Approach
+Project Motivation
+
+Symbols/Acronyms
+
+-Background- 5 pages
+Dijkstra/Kruskal/Prims - Overview of them
+Learning Tools (Psychology) - What makes a good teacher?
+UX Design. What makes a good app.
+Research other tools. See what they do/dont have. What is different in my application compared to others? Perhaps images of their work.
+
+Extra - compare graph libraries?
+
+-Spec & Design - 10 pages
+Talk about libraries/technologies. What & why?
+System Requirements
+JavaScipt/HTML/CSS - What & why?
+Architecture of web application. More talk about the code impelemented. What & why?
+User Experience for my application.
+Fill with Diagrams of MVC.
+Fill with a mock diagram of a user using the applicaiton.
+Has my designed changed? New technolgies? Add that.
+Screenshot of my application 
+JQuery
+Talk about MST???
+
+ZOOM
+
+JSON
+black background?
+examples of websites with good ux?
+
+maybe comparison of graph libraries?
+
+
+-Implementation- 10 pages
+- adjency matrix/list
+session/user session.
+Talk about code to the finer level. (Only important bits)
+Images of my implementation of Dijkstar/Kruskal/Prims? n time
+Any problems and how they were dealt. Lack of documentation/complexity.
+Maybe problems with time complexity.
+Talk about how the website is hosted.
+JSON - printscreen of graph structure
+walk through code and see what will be used
+Default colour scheme - blind people
+Talk about the time complexity for all the functions
+node and edge labels?
+talk about drag?
+speed optimization? min.js'
+dark website web design complications
+downloaded libraries so that can use local files if no connectivity.
+
+-TESTING 5-10 pages
+
+performance testing/looking at google stats?
+selenium + java add this 
+
+-Result & Evaluation 10 pages
+What extent have i achieved my goals?
+Evaluate my application algorithm times.
+Demos in open day.
+sigma contains unit tests
+time to compute x number of nodes
+Demos to other Computer Science stude`nts
+What about testing? Make automation test. Talk about manual testing with other people. Fake survery. Maybe say that most people not aware of some tool.
+Compare the two web applications.
+Website Speed/Settings/HTML 5 / CSS Ready compatabible
+Code standards
+disadvantages of adjecey list
+problems/.?
+graph of the time of execution?
+screenshots of chrome activity manager while running the application
+time of running certain algorithms
+
+- Project Planning - 5 pages 
+ Sprint plan. Follow it up? talk about all the sprints in detail
+ the software i used for sticking tasks
+ GitHub
+
+Further Work and Conclusions 
+Other Algorithms? A*/BFS/DFS
+Mobile?
+could add library testing to final year report too
+Summary of project. What has been learnt/achieved.
+
+References
+Appendix - How to use.
+GitHub Pages
+Add images of code in appendix.
+
+
+35
+
