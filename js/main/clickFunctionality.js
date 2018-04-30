@@ -41,6 +41,17 @@ $(document).ready(function () {
     sigmaInstance.bind("rightClickNode", function (node) {
         sigmaInstance.graph.dropNode(node.data.node.id);
         sigmaInstance.refresh();
+
+
+        if (sigmaInstance.graph.nodes().length > 0) {
+            for (let i = 0; i < sigmaInstance.graph.nodes().length; i++) {
+                sigmaInstance.graph.nodes()[i].label =  (i + 1).toString();
+            }
+        }
+
+
+        sigmaInstance.refresh();
+
     });
 
     sigmaInstance.bind("rightClickEdge", function (e) {

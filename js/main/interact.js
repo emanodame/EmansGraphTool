@@ -6519,7 +6519,7 @@
         'use strict';
 
         var scope = require('../scope');
-        var utils = require('../js/main/index');
+        var utils = require('./index');
 
         var finder = {
             methodOrder: ['simulationResume', 'mouseOrPen', 'hasPointer', 'idle'],
