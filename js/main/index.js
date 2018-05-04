@@ -62,7 +62,7 @@ $(document).ready(function () {
     initalizeTourGuide();
 });
 
-var firstTime = localStorage.getItem("first_time");
+const firstTime = localStorage.getItem("first_time");
 if(!firstTime) {
     localStorage.setItem("first_time","1");
     initalizeTourGuide();

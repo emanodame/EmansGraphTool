@@ -42,13 +42,11 @@ $(document).ready(function () {
         sigmaInstance.graph.dropNode(node.data.node.id);
         sigmaInstance.refresh();
 
-
         if (sigmaInstance.graph.nodes().length > 0) {
             for (let i = 0; i < sigmaInstance.graph.nodes().length; i++) {
-                sigmaInstance.graph.nodes()[i].label =  (i + 1).toString();
+                sigmaInstance.graph.nodes()[i].label = (i + 1).toString();
             }
         }
-
 
         sigmaInstance.refresh();
 

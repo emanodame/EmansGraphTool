@@ -123,8 +123,21 @@ document.onkeydown = function (e) {
         case 37: //left key
             rewindAlgorithm();
             return;
+
         case 39: //right key
             stepAlgorithm();
             return;
+
+        case 32: //space bar
+            if ($("#play-button").is(":visible")) {
+                showPauseButton();
+                resumeAlgorithm();
+                return;
+
+            } else {
+                showPlayButton();
+                pauseAlgorithm();
+                return;
+            }
     }
 };
