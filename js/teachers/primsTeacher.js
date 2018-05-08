@@ -149,19 +149,9 @@ function executePrimsTeacher(edgesOnGraph) {
     function end() {
         if (primsCounter < edgesOnGraph.length) {
             sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(primsEdgeStates[primsCounter === edgesOnGraph.length ? primsCounter - 1 : primsCounter].currentEdge.id)});
-            primsCounter = edgesOnGraph.length - 1;
-            actionPosition = action.length - 1;
-            maxCount = actionPosition;
-            freeFlow = false;
-            task.step();
-
-            $.iGrowl({
-                type: "growler-settings",
-                message: "End of Prim's Algorithm!",
-                placement: {
-                    x: 'center'
-                },
-            });
+            while (actionPosition < action.length - 1) {
+                forward();
+            }
         }
     }
 
@@ -173,11 +163,11 @@ function executePrimsTeacher(edgesOnGraph) {
     executePrimsTeacher.end = end;
 }
 
-function highlightElement(id, color, seconds){
+function highlightElement(id, color, seconds) {
     var element = document.getElementById(id);
     var origcolor = element.style.backgroundColor;
     element.style.backgroundColor = color;
-    var t = setTimeout(function(){
+    var t = setTimeout(function () {
         element.style.backgroundColor = origcolor;
-    },(seconds*1000));
+    }, (seconds * 1000));
 }

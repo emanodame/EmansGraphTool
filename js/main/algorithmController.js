@@ -86,7 +86,6 @@ function executedSelectedAlgorithm() {
         return;
     }
 
-
     if (algorithmSelected === "dijkstra") {
 
         if (!validNodeId) {
@@ -95,6 +94,8 @@ function executedSelectedAlgorithm() {
             return false;
 
         } else {
+            document.getElementById("source-error-message").style.display = "none";
+            document.getElementById("target-error-message").style.display = "none";
 
             if (!localStorage.getItem("dijkstra-summary-prompt")) {
                 showOverlay();
@@ -243,7 +244,15 @@ function calculatePrimsPath() {
 
 function enterKeyHandler() {
     if (event.keyCode === 13) {
-        executedSelectedAlgorithm()
+        const srcNodeId = getNodeIdFromLabel($("#src-node").val());
+
+        if (!srcNodeId) {
+            validNodeId = false;
+            executedSelectedAlgorithm();
+        } else {
+            validNodeId = true;
+            executedSelectedAlgorithm();
+        }
     }
 }
 

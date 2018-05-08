@@ -4,11 +4,14 @@ function executeDijkstraTeacher(path) {
     const dijkstraEdgeStatesArray = [];
 
     const nodeDiscoveryStatus = new Set();
+    const divIds = new Set();
 
     const action = [];
     let actionPosition = 0;
 
     let dijkstraCounter = 0;
+
+    const sourceNodeId = getNodeIdFromLabel($("#src-node").val());
 
     path.forEach(function (edge) {
         sigmaInstance.graph.nodes(edge.source).color = "#CDAD00";
@@ -36,20 +39,12 @@ function executeDijkstraTeacher(path) {
     });
 
     clearColoredNodesAndEdges();
-    displayFirstEdgeInfo();
 
     const task = new Task(actionExecutor(), executionSpeed);
     let freeFlow = false;
 
-    function displayFirstEdgeInfo() {
-        if (maxCount === actionPosition) {
-            const helperText = document.getElementById("helper-text-container");
-            helperText.insertAdjacentHTML("beforeend", "" + displayConnectionInfo());
-            document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
-        }
-        sigmaInstance.renderers[0].dispatchEvent('overEdge', {edge: sigmaInstance.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
-        nodeDiscoveryStatus.add(sigmaInstance.graph.nodes(getNodeIdFromLabel($("#src-node").val())).id);
-    }
+    nodeDiscoveryStatus.add(sourceNodeId);
+    task.step();
 
     function* actionExecutor() {
         while (true) {
@@ -63,6 +58,13 @@ function executeDijkstraTeacher(path) {
             } else {
                 if (dijkstraCounter === path.length) {
                 }
+                $.iGrowl({
+                    type: "growler-settings",
+                    message: "End of Dijkstra's Algorithm!",
+                    placement: {
+                        x: 'center'
+                    },
+                });
                 showPlayButton();
             }
             yield;
@@ -91,38 +93,42 @@ function executeDijkstraTeacher(path) {
     }
 
     function textAction() {
-        const div = document.createElement('div');
-        div.id = dijkstraCounter.toString();
-        div.insertAdjacentHTML("beforeend", "<br />" + displayConnectionInfo());
-        document.getElementById("helper-text-container").appendChild(div);
-        document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
+        if (maxCount === actionPosition) {
+            const div = document.createElement('div');
+            div.id = dijkstraCounter.toString();
 
-        document.getElementById(div.id).addEventListener("click", function (k) {
-            dijkstraCounter = k.srcElement.id;
-            actionPosition = k.srcElement.id * 2 + 1;
-            task.step();
-        });
+            if (!divIds.has(div.id)) {
+                div.insertAdjacentHTML("beforeend", "<br />" + displayConnectionInfo());
+                document.getElementById("helper-text-container").appendChild(div);
+                document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
-        $('.resize-drag').addClass('resize-drag-highlight');
-        setTimeout(function () {
-            $('.resize-drag').removeClass('resize-drag-highlight');
-        }, 1000);
+                document.getElementById(div.id).addEventListener("click", function (k) {
+                    dijkstraCounter = k.srcElement.id;
+                    actionPosition = k.srcElement.id * 2 + 1;
+                    task.step();
+                });
 
+                $('.resize-drag').addClass('resize-drag-highlight');
+                setTimeout(function () {
+                    $('.resize-drag').removeClass('resize-drag-highlight');
+                }, 1000);
+
+                divIds.add(div.id);
+            }
+        }
         highlightElement(dijkstraCounter, '#6e0db6', 0.5);
         sigmaInstance.renderers[0].dispatchEvent('overEdge', {edge: sigmaInstance.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
     }
 
     function displayConnectionInfo() {
         if (!nodeDiscoveryStatus.has(dijkstraNodeStateArray[dijkstraCounter].sourceNode)) {
-            return "> Step " + (dijkstraCounter + 1) + ") This would go to Node " + sigmaInstance.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].sourceNode).label
-                + " from Node " + sigmaInstance.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].targetNode).label
-                + " using Edge " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.label
-                + "<br/> The weight from source node is " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.weight;
+            return "Step " + (dijkstraCounter + 1) + ") This will now go to Node " + sigmaInstance.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].sourceNode).label
+                + " as it is the shortest unvisited Node from starting Node (Node " + sigmaInstance.graph.nodes(sourceNodeId).label + ")"
+                + "<br/> The weight from starting node is " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.weight;
         } else {
-            return "> Step " + (dijkstraCounter + 1) + ") This would go to Node " + sigmaInstance.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].targetNode).label
-                + " from Node " + sigmaInstance.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].sourceNode).label
-                + " using Edge " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.label
-                + "<br/> The weight from source node is " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.weight;
+            return "Step " + (dijkstraCounter + 1) + ") This will now go to Node " + sigmaInstance.graph.nodes(dijkstraNodeStateArray[dijkstraCounter].targetNode).label
+                + " as it is the shortest unvisited Node from starting Node (Node " + sigmaInstance.graph.nodes(sourceNodeId).label + ")"
+                + "<br/> The weight from starting node is " + dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.weight;
         }
     }
 
@@ -177,19 +183,9 @@ function executeDijkstraTeacher(path) {
     function end() {
         if (dijkstraCounter < path.length) {
             sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
-            dijkstraCounter = path.length - 1;
-            actionPosition = action.length - 1;
-            maxCount = actionPosition;
-            freeFlow = false;
-            task.step();
-
-            $.iGrowl({
-                type: "growler-settings",
-                message: "End of Dijkstra's Algorithm!",
-                placement: {
-                    x: 'center'
-                },
-            });
+            while (actionPosition < action.length - 1) {
+                forward();
+            }
         }
     }
 
@@ -200,12 +196,13 @@ function executeDijkstraTeacher(path) {
     executeDijkstraTeacher.forward = forward;
     executeDijkstraTeacher.end = end;
 }
-function highlightElement(id, color, seconds){
-    var element = document.getElementById(id);
-    var origcolor = element.style.backgroundColor;
+
+function highlightElement(id, color, seconds) {
+    const element = document.getElementById(id);
+    const origcolor = element.style.backgroundColor;
     element.style.backgroundColor = color;
-    var t = setTimeout(function(){
+    const t = setTimeout(function () {
         element.style.backgroundColor = origcolor;
-    },(seconds*1000));
+    }, (seconds * 1000));
 }
 

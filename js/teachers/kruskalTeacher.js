@@ -7,6 +7,8 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     let actionPosition = 0;
     const action = [];
 
+    const divIds = new Set();
+
     sortedEdgesOnGraph.forEach(function (edge) {
         edge.color = isEdgeInSpanningTree(edge.id) ? "#6e0db6" : "#CDAD00";
 
@@ -48,21 +50,24 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
         if (maxCount === actionPosition) {
             const div = document.createElement('div');
             div.id = kruskalCounter.toString();
-            div.insertAdjacentHTML("beforeend", " <br />" + displayConnectionInfo());
-            document.getElementById("helper-text-container").appendChild(div);
-            document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
+            if (!divIds.has(div.id)) {
+                div.insertAdjacentHTML("beforeend", " <br />" + displayConnectionInfo());
+                document.getElementById("helper-text-container").appendChild(div);
+                document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
-            document.getElementById(div.id).addEventListener("click", function (k) {
-                kruskalCounter = k.srcElement.id;
-                actionPosition = k.srcElement.id * 2 + 1;
-                task.step();
-            });
+                document.getElementById(div.id).addEventListener("click", function (k) {
+                    kruskalCounter = k.srcElement.id;
+                    actionPosition = k.srcElement.id * 2 + 1;
+                    task.step();
+                });
 
-            $('.resize-drag').addClass('resize-drag-highlight');
-            setTimeout(function () {
-                $('.resize-drag').removeClass('resize-drag-highlight');
-            }, 1000);
+                $('.resize-drag').addClass('resize-drag-highlight');
+                setTimeout(function () {
+                    $('.resize-drag').removeClass('resize-drag-highlight');
+                }, 1000);
+                divIds.add(div.id);
+            }
         }
         highlightElement(kruskalCounter, '#6e0db6', 0.5);
         sigmaInstance.renderers[0].dispatchEvent('overEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id)})
@@ -77,6 +82,13 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                 maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
+                $.iGrowl({
+                    type: "growler-settings",
+                    message: "End of Kruskal's Algorithm!",
+                    placement: {
+                        x: 'center'
+                    },
+                });
                 showPlayButton();
             }
             yield;
@@ -85,13 +97,14 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function displayConnectionInfo() {
         if (kruskalEdgeStatesArray[kruskalCounter].isEdgeInSpanningTree) {
-            return "> Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered edge: " +
+            return "Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered Edge that does not form a cycle. " +
+                "<br /> This will be Edge " +
                 sigmaInstance.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
                 sigmaInstance.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
-                " this has weight " + kruskalEdgeStatesArray[kruskalCounter].currentEdge.label +
+                " with the weight of " + kruskalEdgeStatesArray[kruskalCounter].currentEdge.label +
                 ".  <br /> This will get added to Minimum Spanning Tree."
         } else {
-            return "> Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered edge: " +
+            return "Step " + (kruskalCounter + 1) + ") Pick the lowest weighted undiscovered edge: " +
                 sigmaInstance.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.source).label + " - " +
                 sigmaInstance.graph.nodes(kruskalEdgeStatesArray[kruskalCounter].currentEdge.target).label +
                 " this has weight " + kruskalEdgeStatesArray[kruskalCounter].currentEdge.label +
@@ -151,16 +164,27 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function end() {
         if (kruskalCounter < sortedEdgesOnGraph.length) {
-            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
-            kruskalCounter = sortedEdgesOnGraph.length - 1;
+
+            while (kruskalCounter < sortedEdgesOnGraph.length - 1) {
+                kruskalCounter++;
+                textAction();
+            }
+
             actionPosition = action.length - 1;
             maxCount = actionPosition;
             freeFlow = false;
             task.step();
 
+            sigmaInstance.graph.edges().forEach(function (edge) {
+                sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+            });
+
             $.iGrowl({
                 type: "growler-settings",
                 message: "End of Kruskal's Algorithm!",
+                placement: {
+                    x: 'center'
+                },
             });
         }
     }
@@ -177,11 +201,11 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     executeKruskalTeacher.end = end;
 }
 
-function highlightElement(id, color, seconds){
+function highlightElement(id, color, seconds) {
     var element = document.getElementById(id);
     var origcolor = element.style.backgroundColor;
     element.style.backgroundColor = color;
-    var t = setTimeout(function(){
+    var t = setTimeout(function () {
         element.style.backgroundColor = origcolor;
-    },(seconds*1000));
+    }, (seconds * 1000));
 }

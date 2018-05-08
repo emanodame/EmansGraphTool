@@ -186,7 +186,8 @@ head {
 
 #tour-anchor {
     position: absolute;
-    left: 47%;
+    left: 42%;
+    top: 22%;
     visibility: hidden;
 }
 
@@ -441,12 +442,12 @@ head {
     display: none;
     z-index: 1;
     color: #ff0e58;
-    font-size: 20px;
+    font-size: 18px;
     font-family: sans-serif;
     border: 2px solid #ff0e58;
     border-radius: 8px;
     width: 650px;
-    height: 90px;
+    height: 126px;
     box-sizing: border-box;
     overflow: auto;
 }

@@ -20,13 +20,13 @@ window.onload = function () {
     const storageNodes = JSON.parse(localStorage.getItem("nodes"));
     const storageEdges = JSON.parse(localStorage.getItem("edges"));
 
-    if (storageNodes.length > 0) {
+    if (storageNodes.length && storageNodes.length > 0) {
         storageNodes.forEach(function (node) {
             node.hidden = false;
             sigmaInstance.graph.addNode(node);
         });
 
-        if (storageEdges.length > 0) {
+        if (storageEdges.length && storageEdges.length > 0) {
             storageEdges.forEach(function (edge) {
                 sigmaInstance.graph.addEdge(edge);
             });
@@ -37,7 +37,6 @@ window.onload = function () {
 
 window.onbeforeunload = function () {
     clearColoredNodesAndEdges();
-    localStorage.clear();
 
     localStorage.setItem("nodes", JSON.stringify(sigmaInstance.graph.nodes()));
     localStorage.setItem("edges", JSON.stringify(sigmaInstance.graph.edges()));
@@ -60,13 +59,12 @@ $('.animsition').animsition();
 
 $(document).ready(function () {
     initalizeTourGuide();
+    const firstTime = localStorage.getItem("hasVisited");
+    if (!firstTime) {
+        localStorage.setItem("hasVisited", "true");
+        tour.start();
+    }
 });
-
-const firstTime = localStorage.getItem("first_time");
-if(!firstTime) {
-    localStorage.setItem("first_time","1");
-    initalizeTourGuide();
-}
 
 setTimeout(checkNodeExistence, 2500);
 
@@ -100,8 +98,8 @@ const sigmaInstance = new sigma({
     }
 });
 
-sigmaInstance.camera.x = localStorage.getItem("cameraX") === null ? localStorage.getItem("cameraX") : 0;
-sigmaInstance.camera.y = localStorage.getItem("cameraY") === null ? localStorage.getItem("cameraY") : 0;
+sigmaInstance.camera.x = localStorage.getItem("cameraX") !== null ? localStorage.getItem("cameraX") : 0;
+sigmaInstance.camera.y = localStorage.getItem("cameraY") !== null ? localStorage.getItem("cameraY") : 0;
 
 const dragListener = sigma.plugins.dragNodes(sigmaInstance, sigmaInstance.renderers[0]);
 
@@ -170,11 +168,14 @@ function checkNodeExistence() {
         growler = $.iGrowl({
             type: "growler-settings",
             animShow: 'fadeInDown',
-            message: "Go ahead and add some nodes on the graph by clicking on the screen! :)",
+            message: "Go ahead and add some nodes on the graph by clicking on the screen! <br> If you need assistance, click me to launch the tour guide! :)",
             placement: {
                 x: 'center'
             },
             delay: 0
+        });
+        document.querySelectorAll('.igrowl-text')[0].addEventListener("click", function (k) {
+            tour.restart();
         });
     }
 }

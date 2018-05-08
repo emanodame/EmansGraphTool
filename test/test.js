@@ -1,6 +1,6 @@
 describe("Tests", function () {
 
-    beforeAll(function() {
+    beforeAll(function () {
         sigmaInstance.graph.clear();
         sigmaInstance.drawNodes = false;
     });
@@ -67,16 +67,8 @@ describe("Tests", function () {
         expect(JSON.stringify(expectedPath)).toBe(getContentsFromFile("expectedPrimPath"));
     });
 
-/*    fit('should correctly execute selected algorithm', function () {
-        const kruskalAlgorithmSpy = spyOn(window, 'calculateKruskalPath');
-        algorithmSelected = "kruskal";
-TODO: replace test so that it checks for prompt instead add test case for prompt and non prompt
-        executedSelectedAlgorithm();
-        expect(kruskalAlgorithmSpy).toHaveBeenCalled();
-    });*/
-
     fit('should correcly create a random grpah', function () {
-        const randomNodesValue = 5;
+        const randomNodesValue = 2;
 
         spyOn($.fn, "val").and.returnValue(randomNodesValue);
         createRandomGraph();

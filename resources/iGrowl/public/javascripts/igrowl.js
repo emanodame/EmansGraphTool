@@ -45,7 +45,7 @@
 
 		// title + message
 		if ( options.title ) template.find('.igrowl-text').prepend('<div class="igrowl-title">' + options.title + '</div>');
-		if ( options.message ) template.find('.igrowl-text').append('<div class="igrowl-message">' + options.message + '</div>');
+		if ( options.message ) template.find('.igrowl-text').append('<div class="igrowl-message" id="growl-message">' + options.message + '</div>');
 
 		// link
 		if ( options.link ){ template.addClass('igrowl-link').children('.igrowl-icon, .igrowl-text').wrapAll('<a href="' + options.link +'" target="_' + options.target + '" />'); }

@@ -3,6 +3,7 @@ import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import static junit.framework.TestCase.assertTrue;
 
 public class BrowserAutomationTest {
-    private final static WebDriver driver = new ChromeDriver();
+    private final static WebDriver driver = new FirefoxDriver();
     private final static Actions builder = new Actions(driver);
     private final static JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -18,6 +19,7 @@ public class BrowserAutomationTest {
     @BeforeClass
     public static void init() {
         System.setProperty("webdriver.chrome.driver", "/Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/Automation/chromedriver");
+        System.setProperty("webdriver.gecko.driver", "/Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/Automation/geckodriver");
 
         final ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-infobars");

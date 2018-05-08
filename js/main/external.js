@@ -66,7 +66,7 @@ $(function () {
     $("#slider").slider({
         value: 50,
         stop: function (event, ui) {
-            play(3000 - (ui.value * 25));
+            resumeAlgorithm(3000 - (ui.value * 25));
             showPauseButton();
         }
     });
