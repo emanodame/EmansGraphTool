@@ -20,13 +20,13 @@ window.onload = function () {
     const storageNodes = JSON.parse(localStorage.getItem("nodes"));
     const storageEdges = JSON.parse(localStorage.getItem("edges"));
 
-    if (storageNodes.length && storageNodes.length > 0) {
+    if (storageNodes && storageNodes.length > 0) {
         storageNodes.forEach(function (node) {
             node.hidden = false;
             sigmaInstance.graph.addNode(node);
         });
 
-        if (storageEdges.length && storageEdges.length > 0) {
+        if (storageEdges && storageEdges.length > 0) {
             storageEdges.forEach(function (edge) {
                 sigmaInstance.graph.addEdge(edge);
             });

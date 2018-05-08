@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 
@@ -40,6 +42,11 @@ public class BrowserAutomationTest {
 
     private void leftClickAddNodeTest() {
         //add two nodes in different positions by left clicking
+        final WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.elementToBeClickable(By.className("tour-close-button")));
+
+        driver.findElement(By.className("tour-close-button")).click();
+
         builder.moveByOffset(0, 0)
                 .click()
                 .moveByOffset(100, 100)

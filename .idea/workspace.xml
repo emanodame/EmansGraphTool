@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bacd0c4e-12b0-4d84-af88-8d70b72db066" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Automation/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Automation/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change beforePath="$PROJECT_DIR$/graph.html" afterPath="$PROJECT_DIR$/graph.html" />
-      <change beforePath="$PROJECT_DIR$/js/main/clickFunctionality.js" afterPath="$PROJECT_DIR$/js/main/clickFunctionality.js" />
-      <change beforePath="$PROJECT_DIR$/js/main/graphAction.js" afterPath="$PROJECT_DIR$/js/main/graphAction.js" />
-      <change beforePath="$PROJECT_DIR$/js/main/index.js" afterPath="$PROJECT_DIR$/js/main/index.js" />
-      <change beforePath="$PROJECT_DIR$/js/main/jsonHandler.js" afterPath="$PROJECT_DIR$/js/main/jsonHandler.js" />
-      <change beforePath="$PROJECT_DIR$/js/main/tourGuide.js" afterPath="$PROJECT_DIR$/js/main/tourGuide.js" />
+      <change beforePath="$PROJECT_DIR$/Automation/src/test/java/BrowserAutomationTest.java" afterPath="$PROJECT_DIR$/Automation/src/test/java/BrowserAutomationTest.java" />
+      <change beforePath="$PROJECT_DIR$/Automation/target/test-classes/BrowserAutomationTest.class" afterPath="$PROJECT_DIR$/Automation/target/test-classes/BrowserAutomationTest.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,61 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="graph.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="graph.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graph.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="368" column="0" lean-forward="true" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jsonHandler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main/jsonHandler.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="71" lean-forward="false" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tourGuide.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/main/tourGuide.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="117" column="13" lean-forward="true" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="77" column="16" lean-forward="false" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clickFunctionality.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main/clickFunctionality.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+            <state relative-caret-position="870">
+              <caret line="58" column="55" lean-forward="true" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -88,8 +32,8 @@
       <file leaf-file-name="graphAction.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main/graphAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="225">
+              <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -155,8 +99,8 @@
       <find>on the screen!</find>
       <find>anchor</find>
       <find>tourGuide</find>
-      <find>html</find>
       <find>slider</find>
+      <find>html</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -315,7 +259,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="in&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;inde&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;click&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;Graphac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/graphAction.js&#10;clic&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;to&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/tourGuide.js&#10;algor&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/algorithmController.js&#10;index.c&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;teac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;index&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;css&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;initaliz&#9;null&#9;null&#10;index.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;grap&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/json-graphs/graph3.json&#10;gra&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;kru&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;kruska&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;prim&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/primsTeacher.js&#10;dij&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;krusk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;media&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/media.js&#10;externa&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/external.js&#10;krus&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;dijk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/dijkstra.js&#10;interac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/interact.js&#10;cl&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;json&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/jsonHandler.js&#10;tour&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/tourGuide.js&#10;algo&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithm-summary.html&#10;graph.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;clearGra&#9;null&#9;null&#10;randomGraph&#9;null&#9;null&#10;clickF&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;teache&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;teacher&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;test&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test/test.js&#10;sigma.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/sigma/sigma.min.js&#10;parseJson&#9;null&#9;null&#10;graph&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;kruskal&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/kruskal.js&#10;dijks&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/dijkstra.js&#10;astar&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/astar.js&#10;camer&#9;null&#9;null&#10;ast&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/astarTeacher.js&#10;exter&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/external.js&#10;c&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/graphAction.js&#10;test.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test/test.html&#10;summ&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithm-summary.html&#10;di&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;primst&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/primsTeacher.js" />
+    <property name="SearchEverywhereHistoryKey" value="graph&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;in&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;inde&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;click&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;Graphac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/graphAction.js&#10;clic&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;to&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/tourGuide.js&#10;algor&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/algorithmController.js&#10;index.c&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;teac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;index&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;css&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;initaliz&#9;null&#9;null&#10;index.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;grap&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/json-graphs/graph3.json&#10;gra&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;kru&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;kruska&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;prim&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/primsTeacher.js&#10;dij&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;krusk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;media&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/media.js&#10;externa&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/external.js&#10;krus&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;dijk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/dijkstra.js&#10;interac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/interact.js&#10;cl&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;json&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/jsonHandler.js&#10;tour&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/tourGuide.js&#10;algo&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithm-summary.html&#10;graph.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;clearGra&#9;null&#9;null&#10;randomGraph&#9;null&#9;null&#10;clickF&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;teache&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;teacher&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;test&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test/test.js&#10;sigma.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/sigma/sigma.min.js&#10;parseJson&#9;null&#9;null&#10;kruskal&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/kruskal.js&#10;dijks&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/dijkstra.js&#10;astar&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/astar.js&#10;camer&#9;null&#9;null&#10;ast&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/astarTeacher.js&#10;exter&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/external.js&#10;c&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/graphAction.js&#10;test.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test/test.html&#10;summ&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithm-summary.html&#10;di&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;primst&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/primsTeacher.js" />
     <property name="editorconfig.notification" value="EditorConfig helps developers define and maintain consistent&#10;" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
@@ -458,26 +402,26 @@
       <workItem from="1524177111512" duration="74969000" />
       <workItem from="1525093201553" duration="11010000" />
       <workItem from="1525430876588" duration="21883000" />
-      <workItem from="1525803473969" duration="6870000" />
+      <workItem from="1525803473969" duration="7541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156538000" />
+    <option name="totallyTimeSpent" value="157209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19285715" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19285715" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.50238097" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.50714284" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.49761903" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.49285713" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5059701" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -845,10 +789,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main/clickFunctionality.js">
+    <entry file="file://$PROJECT_DIR$/js/main/tourGuide.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state relative-caret-position="2074">
+          <caret line="122" column="42" lean-forward="true" selection-start-line="122" selection-start-column="42" selection-end-line="122" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -861,10 +805,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main/graphAction.js">
+    <entry file="file://$PROJECT_DIR$/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="183">
+          <caret line="368" column="0" lean-forward="true" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -877,26 +821,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/main/clickFunctionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main/graphAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/graph.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="368" column="0" lean-forward="true" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main/tourGuide.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="117" column="13" lean-forward="true" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
+        <state relative-caret-position="870">
+          <caret line="58" column="55" lean-forward="true" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
           <folding />
         </state>
       </provider>
