@@ -133,7 +133,6 @@ function initalizeTourGuide() {
                     $("#helper-text-container").fadeOut();
                     $('.resize-drag').removeClass('resize-drag-highlight');
                 }
-                onC
             },
             {
                 template: "<div class='popover tour'>\n" +

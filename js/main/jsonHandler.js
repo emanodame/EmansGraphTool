@@ -1,6 +1,8 @@
 function importJson() {
     document.getElementById("json-import").style.visibility = "visible";
     document.getElementById("json-export").style.visibility = "hidden";
+    document.getElementById("random-graph-input").style.visibility = "hidden";
+
     showOverlay();
 }
 
@@ -62,6 +64,7 @@ function parseJson() {
 function exportJson() {
     showOverlay();
     document.getElementById("json-import").style.visibility = "hidden";
+    document.getElementById("random-graph-input").style.visibility = "hidden";
     document.getElementById("json-export").style.visibility = "visible";
 
     let jsonGraphText = "{\"nodes\":";

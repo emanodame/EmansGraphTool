@@ -16,7 +16,7 @@
       <file leaf-file-name="BrowserAutomationTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/BrowserAutomationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
+            <state relative-caret-position="348">
               <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
@@ -407,23 +407,11 @@
       <workItem from="1523829783795" duration="9091000" />
       <workItem from="1525790037075" duration="2242000" />
       <workItem from="1525802464297" duration="7000" />
-      <workItem from="1525807518354" duration="759000" />
+      <workItem from="1525807518354" duration="1690000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BrowserAutomationTest - 2018.05.08 at 16h 00m 08s.xml">
-      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BrowserAutomationTest - 2018.05.08 at 16h 04m 43s.xml">
-      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BrowserAutomationTest - 2018.05.08 at 16h 05m 11s.xml">
-      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BrowserAutomationTest - 2018.05.08 at 16h 06m 06s.xml">
-      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BrowserAutomationTest - 2018.05.08 at 16h 06m 36s.xml">
       <configuration name="BrowserAutomationTest" configurationId="JUnit" />
     </history-entry>
@@ -442,9 +430,21 @@
     <history-entry file="BrowserAutomationTest - 2018.05.08 at 20h 39m 23s.xml">
       <configuration name="BrowserAutomationTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="BrowserAutomationTest - 2018.05.08 at 20h 51m 17s.xml">
+      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BrowserAutomationTest - 2018.05.08 at 21h 43m 51s.xml">
+      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BrowserAutomationTest - 2018.05.08 at 21h 45m 38s.xml">
+      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BrowserAutomationTest - 2018.05.08 at 21h 46m 15s.xml">
+      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12099000" />
+    <option name="totallyTimeSpent" value="13030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -491,12 +491,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/BrowserAutomationTest.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/BrowserAutomationTest.java</url>
           <line>49</line>
           <properties />
-          <option name="timeStamp" value="15" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -707,7 +713,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/BrowserAutomationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
+        <state relative-caret-position="348">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>

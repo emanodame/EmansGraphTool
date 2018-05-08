@@ -1,5 +1,8 @@
-<!--<!DOCTYPE html>-->
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="utf-8"/>
+
 <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
 <link href="resources/bootstrap-tour/build/css/bootstrap-tour-standalone.css" rel="stylesheet">
 
@@ -25,9 +28,9 @@
 <div id="random-graph-input">
     <span class="close-holder"><button class="close-button" onclick="closeRandomGraphInput()">x</button></span>
     <form id="number-input">
-        <label for="number-input">Number of nodes (2 - 99)
+        <label for="number-text-input">Number of nodes (2 - 99)
             <input type="text" id="number-text-input" name="json-input">
-            <input type="submit" class="algo-button" id="number-graph-submit-btn" onclick="createRandomGraph()">
+            <input type="submit" class="algo-button" id="number-graph-submit-btn" onclick="createRandomGraph(event)">
         </label>
     </form>
 </div>

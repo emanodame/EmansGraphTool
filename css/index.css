@@ -2,12 +2,13 @@ html {
     height: 100%;
 }
 
-
 head {
     color: black;
 }
 
 #base {
+    height: 100%;
+    width: 100%;
     background-color: black;
     outline: none !important;
     -moz-user-select: none;
@@ -370,6 +371,7 @@ head {
     margin-top: 10px;
     margin-left: 20px;
     margin-right: 20px;
+    top: -10px;
     height: 10px;
     width: 150px;
     background: #ff0000;

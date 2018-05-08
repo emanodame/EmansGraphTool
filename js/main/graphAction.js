@@ -1,6 +1,8 @@
 function openRandomGraphInput() {
     showOverlay();
     document.getElementById("random-graph-input").style.visibility = "visible";
+    document.getElementById("json-import").style.visibility = "hidden";
+    document.getElementById("json-export").style.visibility = "hidden";
 }
 
 function closeRandomGraphInput() {
@@ -8,7 +10,7 @@ function closeRandomGraphInput() {
     document.getElementById("random-graph-input").style.visibility = "hidden";
 }
 
-function createRandomGraph() {
+function createRandomGraph(event) {
     event.preventDefault();
 
     const quantityOfNodes = $("#number-text-input").val();

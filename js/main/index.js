@@ -75,6 +75,7 @@ const sigmaInstance = new sigma({
     },
     settings: {
         borderSize: 3,
+        verbose: true,
 
         defaultNodeColor: "#ff0e58",
         defaultNodeBorderColor: "#c9ddff",
