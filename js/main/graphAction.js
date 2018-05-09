@@ -36,10 +36,10 @@ function createRandomGraph(event) {
 
         for (let i = 0; i < quantityOfNodes; i++) {
 
-            let randomGeneratedX = Math.floor(Math.random() * 5) + 1;
+            let randomGeneratedX = Math.floor(Math.random() * 10) + 1;
             randomGeneratedX *= Math.floor(Math.random() * 2) === 1 ? 1 : -1;
 
-            let randomGeneratedY = Math.floor(Math.random() * 5) + 1;
+            let randomGeneratedY = Math.floor(Math.random() * 10) + 1;
             randomGeneratedY *= Math.floor(Math.random() * 2) === 1 ? 1 : -1;
 
 

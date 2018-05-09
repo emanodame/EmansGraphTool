@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bacd0c4e-12b0-4d84-af88-8d70b72db066" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Automation/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Automation/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Automation/target/test-classes/BrowserAutomationTest.class" afterPath="$PROJECT_DIR$/Automation/target/test-classes/BrowserAutomationTest.class" />
-      <change beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change beforePath="$PROJECT_DIR$/graph.html" afterPath="$PROJECT_DIR$/graph.html" />
-      <change beforePath="$PROJECT_DIR$/js/main/algorithmController.js" afterPath="$PROJECT_DIR$/js/main/algorithmController.js" />
-      <change beforePath="$PROJECT_DIR$/js/main/clickFunctionality.js" afterPath="$PROJECT_DIR$/js/main/clickFunctionality.js" />
-      <change beforePath="$PROJECT_DIR$/js/teachers/dijsktraTeacher.js" afterPath="$PROJECT_DIR$/js/teachers/dijsktraTeacher.js" />
-      <change beforePath="$PROJECT_DIR$/js/teachers/kruskalTeacher.js" afterPath="$PROJECT_DIR$/js/teachers/kruskalTeacher.js" />
-      <change beforePath="$PROJECT_DIR$/js/teachers/primsTeacher.js" afterPath="$PROJECT_DIR$/js/teachers/primsTeacher.js" />
+      <change beforePath="$PROJECT_DIR$/js/main/graphAction.js" afterPath="$PROJECT_DIR$/js/main/graphAction.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,56 +17,28 @@
     <favorites_list name="EmansGraphTool" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="graph.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/graph.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="328">
-                  <caret line="112" column="106" lean-forward="false" selection-start-line="112" selection-start-column="106" selection-end-line="112" selection-end-column="106" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="primsTeacher.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/js/teachers/primsTeacher.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="337">
-                  <caret line="63" column="49" lean-forward="false" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="kruskalTeacher.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/js/teachers/kruskalTeacher.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1432">
-                  <caret line="135" column="39" lean-forward="true" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dijsktraTeacher.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/teachers/dijsktraTeacher.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1187">
-                  <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="primsTeacher.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/teachers/primsTeacher.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1080">
+              <caret line="72" column="35" lean-forward="true" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graphAction.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/main/graphAction.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" column="63" lean-forward="false" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -86,7 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>forEach</find>
       <find>import-</find>
       <find>interact</find>
       <find>13</find>
@@ -116,6 +79,7 @@
       <find>executionSpeed</find>
       <find>slider</find>
       <find>outEdge</find>
+      <find>noNodeFlag</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -175,7 +139,6 @@
         <option value="$PROJECT_DIR$/resources/json-graphs/graph3.json" />
         <option value="$PROJECT_DIR$/js/main/tourGuide.js" />
         <option value="$PROJECT_DIR$/js/main/jsonHandler.js" />
-        <option value="$PROJECT_DIR$/js/main/graphAction.js" />
         <option value="$PROJECT_DIR$/js/main/index.js" />
         <option value="$PROJECT_DIR$/graph.html" />
         <option value="$PROJECT_DIR$/js/algorithms/dijkstra.js" />
@@ -186,6 +149,7 @@
         <option value="$PROJECT_DIR$/js/teachers/dijsktraTeacher.js" />
         <option value="$PROJECT_DIR$/js/teachers/kruskalTeacher.js" />
         <option value="$PROJECT_DIR$/js/teachers/primsTeacher.js" />
+        <option value="$PROJECT_DIR$/js/main/graphAction.js" />
       </list>
     </option>
   </component>
@@ -417,16 +381,15 @@
       <workItem from="1524177111512" duration="74969000" />
       <workItem from="1525093201553" duration="11010000" />
       <workItem from="1525430876588" duration="21883000" />
-      <workItem from="1525803473969" duration="19879000" />
+      <workItem from="1525803473969" duration="20427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169547000" />
+    <option name="totallyTimeSpent" value="170095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19285715" sideWeight="0.437" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -436,7 +399,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.49285713" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.49285713" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19285715" sideWeight="0.563" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -511,6 +474,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1310" selection-end-column="1" />
+          <folding>
+            <element signature="e#3708#3793#2" expanded="false" />
+            <element signature="e#14702#17051#2" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -763,14 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main/graphAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/json-graphs/graph3.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -819,14 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="112" column="106" lean-forward="false" selection-start-line="112" selection-start-column="106" selection-end-line="112" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main/algorithmController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="679">
@@ -843,6 +794,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/teachers/kruskalTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="53" column="17" lean-forward="true" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/teachers/dijsktraTeacher.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1187">
@@ -851,18 +810,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/teachers/kruskalTeacher.js">
+    <entry file="file://$PROJECT_DIR$/graph.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1432">
-          <caret line="135" column="39" lean-forward="true" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+        <state relative-caret-position="1296">
+          <caret line="112" column="106" lean-forward="false" selection-start-line="112" selection-start-column="106" selection-end-line="112" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main/graphAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="63" lean-forward="false" selection-start-line="38" selection-start-column="63" selection-end-line="38" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/teachers/primsTeacher.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="63" column="49" lean-forward="false" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+        <state relative-caret-position="1080">
+          <caret line="72" column="35" lean-forward="true" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
           <folding />
         </state>
       </provider>
