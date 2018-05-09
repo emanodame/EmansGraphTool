@@ -16,118 +16,9 @@
       <file leaf-file-name="BrowserAutomationTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/BrowserAutomationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="60" column="33" lean-forward="true" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+            <state relative-caret-position="380">
+              <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReflectiveCallable.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FirefoxOptions.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-firefox-driver/3.11.0/selenium-firefox-driver-3.11.0.jar!/org/openqa/selenium/firefox/FirefoxOptions.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-              <folding>
-                <marker date="1523829373498" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1523829373498" expanded="false" signature="151:1102" ph="..." />
-                <marker date="1523829373498" expanded="true" signature="1644:2571" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="2620:6287" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="2670:2779" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="4419:4841" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="6341:6420" ph="{...}" />
-                <marker date="1523829373498" expanded="false" signature="6451:6462" ph=" { " />
-                <marker date="1523829373498" expanded="false" signature="6481:6487" ph=" }" />
-                <marker date="1523829373498" expanded="true" signature="6547:6629" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="6678:6758" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="6809:6889" ph="{...}" />
-                <marker date="1523829373498" expanded="false" signature="6927:6938" ph=" { " />
-                <marker date="1523829373498" expanded="false" signature="7013:7019" ph=" }" />
-                <marker date="1523829373498" expanded="true" signature="7074:7167" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="7230:7314" ph="{...}" />
-                <marker date="1523829373498" expanded="false" signature="7354:7365" ph=" { " />
-                <marker date="1523829373498" expanded="false" signature="7385:7391" ph=" }" />
-                <marker date="1523829373498" expanded="true" signature="7453:7547" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="7612:7677" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="7746:7841" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="7906:7997" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="8065:8159" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="8165:8183" ph="/**...*/" />
-                <marker date="1523829373498" expanded="true" signature="8254:8351" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="8423:8557" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="8632:8776" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="8868:9027" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="9107:9207" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="9265:9407" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="9457:9529" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="9587:11022" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="11063:12940" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="13001:13064" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="13100:13268" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="13295:14751" ph="{...}" />
-                <marker date="1523829373498" expanded="true" signature="13401:13852" ph="{...}" />
-                <marker date="1523829373498" expanded="false" signature="13886:13901" ph=" { " />
-                <marker date="1523829373498" expanded="false" signature="13983:13993" ph=" }" />
-                <marker date="1523829373498" expanded="false" signature="14024:14039" ph=" { " />
-                <marker date="1523829373498" expanded="false" signature="14092:14102" ph=" }" />
-                <marker date="1523829373498" expanded="false" signature="14127:14142" ph=" { " />
-                <marker date="1523829373498" expanded="false" signature="14205:14215" ph=" }" />
-                <marker date="1523829373498" expanded="true" signature="14257:14631" ph="{...}" />
-                <marker date="1523829373498" expanded="false" signature="14662:14677" ph=" { " />
-                <marker date="1523829373498" expanded="false" signature="14735:14745" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChromeDriver.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-chrome-driver/3.11.0/selenium-chrome-driver-3.11.0.jar!/org/openqa/selenium/chrome/ChromeDriver.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-              <folding>
-                <marker date="1523829372057" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1523829372057" expanded="false" signature="150:1080" ph="..." />
-                <marker date="1523829372057" expanded="true" signature="1418:1429" ph=" { " />
-                <marker date="1523829372057" expanded="true" signature="1499:1505" ph=" }" />
-                <marker date="1523829372057" expanded="false" signature="1559:1570" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="1605:1611" ph=" }" />
-                <marker date="1523829372057" expanded="true" signature="1617:1635" ph="/**...*/" />
-                <marker date="1523829372057" expanded="false" signature="1702:1713" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="1776:1782" ph=" }" />
-                <marker date="1523829372057" expanded="false" signature="1830:1841" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="1899:1905" ph=" }" />
-                <marker date="1523829372057" expanded="false" signature="1982:1993" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="2030:2036" ph=" }" />
-                <marker date="1523829372057" expanded="true" signature="2042:2060" ph="/**...*/" />
-                <marker date="1523829372057" expanded="true" signature="2157:2553" ph="{...}" />
-                <marker date="1523829372057" expanded="true" signature="2610:2754" ph="{...}" />
-                <marker date="1523829372057" expanded="false" signature="2797:2808" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="2849:2855" ph=" }" />
-                <marker date="1523829372057" expanded="false" signature="2902:2913" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="2956:2962" ph=" }" />
-                <marker date="1523829372057" expanded="false" signature="2994:3005" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="3044:3050" ph=" }" />
-                <marker date="1523829372057" expanded="false" signature="3098:3109" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="3152:3158" ph=" }" />
-                <marker date="1523829372057" expanded="false" signature="3193:3204" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="3228:3234" ph=" }" />
-                <marker date="1523829372057" expanded="false" signature="3284:3295" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="3348:3354" ph=" }" />
-                <marker date="1523829372057" expanded="true" signature="3424:3497" ph="{...}" />
-                <marker date="1523829372057" expanded="false" signature="3535:3546" ph=" { " />
-                <marker date="1523829372057" expanded="false" signature="3599:3605" ph=" }" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -417,23 +308,11 @@
       <workItem from="1523829783795" duration="9091000" />
       <workItem from="1525790037075" duration="2242000" />
       <workItem from="1525802464297" duration="7000" />
-      <workItem from="1525807518354" duration="3837000" />
+      <workItem from="1525807518354" duration="4502000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BrowserAutomationTest - 2018.05.08 at 21h 45m 38s.xml">
-      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BrowserAutomationTest - 2018.05.08 at 21h 46m 15s.xml">
-      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BrowserAutomationTest - 2018.05.08 at 21h 51m 54s.xml">
-      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BrowserAutomationTest - 2018.05.08 at 21h 52m 17s.xml">
-      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="BrowserAutomationTest - 2018.05.08 at 21h 53m 43s.xml">
       <configuration name="BrowserAutomationTest" configurationId="JUnit" />
     </history-entry>
@@ -452,9 +331,21 @@
     <history-entry file="BrowserAutomationTest - 2018.05.08 at 22h 07m 40s.xml">
       <configuration name="BrowserAutomationTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="BrowserAutomationTest - 2018.05.08 at 22h 27m 59s.xml">
+      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BrowserAutomationTest - 2018.05.08 at 22h 29m 00s.xml">
+      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BrowserAutomationTest - 2018.05.08 at 22h 29m 21s.xml">
+      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BrowserAutomationTest - 2018.05.08 at 22h 29m 48s.xml">
+      <configuration name="BrowserAutomationTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15177000" />
+    <option name="totallyTimeSpent" value="15842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
@@ -474,7 +365,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32190475" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -482,7 +373,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3990476" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990476" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -499,33 +390,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/BrowserAutomationTest.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/BrowserAutomationTest.java</url>
-          <line>57</line>
-          <properties />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="22" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>js.executeScript(&quot;&quot;)</expression-string>
+        <expression-string>js.executeScript(&quot;return sigmaInstance.graph.nodes()&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>js.executeScript(&quot;return sigmaInstance.graph.nodes()&quot;)</expression-string>
+        <expression-string>js.executeScript(&quot;&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -561,11 +438,6 @@
       </expression>
       <expression>
         <expression-string>driver.findElement(By.id(&quot;number-text-input&quot;)).sendKeys(String.valueOf(3));</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>driver.findElement(By.id(&quot;number-text-input&quot;)).sendKeys(String.valueOf(9));</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -624,43 +496,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-chrome-driver/3.11.0/selenium-chrome-driver-3.11.0.jar!/org/openqa/selenium/chrome/ChromeDriver.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-firefox-driver/3.11.0/selenium-firefox-driver-3.11.0.jar!/org/openqa/selenium/firefox/FirefoxDriver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding>
-            <marker date="1523829372057" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1523829372057" expanded="false" signature="150:1080" ph="..." />
-            <marker date="1523829372057" expanded="true" signature="1418:1429" ph=" { " />
-            <marker date="1523829372057" expanded="true" signature="1499:1505" ph=" }" />
-            <marker date="1523829372057" expanded="false" signature="1559:1570" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="1605:1611" ph=" }" />
-            <marker date="1523829372057" expanded="true" signature="1617:1635" ph="/**...*/" />
-            <marker date="1523829372057" expanded="false" signature="1702:1713" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="1776:1782" ph=" }" />
-            <marker date="1523829372057" expanded="false" signature="1830:1841" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="1899:1905" ph=" }" />
-            <marker date="1523829372057" expanded="false" signature="1982:1993" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="2030:2036" ph=" }" />
-            <marker date="1523829372057" expanded="true" signature="2042:2060" ph="/**...*/" />
-            <marker date="1523829372057" expanded="true" signature="2157:2553" ph="{...}" />
-            <marker date="1523829372057" expanded="true" signature="2610:2754" ph="{...}" />
-            <marker date="1523829372057" expanded="false" signature="2797:2808" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="2849:2855" ph=" }" />
-            <marker date="1523829372057" expanded="false" signature="2902:2913" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="2956:2962" ph=" }" />
-            <marker date="1523829372057" expanded="false" signature="2994:3005" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="3044:3050" ph=" }" />
-            <marker date="1523829372057" expanded="false" signature="3098:3109" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="3152:3158" ph=" }" />
-            <marker date="1523829372057" expanded="false" signature="3193:3204" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="3228:3234" ph=" }" />
-            <marker date="1523829372057" expanded="false" signature="3284:3295" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="3348:3354" ph=" }" />
-            <marker date="1523829372057" expanded="true" signature="3424:3497" ph="{...}" />
-            <marker date="1523829372057" expanded="false" signature="3535:3546" ph=" { " />
-            <marker date="1523829372057" expanded="false" signature="3599:3605" ph=" }" />
-          </folding>
+        <state relative-caret-position="388">
+          <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.11.0/selenium-api-3.11.0.jar!/org/openqa/selenium/JavascriptExecutor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -719,34 +575,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-firefox-driver/3.11.0/selenium-firefox-driver-3.11.0.jar!/org/openqa/selenium/firefox/FirefoxDriver.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-chrome-driver/3.11.0/selenium-chrome-driver-3.11.0.jar!/org/openqa/selenium/chrome/ChromeDriver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
-          <folding />
+        <state relative-caret-position="90">
+          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding>
+            <marker date="1523829372057" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1523829372057" expanded="false" signature="150:1080" ph="..." />
+            <marker date="1523829372057" expanded="true" signature="1418:1429" ph=" { " />
+            <marker date="1523829372057" expanded="true" signature="1499:1505" ph=" }" />
+            <marker date="1523829372057" expanded="false" signature="1559:1570" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="1605:1611" ph=" }" />
+            <marker date="1523829372057" expanded="true" signature="1617:1635" ph="/**...*/" />
+            <marker date="1523829372057" expanded="false" signature="1702:1713" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="1776:1782" ph=" }" />
+            <marker date="1523829372057" expanded="false" signature="1830:1841" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="1899:1905" ph=" }" />
+            <marker date="1523829372057" expanded="false" signature="1982:1993" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="2030:2036" ph=" }" />
+            <marker date="1523829372057" expanded="true" signature="2042:2060" ph="/**...*/" />
+            <marker date="1523829372057" expanded="true" signature="2157:2553" ph="{...}" />
+            <marker date="1523829372057" expanded="true" signature="2610:2754" ph="{...}" />
+            <marker date="1523829372057" expanded="false" signature="2797:2808" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="2849:2855" ph=" }" />
+            <marker date="1523829372057" expanded="false" signature="2902:2913" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="2956:2962" ph=" }" />
+            <marker date="1523829372057" expanded="false" signature="2994:3005" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="3044:3050" ph=" }" />
+            <marker date="1523829372057" expanded="false" signature="3098:3109" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="3152:3158" ph=" }" />
+            <marker date="1523829372057" expanded="false" signature="3193:3204" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="3228:3234" ph=" }" />
+            <marker date="1523829372057" expanded="false" signature="3284:3295" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="3348:3354" ph=" }" />
+            <marker date="1523829372057" expanded="true" signature="3424:3497" ph="{...}" />
+            <marker date="1523829372057" expanded="false" signature="3535:3546" ph=" { " />
+            <marker date="1523829372057" expanded="false" signature="3599:3605" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-chrome-driver/3.11.0/selenium-chrome-driver-3.11.0.jar!/org/openqa/selenium/chrome/ChromeOptions.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.11.0/selenium-api-3.11.0.jar!/org/openqa/selenium/JavascriptExecutor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="-739">
+          <caret line="58" column="25" lean-forward="false" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/BrowserAutomationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="60" column="33" lean-forward="true" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+        <state relative-caret-position="380">
+          <caret line="39" column="27" lean-forward="true" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
           <folding />
         </state>
       </provider>

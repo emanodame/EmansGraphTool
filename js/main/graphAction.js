@@ -30,7 +30,6 @@ function createRandomGraph(event) {
         closeRandomGraphInput();
         clearGraph();
 
-        noNodeFlag = false;
         let labelId = 0;
 
         const nodeIdSet = new Set();
@@ -95,7 +94,6 @@ function createRandomGraph(event) {
 }
 
 function clearGraph() {
-    noNodeFlag = false;
     sigmaInstance.graph.clear();
     localStorage.clear();
     sigmaInstance.refresh();

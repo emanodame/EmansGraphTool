@@ -40,7 +40,11 @@ function executeDijkstraTeacher(path) {
 
     clearColoredNodesAndEdges();
 
-    const task = new Task(actionExecutor(), executionSpeed);
+    if (task) {
+        task.pause();
+    }
+
+    task = new Task(actionExecutor(), executionSpeed);
     let freeFlow = false;
 
     nodeDiscoveryStatus.add(sourceNodeId);
@@ -56,14 +60,15 @@ function executeDijkstraTeacher(path) {
                 maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
-                if (dijkstraCounter === path.length) {
-                }
+                $.iGrowl.prototype.dismissAll('all');
+
                 $.iGrowl({
                     type: "growler-settings",
                     message: "End of Dijkstra's Algorithm!",
                     placement: {
                         x: 'center'
                     },
+                    animation: false
                 });
                 showPlayButton();
             }
@@ -103,9 +108,14 @@ function executeDijkstraTeacher(path) {
                 document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
                 document.getElementById(div.id).addEventListener("click", function (k) {
+                    sigmaInstance.graph.edges().forEach(function (edge) {
+                        sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+                    });
+
                     dijkstraCounter = k.srcElement.id;
-                    actionPosition = k.srcElement.id * 2 + 1;
-                    task.step();
+                    actionPosition = k.srcElement.id * 2;
+                    highlightElement(dijkstraCounter, '#6e0db6', 0.5);
+
                 });
 
                 $('.resize-drag').addClass('resize-drag-highlight');
@@ -143,6 +153,8 @@ function executeDijkstraTeacher(path) {
     }
 
     function restart() {
+        $.iGrowl.prototype.dismissAll('all');
+
         if (dijkstraCounter > 2) {
             sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter === path.length ? dijkstraCounter - 1 : dijkstraCounter].currentEdge.id)});
             dijkstraCounter = 0;
@@ -153,6 +165,8 @@ function executeDijkstraTeacher(path) {
     }
 
     function rewind() {
+        $.iGrowl.prototype.dismissAll('all');
+
         if (dijkstraCounter > 0) {
             sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter === path.length ? dijkstraCounter - 1 : dijkstraCounter].currentEdge.id)});
             dijkstraCounter -= 1;
@@ -163,6 +177,7 @@ function executeDijkstraTeacher(path) {
     }
 
     function forward() {
+        $.iGrowl.prototype.dismissAll('all');
         if (dijkstraCounter < path.length) {
             actionPosition++;
             freeFlow = false;
@@ -181,6 +196,7 @@ function executeDijkstraTeacher(path) {
     }
 
     function end() {
+        $.iGrowl.prototype.dismissAll('all');
         if (dijkstraCounter < path.length) {
             sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
             while (actionPosition < action.length - 1) {

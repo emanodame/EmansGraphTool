@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bacd0c4e-12b0-4d84-af88-8d70b72db066" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Automation/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Automation/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Automation/src/test/java/BrowserAutomationTest.java" afterPath="$PROJECT_DIR$/Automation/src/test/java/BrowserAutomationTest.java" />
       <change beforePath="$PROJECT_DIR$/Automation/target/test-classes/BrowserAutomationTest.class" afterPath="$PROJECT_DIR$/Automation/target/test-classes/BrowserAutomationTest.class" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
+      <change beforePath="$PROJECT_DIR$/graph.html" afterPath="$PROJECT_DIR$/graph.html" />
+      <change beforePath="$PROJECT_DIR$/js/main/algorithmController.js" afterPath="$PROJECT_DIR$/js/main/algorithmController.js" />
+      <change beforePath="$PROJECT_DIR$/js/main/clickFunctionality.js" afterPath="$PROJECT_DIR$/js/main/clickFunctionality.js" />
+      <change beforePath="$PROJECT_DIR$/js/teachers/dijsktraTeacher.js" afterPath="$PROJECT_DIR$/js/teachers/dijsktraTeacher.js" />
+      <change beforePath="$PROJECT_DIR$/js/teachers/kruskalTeacher.js" afterPath="$PROJECT_DIR$/js/teachers/kruskalTeacher.js" />
+      <change beforePath="$PROJECT_DIR$/js/teachers/primsTeacher.js" afterPath="$PROJECT_DIR$/js/teachers/primsTeacher.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,48 +25,56 @@
     <favorites_list name="EmansGraphTool" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="graph.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/graph.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="55" lean-forward="true" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="graphAction.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main/graphAction.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dijsktraTeacher.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/teachers/dijsktraTeacher.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="100" column="35" lean-forward="false" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="graph3.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/json-graphs/graph3.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="graph.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/graph.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="328">
+                  <caret line="112" column="106" lean-forward="false" selection-start-line="112" selection-start-column="106" selection-end-line="112" selection-end-column="106" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="primsTeacher.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/teachers/primsTeacher.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="337">
+                  <caret line="63" column="49" lean-forward="false" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="kruskalTeacher.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/teachers/kruskalTeacher.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1432">
+                  <caret line="135" column="39" lean-forward="true" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dijsktraTeacher.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/teachers/dijsktraTeacher.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1187">
+                  <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,12 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>random-grap</find>
-      <find>iGrowl</find>
-      <find>shadow.js</find>
-      <find>shadow.</find>
-      <find>interact.js</find>
-      <find>json</find>
       <find>forEach</find>
       <find>import-</find>
       <find>interact</find>
@@ -90,17 +99,23 @@
       <find>play</find>
       <find>disp</find>
       <find>action</find>
-      <find>outEdge</find>
       <find>\/\*\n   fit\(\'should correctly execute selected algorithm\'\, function \(\) \{\n        algorithmSelected \= \&quot;kruskal\&quot;\;\n        executedSelectedAlgorithm\(\)\;\n        expect\(\$\(\&quot;\#prompt\-text\&quot;\)\.is\(\&quot;\:visible\&quot;\)\)\.toBe\(true\)\;\n    \}\)\;\n\*\/\n</find>
       <find>resize-drag</find>
-      <find>dismiss</find>
       <find>tour-</find>
       <find>tour-a</find>
       <find>on the screen!</find>
       <find>anchor</find>
       <find>tourGuide</find>
-      <find>slider</find>
       <find>html</find>
+      <find>submit</find>
+      <find>x</find>
+      <find>Submit Query</find>
+      <find>form</find>
+      <find>dismiss</find>
+      <find>0.5</find>
+      <find>executionSpeed</find>
+      <find>slider</find>
+      <find>outEdge</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -120,7 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/algorithms/prims.js" />
         <option value="$PROJECT_DIR$/algorithms/kruskal.js" />
         <option value="$PROJECT_DIR$/indexTest.js" />
         <option value="$PROJECT_DIR$/test.html" />
@@ -150,27 +164,28 @@
         <option value="$PROJECT_DIR$/test/test.html" />
         <option value="$PROJECT_DIR$/resources/json-graphs/ss.json" />
         <option value="$PROJECT_DIR$/resources/sigma/sigma.min.js" />
-        <option value="$PROJECT_DIR$/js/algorithms/dijkstra.js" />
         <option value="$PROJECT_DIR$/resources/json-graphs/graph2.json" />
         <option value="$PROJECT_DIR$/resources/tourGuide.js" />
         <option value="$PROJECT_DIR$/js/main/interact.js" />
         <option value="$PROJECT_DIR$/js/main/media.js" />
         <option value="$PROJECT_DIR$/js/main/external.js" />
-        <option value="$PROJECT_DIR$/js/teachers/primsTeacher.js" />
-        <option value="$PROJECT_DIR$/js/teachers/dijsktraTeacher.js" />
-        <option value="$PROJECT_DIR$/js/teachers/kruskalTeacher.js" />
-        <option value="$PROJECT_DIR$/js/main/algorithmController.js" />
         <option value="$PROJECT_DIR$/test/test.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/resources/iGrowl/public/javascripts/igrowl.js" />
         <option value="$PROJECT_DIR$/resources/json-graphs/graph3.json" />
         <option value="$PROJECT_DIR$/js/main/tourGuide.js" />
-        <option value="$PROJECT_DIR$/js/main/clickFunctionality.js" />
         <option value="$PROJECT_DIR$/js/main/jsonHandler.js" />
         <option value="$PROJECT_DIR$/js/main/graphAction.js" />
         <option value="$PROJECT_DIR$/js/main/index.js" />
         <option value="$PROJECT_DIR$/graph.html" />
+        <option value="$PROJECT_DIR$/js/algorithms/dijkstra.js" />
+        <option value="$PROJECT_DIR$/js/main/clickFunctionality.js" />
         <option value="$PROJECT_DIR$/css/index.css" />
+        <option value="$PROJECT_DIR$/js/main/algorithmController.js" />
+        <option value="$PROJECT_DIR$/js/tools/Task.js" />
+        <option value="$PROJECT_DIR$/js/teachers/dijsktraTeacher.js" />
+        <option value="$PROJECT_DIR$/js/teachers/kruskalTeacher.js" />
+        <option value="$PROJECT_DIR$/js/teachers/primsTeacher.js" />
       </list>
     </option>
   </component>
@@ -259,7 +274,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="graph&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;in&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;inde&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;click&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;Graphac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/graphAction.js&#10;clic&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;to&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/tourGuide.js&#10;algor&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/algorithmController.js&#10;index.c&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;teac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;index&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;css&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;initaliz&#9;null&#9;null&#10;index.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;grap&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/json-graphs/graph3.json&#10;gra&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;kru&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;kruska&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;prim&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/primsTeacher.js&#10;dij&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;krusk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;media&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/media.js&#10;externa&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/external.js&#10;krus&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;dijk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/dijkstra.js&#10;interac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/interact.js&#10;cl&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;json&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/jsonHandler.js&#10;tour&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/tourGuide.js&#10;algo&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithm-summary.html&#10;graph.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;clearGra&#9;null&#9;null&#10;randomGraph&#9;null&#9;null&#10;clickF&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;teache&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;teacher&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;test&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test/test.js&#10;sigma.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/sigma/sigma.min.js&#10;parseJson&#9;null&#9;null&#10;kruskal&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/kruskal.js&#10;dijks&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/dijkstra.js&#10;astar&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/astar.js&#10;camer&#9;null&#9;null&#10;ast&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/astarTeacher.js&#10;exter&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/external.js&#10;c&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/graphAction.js&#10;test.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test/test.html&#10;summ&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/algorithm-summary.html&#10;di&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;primst&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/primsTeacher.js" />
+    <property name="SearchEverywhereHistoryKey" value="dij&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;index.js&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;al&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/algorithmController.js&#10;prim&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/primsTeacher.js&#10;algo&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/algorithmController.js&#10;inde&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;kruska&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;algorith&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/algorithmController.js&#10;kruskal&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;Task&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/tools/Task.js&#10;Timer&#9;null&#9;null&#10;prims&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/primsTeacher.js&#10;krusk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;executeSel&#9;null&#9;null&#10;grap&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/json-graphs/graph3.json&#10;click&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;index&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;graph&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;in&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;Graphac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/graphAction.js&#10;clic&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;to&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/tourGuide.js&#10;algor&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/algorithmController.js&#10;index.c&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;teac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;css&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/css/index.css&#10;initaliz&#9;null&#9;null&#10;index.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/index.js&#10;gra&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;kru&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;media&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/media.js&#10;externa&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/external.js&#10;krus&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;dijk&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/dijkstra.js&#10;interac&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/interact.js&#10;cl&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;json&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/jsonHandler.js&#10;tour&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/tourGuide.js&#10;graph.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/graph.html&#10;clearGra&#9;null&#9;null&#10;randomGraph&#9;null&#9;null&#10;clickF&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/main/clickFunctionality.js&#10;teache&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/dijsktraTeacher.js&#10;teacher&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/teachers/kruskalTeacher.js&#10;test&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/test/test.js&#10;sigma.&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/resources/sigma/sigma.min.js&#10;parseJson&#9;null&#9;null&#10;dijks&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/dijkstra.js&#10;astar&#9;FILE&#9;file:///Users/emanodame/Google Drive/University Work/FINAL YEAR WOWOWOWW/EmansGraphTool/js/algorithms/astar.js&#10;camer&#9;null&#9;null" />
     <property name="editorconfig.notification" value="EditorConfig helps developers define and maintain consistent&#10;" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
@@ -402,18 +417,18 @@
       <workItem from="1524177111512" duration="74969000" />
       <workItem from="1525093201553" duration="11010000" />
       <workItem from="1525430876588" duration="21883000" />
-      <workItem from="1525803473969" duration="7541000" />
+      <workItem from="1525803473969" duration="19879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157209000" />
+    <option name="totallyTimeSpent" value="169547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19285715" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19285715" sideWeight="0.437" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.50714284" order="7" side_tool="true" content_ui="tabs" />
@@ -422,7 +437,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.49285713" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5059701" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19285715" sideWeight="0.563" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -449,7 +464,7 @@
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.50238097" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.50714284" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -468,10 +483,10 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.49761903" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.49402985" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.49285713" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19285715" sideWeight="0.4522388" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5059701" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19285715" sideWeight="0.5477612" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -492,7 +507,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package-lock.json" />
     <entry file="file://$PROJECT_DIR$/resources/widget.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -646,14 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/algorithms/dijkstra.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -678,14 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/tools/Task.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -698,22 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="59" column="16" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/teachers/primsTeacher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="153" column="13" lean-forward="false" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/teachers/kruskalTeacher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="94" column="9" lean-forward="true" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -757,34 +739,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/teachers/dijsktraTeacher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="100" column="35" lean-forward="false" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/json-graphs/graph3.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main/algorithmController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -805,30 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="368" column="0" lean-forward="true" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="77" column="16" lean-forward="false" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main/clickFunctionality.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main/graphAction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -837,10 +771,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/json-graphs/graph3.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main/clickFunctionality.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="92" column="31" lean-forward="false" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/algorithms/dijkstra.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="366" column="33" lean-forward="true" selection-start-line="366" selection-start-column="33" selection-end-line="366" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/jasmine/lib/jasmine-3.1.0/jasmine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="78" column="4" lean-forward="false" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tools/Task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/graph.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="55" lean-forward="true" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
+        <state relative-caret-position="328">
+          <caret line="112" column="106" lean-forward="false" selection-start-line="112" selection-start-column="106" selection-end-line="112" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main/algorithmController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="254" column="45" lean-forward="true" selection-start-line="254" selection-start-column="45" selection-end-line="254" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="196" column="22" lean-forward="true" selection-start-line="196" selection-start-column="22" selection-end-line="196" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/teachers/dijsktraTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1187">
+          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/teachers/kruskalTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1432">
+          <caret line="135" column="39" lean-forward="true" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/teachers/primsTeacher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="63" column="49" lean-forward="false" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
           <folding />
         </state>
       </provider>

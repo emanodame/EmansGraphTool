@@ -25,7 +25,11 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     clearColoredNodesAndEdges();
 
-    const task = new Task(actionExecutor(), executionSpeed);
+    if (task) {
+        task.pause();
+    }
+
+    task = new Task(actionExecutor(), executionSpeed);
     let freeFlow = false;
 
     task.step();
@@ -58,7 +62,8 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
                 document.getElementById(div.id).addEventListener("click", function (k) {
                     kruskalCounter = k.srcElement.id;
-                    actionPosition = k.srcElement.id * 2 + 1;
+                    actionPosition = k.srcElement.id * 2;
+                    highlightElement(kruskalCounter, '#6e0db6', 0.5);
                     task.step();
                 });
 
@@ -66,6 +71,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                 setTimeout(function () {
                     $('.resize-drag').removeClass('resize-drag-highlight');
                 }, 1000);
+
                 divIds.add(div.id);
             }
         }
@@ -82,12 +88,15 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                 maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
+                $.iGrowl.prototype.dismissAll('all');
+
                 $.iGrowl({
                     type: "growler-settings",
                     message: "End of Kruskal's Algorithm!",
                     placement: {
                         x: 'center'
                     },
+                    animation: false
                 });
                 showPlayButton();
             }
@@ -124,6 +133,8 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     }
 
     function restart() {
+        $.iGrowl.prototype.dismissAll('all');
+
         if (kruskalCounter > 2) {
             sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
             kruskalCounter = 0;
@@ -135,6 +146,8 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     }
 
     function rewind() {
+        $.iGrowl.prototype.dismissAll('all');
+
         if (kruskalCounter > 0) {
             sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter === sortedEdgesOnGraph.length ? kruskalCounter - 1 : kruskalCounter].currentEdge.id)});
             kruskalCounter -= 1;
@@ -145,6 +158,8 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     }
 
     function forward() {
+        $.iGrowl.prototype.dismissAll('all');
+
         if (kruskalCounter < sortedEdgesOnGraph.length) {
             actionPosition++;
             freeFlow = false;
@@ -163,6 +178,8 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     }
 
     function end() {
+        $.iGrowl.prototype.dismissAll('all');
+
         if (kruskalCounter < sortedEdgesOnGraph.length) {
 
             while (kruskalCounter < sortedEdgesOnGraph.length - 1) {
@@ -202,10 +219,10 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 }
 
 function highlightElement(id, color, seconds) {
-    var element = document.getElementById(id);
-    var origcolor = element.style.backgroundColor;
+    const element = document.getElementById(id);
+    const origcolor = element.style.backgroundColor;
     element.style.backgroundColor = color;
-    var t = setTimeout(function () {
+    const t = setTimeout(function () {
         element.style.backgroundColor = origcolor;
     }, (seconds * 1000));
 }

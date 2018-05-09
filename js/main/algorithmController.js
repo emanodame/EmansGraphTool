@@ -1,4 +1,5 @@
 let algorithmSelected = "dijkstra";
+let task;
 
 function showDijkstraInputBoxes() {
     document.getElementById("source-error-message").style.display = "none";
@@ -59,7 +60,7 @@ function showPauseButton() {
     }
 }
 
-function executedSelectedAlgorithm() {
+function executedSelectedAlgorithm(event) {
     event.preventDefault();
 
     if (sigmaInstance.graph.nodes().length === 0) {
@@ -248,10 +249,10 @@ function enterKeyHandler() {
 
         if (!srcNodeId) {
             validNodeId = false;
-            executedSelectedAlgorithm();
+            executedSelectedAlgorithm(event);
         } else {
             validNodeId = true;
-            executedSelectedAlgorithm();
+            executedSelectedAlgorithm(event);
         }
     }
 }

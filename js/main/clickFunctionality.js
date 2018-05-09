@@ -7,7 +7,6 @@ $(document).ready(function () {
     const nodesSelected = [];
 
     sigmaInstance.bind('clickStage', function (e) {
-        console.log("lolosdlka");
 
         if (!e.shiftKey && !e.data.captor.isDragging && sigmaInstance.settings('mouseEnabled')) {
             const positionWithCamera = sigmaCamera.cameraPosition(e.data.captor.x, e.data.captor.y);

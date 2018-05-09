@@ -27,30 +27,28 @@
 
 <div id="random-graph-input">
     <span class="close-holder"><button class="close-button" onclick="closeRandomGraphInput()">x</button></span>
-    <form id="number-input">
-        <label for="number-text-input">Number of nodes (2 - 99)
-            <input type="text" id="number-text-input" name="json-input">
-            <input type="submit" class="algo-button" id="number-graph-submit-btn" onclick="createRandomGraph(event)">
-        </label>
-    </form>
+    <div id="number-input">
+        Number of nodes (2 - 99)
+        <input type="text" id="number-text-input" name="json-input">
+        <input type="submit" class="algo-button" id="number-graph-submit-btn" onclick="createRandomGraph(event)">
+    </div>
 </div>
 
 <div id="json-import">
     <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
-    <form id="json-input">
-        <label for="json-input">Input
-            <input type="text" id="json-text-input" name="json-input">
-            <input type="submit" class="algo-button" id="json-submit-btn" onclick="parseJson()">
-        </label>
-    </form>
+    <div id="json-input">
+        Input
+        <input type="text" id="json-text-input" name="json-input">
+        <input type="submit" class="algo-button" id="json-submit-btn" onclick="parseJson()">
+    </div>
 </div>
 
 <div id="json-export">
     <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
-    <form id="json-output">
-        <label><input type="text" id="json-text-output" name="json-input"></label>
+    <div id="json-output">
+        <input type="text" id="json-text-output" name="json-input">
         <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="Copy">
-    </form>
+    </div>
 </div>
 
 <div id="guide-prompt">
@@ -88,7 +86,7 @@
         <button type="button" class="algo-button" id="prim-option" onclick="showPrimsInputBoxes()">Prim's</button>
     </div>
 
-    <form name="source-target" id="node-id-input-box" class="input-box-holder" onsubmit="executedSelectedAlgorithm()">
+    <div id="node-id-input-box" class="input-box-holder">
         <div id="source-holder">
             Source Node ID
             <label>
@@ -112,9 +110,9 @@
         </div>
 
         <div id="button-block">
-            <input type="submit" id="execute-button" class="algo-button" value="Execute">
+            <input type="submit" id="execute-button" class="algo-button" value="Execute" onclick="executedSelectedAlgorithm(event)">
         </div>
-    </form>
+    </div>
 
     <div id="bottom-button-block">
         <button type="button" class="algo-button" id="clear-button" onclick="clearGraph()">Clear Graph</button>
