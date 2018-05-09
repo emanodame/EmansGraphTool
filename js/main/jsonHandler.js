@@ -6,6 +6,12 @@ function importJson() {
     showOverlay();
 }
 
+function parseJsonKeyPress(event) {
+    if (event.keyCode === 13) {
+        parseJson();
+    }
+}
+
 function parseJson() {
     event.preventDefault();
 
@@ -42,6 +48,15 @@ function parseJson() {
 
             sigmaInstance.graph.addEdge(edgeCreation);
         }
+
+        $.iGrowl.prototype.dismissAll('all');
+        $.iGrowl({
+            type: "growler-settings",
+            message: "Imported successfully!",
+            placement: {
+                x: 'center'
+            },
+        });
 
         sigmaInstance.refresh();
         removeOverlay();
@@ -90,6 +105,7 @@ function exportJson() {
             id: edge.id,
             source: edge.source,
             target: edge.target,
+            weight: edge.label,
         };
 
         edges.push(edgeCreation);
@@ -112,4 +128,14 @@ function copyJsonOutput() {
     const copyText = document.getElementById("json-text-output");
     copyText.select();
     document.execCommand("Copy");
+    closeJsonInput();
+
+    $.iGrowl.prototype.dismissAll('all');
+    $.iGrowl({
+        type: "growler-settings",
+        message: "Successfully Copied!",
+        placement: {
+            x: 'center'
+        },
+    });
 }

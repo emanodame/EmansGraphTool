@@ -67,11 +67,11 @@ describe("Tests", function () {
         expect(JSON.stringify(expectedPath)).toBe(getContentsFromFile("expectedPrimPath"));
     });
 
-    fit('should correcly create a random grpah', function () {
+    fit('should correctly create a random graph', function () {
         const randomNodesValue = 2;
 
         spyOn($.fn, "val").and.returnValue(randomNodesValue);
-        createRandomGraph();
+        createRandomGraph(event);
         expect(sigmaInstance.graph.nodes().length).toBe(randomNodesValue);
     });
 

@@ -8,6 +8,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     const action = [];
 
     const divIds = new Set();
+    let t;
 
     sortedEdgesOnGraph.forEach(function (edge) {
         edge.color = isEdgeInSpanningTree(edge.id) ? "#6e0db6" : "#CDAD00";
@@ -56,15 +57,16 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             div.id = kruskalCounter.toString();
 
             if (!divIds.has(div.id)) {
-                div.insertAdjacentHTML("beforeend", " <br />" + displayConnectionInfo());
+                div.insertAdjacentHTML("beforeend", displayConnectionInfo() + "<br/>" + "<br/>");
                 document.getElementById("helper-text-container").appendChild(div);
                 document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
                 document.getElementById(div.id).addEventListener("click", function (k) {
                     kruskalCounter = k.srcElement.id;
                     actionPosition = k.srcElement.id * 2;
-                    highlightElement(kruskalCounter, '#6e0db6', 0.5);
-                    task.step();
+                    highlightElement(kruskalCounter, '#6e0db6', 500);
+                    forward();
+                    showPlayButton();
                 });
 
                 $('.resize-drag').addClass('resize-drag-highlight');
@@ -75,11 +77,15 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                 divIds.add(div.id);
             }
         }
-        highlightElement(kruskalCounter, '#6e0db6', 0.5);
+        highlightElement(kruskalCounter, '#6e0db6', 500);
         sigmaInstance.renderers[0].dispatchEvent('overEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id)})
     }
 
     function* actionExecutor() {
+        sigmaInstance.graph.edges().forEach(function (edge) {
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+        });
+
         while (true) {
             if (kruskalCounter !== kruskalEdgeStatesArray.length) {
                 if (freeFlow) {
@@ -216,13 +222,13 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     executeKruskalTeacher.rewind = rewind;
     executeKruskalTeacher.forward = forward;
     executeKruskalTeacher.end = end;
-}
 
-function highlightElement(id, color, seconds) {
-    const element = document.getElementById(id);
-    const origcolor = element.style.backgroundColor;
-    element.style.backgroundColor = color;
-    const t = setTimeout(function () {
-        element.style.backgroundColor = origcolor;
-    }, (seconds * 1000));
+    function highlightElement(id, color, seconds) {
+        const element = document.getElementById(id);
+        const origcolor = element.style.backgroundColor;
+        element.style.backgroundColor = color;
+        t = setTimeout(function () {
+            element.style.backgroundColor = origcolor;
+        }, (seconds));
+    }
 }

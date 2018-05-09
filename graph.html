@@ -29,7 +29,7 @@
     <span class="close-holder"><button class="close-button" onclick="closeRandomGraphInput()">x</button></span>
     <div id="number-input">
         Number of nodes (2 - 99)
-        <input type="text" id="number-text-input" name="json-input">
+        <input type="text" id="number-text-input" name="json-input" onkeydown="createRandomGraphKeyPress(event)">
         <input type="submit" class="algo-button" id="number-graph-submit-btn" onclick="createRandomGraph(event)">
     </div>
 </div>
@@ -38,7 +38,7 @@
     <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
     <div id="json-input">
         Input
-        <input type="text" id="json-text-input" name="json-input">
+        <input type="text" id="json-text-input" name="json-input" onkeydown="parseJsonKeyPress(event)">
         <input type="submit" class="algo-button" id="json-submit-btn" onclick="parseJson()">
     </div>
 </div>
@@ -47,7 +47,7 @@
     <span class="close-holder"><button class="close-button" onclick="closeJsonInput()">x</button></span>
     <div id="json-output">
         <input type="text" id="json-text-output" name="json-input">
-        <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="Copy">
+        <input type="button" class="algo-button" id="json-copy-btn" onclick="copyJsonOutput()" value="Click here to Copy">
     </div>
 </div>
 
@@ -110,7 +110,8 @@
         </div>
 
         <div id="button-block">
-            <input type="submit" id="execute-button" class="algo-button" value="Execute" onclick="executedSelectedAlgorithm(event)">
+            <input type="submit" id="execute-button" class="algo-button" value="Execute"
+                   onclick="executedSelectedAlgorithm(event)">
         </div>
     </div>
 

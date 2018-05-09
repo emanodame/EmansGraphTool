@@ -156,5 +156,4 @@ function initalizeTourGuide() {
             },
         ]
     });
-    tour.init();
 }

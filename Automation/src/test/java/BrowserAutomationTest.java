@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -54,7 +55,7 @@ public class BrowserAutomationTest {
                 .build()
                 .perform();
 
-        final ArrayList<Object> jsReturnObject = (ArrayList<Object>) js.executeScript("return sigmaInstance.graph.nodes()");
+        final ArrayList<Object> jsReturnObject = (ArrayList<Object>) js.executeScript("return (window.wrappedJSObject || window).sigmaInstance");
         assertTrue(jsReturnObject.size() == 2);
     }
 

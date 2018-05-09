@@ -51,6 +51,10 @@ function executeDijkstraTeacher(path) {
     task.step();
 
     function* actionExecutor() {
+        sigmaInstance.graph.edges().forEach(function (edge) {
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+        });
+
         while (true) {
             if (dijkstraCounter !== path.length) {
                 if (freeFlow) {
@@ -103,19 +107,16 @@ function executeDijkstraTeacher(path) {
             div.id = dijkstraCounter.toString();
 
             if (!divIds.has(div.id)) {
-                div.insertAdjacentHTML("beforeend", "<br />" + displayConnectionInfo());
+                div.insertAdjacentHTML("beforeend", displayConnectionInfo() + "<br />" + "<br />");
                 document.getElementById("helper-text-container").appendChild(div);
                 document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
                 document.getElementById(div.id).addEventListener("click", function (k) {
-                    sigmaInstance.graph.edges().forEach(function (edge) {
-                        sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
-                    });
-
                     dijkstraCounter = k.srcElement.id;
                     actionPosition = k.srcElement.id * 2;
                     highlightElement(dijkstraCounter, '#6e0db6', 0.5);
-
+                    forward();
+                    showPlayButton();
                 });
 
                 $('.resize-drag').addClass('resize-drag-highlight');

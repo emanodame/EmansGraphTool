@@ -54,7 +54,7 @@ function executePrimsTeacher(edgesOnGraph) {
             div.id = primsCounter.toString();
 
             if (!divIds.has(div.id)) {
-                div.insertAdjacentHTML("beforeend", " <br />" + displayConnectionInfo());
+                div.insertAdjacentHTML("beforeend", displayConnectionInfo() + "<br/>" + "<br/>");
                 document.getElementById("helper-text-container").appendChild(div);
                 document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
@@ -62,7 +62,8 @@ function executePrimsTeacher(edgesOnGraph) {
                     primsCounter = k.srcElement.id;
                     actionPosition = k.srcElement.id * 2;
                     highlightElement(primsCounter, '#6e0db6', 0.5);
-                    task.step();
+                    forward();
+                    showPlayButton();
                 });
 
                 $('.resize-drag').addClass('resize-drag-highlight');
@@ -78,6 +79,10 @@ function executePrimsTeacher(edgesOnGraph) {
     }
 
     function* actionExecutor() {
+        sigmaInstance.graph.edges().forEach(function (edge) {
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+        });
+
         while (true) {
             if (primsCounter !== primsEdgeStates.length) {
                 if (freeFlow) {

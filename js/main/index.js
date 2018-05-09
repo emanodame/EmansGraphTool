@@ -61,8 +61,8 @@ $(document).ready(function () {
     initalizeTourGuide();
     const firstTime = localStorage.getItem("hasVisited");
     if (!firstTime) {
-        localStorage.setItem("hasVisited", "true");
         tour.start();
+        localStorage.setItem("hasVisited", "true");
     }
 });
 
@@ -194,7 +194,7 @@ function closePrompt() {
     } else {
         localStorage.setItem("prim-summary-prompt", "true");
     }
-    executedSelectedAlgorithm();
+    executedSelectedAlgorithm(event);
 }
 
 function showSummary() {

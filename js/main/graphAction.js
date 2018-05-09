@@ -10,6 +10,12 @@ function closeRandomGraphInput() {
     document.getElementById("random-graph-input").style.visibility = "hidden";
 }
 
+function createRandomGraphKeyPress(event) {
+    if (event.keyCode === 13) {
+        createRandomGraph(event);
+    }
+}
+
 function createRandomGraph(event) {
     event.preventDefault();
 
@@ -19,7 +25,7 @@ function createRandomGraph(event) {
         $.iGrowl.prototype.dismissAll('all');
         $.iGrowl({
             type: "growler-settings",
-            message: "Please enter a number between 2-10 (inclusive)",
+            message: "Please enter a number between 2-100 (inclusive)",
             placement: {
                 x: 'center'
             },
@@ -42,14 +48,21 @@ function createRandomGraph(event) {
             let randomGeneratedY = Math.floor(Math.random() * 10) + 1;
             randomGeneratedY *= Math.floor(Math.random() * 2) === 1 ? 1 : -1;
 
+            const centeredCameraSettings = {
+              x: 0,
+              y: 0,
+              ratio: 1
+            };
+
+            sigmaInstance.camera.goTo(centeredCameraSettings);
 
             const nodeId = createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY);
 
             if (!nodeIdSet.has(nodeId)) {
                 sigmaInstance.graph.addNode({
                     id: createNodeIdFromCoordinates(randomGeneratedX, randomGeneratedY),
-                    x: randomGeneratedX * 100,
-                    y: randomGeneratedY * 100,
+                    x: randomGeneratedX * 50,
+                    y: randomGeneratedY * 50,
                     label: (labelId++).toString(),
                     size: 10
                 });
