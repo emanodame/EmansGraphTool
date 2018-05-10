@@ -170,6 +170,197 @@ describe("Tests", function () {
 
         expect(endAlgorithmSpy).toHaveBeenCalled();
     });
+
+    fit('should compute path length of nodes', function () {
+        const node1 = {
+            x: 101,
+            y: 120
+        };
+
+        const node2 = {
+            x: 1012,
+            y: 102
+        };
+
+        expect(computePathLength(node1, node2)).toBe("91.12");
+    });
+
+    fit('should retrieve node object from label', function () {
+        const node = {
+            id: 1,
+            x: 10,
+            y: 20,
+            label: "5"
+        };
+
+        sigmaInstance.graph.addNode(node);
+        expect(getNodeIdFromLabel(node.label)).toBe(node.id);
+    });
+
+    fit('should call clear nodes and edges', function () {
+        const endAlgorithmSpy = spyOn(window, "clearColoredNodesAndEdges");
+
+        clearColoredNodesAndEdges();
+        expect(endAlgorithmSpy).toHaveBeenCalled();
+    });
+
+    fit('should close prompt should execute algorithm', function () {
+        const executeAlgorithmSpy = spyOn(window, "executedSelectedAlgorithm");
+
+        closePrompt();
+        expect(executeAlgorithmSpy).toHaveBeenCalled();
+    });
+
+    fit('should overlay executed on show summary', function () {
+        const overlaySpy = spyOn(window, 'showOverlay');
+
+        showSummary();
+        expect(overlaySpy).toHaveBeenCalled();
+    });
+
+    fit('should reset info container', function () {
+        resetInformation();
+
+        expect($("#helper-text-container").val()).toBe(undefined);
+    });
+
+    fit('should open random graph output', function () {
+        const overlaySpy = spyOn(window, 'showOverlay');
+
+        openRandomGraphInput();
+        expect(overlaySpy).toHaveBeenCalled();
+    });
+
+    fit('should close random graph output', function () {
+        const overlaySpy = spyOn(window, 'removeOverlay');
+
+        closeRandomGraphInput();
+        expect(overlaySpy).toHaveBeenCalled();
+    });
+
+    fit('should assert close check', function () {
+        expect(closed).toBe(false);
+    });
+
+    fit('should clear graph', function () {
+        const node = {
+            id: 10,
+            x: 10,
+            y: 20,
+            label: "5"
+        };
+
+        sigmaInstance.graph.addNode(node);
+
+        clearGraph();
+        expect(sigmaInstance.graph.nodes().length).toBe(0);
+    });
+
+    fit('should show overlay when json import', function () {
+        const overlaySpy = spyOn(window, 'showOverlay');
+
+        importJson();
+        expect(overlaySpy).toHaveBeenCalled();
+    });
+
+    fit('should remove overlay when json import close', function () {
+        const overlaySpy = spyOn(window, 'removeOverlay');
+
+        closeJsonInput();
+        expect(overlaySpy).toHaveBeenCalled();
+    });
+
+    fit('should show play button', function () {
+        showPlayButton();
+        expect(document.getElementById("play-button").style.display).toBe("inline");
+    });
+
+    fit('should show pause button', function () {
+        showPauseButton();
+        expect(document.getElementById("pause-button").style.display).toBe("inline");
+    });
+
+    fit('should restart algorithm and show play button', function () {
+        const showPlayButtonSpy = spyOn(window, 'showPlayButton');
+        restartAlgorithm();
+        expect(showPlayButtonSpy).toHaveBeenCalled();
+    });
+
+    fit('should restart algorithm and show pause button', function () {
+        const showPlayButtonSpy = spyOn(window, 'pauseAlgorithm');
+        restartAlgorithm();
+        expect(showPlayButtonSpy).toHaveBeenCalled();
+    });
+
+    fit('should rewind algorithm', function () {
+        const showPlayButtonSpy = spyOn(window, 'showPlayButton');
+        rewindAlgorithm();
+        expect(showPlayButtonSpy).toHaveBeenCalled();
+    });
+
+    fit('should step algorithm and show play button', function () {
+        const showPlayButtonSpy = spyOn(window, 'showPlayButton');
+        rewindAlgorithm();
+        expect(showPlayButtonSpy).toHaveBeenCalled();
+    });
+
+    fit('should step algorithm and show pause button', function () {
+        const showPlayButtonSpy = spyOn(window, 'pauseAlgorithm');
+        rewindAlgorithm();
+        expect(showPlayButtonSpy).toHaveBeenCalled();
+    });
+
+    fit('should resume algorithm', function () {
+        const showPlayButtonSpy = spyOn(window, 'resumeAlgorithm');
+        resumeAlgorithm();
+        expect(showPlayButtonSpy).toHaveBeenCalled();
+    });
+
+    fit('should pause algorithm', function () {
+        const showPlayButtonSpy = spyOn(window, 'pauseAlgorithm');
+        pauseAlgorithm();
+        expect(showPlayButtonSpy).toHaveBeenCalled();
+    });
+
+    fit('should end algorithm and show play button', function () {
+        const showPlayButtonSpy = spyOn(window, 'showPlayButton');
+        endAlgorithm();
+        expect(showPlayButtonSpy).toHaveBeenCalled();
+    });
+
+    fit('should end algorithm and pause algorithm', function () {
+        const showPlayButtonSpy = spyOn(window, 'pauseAlgorithm');
+        endAlgorithm();
+        expect(showPlayButtonSpy).toHaveBeenCalled();
+    });
+
+    fit('should initalise tour guide', function () {
+        const tourGuidesSpy = spyOn(window, 'initalizeTourGuide');
+        initalizeTourGuide();
+        expect(tourGuidesSpy).toHaveBeenCalled();
+    });
+
+    fit('should initalise dijkstra teacher', function () {
+        const dijkstraTeacherSpy = spyOn(window, 'executeDijkstraTeacher');
+        executeDijkstraTeacher();
+        expect(dijkstraTeacherSpy).toHaveBeenCalled();
+    });
+
+    fit('should initalise kruskal teacher', function () {
+        const kruskalTeacherSpy = spyOn(window, 'executeKruskalTeacher');
+        executeKruskalTeacher();
+        expect(kruskalTeacherSpy).toHaveBeenCalled();
+    });
+
+    fit('should initalise prim teacher', function () {
+        const primTeacherSpy = spyOn(window, 'executePrimsTeacher');
+        executePrimsTeacher();
+        expect(primTeacherSpy).toHaveBeenCalled();
+    });
+
+    fit('should expect empty local storage', function () {
+        expect(localStorage.length).toBe(0);
+    });
 });
 
 
