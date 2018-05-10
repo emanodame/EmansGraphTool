@@ -109,6 +109,5 @@ function createRandomGraph(event) {
 
 function clearGraph() {
     sigmaInstance.graph.clear();
-    localStorage.clear();
     sigmaInstance.refresh();
 }
