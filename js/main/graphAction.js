@@ -87,6 +87,7 @@ function createRandomGraph(event) {
 
             const edgeId = createEdgeIdFromCoordinates(sourceNode.id, targetNode.id);
             const oppositeEdgeId = createEdgeIdFromCoordinates(targetNode.id, sourceNode.id);
+            const edgeLabel = (computePathLength(sourceNode, targetNode) / 10).toFixed(2);
 
             if (!edgeIdSet.has(edgeId)) {
                 sigmaInstance.graph.addEdge({
@@ -95,7 +96,7 @@ function createRandomGraph(event) {
                     target: targetNode.id,
                     defaultEdgeLabelSize: 20,
                     size: 3,
-                    label: computePathLength(sourceNode, targetNode).toString()
+                    label: edgeLabel.toString()
                 });
 
                 edgeIdSet.add(edgeId);
@@ -108,5 +109,6 @@ function createRandomGraph(event) {
 
 function clearGraph() {
     sigmaInstance.graph.clear();
+    localStorage.clear();
     sigmaInstance.refresh();
 }
