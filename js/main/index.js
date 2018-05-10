@@ -17,6 +17,10 @@ self.overlayElement = $("<div class='slide-reveal-overlay'></div>")
     });
 
 window.onload = function () {
+    localStorage.removeItem("dijkstra-summary-prompt");
+    localStorage.removeItem("kruskal-summary-prompt");
+    localStorage.removeItem("prim-summary-prompt");
+
     const storageNodes = JSON.parse(localStorage.getItem("nodes"));
     const storageEdges = JSON.parse(localStorage.getItem("edges"));
 
