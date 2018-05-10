@@ -7,7 +7,7 @@ function initalizeTourGuide() {
                 template: "<div class='popover tour'>\n" +
                 "<button class='tour-close-button algo-button' data-role='end'>X</button>" +
                 "    <div class='popover-content'>Welcome to the Graph Algorithm Teaching Tool!" +
-                " Explore the site by proceeding the tour. (Click or press right key)</div>\n" +
+                " Explore the site by proceeding the tour.</div>\n" +
                 "    <div class='popover-navigation'>\n" +
                 "     <div id='options'>" +
                 "        <div class='glyphicon glyphicon-arrow-left directional-buttons tour-prev' data-role='prev'></div>\n" +
@@ -21,7 +21,7 @@ function initalizeTourGuide() {
             }, {
                 template: "<div class='popover tour'>\n" +
                 "<button class='tour-close-button algo-button' data-role='end'>X</button>" +
-                "    <div class='popover-content'>Left click anywhere on the screen to create a node. Right click on the node to remove it.</div>\n" +
+                "    <div class='popover-content'>Left click anywhere on the screen to create a node. Right click on the node to remove it - Try it!</div>\n" +
                 "    <div class='popover-navigation'>\n" +
                 "     <div id='options'>" +
                 "        <div class='glyphicon glyphicon-arrow-left directional-buttons tour-prev' data-role='prev'></div>\n" +
@@ -118,7 +118,7 @@ function initalizeTourGuide() {
             {
                 template: "<div class='popover tour'>\n" +
                 "<button class='tour-close-button algo-button' data-role='end'>X</button>" +
-                "    <div class='popover-content'>Just below gives you the ability to modify the execution. You can: Restart, Rewind a step, Pause, Forward a step and Finish execution. " +
+                "    <div class='popover-content'>At the bottom of the screen gives you the ability to modify the execution. You can: Restart, Rewind a step, Pause, Forward a step and Finish execution. " +
                 "<br>You also have the ability to change the speed of execution. </div>\n" +
                 "    <div class='popover-navigation'>\n" +
                 "     <div id='options'>" +
@@ -154,6 +154,13 @@ function initalizeTourGuide() {
                     $('.resize-drag').removeClass('resize-drag-highlight');
                 }
             },
-        ]
+        ],
+        onStart: function () {
+            $.iGrowl.prototype.dismissAll('all');
+        },
+        onEnd: function () {
+            $.iGrowl.prototype.dismissAll('all');
+            checkNodeExistence();
+        }
     });
 }

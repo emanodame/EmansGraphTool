@@ -52,6 +52,17 @@ $(document).ready(function () {
 
     });
 
+    dragListener.bind('drag', function (event) {
+        const edgesConnectedToNode = sigmaInstance.graph.edges().filter(function (edge) {
+            return event.data.node.id === edge.source || event.data.node.id === edge.target;
+        });
+
+        edgesConnectedToNode.forEach(function (edge) {
+            edge.label = computePathLength(sigmaInstance.graph.nodes(edge.source), sigmaInstance.graph.nodes(edge.target));
+            sigmaInstance.refresh();
+        });
+    });
+
     sigmaInstance.bind("rightClickEdge", function (e) {
         const edge = e.data.edge;
         sigmaInstance.graph.dropEdge(edge.id);
@@ -73,17 +84,6 @@ $(document).ready(function () {
         }
         sigmaInstance.refresh();
     }
-
-    dragListener.bind('drag', function (event) {
-        const edgesConnectedToNode = sigmaInstance.graph.edges().filter(function (edge) {
-            return event.data.node.id === edge.source || event.data.node.id === edge.target;
-        });
-
-        edgesConnectedToNode.forEach(function (edge) {
-            edge.label = computePathLength(sigmaInstance.graph.nodes(edge.source), sigmaInstance.graph.nodes(edge.target));
-            sigmaInstance.refresh();
-        });
-    });
 
     function connectNodesViaEdges() {
         const sourceNodeId = nodesSelected[0].id;

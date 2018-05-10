@@ -43,7 +43,6 @@
         }
 
         function discoverNeighbourEdges(prevEdge, neighbours) {
-
             neighbours.forEach(function (neighbour) {
                 const edge = Object.values(neighbour)[0];
 

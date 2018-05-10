@@ -7,6 +7,7 @@ function executePrimsTeacher(edgesOnGraph) {
     const action = [];
 
     const divIds = new Set();
+    let intervalTimePrims;
 
     edgesOnGraph.forEach(function (edge) {
         edge.color = edge.inSpanningTree ? "#6e0db6" : "#CDAD00";
@@ -31,6 +32,36 @@ function executePrimsTeacher(edgesOnGraph) {
     let freeFlow = false;
 
     task.step();
+
+    function* actionExecutor() {
+        sigmaInstance.graph.edges().forEach(function (edge) {
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+        });
+
+        while (true) {
+            if (primsCounter !== primsEdgeStates.length) {
+                if (freeFlow) {
+                    actionPosition++;
+                }
+                maxCount = actionPosition > maxCount ? actionPosition : maxCount;
+                action[actionPosition]();
+            } else {
+                freeFlow = false;
+                $.iGrowl.prototype.dismissAll('all');
+
+                $.iGrowl({
+                    type: "growler-settings",
+                    message: "End of Prims's Algorithm!",
+                    placement: {
+                        x: 'center'
+                    },
+                    animation: false
+                });
+                showPlayButton();
+            }
+            yield;
+        }
+    }
 
     function graphAction() {
         Object.values(primsEdgeStates[primsCounter].edges).forEach(function (edge) {
@@ -59,9 +90,13 @@ function executePrimsTeacher(edgesOnGraph) {
                 document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
                 document.getElementById(div.id).addEventListener("click", function (k) {
+                    sigmaInstance.graph.edges().forEach(function (edge) {
+                        sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+                    });
+
                     primsCounter = k.srcElement.id;
                     actionPosition = k.srcElement.id * 2;
-                    highlightElement(primsCounter, '#6e0db6', 0.5);
+                    highlightElement(primsCounter, '#6e0db6', 500);
                     forward();
                     showPlayButton();
                 });
@@ -74,37 +109,8 @@ function executePrimsTeacher(edgesOnGraph) {
                 divIds.add(div.id);
             }
         }
-        highlightElement(primsCounter, '#6e0db6', 0.5);
+        highlightElement(primsCounter, '#6e0db6', freeFlow ? intervalTimePrims ? intervalTimePrims : 1750 : 500);
         sigmaInstance.renderers[0].dispatchEvent('overEdge', {edge: sigmaInstance.graph.edges(primsEdgeStates[primsCounter].currentEdge.id)});
-    }
-
-    function* actionExecutor() {
-        sigmaInstance.graph.edges().forEach(function (edge) {
-            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
-        });
-
-        while (true) {
-            if (primsCounter !== primsEdgeStates.length) {
-                if (freeFlow) {
-                    actionPosition++;
-                }
-                maxCount = actionPosition > maxCount ? actionPosition : maxCount;
-                action[actionPosition]();
-            } else {
-                $.iGrowl.prototype.dismissAll('all');
-
-                $.iGrowl({
-                    type: "growler-settings",
-                    message: "End of Prims's Algorithm!",
-                    placement: {
-                        x: 'center'
-                    },
-                    animation: false
-                });
-                showPlayButton();
-            }
-            yield;
-        }
     }
 
     function displayConnectionInfo() {
@@ -127,6 +133,7 @@ function executePrimsTeacher(edgesOnGraph) {
 
     function play(intervalTime) {
         freeFlow = true;
+        intervalTimePrims = intervalTime ? intervalTime : 1750;
         task.resume(intervalTime);
     }
 
@@ -201,7 +208,7 @@ function executePrimsTeacher(edgesOnGraph) {
 
             $.iGrowl({
                 type: "growler-settings",
-                message: "End of Kruskal's Algorithm!",
+                message: "End of Prim's Algorithm!",
                 placement: {
                     x: 'center'
                 },
@@ -215,13 +222,13 @@ function executePrimsTeacher(edgesOnGraph) {
     executePrimsTeacher.rewind = rewind;
     executePrimsTeacher.forward = forward;
     executePrimsTeacher.end = end;
-}
 
-function highlightElement(id, color, seconds) {
-    const element = document.getElementById(id);
-    const origcolor = element.style.backgroundColor;
-    element.style.backgroundColor = color;
-    const t = setTimeout(function () {
-        element.style.backgroundColor = origcolor;
-    }, (seconds * 1000));
+    function highlightElement(id, color, seconds) {
+        const element = document.getElementById(id);
+        const origcolor = element.style.backgroundColor;
+        element.style.backgroundColor = color;
+        setTimeout(function () {
+            element.style.backgroundColor = origcolor;
+        }, (seconds));
+    }
 }

@@ -24,10 +24,6 @@
         );
     };
 
-    var lol = function (node1, node2) {
-        return 2;
-    };
-
     sigma.classes.graph.addMethod(
         'astar',
         function (srcId, destId, settings) {

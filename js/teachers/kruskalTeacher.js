@@ -8,7 +8,8 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
     const action = [];
 
     const divIds = new Set();
-    let t;
+    let intervalTimeKruskal;
+
 
     sortedEdgesOnGraph.forEach(function (edge) {
         edge.color = isEdgeInSpanningTree(edge.id) ? "#6e0db6" : "#CDAD00";
@@ -35,6 +36,36 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     task.step();
 
+    function* actionExecutor() {
+        sigmaInstance.graph.edges().forEach(function (edge) {
+            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+        });
+
+        while (true) {
+            if (kruskalCounter !== kruskalEdgeStatesArray.length) {
+                if (freeFlow) {
+                    actionPosition++;
+                }
+                maxCount = actionPosition > maxCount ? actionPosition : maxCount;
+                action[actionPosition]();
+            } else {
+                freeFlow = false;
+                $.iGrowl.prototype.dismissAll('all');
+
+                $.iGrowl({
+                    type: "growler-settings",
+                    message: "End of Kruskal's Algorithm!",
+                    placement: {
+                        x: 'center'
+                    },
+                    animation: false
+                });
+                showPlayButton();
+            }
+            yield;
+        }
+    }
+
     function graphAction() {
         Object.values(kruskalEdgeStatesArray[kruskalCounter].edges).forEach(function (edge) {
             sigmaInstance.graph.edges(edge.id).color = edge.color;
@@ -57,11 +88,15 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
             div.id = kruskalCounter.toString();
 
             if (!divIds.has(div.id)) {
-                div.insertAdjacentHTML("beforeend", displayConnectionInfo() + "<br/>" + "<br/>");
+                div.insertAdjacentHTML("beforeend", displayConnectionInfo() + "<br />" + "<br />");
                 document.getElementById("helper-text-container").appendChild(div);
                 document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
                 document.getElementById(div.id).addEventListener("click", function (k) {
+                    sigmaInstance.graph.edges().forEach(function (edge) {
+                        sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+                    });
+
                     kruskalCounter = k.srcElement.id;
                     actionPosition = k.srcElement.id * 2;
                     highlightElement(kruskalCounter, '#6e0db6', 500);
@@ -77,37 +112,8 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                 divIds.add(div.id);
             }
         }
-        highlightElement(kruskalCounter, '#6e0db6', 500);
+        highlightElement(kruskalCounter, '#6e0db6', freeFlow ? intervalTimeKruskal ? intervalTimeKruskal : 1750 : 500);
         sigmaInstance.renderers[0].dispatchEvent('overEdge', {edge: sigmaInstance.graph.edges(kruskalEdgeStatesArray[kruskalCounter].currentEdge.id)})
-    }
-
-    function* actionExecutor() {
-        sigmaInstance.graph.edges().forEach(function (edge) {
-            sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
-        });
-
-        while (true) {
-            if (kruskalCounter !== kruskalEdgeStatesArray.length) {
-                if (freeFlow) {
-                    actionPosition++;
-                }
-                maxCount = actionPosition > maxCount ? actionPosition : maxCount;
-                action[actionPosition]();
-            } else {
-                $.iGrowl.prototype.dismissAll('all');
-
-                $.iGrowl({
-                    type: "growler-settings",
-                    message: "End of Kruskal's Algorithm!",
-                    placement: {
-                        x: 'center'
-                    },
-                    animation: false
-                });
-                showPlayButton();
-            }
-            yield;
-        }
     }
 
     function displayConnectionInfo() {
@@ -130,6 +136,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
 
     function play(intervalTime) {
         freeFlow = true;
+        intervalTimeKruskal = intervalTime ? intervalTime : 1750;
         task.resume(intervalTime);
     }
 
@@ -227,7 +234,7 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
         const element = document.getElementById(id);
         const origcolor = element.style.backgroundColor;
         element.style.backgroundColor = color;
-        t = setTimeout(function () {
+        setTimeout(function () {
             element.style.backgroundColor = origcolor;
         }, (seconds));
     }

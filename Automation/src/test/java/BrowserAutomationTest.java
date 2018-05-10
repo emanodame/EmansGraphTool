@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import static junit.framework.TestCase.assertTrue;
 
 public class BrowserAutomationTest {
-    private final static WebDriver driver = new FirefoxDriver();
+    private final static WebDriver driver = new ChromeDriver();
     private final static Actions builder = new Actions(driver);
     private final static JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -55,7 +55,7 @@ public class BrowserAutomationTest {
                 .build()
                 .perform();
 
-        final ArrayList<Object> jsReturnObject = (ArrayList<Object>) js.executeScript("return (window.wrappedJSObject || window).sigmaInstance");
+        final ArrayList<Object> jsReturnObject = (ArrayList<Object>) js.executeScript("return sigmaInstance.graph.nodes()");
         assertTrue(jsReturnObject.size() == 2);
     }
 

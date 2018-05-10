@@ -24,6 +24,10 @@ function parseJson() {
 
         for (let i = 0; i < textToJson.nodes.length; i++) {
 
+            if (textToJson.nodes[i].x.match(/[a-z]/i) || textToJson.nodes[i].y.match(/[a-z]/i)) {
+                throw "X and Y coordinates should be numerical! 1";
+            }
+
             const nodeCreation = {
                 id: textToJson.nodes[i].id,
                 x: textToJson.nodes[i].x * 100,
@@ -36,6 +40,10 @@ function parseJson() {
         }
 
         for (let i = 0; i < textToJson.edges.length; i++) {
+
+            if (textToJson.edges[i].source.match(/[a-z]/i) || textToJson.edges[i].target.match(/[a-z]/i)) {
+                throw "X and Y coordinates should be numerical! 1";
+            }
 
             const edgeCreation = {
                 id: createEdgeIdFromCoordinates(textToJson.edges[i].source, textToJson.edges[i].target),
@@ -61,9 +69,7 @@ function parseJson() {
         sigmaInstance.refresh();
         removeOverlay();
     } catch (err) {
-        sigmaInstance.graph.clear();
-        sigmaInstance.refresh();
-
+        console.log(err);
         $.iGrowl.prototype.dismissAll('all');
 
         $.iGrowl({

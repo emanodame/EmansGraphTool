@@ -10,6 +10,7 @@ function executeDijkstraTeacher(path) {
     let actionPosition = 0;
 
     let dijkstraCounter = 0;
+    let intervalTimeDijkstra;
 
     const sourceNodeId = getNodeIdFromLabel($("#src-node").val());
 
@@ -64,6 +65,7 @@ function executeDijkstraTeacher(path) {
                 maxCount = actionPosition > maxCount ? actionPosition : maxCount;
                 action[actionPosition]();
             } else {
+                freeFlow = false;
                 $.iGrowl.prototype.dismissAll('all');
 
                 $.iGrowl({
@@ -112,9 +114,13 @@ function executeDijkstraTeacher(path) {
                 document.getElementById("helper-text-container").scrollTop = document.getElementById("helper-text-container").scrollHeight;
 
                 document.getElementById(div.id).addEventListener("click", function (k) {
+                    sigmaInstance.graph.edges().forEach(function (edge) {
+                        sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
+                    });
+
                     dijkstraCounter = k.srcElement.id;
                     actionPosition = k.srcElement.id * 2;
-                    highlightElement(dijkstraCounter, '#6e0db6', 0.5);
+                    highlightElement(dijkstraCounter, '#6e0db6', 500);
                     forward();
                     showPlayButton();
                 });
@@ -127,7 +133,8 @@ function executeDijkstraTeacher(path) {
                 divIds.add(div.id);
             }
         }
-        highlightElement(dijkstraCounter, '#6e0db6', 0.5);
+
+        highlightElement(dijkstraCounter, '#6e0db6', freeFlow ? intervalTimeDijkstra ? intervalTimeDijkstra : 1750 : 500);
         sigmaInstance.renderers[0].dispatchEvent('overEdge', {edge: sigmaInstance.graph.edges(dijkstraEdgeStatesArray[dijkstraCounter].currentEdge.id)});
     }
 
@@ -145,6 +152,7 @@ function executeDijkstraTeacher(path) {
 
     function play(intervalTime) {
         freeFlow = true;
+        intervalTimeDijkstra = intervalTime ? intervalTime : 1750;
         task.resume(intervalTime);
     }
 
@@ -212,14 +220,14 @@ function executeDijkstraTeacher(path) {
     executeDijkstraTeacher.rewind = rewind;
     executeDijkstraTeacher.forward = forward;
     executeDijkstraTeacher.end = end;
-}
 
-function highlightElement(id, color, seconds) {
-    const element = document.getElementById(id);
-    const origcolor = element.style.backgroundColor;
-    element.style.backgroundColor = color;
-    const t = setTimeout(function () {
-        element.style.backgroundColor = origcolor;
-    }, (seconds * 1000));
+    function highlightElement(id, color, seconds) {
+        const element = document.getElementById(id);
+        const origcolor = element.style.backgroundColor;
+        element.style.backgroundColor = color;
+        setTimeout(function () {
+            element.style.backgroundColor = origcolor;
+        }, (seconds));
+    }
 }
 

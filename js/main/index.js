@@ -80,6 +80,7 @@ const sigmaInstance = new sigma({
         defaultNodeColor: "#ff0e58",
         defaultNodeBorderColor: "#c9ddff",
 
+        edgeColor: "default",
         defaultEdgeColor: "#ff0e58",
         defaultEdgeLabelColor: "#ff0e58",
         defaultEdgeLabelSize: 20,
@@ -165,7 +166,7 @@ $("#src-node").focusout(function () {
 });
 
 function checkNodeExistence() {
-    if (sigmaInstance.graph.nodes().length === 0) {
+    if (sigmaInstance.graph.nodes().length === 0 && !tour._inited) {
         growler = $.iGrowl({
             type: "growler-settings",
             animShow: 'fadeInDown',

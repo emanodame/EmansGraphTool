@@ -176,6 +176,7 @@ function calculateDijkstraPath() {
             }
         });
         return;
+
     } else {
         $("#helper-text-container").fadeIn();
         executeDijkstraTeacher(path);
@@ -203,6 +204,8 @@ function calculateKruskalPath() {
                 x: 'center'
             }
         });
+        return;
+
     } else {
         $("#helper-text-container").fadeIn();
         executeKruskalTeacher(idsOfMinSpanningTreeEdges);
@@ -231,13 +234,15 @@ function calculatePrimsPath() {
                 x: 'center'
             }
         });
+        return;
+
     } else {
         $("#helper-text-container").fadeIn();
         executePrimsTeacher(edgesWithMinSpanTreeFlag);
 
         $('#slide-revealer').slideReveal("hide");
-        document.getElementById("play-button").style.display = "none";
-        document.getElementById("pause-button").style.display = "inline";
+        document.getElementById("play-button").style.display = "inline";
+        document.getElementById("pause-button").style.display = "none";
     }
 
     return edgesWithMinSpanTreeFlag;
