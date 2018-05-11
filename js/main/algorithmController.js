@@ -60,9 +60,7 @@ function showPauseButton() {
     }
 }
 
-function executedSelectedAlgorithm(event) {
-  // event.preventDefault();
-
+function executedSelectedAlgorithm() {
     if (sigmaInstance.graph.nodes().length === 0) {
         $.iGrowl.prototype.dismissAll('all');
         $.iGrowl({

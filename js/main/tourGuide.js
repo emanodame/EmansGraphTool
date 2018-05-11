@@ -160,7 +160,6 @@ function initalizeTourGuide() {
         },
         onEnd: function () {
             $.iGrowl.prototype.dismissAll('all');
-            checkNodeExistence();
         }
     });
 }
