@@ -3,6 +3,7 @@ describe("Tests", function () {
     beforeAll(function () {
         sigmaInstance.graph.clear();
         sigmaInstance.drawNodes = false;
+        localStorage.clear();
     });
 
     var dummyElement = document.createElement('div');
@@ -282,84 +283,93 @@ describe("Tests", function () {
 
     fit('should restart algorithm and show play button', function () {
         const showPlayButtonSpy = spyOn(window, 'showPlayButton');
+        localStorage.removeItem("algorithm");
         restartAlgorithm();
         expect(showPlayButtonSpy).toHaveBeenCalled();
     });
 
     fit('should restart algorithm and show pause button', function () {
         const showPlayButtonSpy = spyOn(window, 'pauseAlgorithm');
+        localStorage.removeItem("algorithm");
         restartAlgorithm();
         expect(showPlayButtonSpy).toHaveBeenCalled();
     });
 
     fit('should rewind algorithm', function () {
         const showPlayButtonSpy = spyOn(window, 'showPlayButton');
+        localStorage.removeItem("algorithm");
         rewindAlgorithm();
         expect(showPlayButtonSpy).toHaveBeenCalled();
     });
 
     fit('should step algorithm and show play button', function () {
         const showPlayButtonSpy = spyOn(window, 'showPlayButton');
+        localStorage.removeItem("algorithm");
         rewindAlgorithm();
         expect(showPlayButtonSpy).toHaveBeenCalled();
     });
 
     fit('should step algorithm and show pause button', function () {
         const showPlayButtonSpy = spyOn(window, 'pauseAlgorithm');
+        localStorage.removeItem("algorithm");
         rewindAlgorithm();
         expect(showPlayButtonSpy).toHaveBeenCalled();
     });
 
     fit('should resume algorithm', function () {
         const showPlayButtonSpy = spyOn(window, 'resumeAlgorithm');
+        localStorage.removeItem("algorithm");
         resumeAlgorithm();
         expect(showPlayButtonSpy).toHaveBeenCalled();
     });
 
     fit('should pause algorithm', function () {
         const showPlayButtonSpy = spyOn(window, 'pauseAlgorithm');
+        localStorage.removeItem("algorithm");
         pauseAlgorithm();
         expect(showPlayButtonSpy).toHaveBeenCalled();
     });
 
     fit('should end algorithm and show play button', function () {
         const showPlayButtonSpy = spyOn(window, 'showPlayButton');
+        localStorage.removeItem("algorithm");
         endAlgorithm();
         expect(showPlayButtonSpy).toHaveBeenCalled();
     });
 
     fit('should end algorithm and pause algorithm', function () {
         const showPlayButtonSpy = spyOn(window, 'pauseAlgorithm');
+        localStorage.removeItem("algorithm");
         endAlgorithm();
         expect(showPlayButtonSpy).toHaveBeenCalled();
     });
 
     fit('should initalise tour guide', function () {
         const tourGuidesSpy = spyOn(window, 'initalizeTourGuide');
+        localStorage.removeItem("algorithm");
         initalizeTourGuide();
         expect(tourGuidesSpy).toHaveBeenCalled();
     });
 
     fit('should initalise dijkstra teacher', function () {
         const dijkstraTeacherSpy = spyOn(window, 'executeDijkstraTeacher');
+        localStorage.removeItem("algorithm");
         executeDijkstraTeacher();
         expect(dijkstraTeacherSpy).toHaveBeenCalled();
     });
 
     fit('should initalise kruskal teacher', function () {
         const kruskalTeacherSpy = spyOn(window, 'executeKruskalTeacher');
+        localStorage.removeItem("algorithm");
         executeKruskalTeacher();
         expect(kruskalTeacherSpy).toHaveBeenCalled();
     });
 
     fit('should initalise prim teacher', function () {
         const primTeacherSpy = spyOn(window, 'executePrimsTeacher');
+        localStorage.removeItem("algorithm");
         executePrimsTeacher();
         expect(primTeacherSpy).toHaveBeenCalled();
-    });
-
-    fit('should expect empty local storage', function () {
-        expect(localStorage.length).toBe(0);
     });
 });
 

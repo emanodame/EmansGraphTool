@@ -61,7 +61,7 @@ function showPauseButton() {
 }
 
 function executedSelectedAlgorithm(event) {
-    event.preventDefault();
+  // event.preventDefault();
 
     if (sigmaInstance.graph.nodes().length === 0) {
         $.iGrowl.prototype.dismissAll('all');
@@ -248,7 +248,7 @@ function calculatePrimsPath() {
     return edgesWithMinSpanTreeFlag;
 }
 
-function enterKeyHandler() {
+function enterKeyHandler(event) {
     if (event.keyCode === 13) {
         const srcNodeId = getNodeIdFromLabel($("#src-node").val());
 

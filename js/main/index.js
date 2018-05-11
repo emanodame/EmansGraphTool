@@ -170,6 +170,8 @@ $("#src-node").focusout(function () {
 });
 
 function checkNodeExistence() {
+    $.iGrowl.prototype.dismissAll('all');
+
     if (sigmaInstance.graph.nodes().length === 0 && !tour._inited) {
         growler = $.iGrowl({
             type: "growler-settings",
@@ -186,7 +188,7 @@ function checkNodeExistence() {
     }
 }
 
-function closePrompt() {
+function closePrompt(event) {
     removeOverlay();
     document.getElementById("guide-prompt").style.display = "none";
 
