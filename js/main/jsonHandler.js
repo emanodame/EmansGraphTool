@@ -13,7 +13,6 @@ function parseJsonKeyPress(event) {
 }
 
 function parseJson() {
-    event.preventDefault();
 
     try {
         const jsonTextInput = document.getElementById("json-text-input").value;

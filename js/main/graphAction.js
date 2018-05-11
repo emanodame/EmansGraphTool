@@ -16,9 +16,7 @@ function createRandomGraphKeyPress(event) {
     }
 }
 
-function createRandomGraph(event) {
-    event.preventDefault();
-
+function createRandomGraph() {
     const quantityOfNodes = $("#number-text-input").val();
 
     if (quantityOfNodes < 2 || quantityOfNodes > 101 || isNaN(quantityOfNodes)) {

@@ -30,7 +30,7 @@
     <div id="number-input">
         Number of nodes (2 - 99)
         <input type="text" id="number-text-input" name="json-input" onkeydown="createRandomGraphKeyPress(event)">
-        <input type="submit" class="algo-button" id="number-graph-submit-btn" onclick="createRandomGraph(event)">
+        <input type="button" class="algo-button" id="number-graph-submit-btn" value="Submit" onclick="createRandomGraph()">
     </div>
 </div>
 
@@ -39,7 +39,7 @@
     <div id="json-input">
         Input
         <input type="text" id="json-text-input" name="json-input" onkeydown="parseJsonKeyPress(event)">
-        <input type="submit" class="algo-button" id="json-submit-btn" onclick="parseJson()">
+        <input type="button" class="algo-button" id="json-submit-btn" value="Submit" onclick="parseJson()">
     </div>
 </div>
 
@@ -110,8 +110,8 @@
         </div>
 
         <div id="button-block">
-            <input type="submit" id="execute-button" class="algo-button" value="Execute"
-                   onclick="executedSelectedAlgorithm(event)">
+            <input type="button" id="execute-button" class="algo-button" value="Execute"
+                   onclick="executedSelectedAlgorithm()">
         </div>
     </div>
 
