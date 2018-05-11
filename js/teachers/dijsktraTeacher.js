@@ -118,8 +118,10 @@ function executeDijkstraTeacher(path) {
                         sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
                     });
 
-                    dijkstraCounter = k.srcElement.id;
-                    actionPosition = k.srcElement.id * 2;
+                    const srcElement = k.srcElement || k.target;
+
+                    dijkstraCounter = srcElement.id;
+                    actionPosition = srcElement.id * 2;
                     highlightElement(dijkstraCounter, '#6e0db6', 500);
                     forward();
                     showPlayButton();

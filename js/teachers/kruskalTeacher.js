@@ -97,8 +97,10 @@ function executeKruskalTeacher(idsOfMinSpanningTreeEdges) {
                         sigmaInstance.renderers[0].dispatchEvent('outEdge', {edge: edge});
                     });
 
-                    kruskalCounter = k.srcElement.id;
-                    actionPosition = k.srcElement.id * 2;
+                    const srcElement = k.srcElement || k.target;
+
+                    kruskalCounter = srcElement.id;
+                    actionPosition = srcElement.id * 2;
                     highlightElement(kruskalCounter, '#6e0db6', 500);
                     forward();
                     showPlayButton();
